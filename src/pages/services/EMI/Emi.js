@@ -32,7 +32,7 @@ const Emi = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#872D67"}}>Seamless online EMI payments.</h2>
+            <h2 className="fw-bold" style={{color:"#001e50"}}>Seamless online EMI payments.</h2>
             <h3>
               Streamline your financial commitments with effortless online loan
               EMI payments.
@@ -53,7 +53,7 @@ const Emi = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Loan EMI Payment Online</h3>
+              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Loan EMI Payment Online</h3>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -87,7 +87,7 @@ const Emi = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#872D67', color: 'white' }}
+                  style={{ backgroundColor: '#001e50', color: 'white' }}
                   disabled={!isFormValid} 
                 >
                   Confirm

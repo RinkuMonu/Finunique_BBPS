@@ -119,7 +119,7 @@ const DTHRecharge = () => {
       <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{ color: "#872D67" }}>
+            <h2 className="fw-bold" style={{ color: " #001e50" }}>
               DTH Recharge: Uninterrupted Entertainment!
             </h2>
             <h3>Elevate your entertainment with hassle-free DTH recharges.</h3>
@@ -135,7 +135,7 @@ const DTHRecharge = () => {
             >
               <h3
                 className="mb-4"
-                style={{ color: "#872D67", fontWeight: "bold" }}
+                style={{ color: " #001e50", fontWeight: "bold" }}
               >
                 DTH Recharge
               </h3>
@@ -194,7 +194,7 @@ const DTHRecharge = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: "#872D67" }}
+                  style={{ backgroundColor: "#001e50" }}
                   disabled={!isFormValid}
                 >
                   Confirm

@@ -26,17 +26,17 @@ const FAQDthRecharge = () => {
           <p>
             DTH is one good source of entertainment for the audiences & timely
             recharge for the same is vital for the constant grasp of content.
-            There are many options online for instant recharge but Finunique is
+            There are many options online for instant recharge but ABDKS Solutions Private Limited is
             a leading payment wallet that allows users to make recharges and
-            bill payments with a button click. On the Finunique platform, the
+            bill payments with a button click. On the ABDKS Solutions Private Limited platform, the
             users can get their DTH recharge done and enjoy uninterrupted DTH
-            services. Online DTH recharge via Finunique is a simple process, and
+            services. Online DTH recharge via ABDKS Solutions Private Limited is a simple process, and
             the users can avail a variety of the best DTH recharge offers.
-            Online DTH recharge can be done via Finunique Small Pvt. Ltd.
+            Online DTH recharge can be done via ABDKS Solutions Private Limited
           </p>
           <ol>
             <li>
-              Go to the recharge and bill payment section on the Finunique
+              Go to the recharge and bill payment section on the ABDKS Solutions Private Limited
               website or app.
             </li>
             <li>Select ‘DTH’ as a category.</li>
@@ -51,7 +51,7 @@ const FAQDthRecharge = () => {
             </li>
           </ol>
           <p>
-            With this, your DTH recharge will be done within minutes. Finunique
+            With this, your DTH recharge will be done within minutes. ABDKS Solutions Private Limited
             provides multiple payment modes like UPI, wallet, credit card, debit
             card, Pay Later (ZIP), and net banking.
           </p>
@@ -59,12 +59,12 @@ const FAQDthRecharge = () => {
       ),
     },
     {
-      title: "Why Choose Finunique for DTH Recharge Online",
+      title: "Why Choose ABDKS Solutions Private Limited for DTH Recharge Online",
       body: (
         <>
           <p>
             If you seek to make DTH recharge online while enjoying exciting DTH
-            recharge offers, discounts, and cashback, then Finunique is the right
+            recharge offers, discounts, and cashback, then ABDKS Solutions Private Limited is the right
             platform. Benefits include:
           </p>
           <ul>
@@ -106,7 +106,7 @@ const FAQDthRecharge = () => {
           </li>
           <li>
             <strong>
-              Does Finunique support all operators for DTH recharge?
+              Does ABDKS Solutions Private Limited support all operators for DTH recharge?
             </strong>
             <br />
             Yes, it supports Airtel DTH, Dish TV, Tata Sky, Videocon D2H, and
@@ -119,7 +119,7 @@ const FAQDthRecharge = () => {
             website, app, or customer support.
           </li>
           <li>
-            <strong>What payment options are available on Finunique?</strong>
+            <strong>What payment options are available on ABDKS Solutions Private Limited?</strong>
             <br />
             Payment options include UPI, credit/debit cards, internet banking,
             and wallet balance.

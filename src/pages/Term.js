@@ -12,26 +12,26 @@ export default function Term() {
                             <div className="service-item style-2">
                                 <div className="service-desc abt">
                                     <p>
-                                        By accessing and using the Finuniques,{" "}
-                                        <a href="https://www.sevenunique.com/">
-                                            https://www.sevenunique.com/
+                                        By accessing and using the ABDKS Solutions,{" "}
+                                        <a href="https://www.abdks.com/ ">
+                                            https://www.abdks.com/ 
                                         </a>{" "}
                                         (the "website"), you are agreeing to be legally bound by these "Terms &amp; Conditions". The
-                                        terms "you" and "user" refer to anyone who accesses the Finuniques Private Limited
+                                        terms "you" and "user" refer to anyone who accesses the ABDKS Solutions Private Limited
                                         website.
                                     </p>
                                     <p>
-                                        As you browse through the Finuniques Private Limited sites, you may access other
+                                        As you browse through the ABDKS Solutions Private Limited sites, you may access other
                                         websites that are subject to different terms of use. When you use those sites, you will be
                                         legally bound by the specific terms of use posted on such sites. If there is a conflict
                                         between these terms &amp; conditions and the other terms and conditions, the other terms
                                         &amp; conditions will govern with respect to use of such pages.
                                     </p>
                                     <p>
-                                        Finuniques Private Limited may change these terms &amp; conditions at any time
+                                        ABDKS Solutions Private Limited may change these terms &amp; conditions at any time
                                         without notice. Changes will be posted on{" "}
-                                        <a href="https://www.sevenunique.com/">
-                                            https://www.sevenunique.com/
+                                        <a href="https://www.abdks.com/ ">
+                                            https://www.abdks.com/ 
                                         </a>{" "}
                                         under "Terms &amp; Conditions".
                                     </p>
@@ -46,7 +46,7 @@ export default function Term() {
                                     </div>
                                     <p>
                                         As part of the registration process, you must select a username and password and provide
-                                        Finuniques Private Limited with accurate, complete, and updated information. Failure
+                                        ABDKS Solutions Private Limited with accurate, complete, and updated information. Failure
                                         to do so constitutes a breach of this agreement, which may result in immediate termination
                                         of your access.
                                     </p>
@@ -58,12 +58,12 @@ export default function Term() {
                                         You are entirely liable for activities conducted by you in connection with your browsing and
                                         use of the website. If you are dissatisfied with the content or the website or with these
                                         terms of use, your sole and exclusive remedy is to stop using the content and the website.
-                                        Finuniques Private Limited will not pay you any damages in connection with your
+                                        ABDKS Solutions Private Limited will not pay you any damages in connection with your
                                         browsing or use of the website.
                                     </p>
                                     <p>
-                                        Finuniques Private Limited assumes no responsibility for the use of third-party
-                                        software on the Finuniques Private Limited site and shall have no liability
+                                        ABDKS Solutions Private Limited assumes no responsibility for the use of third-party
+                                        software on the ABDKS Solutions Private Limited site and shall have no liability
                                         whatsoever to any person or entity for the accuracy or completeness of any outcome generated
                                         by such software.
                                     </p>
@@ -73,15 +73,15 @@ export default function Term() {
                                     </div>
                                     <p>
                                         You may, through hypertext or other computer links, gain access to websites operated by
-                                        persons other than Finuniques Private Limited. Such hyperlinks are provided for your
+                                        persons other than ABDKS Solutions Private Limited. Such hyperlinks are provided for your
                                         reference and convenience only, and are the exclusive responsibility of such websites'
-                                        owners. You agree that Finuniques Private Limited is not responsible for the content
-                                        or operation of such websites, and that Finuniques Private Limited shall have no
+                                        owners. You agree that ABDKS Solutions Private Limited is not responsible for the content
+                                        or operation of such websites, and that ABDKS Solutions Private Limited shall have no
                                         liability to you or any other person or entity for the use of third-party websites. Except
                                         as described below, a hyperlink from this website to another website does not imply or mean
-                                        that Finuniques Private Limited endorses the content on that website or the operator
+                                        that ABDKS Solutions Private Limited endorses the content on that website or the operator
                                         or operations of that site. You are solely responsible for determining the extent to which
-                                        you may use any content at any other websites to which you link from the Finuniques
+                                        you may use any content at any other websites to which you link from the ABDKS Solutions
                                         Private Limited website.
                                     </p>
 
@@ -89,19 +89,19 @@ export default function Term() {
                                         <h4>5. THE USER'S CONTENT</h4>
                                     </div>
                                     <p>
-                                        The user grants to Finuniques Private Limited the non-exclusive right to use all
-                                        material entered into the Finuniques by the user (other than
+                                        The user grants to ABDKS Solutions Private Limited the non-exclusive right to use all
+                                        material entered into the ABDKS Solutions by the user (other than
                                         third-party material transmitted through private electronic mail) in any of the Skriptonic
                                         Softech Private Limited print or electronic publications ("other content").
                                     </p>
                                     <p>
-                                        Users entering material into the Finuniques are responsible
-                                        for the other content. Neither Finuniques Private Limited nor has any responsibility
+                                        Users entering material into the ABDKS Solutions are responsible
+                                        for the other content. Neither ABDKS Solutions Private Limited nor has any responsibility
                                         for other content, including the content of any messages or information posted by users or
                                         others, or for the content of information accessible via direct or indirect hyperlinks from
-                                        the Finuniques. However, Finuniques Private Limited
+                                        the ABDKS Solutions Private Limited However, ABDKS Solutions Private Limited
                                         retains the right, which it may or may not exercise in its sole discretion, to review, edit,
-                                        or delete other content that Finuniques Private Limited deems to be illegal,
+                                        or delete other content that ABDKS Solutions Private Limited deems to be illegal,
                                         offensive, or otherwise inappropriate.
                                     </p>
 
@@ -109,7 +109,7 @@ export default function Term() {
                                         <h4>6. PAYMENTS, CANCELLATION &amp; REFUNDS</h4>
                                     </div>
                                     <p>
-                                        All information, reports, content and access rights purchased on Finuniques Private
+                                        All information, reports, content and access rights purchased on ABDKS Solutions Private
                                         Limited are non-refundable.
                                     </p>
                                     <p>
@@ -123,7 +123,7 @@ export default function Term() {
                                         <h4>7. ADDITIONAL LEGAL TERMS</h4>
                                     </div>
                                     <p>
-                                        This agreement will continue until terminated by either Finuniques Private Limited
+                                        This agreement will continue until terminated by either ABDKS Solutions Private Limited
                                         or you. Either party can terminate the agreement by notifying the other party by telephone
                                         or electronic mail of the decision to terminate.
                                     </p>

@@ -24,7 +24,7 @@ function Footer() {
                 <li>
                 <img src="/assets/Home/send-mail.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
 
-                  <a href="mailto:info@finuniques.in">info@finuniques.in</a>
+                  <a href="mailto:info@abdks.com">info@abdks.com</a>
                 </li>
                 <li>
                 <img src="/assets/Home/phone-call.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
@@ -106,7 +106,7 @@ function Footer() {
           <div className="copyright">
             <div className="row align-items-center">
               <div className="col-md-12 text-center">
-                © 2024 @Finuniques. All rights reserved.
+                © 2024 @ABDKS Solutions Private Limited All rights reserved.
               </div>
             </div>
           </div>

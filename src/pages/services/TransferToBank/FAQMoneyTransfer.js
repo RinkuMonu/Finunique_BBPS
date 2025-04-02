@@ -29,9 +29,9 @@ const FAQMoneyTransfer = () => {
             legal formalities is no longer needed since the money can be
             transferred online through a digital wallet without any hassle.
             Hence, transferring money online has become easier than before with
-            Finunique small pvt ltd. Just make instant money transfer with the 'Wallet to Bank'
-            feature on Finunique small pvt ltd, from credit cards to any bank account through
-            Finunique small pvt ltd's digital wallet. Now, transfer money from credit cards of
+            ABDKS Solutions Private Limited small pvt ltd. Just make instant money transfer with the 'Wallet to Bank'
+            feature on ABDKS Solutions Private Limited small pvt ltd, from credit cards to any bank account through
+            ABDKS Solutions Private Limited small pvt ltd's digital wallet. Now, transfer money from credit cards of
             ICICI, HDFC, Citibank, SBI, and more to any bank account, and the
             amount will reflect in the bank accounts instantly.
           </p>
@@ -48,7 +48,7 @@ const FAQMoneyTransfer = () => {
             steps:
           </p>
           <ol>
-            <li>Add money to your digital wallet on the Finunique small pvt ltd app using your credit or debit card.</li>
+            <li>Add money to your digital wallet on the ABDKS Solutions Private Limited small pvt ltd app using your credit or debit card.</li>
             <li>
               Tap on the 'Transfer money' feature on the app and find 'Wallet
               to Bank.'
@@ -69,12 +69,12 @@ const FAQMoneyTransfer = () => {
           <ul>
             <li>
               <strong>Secure platform:</strong> Choose a platform that is 100%
-              secure. On Finunique small pvt ltd, user data is end-to-end encrypted to ensure
+              secure. On ABDKS Solutions Private Limited small pvt ltd, user data is end-to-end encrypted to ensure
               safety.
             </li>
             <li>
               <strong>Charges involved:</strong> Charges for transferring money
-              vary by bank. Finunique small pvt ltd ensures minimal charges and a smooth
+              vary by bank. ABDKS Solutions Private Limited small pvt ltd ensures minimal charges and a smooth
               process.
             </li>
             <li>
@@ -84,7 +84,7 @@ const FAQMoneyTransfer = () => {
             </li>
             <li>
               <strong>Risk factors:</strong> Follow safe online banking
-              practices to avoid scams. Use Finunique small pvt ltd for secure transactions.
+              practices to avoid scams. Use ABDKS Solutions Private Limited small pvt ltd for secure transactions.
             </li>
           </ul>
         </>
@@ -96,17 +96,17 @@ const FAQMoneyTransfer = () => {
         <>
           <ul>
             <li>
-              <strong>Transfer to any bank account:</strong> Finunique small pvt ltd's digital
+              <strong>Transfer to any bank account:</strong> ABDKS Solutions Private Limited small pvt ltd's digital
               wallet enables hassle-free transfers from any credit card to any
               bank account.
             </li>
             <li>
-              <strong>Swift Transactions:</strong> Finunique small pvt ltd ensures quick and
+              <strong>Swift Transactions:</strong> ABDKS Solutions Private Limited small pvt ltd ensures quick and
               simple money transfers with its seamless interface.
             </li>
             <li>
               <strong>Minimum Charges:</strong> Enjoy low fees for instant
-              transfers with Finunique small pvt ltd.
+              transfers with ABDKS Solutions Private Limited small pvt ltd.
             </li>
             <li>
               <strong>KYC Required:</strong> KYC ensures secure transactions
@@ -124,25 +124,25 @@ const FAQMoneyTransfer = () => {
             <strong>How does online money transfer work?</strong>
             <br />
             Online money transfers can be done via NEFT, RTFS, UPI, or IMPS.
-            Finunique small pvt ltd also offers a 'Wallet to Bank' feature for quick
+            ABDKS Solutions Private Limited small pvt ltd also offers a 'Wallet to Bank' feature for quick
             transfers.
           </li>
           <li>
             <strong>Is KYC required for money transfers?</strong>
             <br />
             Yes, KYC is mandatory for secure transactions and can be completed
-            easily on Finunique small pvt ltd.
+            easily on ABDKS Solutions Private Limited small pvt ltd.
           </li>
           <li>
-            <strong>How safe are bank transfers on Finunique small pvt ltd?</strong>
+            <strong>How safe are bank transfers on ABDKS Solutions Private Limited small pvt ltd?</strong>
             <br />
-            Finunique small pvt ltd provides end-to-end encryption to ensure secure
+            ABDKS Solutions Private Limited small pvt ltd provides end-to-end encryption to ensure secure
             transactions.
           </li>
           <li>
             <strong>How long does a money transfer take?</strong>
             <br />
-            Transfers are completed instantly with Finunique small pvt ltd's 'Wallet to Bank'
+            Transfers are completed instantly with ABDKS Solutions Private Limited small pvt ltd's 'Wallet to Bank'
             feature.
           </li>
         </ul>

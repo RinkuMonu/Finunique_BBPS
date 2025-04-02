@@ -26,15 +26,15 @@ const FAQElectricityBill = () => {
           <p>
             Paying bills is now a seamless and quick process via online means. A
             user can easily make online electricity bill payment easily with
-            Finunique Small Pvt. Ltd. website. Any user can make their online electricity bill
+            ABDKS Solutions Private Limited website. Any user can make their online electricity bill
             payment instantly in a few simple steps. To pay their bijli bill
-            online, the users shall go to the Finunique Small Pvt. Ltd. website and follow the
+            online, the users shall go to the ABDKS Solutions Private Limited website and follow the
             mentioned steps. our Website to get offers on the electricity bill
             payment.
           </p>
           <ol>
             <li>
-              Go to the ‘Recharge’ section on the Finunique Small Pvt. Ltd. app/website and
+              Go to the ‘Recharge’ section on the ABDKS Solutions Private Limited app/website and
               select ‘Electricity’.
             </li>
             <li>Select ‘electricity’ from the operator dropdown.</li>
@@ -47,7 +47,7 @@ const FAQElectricityBill = () => {
             </li>
           </ol>
           <p>
-            You can make online electricity bill payments via Finunique Small Pvt. Ltd. across
+            You can make online electricity bill payments via ABDKS Solutions Private Limited across
             various operators such as TNEB, WBSEDCL, JVVNL, NBPDCL, PSPCL,
             SBPDCL, DHBVN, APDCL, BESCOM, UHBVN, APSPDCL, CESC, UGVCL, DGVCL,
             CSEB, HESCOM, PGVCL, APEPDCL, BSES Rajdhani, BSES Yamuna, DVVNL,
@@ -57,12 +57,12 @@ const FAQElectricityBill = () => {
       ),
     },
     {
-      title: "Why Choose Finunique Small Pvt. Ltd. for Electricity Bill Payment?",
+      title: "Why Choose ABDKS Solutions Private Limited for Electricity Bill Payment?",
       body: (
         <>
           <p>
-            Finunique Small Pvt. Ltd. is the ideal platform for making electricity online
-            payments. Electricity bill payment via Finunique Small Pvt. Ltd. offers many perks to
+            ABDKS Solutions Private Limited is the ideal platform for making electricity online
+            payments. Electricity bill payment via ABDKS Solutions Private Limited offers many perks to
             the users:
           </p>
           <ul>
@@ -75,11 +75,11 @@ const FAQElectricityBill = () => {
       ),
     },
     {
-      title: "Electricity Bill Payment Online At Finunique Small Pvt. Ltd.",
+      title: "Electricity Bill Payment Online At ABDKS Solutions Private Limited",
       body: (
         <>
           <p>
-            Finunique Small Pvt. Ltd., a reliable and user-friendly digital payment wallet,
+            ABDKS Solutions Private Limited, a reliable and user-friendly digital payment wallet,
             enables easy electricity bill payments. Users can:
           </p>
           <ul>
@@ -96,14 +96,14 @@ const FAQElectricityBill = () => {
       ),
     },
     {
-      title: "Electricity Bill Offers | Electricity Coupon Codes at Finunique Small Pvt. Ltd.",
+      title: "Electricity Bill Offers | Electricity Coupon Codes at ABDKS Solutions Private Limited",
       body: (
         <>
           <p>
             Get 5% up to Rs.50 SuperCash on electricity bill payments done on
-            the Finunique Small Pvt. Ltd. App or website. Minimum amount spend to redeem the
+            the ABDKS Solutions Private Limited App or website. Minimum amount spend to redeem the
             SuperCash is Rs.300 & maximum is Rs.50. To know more, visit our
-            Finunique Small Pvt. Ltd. Electricity Bill Offers page.
+            ABDKS Solutions Private Limited Electricity Bill Offers page.
           </p>
         </>
       ),
@@ -117,7 +117,7 @@ const FAQElectricityBill = () => {
             <li>
               <strong>How to check electricity bill online in India?</strong>{" "}
               You can check your electricity bill using the Truly Indian
-              Payments App, Finunique Small Pvt. Ltd. Simply select ‘Electricity’ under the
+              Payments App, ABDKS Solutions Private Limited Simply select ‘Electricity’ under the
               ‘Recharge and Bill Payment’ section, choose your operator, and
               provide your account details.
             </li>
@@ -131,25 +131,25 @@ const FAQElectricityBill = () => {
               <strong>
                 How to get a receipt for electricity bill payment online?
               </strong>{" "}
-              Visit your payment history on the Finunique Small Pvt. Ltd. app to view and
+              Visit your payment history on the ABDKS Solutions Private Limited app to view and
               download the receipt.
             </li>
             <li>
               <strong>How to pay the light bill online?</strong> Open the
-              Finunique Small Pvt. Ltd. app, click on ‘Electricity’ in the ‘Recharge & Bill
+              ABDKS Solutions Private Limited app, click on ‘Electricity’ in the ‘Recharge & Bill
               Payments’ section, select your operator, provide account details,
               and make the payment.
             </li>
             <li>
               <strong>How to check electricity bill status online?</strong> Use
-              the Finunique Small Pvt. Ltd. app, select electricity and your operator, provide
+              the ABDKS Solutions Private Limited app, select electricity and your operator, provide
               account details, and view your bill status.
             </li>
             <li>
               <strong>
                 How can I check my electricity bill online in Karnataka?
               </strong>{" "}
-              Visit the Finunique Small Pvt. Ltd. website or download the Finunique Small Pvt. Ltd. app to resolve
+              Visit the ABDKS Solutions Private Limited website or download the ABDKS Solutions Private Limited app to resolve
               queries related to electricity bills in Karnataka.
             </li>
           </ul>

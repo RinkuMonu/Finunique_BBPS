@@ -243,10 +243,10 @@ const BillPayUI = () => {
                   onClick={() => handleMoreItemClick(item.name)}
                   style={{ cursor: "pointer" }}
                 >
-                  <div className="icon" style={{ fontSize: "24px",color:"#872D67" }}>
+                  <div className="icon" style={{ fontSize: "24px",color:"#001e50" }}>
                     {item.icon}
                   </div>
-                  <p className="mb-0" style={{color:"#872D67"}}>{item.name}</p>
+                  <p className="mb-0" style={{color:"#001e50"}}>{item.name}</p>
                 </Col>
               ))}
             </Row>

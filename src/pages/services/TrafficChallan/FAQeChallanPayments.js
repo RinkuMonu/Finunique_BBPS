@@ -19,7 +19,7 @@ const FAQeChallanPayments = () => {
 
   const content = [
     {
-      title: 'How To Do eChallan Payment Online From Finunique small pvt ltd .?',
+      title: 'How To Do eChallan Payment Online From ABDKS Solutions Private Limited small pvt ltd .?',
       body: (
         <>
           <p>
@@ -55,22 +55,22 @@ const FAQeChallanPayments = () => {
       ),
     },
     {
-      title: 'How to Make eChallan Payment Online Using Finunique small pvt ltd .?',
+      title: 'How to Make eChallan Payment Online Using ABDKS Solutions Private Limited small pvt ltd .?',
       body: (
         <>
           <p>
-            Finunique small pvt ltd . has introduced its new service for its users to pay challan online in a hassle-free manner. Without worrying about the security and authenticity of the payment, you can easily opt for eChallan Online Payment using Finunique small pvt ltd . in just a few simple steps.
+            ABDKS Solutions Private Limited small pvt ltd . has introduced its new service for its users to pay challan online in a hassle-free manner. Without worrying about the security and authenticity of the payment, you can easily opt for eChallan Online Payment using ABDKS Solutions Private Limited small pvt ltd . in just a few simple steps.
           </p>
           <ol>
-            <li>Login to your Finunique small pvt ltd . user account.</li>
+            <li>Login to your ABDKS Solutions Private Limited small pvt ltd . user account.</li>
             <li>Look for the 'Recharge and Bill Pay' option.</li>
             <li>Select “Traffic Challan" out of the various services offered.</li>
             <li>Submit details such as the Traffic police authority of your locality, Challan number, RC number, DL number, etc.</li>
             <li>The system will automatically fetch your challan amount.</li>
-            <li>Pay using any preferred payment options available at Finunique small pvt ltd ., such as Debit Card, Credit Card, UPI, Wallet, Net Banking, or Finunique small pvt ltd . ZIP - Pay Later.</li>
+            <li>Pay using any preferred payment options available at ABDKS Solutions Private Limited small pvt ltd ., such as Debit Card, Credit Card, UPI, Wallet, Net Banking, or ABDKS Solutions Private Limited small pvt ltd . ZIP - Pay Later.</li>
           </ol>
           <p>
-            Online challan payment can be done from anywhere: home, office, college, etc., avoiding all the paperwork and formalities with Finunique small pvt ltd .’s eChallan pay online service.
+            Online challan payment can be done from anywhere: home, office, college, etc., avoiding all the paperwork and formalities with ABDKS Solutions Private Limited small pvt ltd .’s eChallan pay online service.
           </p>
         </>
       ),

@@ -143,7 +143,7 @@ function PageContent() {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-6 col-md-12 order-lg-1">
-                            <img className="img-fluid" src="/assets/Home/SERVICE1.svg" alt="" />
+                            <img className="img-fluid" src="/assets/Home/SERVICE1.png" alt="" />
                         </div>
                         <div className="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10">
                             {/* First Featured Item */}
@@ -192,7 +192,7 @@ function PageContent() {
                                     Services that we offer to our clients at a glance. We have earned 3+ years of expertise in  services. You just need to tell us about your requirements, we will strictly take care of that. You are just one click away!! Start your own business with Finuniques  services and provide Recharge and Bill Payment (BBPS) to your customers.
                                 </p>
                             </div>
-                            <img className="img-fluid" src="/assets/Home/SERVICE2.svg" alt="about" />
+                            <img className="img-fluid" src="/assets/Home/SERVICE2.png" alt="about" />
                         </div>
                         <div className="col-lg-7 ps-lg-8">
                             <div className="row">

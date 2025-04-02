@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&amp;display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap'); :root {
-    --themeht-primary-color: #872D67;
+    --themeht-primary-color: #efb33b;
     /* --themeht-primary-color: #c146f7; */
     /* --themeht-secondary-color: #2a4172; */
-    --themeht-secondary-color: #14263F;
-    --themeht-primary2-color: #103ce7;
+    --themeht-secondary-color: #011e50;
+    --themeht-primary2-color: #001e50;
     --themeht-secondary2-color: #64e9ff;
     --themeht-text-color: #191919;
     --themeht-white-color: #ffffff;

@@ -28,10 +28,10 @@ const FAQWaterBillPayment = () => {
             queues for water bill payments at the centers. The good news is that
             your water bills can now be paid from the comfort of your own home
             in a few simple clicks with a fast and secure payments Website like
-            Finunique Small Pvt Ltd.
+            ABDKS Solutions Private Limited .
           </p>
           <p>
-            Finunique small pvt ltd . is India’s No. 1 site for Online water bill payments like
+            ABDKS Solutions Private Limited small pvt ltd . is India’s No. 1 site for Online water bill payments like
             BWSSB, Delhi Jal Board, Kerala water Authority.
           </p>
         </>
@@ -64,7 +64,7 @@ const FAQWaterBillPayment = () => {
       body: (
         <>
           <p>
-            With multiple payment options, Finunique small pvt ltd . has become a popular choice
+            With multiple payment options, ABDKS Solutions Private Limited small pvt ltd . has become a popular choice
             for bill payments. The following methods are available:
           </p>
           <ul>
@@ -72,7 +72,7 @@ const FAQWaterBillPayment = () => {
             <li>Credit Card</li>
             <li>UPI Payment</li>
             <li>Net Banking</li>
-            <li>Finunique small pvt ltd . ZIP - Pay Later</li>
+            <li>ABDKS Solutions Private Limited small pvt ltd . ZIP - Pay Later</li>
           </ul>
         </>
       ),
@@ -83,7 +83,7 @@ const FAQWaterBillPayment = () => {
         <>
           <p>
             Water bill online payment is safe when using the right bill payment
-            service. Digital payment apps like Finunique small pvt ltd . are 100% trustworthy and
+            service. Digital payment apps like ABDKS Solutions Private Limited small pvt ltd . are 100% trustworthy and
             dependable, using encryption and multistep identity verification to
             keep your data secure.
           </p>
@@ -91,11 +91,11 @@ const FAQWaterBillPayment = () => {
       ),
     },
     {
-      title: "Steps to Pay Water Bills Online Through Finunique small pvt ltd .",
+      title: "Steps to Pay Water Bills Online Through ABDKS Solutions Private Limited small pvt ltd .",
       body: (
         <>
           <ol>
-            <li>Download & login on the Finunique small pvt ltd . UPI Payment app.</li>
+            <li>Download & login on the ABDKS Solutions Private Limited small pvt ltd . UPI Payment app.</li>
             <li>Click on the 'Recharge and Bill Pay' option.</li>
             <li>Select 'Water' as a category.</li>
             <li>Select your operator & enter your Consumer Number.</li>
@@ -114,17 +114,17 @@ const FAQWaterBillPayment = () => {
         <ul>
           <li>
             <strong>
-              Is it Safe to Pay Water Bills Online Through Finunique small pvt ltd .?
+              Is it Safe to Pay Water Bills Online Through ABDKS Solutions Private Limited small pvt ltd .?
             </strong>
             <br />
-            Finunique small pvt ltd . offers a safe and secured payment platform where you can
+            ABDKS Solutions Private Limited small pvt ltd . offers a safe and secured payment platform where you can
             make payments.
           </li>
           <li>
             <strong>Can we make payment from any bank?</strong>
             <br />
             Yes, you can pay your water bills from any bank listed on the
-            Finunique small pvt ltd . app.
+            ABDKS Solutions Private Limited small pvt ltd . app.
           </li>
         </ul>
       ),

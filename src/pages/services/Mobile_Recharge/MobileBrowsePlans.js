@@ -319,7 +319,7 @@ const MobileBrowsePlans = ({ onPlanSelect }) => {
                         className=" align-items-center p-2 "
                         style={{
                           color: "white",
-                          backgroundColor: "#872D67",
+                          backgroundColor: "#001e50",
                           borderRadius: "8px",
                           outline: "none",
                           

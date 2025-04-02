@@ -6,31 +6,31 @@ import axios from "axios";
 
 const ViewBillModal = ({ show, handleClose, billdata }) => {
 
-  const handlePayment =  async ()=>{
-  
+  const handlePayment = async () => {
+
     try {
-       const response = await axios.post("https://finpay-backend.onrender.com/api/payment/payIn",
+      const response = await axios.post("https://finpay-backend.onrender.com/api/payment/payIn",
         {
-          amount:"2",
-          reference:"354346456599679",
-          name:"Rinku",
-          mobile:"9460129249",
-          email:"Rinku@gmail.com",
-          userId:"67b6f05e6a935705d8fc54ee"
-       })
-          console.log("responseeeeee", response)
+          amount: "2",
+          reference: "35456599671",
+          name: "Rinku",
+          mobile: "9351760762",
+          email: "Rinku@gmail.com",
+          userId: "67b6f05e6a935705d8fc54ee"
+        })
+      console.log("responseeeeee", response)
 
-  if (
-    response.data?.data?.status === "success" &&
-    response.data?.data?.data?.payment_link
-  ) {
-    const paymentLink = response.data.data.data.payment_link;
-    window.location.href = paymentLink; 
-  } else {
-    console.log("Payment link not found in the response.");
-  }
+      if (
+        response.data?.data?.status === "success" &&
+        response.data?.data?.data?.payment_link
+      ) {
+        const paymentLink = response.data.data.data.payment_link;
+        window.location.href = paymentLink;
+      } else {
+        console.log("Payment link not found in the response.");
+      }
 
-     return response
+      return response
 
 
     } catch (error) {
@@ -38,6 +38,7 @@ const ViewBillModal = ({ show, handleClose, billdata }) => {
     }
 
   }
+
   return (
     <>
       <Modal show={show} onHide={handleClose} centered>
@@ -70,9 +71,9 @@ const ViewBillModal = ({ show, handleClose, billdata }) => {
               <p><strong>Partial Payment Allowed:</strong> {billdata?.acceptPartPay ? "Yes" : "No"}</p>
               <p><strong>User Name:</strong> {billdata?.userName !== "NA" ? billdata?.userName : "Not Available"}</p>
 
-              <Button 
-              onClick={handlePayment}
-                style={{ backgroundColor: "#872D67", color: "white" }} 
+              <Button
+                onClick={handlePayment}
+                style={{ backgroundColor: "#001e50", color: "white" }}
                 className="w-100 mt-3"
               >
                 Make Payment
@@ -92,6 +93,13 @@ const ViewBillModal = ({ show, handleClose, billdata }) => {
                 />
               </div>
               <p className="text-muted">Unable to get bill details from biller</p>
+              <Button
+                onClick={handlePayment}
+                style={{ backgroundColor: "#001e50", color: "white" }}
+                className="w-100 mt-3"
+              >
+                Make Payment
+              </Button>
             </>
           )}
         </Modal.Body>

@@ -33,7 +33,7 @@ const TrafficChallan = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#872D67"}}>Hassle-free Traffic Ticket Settlement</h2>
+            <h2 className="fw-bold" style={{color:"#001e50"}}>Hassle-free Traffic Ticket Settlement</h2>
             <h3>
               Navigate the fines and penalties seamlessly with online traffic challan payment.
             </h3>
@@ -45,7 +45,7 @@ const TrafficChallan = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Online Traffic Challan Payment</h3>
+              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Online Traffic Challan Payment</h3>
               {/* <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <Form.Label>Operator</Form.Label>

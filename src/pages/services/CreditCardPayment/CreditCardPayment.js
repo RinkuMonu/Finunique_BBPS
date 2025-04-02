@@ -24,7 +24,7 @@ const CreditCardPayment = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#872D67"}}>Streamlined Credit Card Payments</h2>
+            <h2 className="fw-bold" style={{color:"#001e50"}}>Streamlined Credit Card Payments</h2>
             <h3>
               Effortlessly manage your finances by settling credit card bills
               with ease, ensuring financial peace of mind.
@@ -45,7 +45,7 @@ const CreditCardPayment = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Credit Card Payment</h3>
+              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Credit Card Payment</h3>
               <Form>
                 <Form.Group className="mb-3" controlId="creditCard">
                   <Form.Label>Credit Card Number</Form.Label>
@@ -71,7 +71,7 @@ const CreditCardPayment = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#872D67', color: 'white' }}
+                  style={{ backgroundColor: '#001e50', color: 'white' }}
                   disabled={!isFormValid}
                 >
                   Confirm

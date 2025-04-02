@@ -32,7 +32,7 @@ const WalletTransfer = () => {
       <Row>
         {/* Left Side Content */}
         <Col md={6} className="text-center text-md-start">
-          <h2 className="fw-bold" style={{color:"#872D67"}}>
+          <h2 className="fw-bold" style={{color:"#001e50"}}>
             Wallet Transfer
           </h2>
           <h3>
@@ -91,7 +91,7 @@ const WalletTransfer = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: "#872D67", color: "white" }}
+                  style={{ backgroundColor: "#001e50", color: "white" }}
                   disabled={!isWalletFormValid}
                 >
                   Go
@@ -145,7 +145,7 @@ const WalletTransfer = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: "#872D67", color: "white" }}
+                  style={{ backgroundColor: "#001e50", color: "white" }}
                   disabled={!isBankFormValid}
                 >
                   Confirm

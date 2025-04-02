@@ -60,5 +60,5 @@ button {
   /* Optional: Adjust for Firefox */
   * {
     scrollbar-width: thin; /* Makes the scrollbar thinner */
-    scrollbar-color: #BA4680 #f4f4f4; /* Thumb color and track color */
+    scrollbar-color: #ffb300 #f4f4f4; /* Thumb color and track color */
   }

@@ -23,9 +23,9 @@ const FAQBroadbandBillPayment = () => {
       body: (
         <>
           <p>
-            Finunique Small Pvt. Ltd. introduces new service to their consumers
+            ABDKS Solutions Private Limited introduces new service to their consumers
             to pay their broadband bills online. Now there is no need to stand
-            in the long queue to pay their broadband bills for hours. Finunique
+            in the long queue to pay their broadband bills for hours. ABDKS Solutions Private Limited
             allows their consumers to pay BSNL Broadband, Tikona, Airtel
             Broadband, Act Broadband, Hathway Broadband, MTNL Delhi Broadband,
             MTNL Mumbai Broadband, Tata TeleServices (CDMA), Reliance
@@ -42,14 +42,14 @@ const FAQBroadbandBillPayment = () => {
         <>
           <p>
             A user can easily make his/her broadband bill payment online within
-            a few minutes using the Finunique app or website and avail exciting
+            a few minutes using the ABDKS Solutions Private Limited app or website and avail exciting
             broadband bill payment offers. To make the broadband payment, a user
             must follow these simple steps:
           </p>
           <ol>
             <li>
               Click on ‘Broadband’ in the ‘Recharges & Bill Payments’ section on
-              the Finunique app or website.
+              the ABDKS Solutions Private Limited app or website.
             </li>
             <li>
               Select your broadband provider from the ‘Operator’ dropdown menu.
@@ -66,20 +66,20 @@ const FAQBroadbandBillPayment = () => {
       ),
     },
     {
-      title: "Why Choose Finunique for Broadband Bill Payment",
+      title: "Why Choose ABDKS Solutions Private Limited for Broadband Bill Payment",
       body: (
         <>
           <p>
-            Finunique, the pioneer of online recharges and bill payments, aims
+            ABDKS Solutions Private Limited, the pioneer of online recharges and bill payments, aims
             to offer a seamless and easy payment process that ensures instant
             broadband bill payment and also allows users to save on their
             payments by availing broadband bill payment offers. Following are
-            the key benefits of using Finunique for broadband online payment:
+            the key benefits of using ABDKS Solutions Private Limited for broadband online payment:
           </p>
           <ul>
             <li>
               <strong>Instant Payment:</strong> Users only need to follow a few
-              simple steps to pay broadband bills online using the Finunique app.
+              simple steps to pay broadband bills online using the ABDKS Solutions Private Limited app.
             </li>
             <li>
               <strong>Exciting Offers:</strong> Users can avail huge broadband
@@ -87,7 +87,7 @@ const FAQBroadbandBillPayment = () => {
               consistent savings.
             </li>
             <li>
-              <strong>Secure Transactions:</strong> Transactions on Finunique
+              <strong>Secure Transactions:</strong> Transactions on ABDKS Solutions Private Limited
               are completely secure, and user data is never shared with third
               parties.
             </li>
@@ -102,7 +102,7 @@ const FAQBroadbandBillPayment = () => {
           <li>
             <strong>How do I pay my broadband bill online?</strong>
             <br />
-            Users need to follow a few simple steps on the Finunique app or
+            Users need to follow a few simple steps on the ABDKS Solutions Private Limited app or
             website to complete their broadband bill payment by clicking on
             ‘Broadband’ in the ‘Recharges and Bill Payments’ section and
             populating the necessary details. Various payment modes are
@@ -113,22 +113,22 @@ const FAQBroadbandBillPayment = () => {
               How long does it take to process the Broadband Bill Payment?
             </strong>
             <br />
-            Payments on Finunique are instant and easy. Once a user confirms the
+            Payments on ABDKS Solutions Private Limited are instant and easy. Once a user confirms the
             broadband bill payment, it is instantly reflected in their account.
             Processing times by different broadband operators may vary.
           </li>
           <li>
             <strong>
-              Does Finunique support all operators for Broadband Bill Payment?
+              Does ABDKS Solutions Private Limited support all operators for Broadband Bill Payment?
             </strong>
             <br />
-            Finunique allows users to make online broadband bill payments across
+            ABDKS Solutions Private Limited allows users to make online broadband bill payments across
             a wide range of operators, including ACT Fibernet, Airtel, ASIANET,
             BSNL, Comway, Connect, DEN, ION, and many more.
           </li>
           <li>
             <strong>
-              What offers and cashback is Finunique providing for Broadband Bill
+              What offers and cashback is ABDKS Solutions Private Limited providing for Broadband Bill
               Payment?
             </strong>
             <br />
@@ -139,7 +139,7 @@ const FAQBroadbandBillPayment = () => {
           <li>
             <strong>How can I check my broadband bill?</strong>
             <br />
-            By selecting the ‘Broadband Bill Payment’ option on Finunique and
+            By selecting the ‘Broadband Bill Payment’ option on ABDKS Solutions Private Limited and
             providing the necessary details, users can check their broadband
             bills.
           </li>

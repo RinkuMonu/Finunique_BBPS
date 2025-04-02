@@ -136,7 +136,7 @@ const ContactUs = () => {
                       <i className="bi bi-globe-americas fs-3"></i>
                       <div>
                         <span>Visit Our Location</span>
-                        <b>Finuniques Private Limited</b>
+                        <b>ABDKS Solutions Private Limited</b>
                         <p>
                           Plot No 97, Dakshinpuri - I, Shrikishan, Sanganer, Jagatpura, Jaipur Rajasthan, India, 302017
                         </p>
@@ -146,8 +146,8 @@ const ContactUs = () => {
                       <i className="bi bi-envelope fs-3"></i>
                       <div>
                         <span>Send Us Email</span>
-                        <a href="mailto:info@finuniques.in" className="text-decoration-none">
-                          info@finuniques.in
+                        <a href="mailto:info@abdks.com" className="text-decoration-none">
+                          info@abdks.com
                         </a>
                       </div>
                     </li>

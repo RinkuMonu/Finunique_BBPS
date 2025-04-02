@@ -9,7 +9,7 @@ const Home = () => {
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="banner-image p-0">
-            <img className="img-fluid p-0 w-100" src="/assets/Home/bppsbg2.svg" alt="Banner" />
+            <img className="img-fluid p-0 w-100" src="/assets/Home/bppsbg2.jpg" alt="Banner" />
           </div>
         </div>
       </div>

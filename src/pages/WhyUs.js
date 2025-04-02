@@ -23,14 +23,14 @@ const WhyUs = () => {
               <div className="theme-title mb-4">
                 <h2>Explore Unlimited Business Opportunities</h2>
                 <p>
-                  Finuniques Private Limited is easy to operate and it
+                  ABDKS Solutions Private Limited is easy to operate and it
                   also makes your work easier and faster. We will always have
                   wide variety of options as per your needs. You are always
                   privileged to choose how to go forward. After all, You are
                   Important to us.
                 </p>
                 <p>
-                  We at Finuniques Private Limited Providing Bharat Bill
+                  We at ABDKS Solutions Private Limited Providing Bharat Bill
                   Payment System API with 24*7 Auto Billing.
                 </p>
                 <h2>Supportive Team</h2>

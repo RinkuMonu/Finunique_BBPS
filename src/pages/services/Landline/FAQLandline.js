@@ -23,13 +23,13 @@ const FAQLandline = () => {
       body: (
         <>
           <p>
-            Finunique Small Pvt Ltd introduces new service to their consumers to
+            ABDKS Solutions Private Limited  introduces new service to their consumers to
             pay their landline bills online. Now there is no need to stand in
-            the long queue to pay their landline bills for hours. Finunique
+            the long queue to pay their landline bills for hours. ABDKS Solutions Private Limited
             allows their consumers to pay Airtel Landline, MTNL Delhi, Reliance
             Communications and Tata Teleservices bills online. Pay landline
             bills online using multiple payment options such as your debit
-            cards, credit cards, net banking. Finunique Small Pvt Ltd offers
+            cards, credit cards, net banking. ABDKS Solutions Private Limited  offers
             their consumers the ability to pay landline bills online anytime
             and from anywhere by using their various channels such as online,
             mobile site, android app, iPhone app, blackberry, SMS, IVRS etc.

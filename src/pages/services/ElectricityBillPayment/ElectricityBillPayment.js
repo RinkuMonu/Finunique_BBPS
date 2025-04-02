@@ -24,7 +24,7 @@ const ElectricityBillPayment = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#872D67"}}>Ingenious Electricity Bill Settlement</h2>
+            <h2 className="fw-bold" style={{color:"#001e50"}}>Ingenious Electricity Bill Settlement</h2>
             <h3>
               Empower your life with the efficient management of electricity
               bills, ensuring uninterrupted power supply for your world of
@@ -46,7 +46,7 @@ const ElectricityBillPayment = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Electricity Bill Payment</h3>
+              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Electricity Bill Payment</h3>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -80,7 +80,7 @@ const ElectricityBillPayment = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: "#872D67", color: "white" }}
+                  style={{ backgroundColor: "#001e50", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Confirm

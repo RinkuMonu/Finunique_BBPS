@@ -19,12 +19,12 @@ const FAQLoanEMIPayments = () => {
 
   const content = [
     {
-      title: "Pay Your Loan EMI Online Through Finunique small pvt ltd .",
+      title: "Pay Your Loan EMI Online Through ABDKS Solutions Private Limited small pvt ltd .",
       body: (
         <>
           <p>
             With us, your loan EMI payment online can be really convenient. Yes,
-            we, Finunique – the leading digital wallet and provider of online
+            we, ABDKS Solutions Private Limited – the leading digital wallet and provider of online
             payment services in India – have tied up with a number of companies
             such as Bajaj Finserv and so many others of its ilk to bring to you
             a portal that you can use to pay your estimated monthly installments
@@ -62,7 +62,7 @@ const FAQLoanEMIPayments = () => {
             easily in just a few steps.
           </p>
           <p>
-            Finunique small pvt ltd . offers instant personal loans with minimum documentation
+            ABDKS Solutions Private Limited small pvt ltd . offers instant personal loans with minimum documentation
             and a hassle-free experience.
           </p>
         </>
@@ -87,13 +87,13 @@ const FAQLoanEMIPayments = () => {
           <li>
             <strong>Can I pay my EMIs using any device?</strong>
             <br />
-            Yes, Finunique small pvt ltd . allows you to pay EMIs from a smartphone, tablet,
+            Yes, ABDKS Solutions Private Limited small pvt ltd . allows you to pay EMIs from a smartphone, tablet,
             laptop, or desktop with an internet connection.
           </li>
           <li>
-            <strong>Are my transactions secure on Finunique small pvt ltd .?</strong>
+            <strong>Are my transactions secure on ABDKS Solutions Private Limited small pvt ltd .?</strong>
             <br />
-            Absolutely. Finunique small pvt ltd . ensures all transactions are routed through
+            Absolutely. ABDKS Solutions Private Limited small pvt ltd . ensures all transactions are routed through
             secure gateways, protecting your personal and financial data.
           </li>
         </ul>

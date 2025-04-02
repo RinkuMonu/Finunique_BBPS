@@ -33,7 +33,7 @@ export default function KYC() {
   const [message, setMessage] = useState("");
   const [pandata, setpandata] = useState("");
   const [bankData, setBankData] = useState("");
-  const [color, setColor] = useState("#872d67");
+  const [color, setColor] = useState("#001e50");
   const [otp, setOtp] = useState("");
   const [formData, setFormData] = useState({
     aadharNumber: "",
@@ -134,12 +134,10 @@ export default function KYC() {
 
   const handleSubmitBankDetails = async () => {
     setLoading(false);
-
     if (formData.bankAccount.length >= 9) {
       setShowBankDetails(true);
     }
     setLoading(true);
-
     try {
       const response = await axios.post(
         "https://finpay-b2c-backend.onrender.com/api/auth/verifybank",

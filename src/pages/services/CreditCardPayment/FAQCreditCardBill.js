@@ -31,10 +31,10 @@ const FAQCreditCardPayment = () => {
             time, you are charged with interest. Further, untimely payment of
             the credit card bill also leads to a late fee. To avoid unnecessary
             late fees and interest on credit card processing, you can instantly
-            make online credit card payments using Finunique Small Pvt. Ltd.
+            make online credit card payments using ABDKS Solutions Private Limited
           </p>
           <p>
-            Finunique Small Pvt. Ltd. provides a convenient and seamless experience for users to
+            ABDKS Solutions Private Limited provides a convenient and seamless experience for users to
             pay their credit card bills online, ensuring timely payments and
             savings.
           </p>
@@ -42,7 +42,7 @@ const FAQCreditCardPayment = () => {
       ),
     },
     {
-      title: "How to Make Credit Card Bill Payment on Finunique",
+      title: "How to Make Credit Card Bill Payment on ABDKS Solutions Private Limited",
       body: (
         <>
           <p>
@@ -51,7 +51,7 @@ const FAQCreditCardPayment = () => {
           </p>
           <ol>
             <li>
-              Download the Finunique app from the Play Store (Android) or App
+              Download the ABDKS Solutions Private Limited app from the Play Store (Android) or App
               Store (iOS).
             </li>
             <li>Login using your mobile number and OTP.</li>
@@ -72,7 +72,7 @@ const FAQCreditCardPayment = () => {
       body: (
         <>
           <p>
-            Finunique Small Pvt. Ltd. supports credit card payments for a wide range of banks,
+            ABDKS Solutions Private Limited supports credit card payments for a wide range of banks,
             including:
           </p>
           <ul>
@@ -120,7 +120,7 @@ const FAQCreditCardPayment = () => {
           <li>
             <strong>How long does it take to process the payment?</strong>
             <br />
-            Payments made via Finunique Small Pvt. Ltd. usually take 2-3 business days to
+            Payments made via ABDKS Solutions Private Limited usually take 2-3 business days to
             process.
           </li>
         </ul>

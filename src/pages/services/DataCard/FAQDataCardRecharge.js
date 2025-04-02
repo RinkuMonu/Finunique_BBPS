@@ -28,7 +28,7 @@ const FAQDataCardRecharge = () => {
             internet service on their smartphone. With monthly, quarterly or
             annual data card recharge plans, users can avail seamless browsing,
             online streaming and downloading services. The data card recharge
-            plans vary for each network operator and time period. Finunique
+            plans vary for each network operator and time period. ABDKS Solutions Private Limited
             ensures an instant and simple process of online data card recharge,
             dongle recharge, modem recharge, dongle recharge plans, wifi dongle
             recharge plans and more. Instant data card recharge ensures internet
@@ -42,7 +42,7 @@ const FAQDataCardRecharge = () => {
       body: (
         <>
           <p>
-            Online data card recharge via Finunique Small Pvt. Ltd. is a simple and a quick
+            Online data card recharge via ABDKS Solutions Private Limited is a simple and a quick
             process. In order to avail the data card recharge plans online and
             enjoy huge data card recharge offers at the same time, a user must
             only follow the following simple steps.
@@ -50,7 +50,7 @@ const FAQDataCardRecharge = () => {
           <ol>
             <li>
               Select ‘Data Card’ from ‘Recharge and Bill Payments’ section on
-              the Finunique Small Pvt. Ltd. app/ website
+              the ABDKS Solutions Private Limited app/ website
             </li>
             <li>
               Enter your Data card number, choose the operator and add the
@@ -66,38 +66,38 @@ const FAQDataCardRecharge = () => {
       ),
     },
     {
-      title: "Why Choose Finunique Small Pvt. Ltd. for Data Card Recharge",
+      title: "Why Choose ABDKS Solutions Private Limited for Data Card Recharge",
       body: (
         <>
           <p>
-            Finunique Small Pvt. Ltd. ensures ease and convenience to all its users. It is the
+            ABDKS Solutions Private Limited ensures ease and convenience to all its users. It is the
             only Truly Indian payments app which allows one-tap data card
             recharge. In addition to ensuring an easy way of online data card
-            recharge, Finunique Small Pvt. Ltd. also ensures exciting online data card recharge
+            recharge, ABDKS Solutions Private Limited also ensures exciting online data card recharge
             offers including huge Cashback and SuperCash offers. Following are
-            the key benefits of making online data card recharge using Finunique Small Pvt. Ltd..
+            the key benefits of making online data card recharge using ABDKS Solutions Private Limited.
           </p>
           <ul>
             <li>
-              <strong>Instant Payment:</strong> On Finunique Small Pvt. Ltd. all internet service
+              <strong>Instant Payment:</strong> On ABDKS Solutions Private Limited all internet service
               recharges including data card recharge plans, dongle recharge
               plans, modem recharge plans and wifi dongle recharge plans are
-              just a click away. Finunique Small Pvt. Ltd. ensures a seamless process of making
+              just a click away. ABDKS Solutions Private Limited ensures a seamless process of making
               the online data card recharge
             </li>
             <li>
-              <strong>Data card recharge offers:</strong> With the Finunique Small Pvt. Ltd. app,
+              <strong>Data card recharge offers:</strong> With the ABDKS Solutions Private Limited app,
               users can earn and save big on every payment with Cashback and
               SuperCash offers
             </li>
             <li>
               <strong>Secured Transactions:</strong> Every transaction you make
-              using the Finunique Small Pvt. Ltd. app or website is highly secured. The app
+              using the ABDKS Solutions Private Limited app or website is highly secured. The app
               assures the utmost safety and confidentiality as you pay for your
               online data card recharge
             </li>
             <li>
-              <strong>Data Card Recharge Offers:</strong> On Finunique Small Pvt. Ltd., a user
+              <strong>Data Card Recharge Offers:</strong> On ABDKS Solutions Private Limited, a user
               gets huge variety of offers. A user may earn or use his/her
               SuperCash balance on the online data card recharge payment. A user
               may also get a huge Cashback depending on the ongoing data card
@@ -113,7 +113,7 @@ const FAQDataCardRecharge = () => {
         <ul>
           <li>
             <strong>How do I recharge my dongle?</strong>
-            <br />A user can easily avail dongle recharge plans on Finunique Small Pvt. Ltd.
+            <br />A user can easily avail dongle recharge plans on ABDKS Solutions Private Limited
             under ‘Recharges and bill payment’ section by providing the operator
             name and making the payment
           </li>

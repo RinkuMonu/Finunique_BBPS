@@ -29,7 +29,7 @@ const BBPS = () => {
                   </b>
                 </p>
                 <p>
-                  We at Finuniques Private Limited Providing Bharat Bill
+                  We at ABDKS Solutions Private Limited Providing Bharat Bill
                   Payment System API with 24*7 Auto Billing.
                 </p>
                 <p>

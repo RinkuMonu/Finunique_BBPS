@@ -101,7 +101,7 @@ function PaymentMode() {
 
         {/* Left Section */}
         
-          <h3 className="mb-4 fw-bold" style={{color:"#872D67"}}>Select a Payment Mode</h3>
+          <h3 className="mb-4 fw-bold" style={{color:"#001e50"}}>Select a Payment Mode</h3>
         <Col lg={8} md={12} sm={12} className="mb-4 order-2 order-lg-1">
           <div className="border p-4 rounded shadow">
             <Tab.Container defaultActiveKey="debit">
@@ -163,7 +163,7 @@ function PaymentMode() {
                         </Form.Group>
                       </Col>
                     </Row>
-                    <Button variant="primary" type="submit" onClick={handleOnSubmit} className="w-100 py-2" style={{backgroundColor:"#872D67"}}>
+                    <Button variant="primary" type="submit" onClick={handleOnSubmit} className="w-100 py-2" style={{backgroundColor:"#001e50"}}>
                       Proceed to Pay ₹{amount}
                     </Button>
                   </Form>
@@ -219,7 +219,7 @@ function PaymentMode() {
                         </Form.Group>
                       </Col>
                     </Row>
-                    <Button variant="primary" type="submit" className="w-100 py-2" style={{backgroundColor:"#872D67"}}>
+                    <Button variant="primary" type="submit" className="w-100 py-2" style={{backgroundColor:"#001e50"}}>
                       Proceed to Pay ₹{amount}
                     </Button>
                   </Form>

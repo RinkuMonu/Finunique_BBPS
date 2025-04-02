@@ -95,7 +95,7 @@ const MobileRechargeUI = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{ color: "#872D67" }}>
+            <h2 className="fw-bold" style={{ color: " #001e50" }}>
               Instant Prepaid Mobile Recharge Solution
             </h2>
             <h3>
@@ -120,7 +120,7 @@ const MobileRechargeUI = () => {
             >
               <h3
                 className="mb-4"
-                style={{ color: "#872D67", fontWeight: "bold" }}
+                style={{ color: "#001e50", fontWeight: "bold" }}
               >
                 Mobile Recharge
               </h3>
@@ -217,13 +217,13 @@ const MobileRechargeUI = () => {
                   variant="primary"
                   type="button"
                   className="w-100"
-                  style={{ backgroundColor: "#872D67", color: "white" }}
+                  style={{ backgroundColor: "#001e50", color: "white" }}
                   disabled={!isFormValid}
                   onClick={handleConfirmModalOpen}
                 >
                   Confirm
                 </Button>}
-               {formData.connectionType === "Postpaid" && <Button   disabled={!isFormValid} style={{ backgroundColor: "#872D67", color: "white" }} className="w-100" onClick={handleViewBill}>Confirm</Button>}
+               {formData.connectionType === "Postpaid" && <Button   disabled={!isFormValid} style={{ backgroundColor: "#001e50", color: "white" }} className="w-100" onClick={handleViewBill}>Confirm</Button>}
               </Form>
             </div>
           </Col>
