@@ -28,7 +28,7 @@ button {
 
 
 :root {
-  --themeht-primary-color: #3498db; /* Example color */
+  --themeht-primary-color: #ffb300; /* Example color */
   /* You can replace #3498db with any color code of your choice */
 }
 
@@ -53,6 +53,8 @@ button {
   }
 
 
+
+
   ::-webkit-scrollbar-thumb:hover {
     background: #555; /* Darker color on hover */
   }
@@ -62,3 +64,6 @@ button {
     scrollbar-width: thin; /* Makes the scrollbar thinner */
     scrollbar-color: #ffb300 #f4f4f4; /* Thumb color and track color */
   }
+
+
+  

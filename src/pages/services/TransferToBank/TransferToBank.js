@@ -35,8 +35,8 @@ const TransferToBank = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/loanemi.png"
-                alt="Image"
+                src="/assets/Transfer to Bank.svg"
+                alt="Transfer to Bank"
                 height="300"
                 className="item-center"
               />

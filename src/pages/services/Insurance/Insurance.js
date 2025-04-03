@@ -39,8 +39,8 @@ const Insurance = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/insurance.png"
-                alt="Image"
+                src="/assets/Insurance.svg"
+                alt="insurance"
                 height="300"
                 className="item-center"
               />

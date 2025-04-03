@@ -31,8 +31,8 @@ const Water = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/waterbill.png"
-                alt="Image"
+                src="/assets/Water Bill.svg"
+                alt="water bill"
                 height="300"
                 className="item-center"
               />

@@ -38,8 +38,8 @@ const LpgBooking = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/lpgbooking.png"
-                alt="Image"
+                src="/assets/LPG Booking.svg"
+                alt="Lpg booking"
                 height="300"
                 className="item-center"
               />
