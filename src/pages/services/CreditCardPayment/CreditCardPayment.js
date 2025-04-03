@@ -31,8 +31,8 @@ const CreditCardPayment = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/creditcard.png"
-                alt="Image"
+                src="/assets/Credit Card Payments.svg"
+                alt="Credit card"
                 height="300"
                 className="item-center"
               />

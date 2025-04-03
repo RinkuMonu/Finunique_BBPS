@@ -124,7 +124,7 @@ const DTHRecharge = () => {
             </h2>
             <h3>Elevate your entertainment with hassle-free DTH recharges.</h3>
             <div className="d-flex justify-content-center align-items-center">
-              <img src="images/dth.png" alt="DTH Image" height="300" />
+              <img src="/assets/DTH.svg" alt="DTH Image" height="300" />
             </div>
           </Col>
 

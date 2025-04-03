@@ -104,7 +104,7 @@ const MobileRechargeUI = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/mobile_recharge.png"
+                src="/assets/Mobile Recharge.svg"
                 alt="Image"
                 height="300"
                 className="item-center"

@@ -54,8 +54,8 @@ const DataCardRecharge = () => {
             <h3>Energize Your Online Experience with Datacard Recharge.</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/datacard.png"
-                alt="Image"
+                src="/assets/Datacard .svg"
+                alt="data card"
                 height="300"
                 className="item-center"
               />

@@ -32,8 +32,8 @@ const ElectricityBillPayment = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/Electricity.png"
-                alt="Image"
+                src="/assets/Electricity Bill.svg"
+                alt="electricityv bill"
                 height="300"
                 className="item-center"
               />

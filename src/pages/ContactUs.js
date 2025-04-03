@@ -50,7 +50,7 @@ const ContactUs = () => {
   return (
     <div>
       <section className="page-title pb-0 border-0">
-        <img src="/images/contact.svg" alt="Contact Us" className="full-width-image" />
+        <img src="/assets/contact us-01.svg" alt="Contact Us" className="full-width-image" />
       </section>
 
       <div className="page-content">

@@ -29,8 +29,8 @@ const GooglePlay = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/googe_play.png"
-                alt="Image"
+                src="/assets/Google Play Recharge.svg"
+                alt="google play"
                 height="300"
                 className="item-center"
               />

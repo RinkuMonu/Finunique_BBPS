@@ -31,8 +31,8 @@ const PipedGas = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/onlinegas.png"
-                alt="Image"
+                src="/assets/Gas Bill Solution.svg"
+                alt="piped gas"
                 height="300"
                 className="item-center"
               />

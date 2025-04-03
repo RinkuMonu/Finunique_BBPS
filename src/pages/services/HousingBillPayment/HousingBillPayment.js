@@ -40,8 +40,8 @@ const HousingBillPayment = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/electricity.png"
-                alt="Image"
+                src="/assets/Housing .svg"
+                alt="Housing"
                 height="300"
                 className="item-center"
               />
