@@ -35,7 +35,7 @@ function PageContent() {
                                     The Fastest Way To <span>Grow Your Business</span>
                                 </h2>
                                 <p>
-                                    We are happy to introduce Finuniques, a  service provider
+                                    We are happy to introduce Abdks, a  service provider
                                     offering services like Bills Payment (BBPS) and Recharge to
                                     retailers/merchants.
                                 </p>
@@ -87,7 +87,7 @@ function PageContent() {
                             </p>
                             <h4>Growth Is Our Only Obsession</h4>
                             <p>
-                                Finuniques makes your work easier and faster. Our strongest motive
+                                Abdks makes your work easier and faster. Our strongest motive
                                 is to provide the best possible services to our customers.
                             </p>
                         </div>
@@ -156,7 +156,7 @@ function PageContent() {
                                         <h4>Explore Unlimited Business Opportunities</h4>
                                     </div>
                                     <p>
-                                        Finuniques is easy to operate and it also makes your work easier and faster.
+                                        Abdks is easy to operate and it also makes your work easier and faster.
                                         We will always have a wide variety of options as per your needs. You are always
                                         privileged to choose how to go forward. After all, You are Important to us.
                                     </p>
@@ -189,7 +189,7 @@ function PageContent() {
                             <div className="theme-title">
                                 <h6 className="fz40">Services</h6>
                                 <p>
-                                    Services that we offer to our clients at a glance. We have earned 3+ years of expertise in  services. You just need to tell us about your requirements, we will strictly take care of that. You are just one click away!! Start your own business with Finuniques  services and provide Recharge and Bill Payment (BBPS) to your customers.
+                                    Services that we offer to our clients at a glance. We have earned 3+ years of expertise in  services. You just need to tell us about your requirements, we will strictly take care of that. You are just one click away!! Start your own business with Abdks  services and provide Recharge and Bill Payment (BBPS) to your customers.
                                 </p>
                             </div>
                             <img className="img-fluid" src="/assets/Home/SERVICE2.png" alt="about" />
@@ -208,7 +208,7 @@ function PageContent() {
                                                     <h4>Electricity Bill</h4>
                                                 </div>
                                                 <p>
-                                                    Pay your Electricity bill online using the Pay Finuniques app. We use the best in industry technology to make it fast and reliable.
+                                                    Pay your Electricity bill online using the Pay Abdks app. We use the best in industry technology to make it fast and reliable.
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
@@ -252,7 +252,7 @@ function PageContent() {
                                                     <h4>BBPS</h4>
                                                 </div>
                                                 <p>
-                                                    Finuniques offers its customers to pay their bills with just a click. No need to stand in queue at the operator’s office anymore.
+                                                    Abdks offers its customers to pay their bills with just a click. No need to stand in queue at the operator’s office anymore.
                                                 </p> 
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
@@ -274,7 +274,7 @@ function PageContent() {
                                                     <h4>Recharge Services</h4>
                                                 </div>
                                                 <p>
-                                                    Finuniques recharge service covers all major service providers of Mobile, and you can earn the best commission on each recharge.
+                                                    Abdks recharge service covers all major service providers of Mobile, and you can earn the best commission on each recharge.
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
