@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useState } from "react";
 import "./styles/contact.css";
+import img from "../Assets/images/contact-us.png";
+import { FiCheckCircle, FiArrowRight } from "react-icons/fi";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -13,35 +15,45 @@ const ContactUs = () => {
   const [responseMessage, setResponseMessage] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setResponseMessage(null);
 
     try {
-      const response = await fetch("https://finpay-b2c-backend.onrender.com/api/query/submit-form", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://finpay-b2c-backend.onrender.com/api/query/submit-form",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const result = await response.json();
       if (response.ok) {
-        setResponseMessage({ type: "success", text: "Message sent successfully!" });
+        setResponseMessage({
+          type: "success",
+          text: "Message sent successfully!",
+        });
         setFormData({ fullName: "", email: "", number: "", message: "" });
       } else {
-        setResponseMessage({ type: "error", text: result.message || "Something went wrong!" });
+        setResponseMessage({
+          type: "error",
+          text: result.message || "Something went wrong!",
+        });
       }
     } catch (error) {
-      setResponseMessage({ type: "error", text: "Failed to send message. Try again later." });
+      setResponseMessage({
+        type: "error",
+        text: "Failed to send message. Try again later.",
+      });
     } finally {
       setLoading(false);
     }
@@ -49,8 +61,31 @@ const ContactUs = () => {
 
   return (
     <div>
-      <section className="page-title pb-0 border-0">
-        <img src="/assets/contact us-01.svg" alt="Contact Us" className="full-width-image" />
+      <section className="hero-section heroaabout overflow-hidden">
+        <div className="container-fluid p-0 d-flex  flex-column align-items-center">
+          <div className="row align-items-center hero-content-wrapper ">
+            <div className="col-lg-7 col-md-12 text-content px-4 px-lg-5 ">
+              <h1 className="hero-headline">
+                Contact <span className="highlight">Us</span>
+              </h1>
+              <p className="hero-subheadline">
+                We are here to help - anytime, anywhere
+              </p>
+              <p className="hero-subheadline">
+                Whether you're a retailer ready to join our BBPS network, a
+                distributor seeking a fintech partnership, or a customer needing
+                support — the ABDKS team is available 24/7 with fast and reliable service.
+              </p>
+            </div>
+            <div className="col-lg-5 col-md-12 image-content hero-image-container">
+              <img
+                src={img}
+                alt="Retail Partner"
+                className="img-fluid hero-image"
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
       <div className="page-content">
@@ -59,10 +94,17 @@ const ContactUs = () => {
             <div className="row">
               <div className="col-lg-7 col-md-12 ps-lg-10 order-lg-1">
                 <div className="theme-title">
-                  <h2>Get In Touch</h2>
+                  <h2>Stay in Touch</h2>
+                  <p>Fill out the form, and our team will get back to you shortly.</p>
                 </div>
                 {responseMessage && (
-                  <div className={`alert ${responseMessage.type === "success" ? "alert-success" : "alert-danger"}`}>
+                  <div
+                    className={`alert ${
+                      responseMessage.type === "success"
+                        ? "alert-success"
+                        : "alert-danger"
+                    }`}
+                  >
                     {responseMessage.text}
                   </div>
                 )}
@@ -74,7 +116,7 @@ const ContactUs = () => {
                           type="text"
                           name="fullName"
                           className="form-control"
-                          placeholder="Name"
+                          placeholder="Full Name"
                           required
                           value={formData.fullName}
                           onChange={handleChange}
@@ -100,7 +142,7 @@ const ContactUs = () => {
                           type="tel"
                           name="number"
                           className="form-control"
-                          placeholder="Phone"
+                          placeholder="Mobile Number"
                           required
                           value={formData.number}
                           onChange={handleChange}
@@ -112,15 +154,19 @@ const ContactUs = () => {
                     <textarea
                       name="message"
                       className="form-control"
-                      placeholder="Write Message"
+                      placeholder="Message / Query"
                       rows="4"
                       required
                       value={formData.message}
                       onChange={handleChange}
                     ></textarea>
                   </div>
-                  <button type="submit" className="themeht-btn primary-btn mt-4" disabled={loading}>
-                    <span>{loading ? "Sending..." : "Submit"}</span>
+                  <button
+                    type="submit"
+                    className="themeht-btn primary-btn mt-4"
+                    disabled={loading}
+                  >
+                    <span>{loading ? "Sending..." : "Send Message"}</span>
                     <i className="bi bi-arrow-right"></i>
                   </button>
                 </form>
@@ -135,32 +181,55 @@ const ContactUs = () => {
                     <li>
                       <i className="bi bi-globe-americas fs-3"></i>
                       <div>
-                        <span>Visit Our Location</span>
+                        <span>Head Office</span>
                         <b>ABDKS Solutions Private Limited</b>
                         <p>
-                          Plot No 97, Dakshinpuri - I, Shrikishan, Sanganer, Jagatpura, Jaipur Rajasthan, India, 302017
+                          Plot No 97, Darakshapuri - I, Srikishan, Sangner,
+                          Jagatpura, Jaipur, Rajasthan, India - 302017
                         </p>
                       </div>
                     </li>
                     <li>
                       <i className="bi bi-envelope fs-3"></i>
                       <div>
-                        <span>Send Us Email</span>
-                        <a href="mailto:info@abdks.com" className="text-decoration-none">
-                          info@abdks.com
+                        <span>Email</span>
+                        <a
+                          href="mailto:support@abdks.com"
+                          className="text-decoration-none"
+                        >
+                          support@abdks.com
                         </a>
                       </div>
                     </li>
                     <li>
                       <i className="bi bi-telephone-outbound fs-3"></i>
                       <div>
-                        <span>Phone No.</span>
+                        <span>Phone</span>
                         <a
-                          href="tel:01414511098"
+                          href="tel:+91XXXXXXXXXX"
                           className="text-decoration-none"
                         >
-                          01414511098
+                          +91-XXXXXXXXXX
                         </a>
+                      </div>
+                    </li>
+                    <li>
+                      <i className="bi bi-whatsapp fs-3"></i>
+                      <div>
+                        <span>WhatsApp</span>
+                        <a
+                          href="https://wa.me/91XXXXXXXXXX"
+                          className="text-decoration-none"
+                        >
+                          +91-XXXXXXXXXX
+                        </a>
+                      </div>
+                    </li>
+                    <li>
+                      <i className="bi bi-clock fs-3"></i>
+                      <div>
+                        <span>Professional Hours</span>
+                        <p>24/7 assistance for all BBPS partners</p>
                       </div>
                     </li>
                   </ul>
@@ -178,6 +247,19 @@ const ContactUs = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
+              </div>
+            </div>
+
+            <div className="row mt-5">
+              <div className="col-lg-12 text-center">
+                <h4>Partner With Us</h4>
+                <p>
+                  Interested in becoming a BBPS retailer, distributor, or service
+                  partner with ABDKS? Let’s strengthen India’s digital payment future together.
+                </p>
+                <a href="#" className="btn btn-primary px-4 mt-2">
+                  Be a Partner <FiArrowRight className="ms-2" />
+                </a>
               </div>
             </div>
           </div>

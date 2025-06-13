@@ -1,84 +1,187 @@
-import React from 'react'
-import ServiceItem from "./ServiceItem"
-import "./OurService.css"
-
+import React from "react";
+import ServiceItem from "./ServiceItem";
+import "./OurService.css";
+import img from "../../Assets/images/services.png";
+import { FiCheckCircle, FiArrowRight } from "react-icons/fi";
 
 function OurService() {
-  
-    const services = [
-        {
-          imgSrc: "/assets/DTH.png",
-          title: "DTH Recharge",
-          description:
-            "Credit cards offer convenience and a long list of benefits that cash doesn't provide, but we provide instant cash on all credit cards any time and any cities.",
-        },
-        {
-          imgSrc: "/assets/Electricity.png",
-          title: "Electricity Bill",
-          description:
-            "Pay your Electricity bill online using the Pay ABDKS Solutions Private Limited app. We use best in industry technology to make it fast and reliable.",
-        },
-        {
-          imgSrc: "/assets/Utility.png",
-          title: "Pay Utility Bill",
-          description:
-            "How difficult to make payment for your utility bills at marchand outlet that does not accept credit card but we make it easy for you with our credit card payment system.",
-        },
-        {
-          imgSrc: "/assets/Mobile.png",
-          title: "Mobile Recharge",
-          description:
-            "Mobile Recharge Services are the fastest and reliable as everything happen in seconds with ninety nine percent of success ratio in prepaid recharges.",
-        },
-        {
-          imgSrc: "/assets/BBPS.png",
-          title: "BBPS",
-          description:
-            "ABDKS Solutions Private Limited offers its customers to pay their bills with just a click. No need to stand in queue at operator’s office anymore.",
-        },
-        {
-          imgSrc: "/assets/Recharge.png",
-          title: "Recharge Services",
-          description:
-            "ABDKS Solutions Private Limited recharge service covers all major service providers of Mobile, And you can earn best commission on each recharge.",
-        },
-      ];
-    
+  const services = [
+    {
+      imgSrc: "/assets/BBPS.png",
+      title: "Bharat Bill Payment System (BBPS)",
+      description:
+        "Enable your customers to pay bills in real time with our safe, NPCI-demonstrated BBPS recharge system.",
+      features: [
+        "Electricity bill",
+        "Water supply bill",
+        "Gas (PNG/LPG) bill",
+        "Broadband and landline bill",
+        "Insurance premium payment",
+        "Loan EMI collection",
+        "Municipal tax payment",
+        "Fastag recharge",
+      ],
+    },
+    {
+      imgSrc: "/assets/DTH.png",
+      title: "Mobile & DTH recharge services",
+      description:
+        "Provide prepaid and postpaid mobile recharge and DTH services in all major networks through our fast BBPS-supported backend.",
+      features: [
+        "Prepaid mobile recharge",
+        "Postage bill payment",
+        "DTH Recharge BBPS",
+      ],
+    },
+    {
+      imgSrc: "/assets/Utility.png",
+      title: "Credit card payment Acceptance",
+      description:
+        "Accept the credit card payment from customers safely through our integrated payment gateway.",
+      features: [
+        "Real time payment processing",
+        "End-to-end encryption & fraud protection",
+        "Digital receipts & transactions report",
+      ],
+    },
+    {
+      imgSrc: "/assets/Mobile.png",
+      title: "Micro ATM Services",
+      description:
+        "With our micro ATM solutions, distribute banking services to low financial access areas.",
+      features: ["Cash withdrawal", "Balance inquiry", "Mini statement"],
+    },
+    {
+      imgSrc: "/assets/Utility.png",
+      title: "Aadhaar Enabled Payment System (AEPS)",
+      description:
+        "Use AEPS authentication to provide secure transactions to users without debit cards or internet access.",
+      features: [
+        "Aadhaar-Based Withdrawals",
+        "Balance Checks",
+        "Interbank Fund Transfers",
+      ],
+    },
+    {
+      imgSrc: "/assets/Utility.png",
+      title: "PAN Card Services",
+      description:
+        "Help customers with new PAN card applications or corrections.",
+      features: [
+        "Paperless PAN Card Applications",
+        "Status Tracking and Support",
+        "Full Customer Assistance from Start to Finish",
+      ],
+    },
+    {
+      imgSrc: "/assets/Utility.png",
+      title: "Insurance services",
+      description:
+        "Participate with top insurers to offer several schemes from your local store.",
+      features: [
+        "Insurance",
+        "Health insurance",
+        "Motor and general insurance",
+      ],
+    },
+    {
+      imgSrc: "/assets/Mobile.png",
+      title: "Credit services",
+      description:
+        "Enable your customers to apply for a loan directly from your platform.",
+      features: ["Individual debt", "Trade loan", "Home loan"],
+    },
+  ];
+
   return (
     <>
-       <section className="page-title ">
-      <img src="/assets/our service-01.svg" alt="services" />
-    </section>
-   
+      {/* Hero Section */}
+      <section className="hero-section heroaabout overflow-hidden">
+        <div className="container-fluid p-0 d-flex flex-column align-items-center">
+          <div className="row align-items-center hero-content-wrapper">
+            <div className="col-lg-7 col-md-12 text-content px-4 px-lg-5">
+              <h1 className="hero-headline">
+                Driving India's Digital Payment Future with{" "}
+                <span className="highlight">BBPS Innovation</span>
+              </h1>
+              <p className="hero-subheadline">
+                One platform for mobile recharges, bill payments, and card
+                transactions – powered by BBPS.
+              </p>
 
-    <section className="page-content text-col marginTop">
-      <div className="container">
-        <div className="row justify-content-center text-center">
-          <div className="col-lg-8 col-md-12">
-            <div className="theme-title">
-              <h2 className='fw-400'>
-                Services that we offer to our clients at a glance. We have
-                earned 3+ years expertise in fintech services. You just need to
-                tell us about your requirements, we will strictly take care of
-                that.
-              </h2>
+              <div className="hero-features mb-4">
+                <div className="feature-item">
+                  <FiCheckCircle className="feature-icon" />
+                  <span>Zero Maintenance Fees</span>
+                </div>
+                <div className="feature-item">
+                  <FiCheckCircle className="feature-icon" />
+                  <span>Instant Settlements</span>
+                </div>
+                <div className="feature-item">
+                  <FiCheckCircle className="feature-icon" />
+                  <span>24/7 Support</span>
+                </div>
+              </div>
+
+              <div className="cta-buttons">
+                <button className="btn btn-primary cta-main">
+                  Explore Our BBPS Services
+                  <FiArrowRight className="cta-icon" />
+                </button>
+                <button className="btn btn-outline-secondary cta-secondary">
+                  Join the ABDKS Retailer Network
+                </button>
+              </div>
+            </div>
+
+            <div className="col-lg-5 col-md-12 image-content hero-image-container">
+              <img
+                src={img}
+                alt="Retail Partner"
+                className="img-fluid hero-image"
+              />
             </div>
           </div>
         </div>
-        <div className="row gy-5">
-          {services.map((service, index) => (
-            <ServiceItem
-              key={index}
-              imgSrc={service.imgSrc}
-              title={service.title}
-              description={service.description}
-            />
-          ))}
+      </section>
+
+      {/* Service Overview Section */}
+      <section className="page-content text-col marginTop">
+        <div className="container">
+          <div className="row justify-content-center text-center">
+            <div className="col-lg-8 col-md-12">
+              <div className="theme-title">
+                <h2 className="fw-400">
+                  Empower digital transactions across India at{" "}
+                  <span>ABDKS Solutions Private Ltd.</span>
+                  <br />
+                  We offer a comprehensive suite of BBPS-based and digital
+                  financial services designed to streamline daily transactions
+                  for retailers, distributors, and customers across India. Our
+                  platform is safe, scalable, and designed for India's digital
+                  economy's development needs.
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          {/* Services Grid */}
+          <div className="row gy-5">
+            {services.map((service, index) => (
+              <ServiceItem
+                key={index}
+                imgSrc={service.imgSrc}
+                title={service.title}
+                description={service.description}
+                features={service.features}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
-  )
+  );
 }
 
-export default OurService
+export default OurService;

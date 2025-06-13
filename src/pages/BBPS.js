@@ -1,56 +1,144 @@
 import React from "react";
 import "./styles/bbps.css";
+import img from "../Assets/images/BBPS.png";
+
 const BBPS = () => {
   return (
     <div>
-      <section className="page-title  border-0">
-        <img
-          src="/images/BBPSBG.svg"
-          alt="Contact Us"
-          className="full-width-image"
-        />
+      <section className="hero-section heroaabout overflow-hidden">
+        <div className="container-fluid p-0 d-flex flex-column align-items-center">
+          <div className="row align-items-center hero-content-wrapper">
+            {/* Left Side Content */}
+            <div className="col-lg-7 col-md-12 text-content px-4 px-lg-5">
+              <h1 className="hero-headline">
+                <span className="highlight">BBPS</span> - Bharat Bill Payment System by ABDKS
+              </h1>
+              <p className="hero-subheadline">
+                Immediate, safe, and profitable bill payment for retailers across India
+              </p>
+              <p className="hero-subheadline">
+                Looking for a digital business to start? Want to offer utility bill payment services in your local store? ABDKS provides a fully integrated, government-official BBPS platform that enables safe and real-time bill payment across India. Made for retailers, entrepreneurs, and rural service providers, this is your opportunity to tap in India's growing digital economy.
+              </p>
+            </div>
+            <div className="col-lg-5 col-md-12 image-content hero-image-container">
+              <img
+                src={img}
+                alt="Retail Partner"
+                className="img-fluid hero-image"
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section class="pb0 bbps">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12">
-              <div class="shape-img-bg">
-                <img class="mask-img1" src="/images/BBPS.svg" alt="bbps vector" />
+      <section className="py-5 bg-light">
+        <div className="container">
+          {/* What is BBPS */}
+          <div className="row mb-5 text-center">
+            <div className="col-lg-10 mx-auto">
+              <h2 className="text-primary">What is BBPS?</h2>
+              <p className="lead">
+                BBPS (Bharat Bill Payment System) is a centralized payment platform approved by the RBI and NPCI, offering an integrated system for all utility bill payments. With ABDKS, you get direct access to the BBPS infrastructure, allowing you to distribute reliable digital services such as utility bill payment, DTH recharge, and mobile postpaid payment through the same platform.
+              </p>
+            </div>
+          </div>
+
+          {/* Bill Categories */}
+          <div className="row mb-4">
+            <div className="col-md-12">
+              <h4 className="mb-3 text-warning">Bill Categories Supported on ABDKS BBPS</h4>
+              <div className="row gy-2">
+                {[
+                  "Electricity Bill Payment",
+                  "Piped and LPG Gas Bills",
+                  "Water Supply Bill Payment",
+                  "Mobile Postpaid Bill Payment",
+                  "DTH Recharge Services",
+                  "Broadband and Landline Bills",
+                  "Insurance Premium Payment",
+                  "Loan EMI Payment",
+                  "Municipal Tax & Water Bills",
+                  "FASTag Recharge Services",
+                ].map((item, i) => (
+                  <div key={i} className="col-md-6">
+                    <i className="bi bi-arrow-right-short"></i> {item}
+                  </div>
+                ))}
               </div>
             </div>
-            <div class="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10">
-              <div class="theme-title mb-4">
-                <h2>BBPS - BHARAT BILL PAYMENT SYSTEM</h2>
-                <p>
-                  <b>
-                    BHARAT BILL PAYMENT SYSTEM, IS THE SIMPLE WAY TO MANAGE
-                    BILLS!
-                  </b>
-                </p>
-                <p>
-                  We at ABDKS Solutions Private Limited Providing Bharat Bill
-                  Payment System API with 24*7 Auto Billing.
-                </p>
-                <p>
-                  Bharat Bill Payment System facilitates the installment of
-                  bills and enhances the security and speed of bill pay. The
-                  administration is accessible in different installment modes,
-                  on the web and through a system of specialists. A moment
-                  affirmation is produced for the bill installments. The BBPS
-                  will change the general public from money to electronic
-                  installment framework making it less reliant on money
-                  .Currently you can pay charge for Utility (Gas, power, water,
-                  DTH).
-                </p>
-                <h2>BBPS Partner : Easy For You And Your Customers!.</h2>
-                <p>
-                  Once you get listed as an authorized BBPS partner, your
-                  customers will enjoy the ease of hassle-free bill payments.
-                  Also, it's a great opportunity for you to enhance your
-                  customer's trust. BBPS allows you to build healthy customer
-                  relationships, and leverages your business network.
-                </p>
+          </div>
+
+          {/* Benefits */}
+          <div className="row mt-5">
+            <div className="col-md-12">
+              <h4 className="mb-3 text-warning">Benefits of Using BBPS with ABDKS</h4>
+              <ul className="list-unstyled">
+                <li>✔️ <strong>Instant Payment Confirmation:</strong> Every bill payment is processed in real-time and comes with a digital receipt.</li>
+                <li>✔️ <strong>RBI-Compliant Secure Transactions:</strong> All payments are processed through encrypted channels and authorized by BBPS protocols.</li>
+                <li>✔️ <strong>Pan India Bill Coverage:</strong> Accept and process payments from over 100 national and regional billers under BBPS.</li>
+                <li>✔️ <strong>24x7 Service Availability:</strong> Services operate round-the-clock, even on weekends and public holidays.</li>
+                <li>✔️ <strong>Earn Commission Per Transaction:</strong> Get paid for every successful BBPS transaction with a transparent commission system.</li>
+                <li>✔️ <strong>Jaipur-Based Retailer Support:</strong> Local support team available for onboarding assistance and technical guidance.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Who Can Use */}
+          <div className="row mt-5">
+            <div className="col-md-12">
+              <h4 className="mb-3 text-warning">Who Can Use the ABDKS BBPS Platform?</h4>
+              <div className="row gy-2">
+                {[
+                  "Kirana Stores",
+                  "Mobile Recharge Points",
+                  "Cyber Cafés",
+                  "Jan Seva Kendras (CSCs)",
+                  "Utility Counters",
+                  "Rural Distributors",
+                  "Local Retail Shops",
+                  "Digital Entrepreneurs",
+                ].map((item, i) => (
+                  <div key={i} className="col-md-4">📌 {item}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* How to Start */}
+          <div className="row mt-5">
+            <div className="col-md-12">
+              <h4 className="mb-3">How to Start with ABDKS BBPS</h4>
+              <ol className="ps-3">
+                <li>Register as a BBPS Retail Partner</li>
+                <li>Complete KYC with PAN and Aadhaar</li>
+                <li>Get active within 24 hours</li>
+                <li>Start accepting utility and recharge payments immediately</li>
+                <li>Track the earnings through a real-time dashboard</li>
+              </ol>
+            </div>
+          </div>
+
+          {/* Why Choose */}
+          <div className="row mt-5 text-center">
+            <div className="col-md-12">
+              <h4 className="text-success mb-3">Why Choose ABDKS?</h4>
+              <p className="mb-1">7+ Years of Industry Legacy</p>
+              <p className="mb-1">Trusted by 1000+ Retailers in Jaipur</p>
+              <p className="mb-1">24x7 Multilingual Customer Support</p>
+              <p className="mb-3">Fast Onboarding & Transparent Commissions</p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="row mt-4">
+            <div className="col-md-12 text-center">
+              <h5 className="mb-3">Start Your BBPS Business with ABDKS</h5>
+              <p>
+                Join the ABDKS Network and provide official, government-backed BBPS services to your customers. Whether you are in a city or village, you can create a powerful digital payment business, increase footfall, and earn a recurring commission through every transaction.
+              </p>
+              <div className="d-flex justify-content-center flex-wrap gap-3 mt-3">
+                <a href="#" className="btn btn-primary px-4">Be BBPS Partner</a>
+                <a href="#" className="btn btn-outline-secondary px-4">Talk to Our Team</a>
               </div>
             </div>
           </div>

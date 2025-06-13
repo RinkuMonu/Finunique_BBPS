@@ -32,9 +32,9 @@ const LpgBooking = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Quick Gas Booking Service</h2>
+            <h2 className="fw-bold" style={{color:"#001e50"}}>Book Your LPG Gas Cylinder Online – Fast, Secure, and Anytime with ABDKS</h2>
             <h3>
-              Effortlessly secure your fuel supply with swift and convenient gas booking services, ensuring uninterrupted energy for your needs.
+            Hassle-Free LPG Refill Booking in Just a Few Clicks
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img

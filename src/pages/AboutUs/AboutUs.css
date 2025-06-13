@@ -1,67 +1,245 @@
-
-
 .mask-img1 {
-    width: 100%;
+  width: 100%;
 }
 
 .theme-title h2 {
-    margin-bottom: 0;
-    font-size: 20px;
-    line-height: 28px;
+  margin-bottom: 0;
+  font-size: 20px;
+  line-height: 28px;
 }
 p {
-    line-height: 1.7;
+  line-height: 1.7;
 }
 p {
-    margin-bottom: 1rem;
-    margin-top: 0;
+  margin-bottom: 1rem;
+  margin-top: 0;
 }
 .abt h4 {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 .service-item.style-2 .service-desc p {
-    margin: 20px 0 0;
+  margin: 20px 0 0;
 }
 @media (max-width: 992px) {
-    .service-item.style-2 {
-        padding: 40px 30px 70px;
-    }
+  .service-item.style-2 {
+    padding: 40px 30px 70px;
+  }
 }
 .abt p {
-    margin-top: 0px !important;
+  margin-top: 0px !important;
 }
 
+/* .service-item.style-2:after {
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  opacity: 0.04;
+  width: 100%;
+  z-index: -1;
+  background: url(../../../public/assets/Home/02.png) no-repeat 0 0;
+  background-size: cover;
+} */
+
+a,
+i,
+.themeht-btn,
+button,
+img,
+span,
+.nav-link,
+.dropdown-item,
+#ht-main-nav,
+.social-icons li:hover a,
+.testimonial-carousel .controls li,
+.service-item,
+.service-item.style-1 svg,
+.service-item.style-1::before,
+.service-item.style-1:after,
+.service-item.style-2:after,
+.service-item.style-3::before,
+.service-item.style-3:after,
+.clients-logo,
+.service-item.style-3,
+.featured-item,
+.featured-icon,
+.featured-item .featured-icon i,
+.portfolio-item,
+.price-table,
+.post .post-desc,
+.service-menu li a:before,
+.team-social-icon,
+.step-icon-bg,
+.accordion .accordion-button:before,
+.accordion .accordion-button:after {
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+.zoom-fade,
+.service-item.style-1:after,
 .service-item.style-2:after {
-    content: "";
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    opacity: 0.04;
-    width: 100%;
-    z-index: -1;
-    background: url(../../../public/assets/Home/02.png) no-repeat 0 0;
-    background-size: cover;
+  animation-name: zoom-fade;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #67757c;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
 }
 
-a, i, .themeht-btn, button, img, span, .nav-link, .dropdown-item, #ht-main-nav, .social-icons li:hover a, .testimonial-carousel .controls li, .service-item, .service-item.style-1 svg, .service-item.style-1::before, .service-item.style-1:after, .service-item.style-2:after, .service-item.style-3::before, .service-item.style-3:after, .clients-logo, .service-item.style-3, .featured-item, .featured-icon, .featured-item .featured-icon i, .portfolio-item, .price-table, .post .post-desc, .service-menu li a:before, .team-social-icon, .step-icon-bg, .accordion .accordion-button:before, .accordion .accordion-button:after {
-    -webkit-transition: all 0.5s ease-in-out 0s;
-    -moz-transition: all 0.5s ease-in-out 0s;
-    -ms-transition: all 0.5s ease-in-out 0s;
-    -o-transition: all 0.5s ease-in-out 0s;
-    transition: all 0.5s ease-in-out 0s;
+/*  */
+
+.shape-img-bg img {
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-.zoom-fade, .service-item.style-1:after, .service-item.style-2:after {
-    animation-name: zoom-fade;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
 }
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    color: #67757c;
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: .5rem;
-    margin-top: 0;
+.abdk-story-section h4 {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+.heroaabout{
+  padding-bottom: 0 !important;
+}
+
+
+
+/* Vision & Mission Section Styles */
+.vision-mission-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.vision-mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight-box {
+  border-left: 4px solid #0d6efd;
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+.icon-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mission Card Special Styles */
+.bg-light-blue {
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+.mission-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.mission-list li {
+  padding: 6px 0;
+}
+
+/* Values Styles */
+.values-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.value-item {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.value-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bg-light-success {
+  background-color: rgba(25, 135, 84, 0.1);
+}
+
+.bg-light-primary {
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+.bg-light-warning {
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.bg-light-danger {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.bg-light-info {
+  background-color: rgba(13, 202, 240, 0.1);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.delay-2 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

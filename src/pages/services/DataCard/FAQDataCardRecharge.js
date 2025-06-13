@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 const FAQDataCardRecharge = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -11,141 +13,164 @@ const FAQDataCardRecharge = () => {
 
     handleResize();
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const content = [
     {
-      title: "About Data Card Recharge",
+      title: "About Datacard Recharge",
       body: (
         <>
           <p>
-            In today’s time, wherever you may go, the internet must follow.
-            Online data card recharge allows a user to enjoy uninterrupted
-            internet service on their smartphone. With monthly, quarterly or
-            annual data card recharge plans, users can avail seamless browsing,
-            online streaming and downloading services. The data card recharge
-            plans vary for each network operator and time period. ABDKS Solutions Private Limited
-            ensures an instant and simple process of online data card recharge,
-            dongle recharge, modem recharge, dongle recharge plans, wifi dongle
-            recharge plans and more. Instant data card recharge ensures internet
-            access to all the users.
+            In today’s digital-first world, uninterrupted internet is essential. Whether you’re streaming, working remotely, attending online classes, or gaming — your dongle or data card should never run out of balance. 
+            <strong> ABDKS Solutions Private Ltd.</strong> offers a secure, fast, and user-friendly platform for recharging any prepaid data card or dongle across India.
+          </p>
+          <p>
+            Backed by <strong>BBPS (Bharat Bill Payment System)</strong>, we ensure real-time confirmation and 100% operator coverage.
           </p>
         </>
       ),
     },
     {
-      title: "How to Recharge Data Card Online Instantly",
+      title: "Supported Datacard & Dongle Operators",
       body: (
         <>
-          <p>
-            Online data card recharge via ABDKS Solutions Private Limited is a simple and a quick
-            process. In order to avail the data card recharge plans online and
-            enjoy huge data card recharge offers at the same time, a user must
-            only follow the following simple steps.
-          </p>
+          <p>Recharge is supported for all leading internet devices and service providers:</p>
+          <div className="row">
+            <div className="col-md-6">
+              <ul>
+                <li>JioFi Datacard</li>
+                <li>Airtel 4G Dongle / Hotspot</li>
+                <li>VI Dongle (Vodafone Idea)</li>
+              </ul>
+            </div>
+            <div className="col-md-6">
+              <ul>
+                <li>BSNL Data Card</li>
+                <li>MTNL Dongle</li>
+                <li>Other prepaid internet providers</li>
+              </ul>
+            </div>
+          </div>
+          <p>Whether it’s a USB modem, Wi-Fi dongle, or 4G stick — recharge securely with just a few taps using ABDKS.</p>
+        </>
+      ),
+    },
+    {
+      title: "How to Recharge Your Data Card Online",
+      body: (
+        <>
           <ol>
-            <li>
-              Select ‘Data Card’ from ‘Recharge and Bill Payments’ section on
-              the ABDKS Solutions Private Limited app/ website
-            </li>
-            <li>
-              Enter your Data card number, choose the operator and add the
-              amount for Prepaid/Postpaid connection
-            </li>
-            <li>Click ‘Continue’ and proceed to pay</li>
-            <li>
-              Select a suitable payment mode and complete your online data card
-              recharge
-            </li>
+            <li>Open the ABDKS app or visit our official website.</li>
+            <li>Navigate to the ‘Recharge’ section.</li>
+            <li>Select ‘Data Card Recharge’ as the category.</li>
+            <li>Choose your operator (e.g., Jio, Airtel, VI, BSNL).</li>
+            <li>Enter your datacard or registered mobile number.</li>
+            <li>Select a plan or input a custom recharge amount.</li>
+            <li>Choose your payment method: UPI, Debit/Credit Card, Wallet, or Net Banking.</li>
+            <li>Complete the transaction and receive instant confirmation.</li>
           </ol>
         </>
       ),
     },
     {
-      title: "Why Choose ABDKS Solutions Private Limited for Data Card Recharge",
+      title: "Why Choose ABDKS for Datacard Recharge?",
+      body: (
+        <div className="row">
+          <div className="col-md-6">
+            <ul>
+              <li>Instant Recharge – Real-time success and balance update</li>
+              <li>BBPS-supported – RBI-authorized, safe digital payment ecosystem</li>
+              <li>Multi-operator Support – Recharge any major data provider</li>
+            </ul>
+          </div>
+          <div className="col-md-6">
+            <ul>
+              <li>Available 24x7 – Recharge any time, even on holidays</li>
+              <li>Mobile-friendly Interface – Optimized for speed and usability</li>
+              <li>No Hidden Fees – Transparent pricing with 0 extra charges</li>
+              <li>Exciting Cashback & Offers – Earn rewards and coupons</li>
+            </ul>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "For Retailers & Digital Service Points",
       body: (
         <>
-          <p>
-            ABDKS Solutions Private Limited ensures ease and convenience to all its users. It is the
-            only Truly Indian payments app which allows one-tap data card
-            recharge. In addition to ensuring an easy way of online data card
-            recharge, ABDKS Solutions Private Limited also ensures exciting online data card recharge
-            offers including huge Cashback and SuperCash offers. Following are
-            the key benefits of making online data card recharge using ABDKS Solutions Private Limited.
-          </p>
+          <p>If you run a cyber café, CSC center, recharge shop, or a local store, you can earn by providing datacard recharge services with ABDKS:</p>
           <ul>
-            <li>
-              <strong>Instant Payment:</strong> On ABDKS Solutions Private Limited all internet service
-              recharges including data card recharge plans, dongle recharge
-              plans, modem recharge plans and wifi dongle recharge plans are
-              just a click away. ABDKS Solutions Private Limited ensures a seamless process of making
-              the online data card recharge
-            </li>
-            <li>
-              <strong>Data card recharge offers:</strong> With the ABDKS Solutions Private Limited app,
-              users can earn and save big on every payment with Cashback and
-              SuperCash offers
-            </li>
-            <li>
-              <strong>Secured Transactions:</strong> Every transaction you make
-              using the ABDKS Solutions Private Limited app or website is highly secured. The app
-              assures the utmost safety and confidentiality as you pay for your
-              online data card recharge
-            </li>
-            <li>
-              <strong>Data Card Recharge Offers:</strong> On ABDKS Solutions Private Limited, a user
-              gets huge variety of offers. A user may earn or use his/her
-              SuperCash balance on the online data card recharge payment. A user
-              may also get a huge Cashback depending on the ongoing data card
-              recharge offer.
-            </li>
+            <li>Serve customers in your locality with essential internet services</li>
+            <li>No technical setup – Just login and start recharging</li>
+            <li>Track commissions, earnings, and reports in real-time</li>
+            <li>Onboarding and ongoing support from our Jaipur-based team</li>
+            <li>Boost footfall and increase monthly earnings</li>
           </ul>
         </>
       ),
     },
     {
-      title: "Frequently Asked Question on Data Card Recharge",
+      title: "Frequently Asked Questions (FAQs)",
       body: (
-        <ul>
-          <li>
-            <strong>How do I recharge my dongle?</strong>
-            <br />A user can easily avail dongle recharge plans on ABDKS Solutions Private Limited
-            under ‘Recharges and bill payment’ section by providing the operator
-            name and making the payment
-          </li>
-          <li>
-            <strong>What is a data card for Internet access?</strong>
-            <br />A data card is a removable electronic card that allows data
-            storage and internet access in a particular device.
-          </li>
-          <li>
-            <strong>What is difference between data card and dongle?</strong>
-            <br />A data card is a removable electronic card which allows data
-            storage or is used to carry out data operations. A dongle, on the
-            other hand, is used for enabling services like software protection,
-            audio-video, etc. A dongle used for connection to mobile broadband
-            is also referred to as a data card
-          </li>
-          <li>
-            <strong>Is dongle faster than mobile Internet?</strong>
-            <br />
-            Both dongle and mobile internet are offered by a wide range of
-            operators and the quality of service varies. While a dongle is used
-            for internet access in laptop/ computer devices, mobile internet is
-            needed for continuous internet access throughout the day. Hence, a
-            user must opt for either based on his/her need or requirement.
-          </li>
-        </ul>
+        <Accordion flush>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>How do I recharge my internet dongle?</Accordion.Header>
+            <Accordion.Body>
+              Log in to ABDKS, choose “Datacard Recharge”, select your operator, enter your number, and complete the payment.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>What is a datacard?</Accordion.Header>
+            <Accordion.Body>
+              A datacard is a device (USB, SIM-based, or wireless) that enables internet access using a mobile network.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="2">
+            <Accordion.Header>Is dongle recharge the same as datacard recharge?</Accordion.Header>
+            <Accordion.Body>
+              Yes. Dongles and datacards are often used interchangeably. Both require similar recharge plans.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="3">
+            <Accordion.Header>Is dongle internet faster than mobile internet?</Accordion.Header>
+            <Accordion.Body>
+              Speeds vary by device, location, and operator. Dongles often offer more stable connections for laptops and PCs.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="4">
+            <Accordion.Header>Are there any extra charges on ABDKS?</Accordion.Header>
+            <Accordion.Body>
+              No. There are zero hidden or additional charges on our platform.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="5">
+            <Accordion.Header>Can I check available datacard recharge plans?</Accordion.Header>
+            <Accordion.Body>
+              Yes. After selecting your operator and entering your number, available plans will be shown automatically.
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      ),
+    },
+    {
+      title: "Keep Your Internet Running with ABDKS",
+      body: (
+        <>
+          <p>
+            Whether you're at home, traveling, or running a business — stay connected with ABDKS. Recharge online in seconds and enjoy uninterrupted browsing anytime, anywhere.
+          </p>
+          <div className="d-flex flex-wrap gap-3 mt-4">
+            <Button variant="primary" size="lg">Recharge Now</Button>
+            <Button variant="outline-primary" size="lg">Join as a Retail Partner</Button>
+          </div>
+        </>
       ),
     },
   ];
 
   return (
-    <>
+    <div className="container my-4">
       {isMobile ? (
         <Accordion>
           {content.map((item, index) => (
@@ -156,16 +181,18 @@ const FAQDataCardRecharge = () => {
           ))}
         </Accordion>
       ) : (
-        <div className="p-5">
+        <div>
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: "1rem" }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
+            <Card key={index} className="mb-4">
+              <Card.Body>
+                <Card.Title className="h4 mb-3 text-warning-emphasis">{item.title}</Card.Title>
+                {item.body}
+              </Card.Body>
+            </Card>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

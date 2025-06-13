@@ -1,15 +1,32 @@
 .partner {
-    padding-top: 50px;
-    padding-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .partner img {
-    width: 100%;
-    border: 1px solid #aaa;
-    margin-bottom: 30px;
+  width: 100%;
+  border: 1px solid #aaa;
+  margin-bottom: 30px;
 }
 img {
-    vertical-align: middle;
-    transition: all 0.5s ease-in-out 0s;
-    overflow-clip-margin: content-box;
-    overflow: clip;
+  vertical-align: middle;
+  transition: all 0.5s ease-in-out 0s;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+@media (max-width: 376px) {
+  .partnerbtnjoin {
+    display: flex;
+    justify-content: center;
+    & button {
+      padding: 0px 1.2px 0px 2px;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .partner-logo {display: none;
+  }
+}
+.bankpartner{
+    max-width: 70%;
 }

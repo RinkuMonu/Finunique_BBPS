@@ -8,95 +8,131 @@ const FAQLoanEMIPayments = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const content = [
     {
-      title: "Pay Your Loan EMI Online Through ABDKS Solutions Private Limited small pvt ltd .",
+      title: "Simple & Secure EMI Payments with ABDKS",
       body: (
         <>
           <p>
-            With us, your loan EMI payment online can be really convenient. Yes,
-            we, ABDKS Solutions Private Limited – the leading digital wallet and provider of online
-            payment services in India – have tied up with a number of companies
-            such as Bajaj Finserv and so many others of its ilk to bring to you
-            a portal that you can use to pay your estimated monthly installments
-            (EMIs).
+            ABDKS Solutions Private Ltd. enables you to pay your loan EMIs online from the comfort of your home or through your nearest digital service point. Whether it’s a personal loan, vehicle loan, home loan, or consumer durable loan — ABDKS ensures secure, instant, and reliable EMI transactions for all major NBFCs and banks.
+          </p>
+          <p>
+            No more missed due dates, long queues, or delayed payments. With ABDKS, your EMI payments are just a few clicks away.
           </p>
         </>
       ),
     },
     {
-      title: "More on What We Can Do for You",
+      title: "Supported Loan Types",
       body: (
-        <>
-          <p>
-            We can help make any and every personal loan EMI payment easier for
-            you. You can do it from just about any device that you please. If
-            you are a tech-savvy person and own a Smartphone or tablet phone,
-            then you can make the payment from that device itself. In case you
-            have a laptop with a killer internet connection, then you can use
-            that as well. Even if it is just a rudimentary desktop that you
-            have, you should not worry as we will help you pay from that as
-            well.
-          </p>
-        </>
+        <ul>
+          <li>Personal Loans</li>
+          <li>Business Loans</li>
+          <li>Home Loans</li>
+          <li>Car or Bike Loans</li>
+          <li>Consumer Durable Loans</li>
+          <li>Education Loans</li>
+          <li>Gold Loans</li>
+          <li>Digital Credit Cards (BNPL / Pay Later)</li>
+        </ul>
       ),
     },
     {
-      title: "The Various Benefits That We Offer for You",
+      title: "Partnered NBFCs & Banks",
       body: (
-        <>
-          <p>
-            We have assisted a lot of people in making their loan EMI payment
-            online. When you try and make the payment from our interface, you
-            would see to your utter delight that we have made it very easy and
-            simple for you. You would now be able to make the payments quite
-            easily in just a few steps.
-          </p>
-          <p>
-            ABDKS Solutions Private Limited small pvt ltd . offers instant personal loans with minimum documentation
-            and a hassle-free experience.
-          </p>
-        </>
+        <ul>
+          <li>Bajaj Finserv</li>
+          <li>HDFC Bank</li>
+          <li>IDFC First Bank</li>
+          <li>Capital Float</li>
+          <li>Tata Capital</li>
+          <li>Indiabulls</li>
+          <li>Home Credit</li>
+          <li>Kissht</li>
+          <li>FlexPay</li>
+          <li>ZestMoney</li>
+          <li>Paysense</li>
+          <li>And many more</li>
+        </ul>
       ),
     },
     {
-      title: "Supported Financial Units for EMI Payments",
+      title: "How to Pay EMI Online via ABDKS",
       body: (
-        <>
-          <p>
-            You can also make the loan EMI payment for other financial units
-            such as L&T Finance, IDFC, Bajaj Finserv, Bajaj Auto Finance, Hero
-            Fincorp, Indiabulls Finance, Aditya Birla Capital, and many more.
-          </p>
-        </>
+        <ol>
+          <li>Visit the EMI Payment section on the ABDKS website or app</li>
+          <li>Select the financial institution or NBFC</li>
+          <li>Enter your loan/account number or mobile number</li>
+          <li>View the outstanding EMI and due date</li>
+          <li>Proceed to pay via UPI, card, wallet, or net banking</li>
+          <li>Receive instant confirmation and receipt</li>
+        </ol>
       ),
     },
     {
-      title: "FAQs",
+      title: "Features & Benefits",
+      body: (
+        <ul>
+          <li>Instant Payment & Confirmation</li>
+          <li>24x7 Access – Pay anytime</li>
+          <li>Secure Transactions – Fully encrypted</li>
+          <li>Multiple Payment Modes – UPI, cards, net banking</li>
+          <li>Supports All Major NBFCs & Lenders</li>
+          <li>Mobile-Friendly Interface</li>
+        </ul>
+      ),
+    },
+    {
+      title: "For Retailers & Agents",
+      body: (
+        <ul>
+          <li>Serve customers who need to pay EMIs</li>
+          <li>Earn commissions on every transaction</li>
+          <li>Use ABDKS dashboard to manage services</li>
+          <li>Access real-time support from our Jaipur-based team</li>
+        </ul>
+      ),
+    },
+    {
+      title: "Frequently Asked Questions",
       body: (
         <ul>
           <li>
-            <strong>Can I pay my EMIs using any device?</strong>
-            <br />
-            Yes, ABDKS Solutions Private Limited small pvt ltd . allows you to pay EMIs from a smartphone, tablet,
-            laptop, or desktop with an internet connection.
+            <strong>Can I pay EMI for any NBFC or bank through ABDKS?</strong><br />
+            We support most major NBFCs and banks. Check the partner list in the portal.
           </li>
           <li>
-            <strong>Are my transactions secure on ABDKS Solutions Private Limited small pvt ltd .?</strong>
-            <br />
-            Absolutely. ABDKS Solutions Private Limited small pvt ltd . ensures all transactions are routed through
-            secure gateways, protecting your personal and financial data.
+            <strong>Do I get a receipt for my EMI payment?</strong><br />
+            Yes, a digital receipt is sent via SMS/email immediately after payment.
+          </li>
+          <li>
+            <strong>Can I pay for someone else’s loan EMI?</strong><br />
+            Yes. Enter their valid account/loan number or registered mobile number.
+          </li>
+          <li>
+            <strong>Is there any extra charge for using ABDKS?</strong><br />
+            No additional service charge is applied for standard EMI payments.
           </li>
         </ul>
+      ),
+    },
+    {
+      title: "Stay On Track with Your EMI Payments",
+      body: (
+        <>
+          <p>
+            Avoid late fees and maintain a good credit score by paying EMIs on time — powered by ABDKS.
+          </p>
+          <div style={{ marginTop: '1rem' }}>
+            <button className="btn btn-primary me-2">Pay EMI Now</button>
+            <button className="btn btn-outline-secondary">Become a Retail Partner</button>
+          </div>
+        </>
       ),
     },
   ];
@@ -115,9 +151,9 @@ const FAQLoanEMIPayments = () => {
       ) : (
         <div className="p-5">
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: "1rem" }}>
+            <div key={index} style={{ marginBottom: "2rem" }}>
               <h3>{item.title}</h3>
-              {item.body}
+              <div>{item.body}</div>
             </div>
           ))}
         </div>

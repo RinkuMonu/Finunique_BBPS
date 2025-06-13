@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import {  Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQGasBillPayment from "./FAQGasBillPayment";
+import "./pipegas.css";
 
 const PipedGas = () => {
   const [formData, setFormData] = useState({
@@ -20,21 +21,20 @@ const PipedGas = () => {
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Your Convenient Gas Bill Solution</h2>
-            <h3>
-              Simplify your life with effortless gas bill payments, keeping your
-              home comfortably energized.
-            </h3>
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
+              Gas Bill Payment
+            </h2>
+            <h3>Pay Your Gas Bills Online Safely and Instantly with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Gas Bill Solution.svg"
                 alt="piped gas"
                 height="300"
-                className="item-center"
+                className="item-center pipegasSideImg"
               />
             </div>
           </Col>
@@ -45,7 +45,12 @@ const PipedGas = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Gas Bill Payment Online</h3>
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
+                Gas Bill Payment Online
+              </h3>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -80,7 +85,7 @@ const PipedGas = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#001e50', color: 'white' }}
+                  style={{ backgroundColor: "#001e50", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Confirm

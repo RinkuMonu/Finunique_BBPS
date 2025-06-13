@@ -33,8 +33,9 @@ const Municipality = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Simplify Municipal Bill Payments</h2>
-            <h3>Simplify urban life with convenient municipality bill payments.</h3>
+            <h2 className="fw-bold" style={{color:"#001e50"}}>Pay Your Municipal Taxes and Bills Online with ABDKS</h2>
+            <h3>Convenient, Transparent & Instant Civic Bill Payment Solution
+</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Municipal Bill Payments.svg"

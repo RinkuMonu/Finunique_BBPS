@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import {  Row, Col, Form, Button } from "react-bootstrap";
-import FAQCreditCardPayment from './FAQCreditCardBill';
+import React, { useState } from "react";
+import { Row, Col, Form, Button } from "react-bootstrap";
+import FAQCreditCardPayment from "./FAQCreditCardBill";
+import "./creditcard.css";
 
 const CreditCardPayment = () => {
   const [formData, setFormData] = useState({
@@ -20,21 +21,24 @@ const CreditCardPayment = () => {
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Streamlined Credit Card Payments</h2>
-            <h3>
-              Effortlessly manage your finances by settling credit card bills
-              with ease, ensuring financial peace of mind.
-            </h3>
-            <div className="d-flex justify-content-center align-items-center">
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
+              Credit Card Bill Payment – Fast, Secure & BBPS-Enabled by ABDKS
+            </h2>
+            <h5>
+              Pay your credit card bills instantly through ABDKS – India’s
+              trusted BBPS platform with 24x7 access, real-time confirmation,
+              and no hidden fees.
+            </h5>
+            <div className="d-flex justify-content-center align-items-center creditcardSideImg">
               <img
                 src="/assets/Credit Card Payments.svg"
                 alt="Credit card"
                 height="300"
-                className="item-center"
+                className="item-center creditcardSideImg"
               />
             </div>
           </Col>
@@ -45,7 +49,12 @@ const CreditCardPayment = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Credit Card Payment</h3>
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
+                Credit Card Payment
+              </h3>
               <Form>
                 <Form.Group className="mb-3" controlId="creditCard">
                   <Form.Label>Credit Card Number</Form.Label>
@@ -71,7 +80,7 @@ const CreditCardPayment = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#001e50', color: 'white' }}
+                  style={{ backgroundColor: "#001e50", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Confirm

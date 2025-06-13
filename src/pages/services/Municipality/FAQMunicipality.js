@@ -1,83 +1,125 @@
 import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const FAQMunicipality = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     handleResize();
     window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const content = [
     {
-      title: 'Pay Your Municipal Property Tax Online',
+      title: 'ABDKS: Your Trusted Partner for Municipal Bill Payments',
       body: (
         <>
           <p>
-            Gone are the days when you had to stand in a queue for making your Municipal Property Tax payments. ABDKS Solutions Private Limited small pvt ltd . now brings house tax payment facilities for you at your fingertips. You can now make your property tax payment at any time and any place.
-          </p>
-          <p>
-            You also have the added benefit of using secure payment options for municipal property tax payment online through debit/credit card or through net banking.
+            ABDKS Solutions Private Ltd. empowers citizens and retailers with a simple and secure way to pay municipal dues online. Whether it's property tax, water tax, sewerage charges, or municipal service fees, our digital platform ensures quick payments with real-time status updates — without standing in queues.
           </p>
         </>
       ),
     },
     {
-      title: 'Safe and Secure Property Tax Payment',
-      body: (
-        <>
-          <p>
-            ABDKS Solutions Private Limited small pvt ltd . ensures secure and hassle-free transactions for municipal property tax payments. All payment options such as debit cards, credit cards, and net banking are routed through secure servers, providing the highest level of data protection.
-          </p>
-          <p>
-            Your personal information, including email addresses, phone numbers, and banking details, is encrypted and accessible only by you, ensuring maximum privacy.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'Steps to Pay Property Tax Using ABDKS Solutions Private Limited small pvt ltd .',
-      body: (
-        <>
-          <ol>
-            <li>Download & log in to the ABDKS Solutions Private Limited small pvt ltd . app.</li>
-            <li>Select the 'Recharge and Bill Pay' option.</li>
-            <li>Choose 'Property Tax' as the category.</li>
-            <li>Enter your municipal corporation and property details.</li>
-            <li>Verify the tax amount fetched by the system.</li>
-            <li>Choose your preferred payment method and complete the transaction.</li>
-          </ol>
-        </>
-      ),
-    },
-    {
-      title: 'FAQs',
+      title: 'Types of Municipal Bills You Can Pay',
       body: (
         <ul>
-          <li>
-            <strong>Is it safe to pay property taxes online using ABDKS Solutions Private Limited small pvt ltd .?</strong><br />
-            Yes, ABDKS Solutions Private Limited small pvt ltd . offers encrypted payment gateways and keeps all user data secure.
-          </li>
-          <li>
-            <strong>Can I pay property taxes for any municipal corporation?</strong><br />
-            Yes, ABDKS Solutions Private Limited small pvt ltd . supports property tax payments for multiple municipal corporations across the country.
-          </li>
+          <li>Property Tax</li>
+          <li>Water Tax</li>
+          <li>Sewerage Charges</li>
+          <li>Solid Waste Management Fees</li>
+          <li>Trade License Renewal Fees</li>
+          <li>Development Charges & Other Civic Fees</li>
         </ul>
+      ),
+    },
+    {
+      title: 'Supported Municipal Corporations',
+      body: (
+        <ul>
+          <li>Jaipur Municipal Corporation</li>
+          <li>Delhi MCD (North, South, East)</li>
+          <li>Pune Municipal Corporation</li>
+          <li>Chennai Corporation</li>
+          <li>Greater Hyderabad Municipal Corporation (GHMC)</li>
+          <li>Bhopal Municipal Corporation</li>
+          <li>And many others based on regional coverage</li>
+        </ul>
+      ),
+    },
+    {
+      title: 'How to Pay Municipal Bills via ABDKS',
+      body: (
+        <ol>
+          <li>Go to the Bill Payment section on the ABDKS app or website</li>
+          <li>Choose Municipal Bill as the service category</li>
+          <li>Select your city or municipality from the list</li>
+          <li>Enter your property ID, account number, or consumer number</li>
+          <li>Fetch and verify the bill details</li>
+          <li>Complete payment using UPI, debit/credit card, wallet, or net banking</li>
+          <li>Get instant confirmation and receipt</li>
+        </ol>
+      ),
+    },
+    {
+      title: 'Why Use ABDKS for Municipal Payments?',
+      body: (
+        <ul>
+          <li>24x7 Availability – Pay your bills anytime, from any location</li>
+          <li>Multiple Services in One Place – Pay property tax, water bills, and more</li>
+          <li>Instant Updates – View current dues and receive instant confirmations</li>
+          <li>Secure Payment Gateway – RBI-authorized, encrypted transactions</li>
+          <li>Mobile-Friendly Interface – Seamless experience on mobile or desktop</li>
+          <li>Retailer Access – Offer civic payment services in your shop or center</li>
+        </ul>
+      ),
+    },
+    {
+      title: 'For Retailers & Digital Entrepreneurs',
+      body: (
+        <ul>
+          <li>Expand your digital services by offering municipal bill payments to your community</li>
+          <li>Increase customer footfall and revenue</li>
+          <li>Offer value-added services to residents</li>
+          <li>Earn a commission on every successful payment</li>
+          <li>View and manage transactions easily from your ABDKS dashboard</li>
+          <li>Get real-time support from our local Jaipur-based team</li>
+        </ul>
+      ),
+    },
+    {
+      title: 'Frequently Asked Questions',
+      body: (
+        <ul>
+          <li><strong>Can I pay property tax online through ABDKS?</strong><br />Yes. You can pay property tax and other civic dues for supported municipalities.</li>
+          <li><strong>What details do I need to pay a municipal bill?</strong><br />Typically, your property ID, account number, or consumer ID is required.</li>
+          <li><strong>Are municipal payments processed instantly?</strong><br />Yes. Once paid, the confirmation is generated instantly and shared via email/SMS.</li>
+          <li><strong>Is there a charge for paying municipal bills via ABDKS?</strong><br />There are no additional service charges for standard municipal bill payments.</li>
+        </ul>
+      ),
+    },
+    {
+      title: 'Make Civic Payments Simple & Stress-Free',
+      body: (
+        <>
+          <p>
+            Whether you're a resident or a digital retailer, ABDKS helps you manage all your civic dues from one trusted platform — quickly, securely, and without delay.
+          </p>
+          <div className="d-flex flex-wrap gap-3 mt-3">
+            <Button variant="primary" size="lg">Pay Municipal Bill Now</Button>
+            <Button variant="outline-primary" size="lg">Become a Service Partner</Button>
+          </div>
+        </>
       ),
     },
   ];
 
   return (
-    <>
+    <div className="container my-4">
       {isMobile ? (
         <Accordion>
           {content.map((item, index) => (
@@ -88,16 +130,18 @@ const FAQMunicipality = () => {
           ))}
         </Accordion>
       ) : (
-        <div className='p-5'>
+        <div>
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: '1rem' }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
+            <Card key={index} className="mb-4">
+              <Card.Body>
+                <Card.Title className="h4 mb-3 text-warning-emphasis">{item.title}</Card.Title>
+                {item.body}
+              </Card.Body>
+            </Card>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 const FAQGasBillPayment = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -19,164 +21,193 @@ const FAQGasBillPayment = () => {
 
   const content = [
     {
-      title: "About Online Gas Bill Payment",
+      title: "Hassle-Free Piped and LPG Gas Bill Payments",
       body: (
         <>
           <p>
-            With the increased use of smartphones and one click payment
-            services, online gas bill payments are now easier than ever. Paying
-            gas bills online is fast, easy and highly secured. There are
-            multiple options available to make gas bill payment online through
-            website . No need to spend hours in long queues, ABDKS Solutions Private Limited is one of
-            the best ways to complete online gas bill payment in less than a
-            minute.
+            Managing your household gas connection is now easier than ever with
+            <strong> ABDKS Solutions Private Ltd.</strong> Whether it’s a piped gas bill or a LPG gas booking, our
+            platform offers a secure, fast, and convenient way to make your
+            payments online — anytime, from anywhere.
           </p>
         </>
       ),
     },
     {
-      title: "How to Make Gas Bill Payment Online at ABDKS Solutions Private Limited?",
+      title: "Supported Gas Providers",
       body: (
         <>
           <p>
-            Timely gas bill payment is very important to ensure uninterrupted
-            services. To avoid delays, paying gas bills online is the best way
-            out. A user can make the online gas payment using the ABDKS Solutions Private Limited app
-            or by visiting the website. ABDKS Solutions Private Limited completes the gas bill payment
-            cycle in minimal steps. Below are the mentioned steps to pay gas
-            bill online using the app:
+            ABDKS supports bill payments and bookings for major gas service
+            providers, including:
           </p>
+          <div className="row">
+            <div className="col-md-6">
+              <ul>
+                <li>Indraprastha Gas Limited (IGL)</li>
+                <li>Mahanagar Gas Limited (MGL)</li>
+                <li>Gujarat Gas</li>
+                <li>Adani Total Gas</li>
+                <li>GAIL Gas</li>
+              </ul>
+            </div>
+            <div className="col-md-6">
+              <ul>
+                <li>HP Gas</li>
+                <li>Bharat Gas</li>
+                <li>Indian Oil (Indane)</li>
+                <li>Tripura Natural Gas Company</li>
+                <li>Assam Gas Company</li>
+              </ul>
+            </div>
+          </div>
+          <p>and other regional piped gas boards</p>
+        </>
+      ),
+    },
+    {
+      title: "How to Pay Gas Bills Online Using ABDKS",
+      body: (
+        <>
           <ol>
-            <li>
-              Go to the ‘Recharges & Bill payment’ section and select ‘Piped
-              Gas’ on the ABDKS Solutions Private Limited app.
-            </li>
-            <li>Choose your operator and enter the Customer ID.</li>
-            <li>
-              The user will get the bill details online, press ‘Continue’ to
-              proceed.
-            </li>
-            <li>
-              Complete the online bill payment using one of the payment methods
-              like wallet, UPI, Debit/Credit.
-            </li>
+            <li>Visit the Bill Payment section on the ABDKS website or app</li>
+            <li>Select Gas as the category</li>
+            <li>Choose your service provider from the dropdown</li>
+            <li>Enter your Consumer Number / Customer ID</li>
+            <li>View bill details fetched automatically</li>
+            <li>Confirm the amount and pay via UPI, card, wallet, or net banking</li>
+            <li>Receive instant confirmation and digital receipt</li>
           </ol>
         </>
       ),
     },
     {
-      title: "Benefits of Gas Bill Payment Online",
+      title: "Key Features & Benefits",
+      body: (
+        <>
+          <div className="row">
+            <div className="col-md-6">
+              <ul>
+                <li>
+                  <strong>Instant Confirmation</strong> – Payment processed in
+                  seconds
+                </li>
+                <li>
+                  <strong>Available 24/7</strong> – Make payments anytime, even
+                  on holidays
+                </li>
+                <li>
+                  <strong>Supports LPG & Piped Gas Bills</strong> – One platform
+                  for all types of connections
+                </li>
+              </ul>
+            </div>
+            <div className="col-md-6">
+              <ul>
+                <li>
+                  <strong>Multiple Payment Modes</strong> – UPI, debit/credit
+                  card, wallet, and internet banking
+                </li>
+                <li>
+                  <strong>Safe and Secure</strong> – Encrypted transactions with
+                  RBI-authorized gateways
+                </li>
+                <li>
+                  <strong>User-Friendly Design</strong> – Optimized for mobile
+                  and desktop users alike
+                </li>
+              </ul>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      title: "Benefits for Retailers & Local Agents",
       body: (
         <>
           <p>
-            The benefits of gas bill payment online are hard to ignore. In the
-            busy life, paying gas bills online is the best and fastest way. With
-            instant online payment platforms like ABDKS Solutions Private Limited, online gas payment
-            is now easier than ever.
+            If you run a digital service center, shop, or kiosk, offer gas bill
+            payment services through ABDKS and:
           </p>
           <ul>
-            <li>
-              <strong>Secured payments:</strong> Gone are the days when online
-              transactions were the reason to be worried. With payment methods
-              like ABDKS Solutions Private Limited, user’s money, data, and transactions are highly
-              protected.
-            </li>
-            <li>
-              <strong>One tap away:</strong> All a user needs to do is open the
-              app or website and make one click to complete the online gas
-              payment. It is that fast and quick.
-            </li>
-            <li>
-              <strong>Easy to pay:</strong> The account setup to make the online
-              gas payment is very simple. No paperwork or formalities are
-              required, a user just needs to add the payment details and the gas
-              bill payment is done.
-            </li>
+            <li>Increase walk-in customers</li>
+            <li>Earn commission on every successful payment</li>
+            <li>Provide value-added services in your area</li>
+            <li>Access detailed reports and dashboards</li>
+            <li>Get real-time support from the ABDKS team</li>
           </ul>
         </>
       ),
     },
     {
-      title: "Why Use ABDKS Solutions Private Limited for Gas Bill Payment?",
+      title: "Frequently Asked Questions",
       body: (
         <>
-          <p>
-            ABDKS Solutions Private Limited, one of India’s largest digital payment apps, offers you
-            fast, smooth, and hassle-free transactions. It not just saves time
-            but also excites you with many gas bill payment offers. Gas payment
-            was never this easy before; using the ABDKS Solutions Private Limited app it is a few-step
-            process. Here are the few listed benefits of using the ABDKS Solutions Private Limited app
-            to pay gas bills:
-          </p>
-          <ul>
-            <li>
-              <strong>Instant Payments:</strong> Pay gas bills quickly in almost
-              less than a minute using the ABDKS Solutions Private Limited app. It’s easy and with
-              multiple payment modes becomes convenient for a user.
-            </li>
-            <li>
-              <strong>More discounts:</strong> Using the ABDKS Solutions Private Limited app, a user
-              can get unlimited offers and discounts on every gas payment. One
-              can avail of gas bill offers and save more on every checkout.
-            </li>
-            <li>
-              <strong>Secured Transactions:</strong> While paying the gas bill
-              using ABDKS Solutions Private Limited, safety is guaranteed to the user. The user data
-              and account details are highly protected.
-            </li>
-          </ul>
+          <Accordion flush>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>
+                Which gas companies are supported for bill payment?
+              </Accordion.Header>
+              <Accordion.Body>
+                ABDKS supports both piped and LPG gas providers such as IGL,
+                MGL, Adani Gas, Bharat Gas, Indane, and more.
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>
+                How soon is the payment confirmed?
+              </Accordion.Header>
+              <Accordion.Body>
+                Payments are confirmed instantly, and digital receipts are
+                generated in real time.
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="2">
+              <Accordion.Header>
+                Can I use ABDKS to pay someone else's gas bill?
+              </Accordion.Header>
+              <Accordion.Body>
+                Yes, simply enter the correct consumer number and proceed with
+                the payment.
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="3">
+              <Accordion.Header>
+                Are there any additional charges?
+              </Accordion.Header>
+              <Accordion.Body>
+                No extra transaction fees are charged on gas bill payments made
+                via ABDKS.
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         </>
       ),
     },
     {
-      title: "Frequently Asked Questions on Gas Bill Payment Online",
+      title: "Pay Your Gas Bill in Minutes with ABDKS",
       body: (
-        <ul>
-          <li>
-            <strong>How do I pay my gas bill online?</strong>
-            <br />
-            To pay the gas bill, a user can simply visit the ABDKS Solutions Private Limited website or
-            open the app. In the ‘Recharge and bill payments’ section, one has
-            to select the option ‘Piped gas’. Select the operator name and add
-            the customer id. The user will get the bill details automatically.
-            By clicking on ‘Continue’ one can make the gas bill payment choosing
-            their desired payment mode.
-          </li>
-          <li>
-            <strong>Can I pay my gas bill with a credit card?</strong>
-            <br />
-            Yes. To make a gas bill payment using a credit card, a user has to
-            select the mode of payment as ‘Credit card’ and enter their details.
-            The gas bill payment through the ABDKS Solutions Private Limited app will be successful.
-          </li>
-          <li>
-            <strong>How do I calculate my gas bill?</strong>
-            <br />
-            In order to know your gas bill, a user can note the meter reading
-            and simply send it to their respective operator. The gas bill will
-            be received via registered contact details.
-          </li>
-          <li>
-            <strong>How much is your average gas bill?</strong>
-            <br />
-            The average gas bill of a user depends on the usage and the
-            frequency. To know about the gas bill, one can contact their
-            respective operator for the details.
-          </li>
-          <li>
-            <strong>Can a gas leak cause a high gas bill?</strong>
-            <br />
-            There are possibilities that a gas leak may result in a high gas
-            bill. The bill raised to the end user is as per the usage, if the
-            usage is more, the gas bill will be higher.
-          </li>
-        </ul>
+        <>
+          <p>
+            Stay safe, save time, and never miss a due date again. With ABDKS,
+            paying gas bills is quick, convenient, and secure.
+          </p>
+          <div className="d-flex flex-wrap gap-3 mt-4">
+            <Button variant="primary" size="lg">
+              Pay Your Gas Bill Now
+            </Button>
+            <Button variant="outline-primary" size="lg">
+              Join as a Retailer
+            </Button>
+          </div>
+        </>
       ),
     },
   ];
 
   return (
-    <>
+    <div className="container my-4">
       {isMobile ? (
         <Accordion>
           {content.map((item, index) => (
@@ -187,16 +218,20 @@ const FAQGasBillPayment = () => {
           ))}
         </Accordion>
       ) : (
-        <div className="p-5">
+        <div>
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: "1rem" }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
+            <Card key={index} className="mb-4">
+              <Card.Body>
+                <Card.Title className="h4 mb-3 text-warning-emphasis">
+                  {item.title}
+                </Card.Title>
+                {item.body}
+              </Card.Body>
+            </Card>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

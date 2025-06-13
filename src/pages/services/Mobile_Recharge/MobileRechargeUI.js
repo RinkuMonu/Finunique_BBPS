@@ -7,16 +7,12 @@ import ConfirmRechargeModal from "./ConfirmRechargeModal";
 import ViewBillModal from "./ViewBillModal";
 import axios from "axios";
 
-
-
-
 const MobileRechargeUI = () => {
-
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showPlansModal, setShowPlansModal] = useState(false);
-  const [showViewBillModal, setShowViewBillModal] = useState(false)
-  const[billdata,  setBillData] = useState(null)
-  
+  const [showViewBillModal, setShowViewBillModal] = useState(false);
+  const [billdata, setBillData] = useState(null);
+
   const handleConfirmModalOpen = () => setShowConfirmModal(true);
   const handleConfirmModalClose = () => setShowConfirmModal(false);
 
@@ -25,7 +21,7 @@ const MobileRechargeUI = () => {
 
   const handlePlansModalOpen = () => setShowPlansModal(true);
   const handlePlansModalClose = () => setShowPlansModal(false);
-  
+
   const [formData, setFormData] = useState({
     mobileNumber: "",
     operator: "",
@@ -33,8 +29,6 @@ const MobileRechargeUI = () => {
     amount: "",
     connectionType: "",
   });
-
-
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -76,16 +70,21 @@ const MobileRechargeUI = () => {
         cn: "9351760762",
         op: "29",
       };
-  
-      const response = await axios.post("https://finpay-b2c-backend.onrender.com/api/recharge/viewbill", payload);
+
+      const response = await axios.post(
+        "https://finpay-b2c-backend.onrender.com/api/recharge/viewbill",
+        payload
+      );
       setBillData(response.data.data[0]);
-      setShowViewBillModal(true); 
+      setShowViewBillModal(true);
       console.log("Bill Data:", response.data.data[0]);
     } catch (error) {
-      console.error("Error fetching bill:", error.response?.data || error.message);
-      setBillData(null); 
-    handleViewBillModalOpen();
-
+      console.error(
+        "Error fetching bill:",
+        error.response?.data || error.message
+      );
+      setBillData(null);
+      handleViewBillModalOpen();
     }
   };
 
@@ -96,11 +95,11 @@ const MobileRechargeUI = () => {
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: " #001e50" }}>
-              Instant Prepaid Mobile Recharge Solution
+              Instant Mobile Recharge via BBPS
             </h2>
             <h3>
-              Empower your connectivity with seamless prepaid mobile recharges,
-              where convenience meets innovation.
+              Recharge prepaid & postpaid numbers securely with BBPS mobile
+              portal.
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
@@ -212,18 +211,28 @@ const MobileRechargeUI = () => {
                     )}
                   </div>
                 </Form.Group>
-                    {formData.connectionType === "Prepaid" &&
-                <Button
-                  variant="primary"
-                  type="button"
-                  className="w-100"
-                  style={{ backgroundColor: "#001e50", color: "white" }}
-                  disabled={!isFormValid}
-                  onClick={handleConfirmModalOpen}
-                >
-                  Confirm
-                </Button>}
-               {formData.connectionType === "Postpaid" && <Button   disabled={!isFormValid} style={{ backgroundColor: "#001e50", color: "white" }} className="w-100" onClick={handleViewBill}>Confirm</Button>}
+                {formData.connectionType === "Prepaid" && (
+                  <Button
+                    variant="primary"
+                    type="button"
+                    className="w-100"
+                    style={{ backgroundColor: "#001e50", color: "white" }}
+                    disabled={!isFormValid}
+                    onClick={handleConfirmModalOpen}
+                  >
+                    Confirm
+                  </Button>
+                )}
+                {formData.connectionType === "Postpaid" && (
+                  <Button
+                    disabled={!isFormValid}
+                    style={{ backgroundColor: "#001e50", color: "white" }}
+                    className="w-100"
+                    onClick={handleViewBill}
+                  >
+                    Confirm
+                  </Button>
+                )}
               </Form>
             </div>
           </Col>
@@ -239,10 +248,7 @@ const MobileRechargeUI = () => {
         handleClose={handleConfirmModalClose}
         formData={formData} // Pass form data for displaying
         modalTitle={
-          <div
-            className="d-flex justify-content-between align-items-center w-100"
-           
-          >
+          <div className="d-flex justify-content-between align-items-center w-100">
             <span>Confirm Recharge</span>
             {formData.connectionType === "Postpaid" && (
               <img
@@ -256,11 +262,11 @@ const MobileRechargeUI = () => {
         }
       />
 
-     <ViewBillModal 
-      show={showViewBillModal}
-      handleClose={handleViewBillModalClose}
-      billdata={billdata}
-     />
+      <ViewBillModal
+        show={showViewBillModal}
+        handleClose={handleViewBillModalClose}
+        billdata={billdata}
+      />
 
       {/* Plans Modal */}
       <Modal

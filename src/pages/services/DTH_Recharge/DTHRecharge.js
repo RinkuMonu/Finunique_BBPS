@@ -120,9 +120,12 @@ const DTHRecharge = () => {
         <Row>
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: " #001e50" }}>
-              DTH Recharge: Uninterrupted Entertainment!
+              DTH recharge services with ABDKS
             </h2>
-            <h3>Elevate your entertainment with hassle-free DTH recharges.</h3>
+            <h3>
+              Recharge your DTH connection instantly with our BBPS-compliant
+              platform.
+            </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img src="/assets/DTH.svg" alt="DTH Image" height="300" />
             </div>

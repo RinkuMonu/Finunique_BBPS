@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import FAQMoneyTransfer from "./FAQMoneyTransfer";
+import "./transfer.css";
 
 const TransferToBank = () => {
   const [formData, setFormData] = useState({
@@ -23,22 +24,20 @@ const TransferToBank = () => {
 
   return (
     <>
-      <div className="p-5 marginTop" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5 mt-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#664A86"}}>Online Money Transfer</h2>
-            <h3>
-              Effortless Money Transfers: Empowering You to Send, Receive, and
-              Manage Funds with Speed, Security, and Simplicity – Wherever You
-              Go!
-            </h3>
-            <div className="d-flex justify-content-center align-items-center">
+            <h2 className="fw-bold" style={{ color: "#664A86" }}>
+              Send Money Securely Across India – Powered by ABDKS
+            </h2>
+            <h3>Fast, Reliable & Compliant Domestic Money Transfers</h3>
+            <div className="d-flex justify-content-center align-items-center transferBankSideImg">
               <img
                 src="/assets/Transfer to Bank.svg"
                 alt="Transfer to Bank"
                 height="300"
-                className="item-center"
+                className="item-center transferBankSideImg"
               />
             </div>
           </Col>
@@ -104,7 +103,7 @@ const TransferToBank = () => {
           </Col>
         </Row>
       </div>
-        <FAQMoneyTransfer/>
+      <FAQMoneyTransfer />
     </>
   );
 };

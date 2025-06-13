@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
-import FAQBroadbandBillPayment from './FAQBroadbandBillPayment';
+import FAQBroadbandBillPayment from "./FAQBroadbandBillPayment";
+import "./broadband.css";
 
 const Broadband = () => {
   const [formData, setFormData] = useState({
@@ -20,20 +21,22 @@ const Broadband = () => {
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Streamlined Broadband Bill Settlement</h2>
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
+              Broadband Bill Payment
+            </h2>
             <h3>
-              Effortlessly handle your broadband bills, keeping your online world running smoothly.
+              Fast, Secure, and Convenient Internet Bill Payment with ABDKS
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Broadband Bill Settlement.svg"
                 alt="Broadband"
                 height="300"
-                className="item-center"
+                className="item-center broadbandSideImg"
               />
             </div>
           </Col>
@@ -44,7 +47,12 @@ const Broadband = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Broadband Bill Payment</h3>
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
+                Broadband Bill Payment
+              </h3>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -79,7 +87,7 @@ const Broadband = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#001e50', color: 'white' }}
+                  style={{ backgroundColor: "#001e50", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Confirm

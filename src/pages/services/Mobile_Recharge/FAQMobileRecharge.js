@@ -1,178 +1,141 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 const FAQMobileRecharge = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Handle screen size change
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as per your design
+      setIsMobile(window.innerWidth <= 768);
     };
-
-    handleResize(); // Check initial screen size
+    handleResize();
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const content = [
     {
-      title: "Prepaid Mobile Recharge",
-      body: (
-        <>
-          <p>
-            Nowadays, everyone has a smartphone, and the number of smartphone
-            users continues to rise. When it comes to mobile payment plans,
-            users have two options: postpaid or prepaid. Prepaid mobile plans are
-            those you must pay in advance to use them. Customers can choose from
-            a variety of prepaid plans offered by various operators. People
-            looking for budget-friendly options might consider prepaid
-            subscriptions. There are so many options available online to do your
-            prepaid mobile recharge, but ABDKS Solutions Private Limited is one of the
-            most trustworthy digital payments Website to make your life easier.
-          </p>
-          <ul>
-            <li>Budget-friendly plans</li>
-            <li>Pay in advance</li>
-            <li>Wide variety of options</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "How to Make Prepaid Mobile Recharge Online?",
-      body: (
-        <>
-          <p>
-            Online recharge gives you the liberty to recharge your mobile phone
-            number anytime and from anywhere. All you need is an internet
-            connection. Here’s how you can recharge online:
-          </p>
-          <ol>
-            <li>Open the ABDKS Solutions Private Limited app & navigate to ‘Recharges & Bill Pay’.</li>
-            <li>Enter the phone number and select Prepaid or Postpaid.</li>
-            <li>Select your mobile operator and circle.</li>
-            <li>Choose a plan or enter the recharge amount.</li>
-            <li>Enter your mobile number again and verify with OTP.</li>
-            <li>Complete the payment using your preferred method.</li>
-          </ol>
-        </>
-      ),
-    },
-    {
-      title: "Prepaid vs Postpaid Mobile Recharge",
-      body: (
-        <>
-          <p>
-            Prepaid mobile plans require customers to pay in advance for mobile
-            services, while postpaid mobile services require customers to pay
-            monthly bills after utilizing the services.
-          </p>
-          <ul>
-            <li>
-              Prepaid plans are less expensive when compared to postpaid plans.
-            </li>
-            <li>Prepaid plans are more flexible.</li>
-            <li>Prepaid plans ensure no bill shock for users.</li>
-            <li>
-              Generally, prepaid recharge offers are more attractive and
-              cost-effective.
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "Why Choose ABDKS Solutions Private Limited for Online Mobile Recharge?",
-      body: (
-        <>
-          <p>
-            Here are some benefits of using ABDKS Solutions Private Limited for your mobile recharge:
-          </p>
-          <ul>
-            <li>
-              <strong>Instant Transactions:</strong> Recharge in just a few
-              clicks, and it doesn't even take a minute.
-            </li>
-            <li>
-              <strong>Secure Payments:</strong> ABDKS Solutions Private Limited offers end-to-end data
-              protection for each prepaid recharge.
-            </li>
-            <li>
-              <strong>No Transaction Cost:</strong> You won't be charged
-              additional fees for making a recharge through ABDKS Solutions Private Limited
-            </li>
-            <li>
-              <strong>More Savings:</strong> Enjoy discounts and cashback
-              rewards on prepaid plans.
-            </li>
-            <li>
-              <strong>Various Payment Options:</strong> Pay using Credit Card,
-              Debit Card, UPI, ZIP pay later, or other methods.
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "Free Mobile Recharge",
+      title: "Quick, Safe, and Real-Time Recharge with ABDKS",
       body: (
         <p>
-          ABDKS Solutions Private Limited does not charge you over any online recharges, i.e., on
-          ABDKS Solutions Private Limited, it enables free mobile recharge. Moreover, it offers many
-          discounts and phone recharge offers to its users.
+          Experience uninterrupted recharge using India's reliable BBPS recharge system. Abdks provides a fully integrated mobile recharge BBPS platform, designed for individuals, retailers and fintech entrepreneurs. With support to all major telecommunications networks and real-time recharge confirmation, you can serve customers anytime, anywhere.
         </p>
       ),
     },
     {
-      title: "Frequently Asked Questions on Online Prepaid Recharge",
+      title: "Operator supported across India",
+      body: (
+        <>
+          <p>
+            Our prepaid recharge BBPS platform and postpaid mobile bill payment system support all major telecom operators:
+          </p>
+          <ul>
+            <li>Jio</li>
+            <li>Airtel</li>
+            <li>Vodafone Idea (VI)</li>
+            <li>BSNL</li>
+          </ul>
+          <p>
+            Support includes mobile recharge, BBPS postpaid bill payment, and integration with our comprehensive utility bill payment software.
+          </p>
+        </>
+      ),
+    },
+    {
+      title: "How to recharge using ABDKS BBPS",
+      body: (
+        <>
+          <p>Follow these simple steps on the ABDKS platform or mobile dashboard:</p>
+          <ol>
+            <li>Go to the mobile recharge section</li>
+            <li>Select your telecom operator and field/circle</li>
+            <li>Please enter the mobile number</li>
+            <li>Choose a recharge plan or manually enter an amount</li>
+            <li>Pay through UPI, Debit/Credit Card, Wallet, or Net Banking</li>
+            <li>Get immediate recharge confirmation and a digital receipt</li>
+          </ol>
+          <p>
+            All transactions are processed through our RBI-authorized BBPS recharge system.
+          </p>
+        </>
+      ),
+    },
+    {
+      title: "Major features of our mobile recharge BBPS platform",
+      body: (
+        <ul>
+          <li>Immediate recharge BBPS integration - No delay, real-time update</li>
+          <li>24x7 recharge access - available on weekends and holidays</li>
+          <li>Prepaid and Postpaid Support - BBPS Bill Payment for all types</li>
+          <li>Multiple payment methods - UPI, card, net banking, and wallet</li>
+          <li>Mobile-friendly interface—anyone can work on an Android smartphone</li>
+          <li>End-to-end security-RBI-defined and encrypted transactions</li>
+        </ul>
+      ),
+    },
+    {
+      title: "Why retailers choose ABDKS for mobile recharge",
+      body: (
+        <>
+          <p>Expand your service offerings and create a revenue stream with our mobile recharge BBPS solution:</p>
+          <ul>
+            <li>Earn commission on every prepaid and postpaid transaction</li>
+            <li>No basic structure cost - just a mobile phone and internet</li>
+            <li>Serve all major Indian networks with a single BBPS interface</li>
+            <li>Real times access to the commission and transaction logs</li>
+            <li>Jaipur-based aid team dedicated for training and issues</li>
+          </ul>
+          <p><strong>Perfect for:</strong> Kirana stores || Recharge shops || Cyber cafés || Jan Seva Kendra operators || and digital entrepreneurs.</p>
+        </>
+      ),
+    },
+    {
+      title: "Frequently Asked Questions",
       body: (
         <ul>
           <li>
-            <strong>Why Choose ABDKS Solutions Private Limited for Prepaid Recharge?</strong>
-            <br />
-            ABDKS Solutions Private Limited is India's no. 1 site for online easy Mobile recharge.
-            ABDKS Solutions Private Limited does not charge you over any online recharges, enabling
-            free mobile recharge and helping you save your time, effort, and
-            money.
+            <strong>Is mobile recharge safe through ABDKS?</strong><br />
+            Yes. Our BBPS recharge platform uses the RBI-authorized payment gateway with full encryption.
           </li>
           <li>
-            <strong>Is Online Recharge Safe?</strong>
-            <br />
-            Prepaid online recharges via ABDKS Solutions Private Limited are safe and seamless. There
-            is no fear of fraudulent or unsafe payments when using ABDKS Solutions Private Limited
+            <strong>Can I recharge other people's numbers?</strong><br />
+            Yes, retailers and individuals can recharge for any mobile user in India.
           </li>
           <li>
-            <strong>By when can Recharge be done?</strong>
-            <br />
-            Mobile recharges via ABDKS Solutions Private Limited can be done quickly and instantly in a
-            few simple steps. There is no hassle or shuffling to pages. Just a
-            simple procedure, and your online recharge is done.
+            <strong>Are there additional charges for mobile recharge?</strong><br />
+            No. Abdks does not impose any hidden fees on mobile recharge BBPS transactions.
           </li>
           <li>
-            <strong>Which recharge app gives the best cashback?</strong>
-            <br />
-            ABDKS Solutions Private Limited recharge app gives you the best benefits with cashback
-            offers, exclusive recharge discounts, and deals.
-          </li>
-          <li>
-            <strong>Is there any extra charge on Mobile Recharge?</strong>
-            <br />
-            ABDKS Solutions Private Limited enables free online recharge. There are no charges for any
-            operator online recharge. ABDKS Solutions Private Limited has never charged its customers
-            any extra fee for using the platform to recharge their mobile
-            numbers.
+            <strong>Which payment methods are supported?</strong><br />
+            UPI, debit/credit card, net banking, and wallet—all are available for convenience.
           </li>
         </ul>
+      ),
+    },
+    {
+      title: "Start Mobile Recharge BBPS Business with ABDKS",
+      body: (
+        <>
+          <p>
+            Whether you're a new retailer or want to add services to your existing shop, ABDKS makes mobile recharges fast, secure, and commission-generating. Tap into India’s growing demand for digital transactions with our prepaid recharge BBPS and postpaid payment tools.
+          </p>
+          <div className="d-flex flex-wrap gap-3 mt-4">
+            <Button variant="primary" size="lg">
+              Start Recharging Now
+            </Button>
+            <Button variant="outline-primary" size="lg">
+              Become a Partner
+            </Button>
+          </div>
+        </>
       ),
     },
   ];
 
   return (
-    <>
+    <div className="container my-4">
       {isMobile ? (
         <Accordion>
           {content.map((item, index) => (
@@ -183,16 +146,18 @@ const FAQMobileRecharge = () => {
           ))}
         </Accordion>
       ) : (
-        <div className="px-5 py-5">
+        <div>
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: "1rem" }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
+            <Card key={index} className="mb-4">
+              <Card.Body>
+                <Card.Title className="h4 mb-3 text-warning-emphasis">{item.title}</Card.Title>
+                {item.body}
+              </Card.Body>
+            </Card>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

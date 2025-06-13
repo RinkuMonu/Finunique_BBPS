@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 const FAQLpgGasBooking = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -8,133 +10,138 @@ const FAQLpgGasBooking = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const content = [
     {
-      title: "Why to Choose Online Gas Booking",
+      title: "About LPG Gas Booking",
       body: (
         <>
           <p>
-            No LPG to cook? No worries, you can book cylinder online instantly
-            and easily using the ABDKS Solutions Private Limited app or webpage. ABDKS Solutions Private Limited allows its
-            users to make LPG bookings online and offers exciting deals for LPG
-            gas bookings and enables users to make their gas bill payments
-            online without any hassle. Making online gas booking through
-            ABDKS Solutions Private Limited  is easy and instant and offers great
-            savings. Thus, ABDKS Solutions Private Limited is the best platform for online gas payment
+            ABDKS Solutions Private Ltd. offers a convenient way to book LPG gas
+            cylinders online for all major providers in India. With our Quick
+            Gas Booking Service, you can schedule a cylinder refill anytime —
+            no need to visit the gas agency or wait in long queues.
+          </p>
+          <p>
+            Whether you're booking for your home or helping customers as a
+            retailer, ABDKS ensures smooth, secure, and instant gas booking
+            with digital confirmation.
           </p>
         </>
       ),
     },
     {
-      title: "How to Book LPG Gas Online",
+      title: "Supported Gas Providers",
+      body: (
+        <ul>
+          <li>Indane (Indian Oil)</li>
+          <li>HP Gas (Hindustan Petroleum)</li>
+          <li>Bharat Gas (Bharat Petroleum)</li>
+          <li>
+            Booking support is available for both regular and subsidized
+            connections.
+          </li>
+        </ul>
+      ),
+    },
+    {
+      title: "How to Book Gas Cylinder with ABDKS",
+      body: (
+        <ol>
+          <li>Visit the Gas Booking section on the ABDKS app or website</li>
+          <li>Select your LPG Provider (e.g., Indane, HP, Bharat)</li>
+          <li>Enter your Consumer Number / Registered Mobile Number</li>
+          <li>Confirm your booking details and delivery address</li>
+          <li>Choose your payment method (if required)</li>
+          <li>Submit the request and receive instant confirmation via SMS/email</li>
+        </ol>
+      ),
+    },
+    {
+      title: "Features of ABDKS Gas Booking",
+      body: (
+        <ul>
+          <li>24x7 Booking Access – Book gas refills anytime, including holidays</li>
+          <li>No Manual Visit Needed – Fully digital process from start to finish</li>
+          <li>Supports All Major LPG Agencies – One platform for all customers</li>
+          <li>Digital Receipt Generation – Instantly download or share booking details</li>
+          <li>Safe & Secure System – All data and transactions are encrypted</li>
+          <li>Mobile-Friendly Interface – Designed for smooth use on all devices</li>
+        </ul>
+      ),
+    },
+    {
+      title: "Benefits for Retailers & Service Agents",
+      body: (
+        <ul>
+          <li>Help customers in your area book LPG refills easily</li>
+          <li>Earn small commissions on successful bookings</li>
+          <li>Increase customer footfall with essential services</li>
+          <li>Simple integration with ABDKS dashboard</li>
+          <li>Onboarding and support provided by the ABDKS team</li>
+        </ul>
+      ),
+    },
+    {
+      title: "Frequently Asked Questions (FAQs)",
+      body: (
+        <Accordion flush>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>Can I book gas for any LPG provider?</Accordion.Header>
+            <Accordion.Body>
+              Yes. ABDKS supports Indane, Bharat Gas, and HP Gas bookings.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Do I get a confirmation after booking?</Accordion.Header>
+            <Accordion.Body>
+              Yes. Confirmation is sent instantly via SMS and email.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="2">
+            <Accordion.Header>Can I book gas for someone else?</Accordion.Header>
+            <Accordion.Body>
+              Yes. Just enter their valid consumer number and delivery details.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="3">
+            <Accordion.Header>Are there extra charges for booking?</Accordion.Header>
+            <Accordion.Body>
+              There are no hidden charges for standard LPG booking through ABDKS.
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      ),
+    },
+    {
+      title: "Book Your Gas Cylinder the Smart Way",
       body: (
         <>
-          <ol>
-            <li>
-              In Recharge and Bill Payments section, click on LPG Booking.
-            </li>
-            <li>Select your gas booking operator.</li>
-            <li>Select the state you belong to.</li>
-            <li>Now select your district.</li>
-            <li>Choose your distributor from the dropdown.</li>
-            <li>Enter your gas booking no or your Consumer Number.</li>
-            <li>
-              Make the payment using a preferred method like UPI, Credit Card,
-              Debit Card, Wallet, or Net Banking.
-            </li>
-          </ol>
           <p>
-            You can also opt for the pay later option, 'Zip', to make your
-            payment now and pay back later.
+            Choose ABDKS for quick, reliable, and secure LPG gas booking —
+            available 24x7 for you and your customers.
           </p>
-        </>
-      ),
-    },
-    {
-      title: "Benefits of Online Gas Booking",
-      body: (
-        <>
-          <ul>
-            <li>No additional fees/ charges are levied on gas bill online.</li>
-            <li>One of the easiest methods for LPG gas booking.</li>
-            <li>
-              Helps avoid traveling to the gas agency or taking constant
-              follow-ups with the distributor.
-            </li>
-            <li>
-              Can be booked anytime, anywhere, ensuring great convenience.
-            </li>
-            <li>Easy and instant payment for online LPG cylinder booking.</li>
-            <li>
-              Various payment options like Debit/Credit Card, UPI, or Net
-              Banking, eliminating the need for cash.
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "Why Use ABDKS Solutions Private Limited small pvt ltd . for LPG Booking?",
-      body: (
-        <>
-          <ul>
-            <li>
-              <strong>Free of cost online LPG gas connection:</strong> ABDKS Solutions Private Limited small pvt ltd .
-              does not charge any amount for online LPG gas booking.
-            </li>
-            <li>
-              <strong>Safe and secure transactions:</strong> All payments are
-              secure and reflect instantly in your transaction history.
-            </li>
-            <li>
-              <strong>Multiple payment options:</strong> Choose from Credit
-              Card, Debit Card, UPI, and more.
-            </li>
-            <li>
-              <strong>Quick and simple process:</strong> Provide basic details,
-              and your booking is completed instantly.
-            </li>
-            <li>
-              <strong>Discounts and Cashback offers:</strong> Enjoy lucrative
-              deals and offers, making your booking more affordable.
-            </li>
-            <li>
-              <strong>Pay Later option:</strong> Use 'Zip' to book now and pay
-              later, enhancing your payment experience.
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "ABDKS Solutions Private Limited small pvt ltd . Provides Irresistible Deals on LPG Gas Booking",
-      body: (
-        <>
-          <p>
-            ABDKS Solutions Private Limited small pvt ltd . offers SuperCash and Cashback on LPG gas booking online
-            payments. These deals make it an ideal platform for users to book
-            gas cylinders conveniently while saving time and money. Make your
-            booking today and avail the best offers on Bharat Gas, HP Gas, and
-            Indane Gas bookings.
-          </p>
+          <div className="d-flex flex-wrap gap-3 mt-4">
+            <Button variant="primary" size="lg">
+              Book Now
+            </Button>
+            <Button variant="outline-primary" size="lg">
+              Become a Gas Booking Agent
+            </Button>
+          </div>
         </>
       ),
     },
   ];
 
   return (
-    <>
+    <div className="container my-4">
       {isMobile ? (
-        <Accordion>
+        <Accordion className="mb-4">
           {content.map((item, index) => (
             <Accordion.Item eventKey={index.toString()} key={index}>
               <Accordion.Header>{item.title}</Accordion.Header>
@@ -143,16 +150,20 @@ const FAQLpgGasBooking = () => {
           ))}
         </Accordion>
       ) : (
-        <div className="p-5">
+        <div>
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: "1rem" }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
+            <Card key={index} className="mb-4">
+              <Card.Body>
+                <Card.Title className="h4 mb-3 text-warning-emphasis">
+                  {item.title}
+                </Card.Title>
+                {item.body}
+              </Card.Body>
+            </Card>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

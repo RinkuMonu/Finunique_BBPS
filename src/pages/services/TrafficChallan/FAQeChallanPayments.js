@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
+import React, { useState, useEffect } from "react";
+import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 const FAQeChallanPayments = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -8,92 +10,170 @@ const FAQeChallanPayments = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-
     handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const content = [
     {
-      title: 'How To Do eChallan Payment Online From ABDKS Solutions Private Limited small pvt ltd .?',
+      title: "About eChallan Payment with ABDKS",
       body: (
         <>
           <p>
-            Following traffic rules is each and everyone’s duty to ensure not only one’s safety but of other people as well. However, one may need to pay for a traffic challan issued to them for violating traffic rules of the Motor Vehicles Act, 1988, or for not following them at all. Some of the violations typically include not wearing a helmet, driving without a valid license, over speeding the vehicle, not following signal lights, etc.
+            ABDKS Solutions Private Ltd. offers a quick and secure solution to
+            settle your traffic challans online. Whether you've received an
+            e-challan for overspeeding, signal jumping, or other violations —
+            our platform helps you pay your traffic fines instantly, from
+            anywhere, without the need to visit a traffic office.
+          </p>
+          <p>
+            Our goal is to make digital traffic fine payments simple,
+            transparent, and hassle-free for every citizen and local retailer.
           </p>
         </>
       ),
     },
     {
-      title: 'What is eChallan Payment?',
-      body: (
-        <>
-          <p>
-            The introduction of eChallan online payment is an initiative taken by the Government of India to ensure the transparency of records and enhance its traffic services. Nowadays, almost every procedure is being digitized, so traffic rules violators can also use the online service to pay for the penalties.
-          </p>
-          <p>
-            The government’s main aim to introduce eChallan payment is to negate the bribing process by eliminating cash transactions and making every record maintained online.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'How is eChallan Generated?',
-      body: (
-        <>
-          <p>
-            The traffic police have the swiping machine that enables them to create a printed eChallan in no time. So, in a situation where they spot a traffic violator, they can make a real-time entry and print the challan against the traffic rule violator’s name.
-          </p>
-          <p>
-            Using these machines makes it easy for the traffic police to collect the fine on the spot. Once the payment is received, the police issue the traffic violator a formal receipt stating the fine payment has been received successfully.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'How to Make eChallan Payment Online Using ABDKS Solutions Private Limited small pvt ltd .?',
-      body: (
-        <>
-          <p>
-            ABDKS Solutions Private Limited small pvt ltd . has introduced its new service for its users to pay challan online in a hassle-free manner. Without worrying about the security and authenticity of the payment, you can easily opt for eChallan Online Payment using ABDKS Solutions Private Limited small pvt ltd . in just a few simple steps.
-          </p>
-          <ol>
-            <li>Login to your ABDKS Solutions Private Limited small pvt ltd . user account.</li>
-            <li>Look for the 'Recharge and Bill Pay' option.</li>
-            <li>Select “Traffic Challan" out of the various services offered.</li>
-            <li>Submit details such as the Traffic police authority of your locality, Challan number, RC number, DL number, etc.</li>
-            <li>The system will automatically fetch your challan amount.</li>
-            <li>Pay using any preferred payment options available at ABDKS Solutions Private Limited small pvt ltd ., such as Debit Card, Credit Card, UPI, Wallet, Net Banking, or ABDKS Solutions Private Limited small pvt ltd . ZIP - Pay Later.</li>
-          </ol>
-          <p>
-            Online challan payment can be done from anywhere: home, office, college, etc., avoiding all the paperwork and formalities with ABDKS Solutions Private Limited small pvt ltd .’s eChallan pay online service.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'FAQs',
+      title: "What Can You Pay?",
       body: (
         <ul>
-          <li>
-            <strong>What can be the challan amount for driving without a valid driving license?</strong><br />
-            The challan amount will depend upon one traffic authority to another. According to the new Motor Vehicle Bill, 2019, you may get a penalty of up to 5000 INR for driving without a valid DL.
-          </li>
-          <li>
-            <strong>By what time do I need to make my traffic challan payment from the date of issue?</strong><br />
-            You must pay for your challan within 15 days after the issue. In case you fail to pay within due time, a late payment fee of INR 10 will be imposed.
-          </li>
+          <li>E-Challans issued by traffic police</li>
+          <li>Speeding fines</li>
+          <li>Red light violations</li>
+          <li>No parking penalties</li>
+          <li>Helmet/seatbelt violations</li>
+          <li>Vehicle document-related fines</li>
+          <li>Road tax-related challans (in supported regions)</li>
         </ul>
+      ),
+    },
+    {
+      title: "Supported States & Traffic Authorities",
+      body: (
+        <ul>
+          <li>Rajasthan (Jaipur, Jodhpur, Udaipur, etc.)</li>
+          <li>Delhi Traffic Police</li>
+          <li>Maharashtra (Mumbai, Pune)</li>
+          <li>Uttar Pradesh</li>
+          <li>Telangana</li>
+          <li>Karnataka</li>
+          <li>Other states via Parivahan portal integration</li>
+          <li>Coverage expands based on traffic department availability.</li>
+        </ul>
+      ),
+    },
+    {
+      title: "How to Settle Traffic Challan with ABDKS",
+      body: (
+        <ol>
+          <li>Visit the Challan Payment section on the ABDKS app or website</li>
+          <li>Enter your vehicle number or challan number</li>
+          <li>The system auto-fetches any pending fines</li>
+          <li>Verify the fine details and amount</li>
+          <li>
+            Make payment using UPI, debit/credit card, wallet, or net banking
+          </li>
+          <li>Receive instant confirmation and digital receipt</li>
+        </ol>
+      ),
+    },
+    {
+      title: "Why Use ABDKS for Challan Payment?",
+      body: (
+        <ul>
+          <li>24x7 Access – Pay fines anytime, from mobile or desktop</li>
+          <li>
+            Secure Transactions – Encrypted payments through RBI-compliant
+            gateways
+          </li>
+          <li>Real-Time Status – Get instant updates after payment</li>
+          <li>
+            Multiple Payment Methods – UPI, cards, wallet, and internet banking
+            supported
+          </li>
+          <li>No Need to Visit Court or Office – Settle from your home or shop</li>
+          <li>Supports Retailer Integration – Agents can offer services</li>
+        </ul>
+      ),
+    },
+    {
+      title: "Benefits for Retailers & Digital Service Points",
+      body: (
+        <ul>
+          <li>Offer traffic fine settlement services at your store or kiosk</li>
+          <li>Help customers resolve challans easily</li>
+          <li>Increase daily footfall and trust</li>
+          <li>Earn small margins or service fees</li>
+          <li>Access transactions via the ABDKS dashboard</li>
+          <li>Get full training and backend support</li>
+        </ul>
+      ),
+    },
+    {
+      title: "Frequently Asked Questions",
+      body: (
+        <Accordion flush>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>
+              Is it safe to pay traffic fines through ABDKS?
+            </Accordion.Header>
+            <Accordion.Body>
+              Yes. All payments are processed securely via official
+              government-authorized channels.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>
+              Can I pay a challan for someone else?
+            </Accordion.Header>
+            <Accordion.Body>
+              Yes, as long as you have their vehicle number or challan number.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="2">
+            <Accordion.Header>
+              Is my payment updated with the government?
+            </Accordion.Header>
+            <Accordion.Body>
+              Yes, the payment is automatically updated on the official traffic
+              police or Parivahan record.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="3">
+            <Accordion.Header>Are there any extra charges?</Accordion.Header>
+            <Accordion.Body>
+              ABDKS does not charge additional service fees for standard challan
+              payments.
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      ),
+    },
+    {
+      title: "Settle Traffic Fines Online – The Smart Way",
+      body: (
+        <>
+          <p>
+            Avoid delays, penalties, or legal issues. Choose ABDKS for
+            hassle-free, secure, and verified traffic challan settlement —
+            available 24x7 for individuals and retailers alike.
+          </p>
+          <div className="d-flex flex-wrap gap-3 mt-4">
+            <Button variant="primary" size="lg">
+              Pay Traffic Challan Now
+            </Button>
+            <Button variant="outline-primary" size="lg">
+              Become a Digital Partner
+            </Button>
+          </div>
+        </>
       ),
     },
   ];
 
   return (
-    <>
+    <div className="container my-4">
       {isMobile ? (
         <Accordion>
           {content.map((item, index) => (
@@ -104,16 +184,20 @@ const FAQeChallanPayments = () => {
           ))}
         </Accordion>
       ) : (
-        <div className='p-5'>
+        <div>
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: '1rem' }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
+            <Card key={index} className="mb-4">
+              <Card.Body>
+                <Card.Title className="h4 mb-3 text-warning-emphasis">
+                  {item.title}
+                </Card.Title>
+                {item.body}
+              </Card.Body>
+            </Card>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

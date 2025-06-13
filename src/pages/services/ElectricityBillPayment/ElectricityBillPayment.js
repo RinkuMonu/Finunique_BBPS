@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import {  Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQElectricityBill from "./FAQElectricityBill";
-
+import "./elebillpay.css";
 const ElectricityBillPayment = () => {
   const [formData, setFormData] = useState({
     operator: "",
@@ -15,27 +15,29 @@ const ElectricityBillPayment = () => {
       [id]: value,
     }));
   };
-
   const isFormValid = formData.operator && formData.consumerNumber;
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5 " style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Ingenious Electricity Bill Settlement</h2>
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
+              Electricity bill payment online- BBPS- Powered, safe, and
+              immediate
+            </h2>
             <h3>
-              Empower your life with the efficient management of electricity
-              bills, ensuring uninterrupted power supply for your world of
-              possibilities.
+              Immediately pay electricity bills across India with the ABDKS
+              reliable BBPS platform that offers real-time updates, zero
+              additional fees, and multi-operator coverage.
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Electricity Bill.svg"
                 alt="electricityv bill"
                 height="300"
-                className="item-center"
+                className="item-center elebillpaySideImg"
               />
             </div>
           </Col>
@@ -46,7 +48,12 @@ const ElectricityBillPayment = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Electricity Bill Payment</h3>
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
+                Electricity Bill Payment
+              </h3>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">

@@ -1,117 +1,196 @@
-import React, { useState, useEffect } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
+import React, { useState, useEffect } from "react";
+import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
-const FAQCableBillPayments = () => {
+const FAQCableBillPayment = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-
     handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const content = [
     {
-      title: 'Quickly and Conveniently Pay Cable Bill Online using ABDKS Solutions Private Limited small pvt ltd .',
+      title: "About Cable TV Bill Payment",
       body: (
         <>
           <p>
-            Most modern homes are equipped with a TV and a cable connection. Cable connections usually require monthly bill payments to ensure seamless connectivity. Companies like Hathway Cable, InCable, Reliance Digital TV, HiFi Vision, and Digi Cable offer services across the country.
+            With ABDKS Solutions Private Ltd., you can now pay your cable TV bills
+            online in just a few simple steps. Whether you're paying for your
+            home connection or helping a customer as a digital service retailer,
+            ABDKS ensures smooth, secure, and real-time bill payments.
           </p>
           <p>
-            Traditionally, paying cable bills involved visiting the cable office or waiting for the operator to collect payments. Now, ABDKS Solutions Private Limited small pvt ltd . has integrated multiple cable operators into its payment portal, simplifying online cable bill payments. With ABDKS Solutions Private Limited small pvt ltd ., you can easily and conveniently pay your cable TV bill online using the app or website.
+            Avoid missed deadlines, late penalties, and long queues — make your
+            cable bill payments digitally with ease.
           </p>
         </>
       ),
     },
     {
-      title: 'Safe and Secure Cable TV Online Payment',
-      body: (
-        <>
-          <p>
-            ABDKS Solutions Private Limited small pvt ltd . is not only easy to use but also a secure method for online cable bill payments. It offers various payment options such as Credit Card, Debit Card, Internet Banking, and ABDKS Solutions Private Limited small pvt ltd . Secure Digital Wallet. You can choose your preferred method to pay the cable bill online.
-          </p>
-          <p>
-            Transactions are processed through secure bank servers and payment gateways, ensuring the highest level of security. Additionally, ABDKS Solutions Private Limited small pvt ltd . maintains user privacy by safeguarding data like email addresses, phone numbers, customer IDs, and banking information, accessible only to the user.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'Explore A Wide Range of Cable TV Packages',
-      body: (
-        <>
-          <p>
-            When paying cable bills online, you can explore the cable packages offered by your operator. For operators offering prepaid services, you can also check for recharge offers. Paying your cable bill via ABDKS Solutions Private Limited small pvt ltd . can earn you cashback in the form of SuperCash.
-          </p>
-          <p>
-            SuperCash is credited to your ABDKS Solutions Private Limited small pvt ltd . wallet and can be used for future transactions. Besides paying bills, you can use SuperCash for online purchases on various E-commerce websites.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'How to Pay Cable Bills Using ABDKS Solutions Private Limited small pvt ltd .',
-      body: (
-        <>
-          <ol>
-            <li>Download & log in to the ABDKS Solutions Private Limited small pvt ltd . app.</li>
-            <li>Select the 'Recharge and Bill Pay' option.</li>
-            <li>Choose 'Cable TV' as the category.</li>
-            <li>Enter your cable operator and account details.</li>
-            <li>Verify the bill amount fetched by the system.</li>
-            <li>Choose your payment method and complete the transaction.</li>
-          </ol>
-        </>
-      ),
-    },
-    {
-      title: 'FAQs',
+      title: "Supported Cable Operators",
       body: (
         <ul>
-          <li>
-            <strong>Is it safe to pay cable bills online using ABDKS Solutions Private Limited small pvt ltd .?</strong><br />
-            Yes, ABDKS Solutions Private Limited small pvt ltd . ensures secure transactions through encrypted gateways and protects user data.
-          </li>
-          <li>
-            <strong>Can I pay for any cable operator?</strong><br />
-            Yes, ABDKS Solutions Private Limited small pvt ltd . supports payments for major operators like Hathway, InCable, Reliance Digital TV, and more.
-          </li>
+          <li>GTPL</li>
+          <li>DEN Networks</li>
+          <li>Hathway</li>
+          <li>Digi Cable</li>
+          <li>Siti Cable</li>
+          <li>InCable</li>
+          <li>Asianet</li>
+          <li>Fastway</li>
+          <li>NXT Digital</li>
+          <li>And more depending on your region</li>
         </ul>
+      ),
+    },
+    {
+      title: "How to Pay Cable Bills via ABDKS",
+      body: (
+        <ol>
+          <li>
+            Go to the Bill Payment section on the ABDKS website or mobile app
+          </li>
+          <li>Select Cable TV or Cable Bill from the service category</li>
+          <li>Choose your Cable Operator from the dropdown list</li>
+          <li>Enter your Subscriber ID / Customer Number</li>
+          <li>The system auto-fetches the current bill amount</li>
+          <li>
+            Complete the payment using UPI, debit/credit card, wallet, or
+            internet banking
+          </li>
+          <li>Get instant confirmation and a digital receipt</li>
+        </ol>
+      ),
+    },
+    {
+      title: "Why Use ABDKS for Cable Bill Payment?",
+      body: (
+        <ul>
+          <li>24x7 Availability – Pay anytime, anywhere</li>
+          <li>
+            All Major Operators Supported – Serve urban and rural connections
+          </li>
+          <li>Instant Confirmation – Real-time payment status updates</li>
+          <li>
+            Secure Payments – Encrypted & RBI-compliant payment infrastructure
+          </li>
+          <li>
+            Mobile-Friendly Platform – Optimized for quick use on mobile devices
+          </li>
+          <li>Multi-Payment Options – UPI, cards, wallet, and net banking</li>
+        </ul>
+      ),
+    },
+    {
+      title: "Benefits for Retailers & CSC Operators",
+      body: (
+        <ul>
+          <li>Provide a valuable service in your local area</li>
+          <li>Earn commissions on each successful cable bill payment</li>
+          <li>Attract more footfall to your digital service point</li>
+          <li>Get a dedicated dashboard with full transaction logs</li>
+          <li>Access 24x7 support from the ABDKS backend team</li>
+        </ul>
+      ),
+    },
+    {
+      title: "Frequently Asked Questions (FAQs)",
+      body: (
+        <Accordion flush>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>
+              Can I pay for any cable operator?
+            </Accordion.Header>
+            <Accordion.Body>
+              Yes, ABDKS supports a wide range of regional and national cable TV
+              providers.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>
+              Is the payment confirmed instantly?
+            </Accordion.Header>
+            <Accordion.Body>
+              Yes. Once paid, the status is updated instantly and a digital
+              receipt is issued.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="2">
+            <Accordion.Header>
+              Are there extra fees for paying a cable bill through ABDKS?
+            </Accordion.Header>
+            <Accordion.Body>
+              No additional charges are applied for standard cable bill
+              payments.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="3">
+            <Accordion.Header>
+              Can I pay for someone else’s cable connection?
+            </Accordion.Header>
+            <Accordion.Body>
+              Yes, just enter their correct Subscriber ID or customer number.
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      ),
+    },
+    {
+      title: "Pay Your Cable TV Bill Without Any Delay",
+      body: (
+        <>
+          <p>
+            Choose ABDKS to simplify your entertainment bill payments — quickly,
+            securely, and without hassle.
+          </p>
+          <div className="d-flex flex-wrap gap-3 mt-4">
+            <Button variant="primary" size="lg">
+              Pay Cable Bill Now
+            </Button>
+            <Button variant="outline-primary" size="lg">
+              Become a Retail Partner
+            </Button>
+          </div>
+        </>
       ),
     },
   ];
 
   return (
-    <>
+    <div className="container my-4">
       {isMobile ? (
-        <Accordion>
+        <Accordion className="mb-4">
           {content.map((item, index) => (
             <Accordion.Item eventKey={index.toString()} key={index}>
               <Accordion.Header>{item.title}</Accordion.Header>
+
               <Accordion.Body>{item.body}</Accordion.Body>
             </Accordion.Item>
           ))}
         </Accordion>
       ) : (
-        <div className='p-5'>
+        <div>
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: '1rem' }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
+            <Card key={index} className="mb-4">
+              <Card.Body>
+                <Card.Title className="h4 mb-3 text-warning-emphasis">
+                  {item.title}
+                </Card.Title>
+                {item.body}
+              </Card.Body>
+            </Card>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 
-export default FAQCableBillPayments;
+export default FAQCableBillPayment;

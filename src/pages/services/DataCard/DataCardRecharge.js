@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Row, Col, Form, Button, Modal } from "react-bootstrap";
 import FAQDataCardRecharge from "./FAQDataCardRecharge";
 import DataCardBrowsePlan from "./DataCardBrowsePlan";
+import "./dataCard.css";
 
 const DataCardRecharge = () => {
   const [showModal, setShowModal] = useState(false);
@@ -46,18 +47,23 @@ const DataCardRecharge = () => {
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Fuel Your Connectivity with Datacard Recharge</h2>
-            <h3>Energize Your Online Experience with Datacard Recharge.</h3>
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
+              Data Card Recharge - Instant, Secure and All Operator Support
+            </h2>
+            <h3>
+              Recharge your data card or internet dongle in seconds with India's
+              reliable platform for BBPS-competent data recharge.
+            </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Datacard .svg"
                 alt="data card"
                 height="300"
-                className="item-center"
+                className="item-center datacardSideImg"
               />
             </div>
           </Col>
@@ -68,7 +74,12 @@ const DataCardRecharge = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Data Card Recharge Online</h3>
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
+                Data Card Recharge Online
+              </h3>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="mobileNumber">
                   <Form.Label>Mobile Number</Form.Label>
@@ -107,7 +118,10 @@ const DataCardRecharge = () => {
 
                 <Form.Group className="mb-3" controlId="operator">
                   <Form.Label>Operator</Form.Label>
-                  <Form.Select value={formData.operator} onChange={handleChange}>
+                  <Form.Select
+                    value={formData.operator}
+                    onChange={handleChange}
+                  >
                     <option value="">Select Operator</option>
                     <option value="Airtel">Airtel</option>
                     <option value="Jio">Jio</option>
@@ -159,20 +173,6 @@ const DataCardRecharge = () => {
       </div>
 
       <FAQDataCardRecharge />
-
-      <Modal show={showModal} onHide={handleModalClose} size="lg" centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Browse Plans</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <DataCardBrowsePlan />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleModalClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </>
   );
 };

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
-import FAQLandline from './FAQLandline';
+import FAQLandline from "./FAQLandline";
+import "./landline.css";
 
 const Landline = () => {
   const [formData, setFormData] = useState({
@@ -20,20 +21,20 @@ const Landline = () => {
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Effortless Landline Bill Settlement</h2>
-            <h3>
-              Streamline Your Communications with Landline Bill Payment.
-            </h3>
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
+              Landline Bill Payment
+            </h2>
+            <h3>Pay Landline Bills Online Quickly & Securely with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Landline .svg"
                 alt="Landline"
                 height="300"
-                className="item-center"
+                className="item-center landlineSideImg"
               />
             </div>
           </Col>
@@ -44,7 +45,12 @@ const Landline = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Online Landline Bill Payment</h3>
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
+                Online Landline Bill Payment
+              </h3>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -79,7 +85,7 @@ const Landline = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#001e50', color: 'white' }}
+                  style={{ backgroundColor: "#001e50", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Confirm

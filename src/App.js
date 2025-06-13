@@ -1,6 +1,6 @@
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Home from "./pages/Home";
@@ -8,29 +8,26 @@ import ContactUs from "./pages/ContactUs";
 import AppLayout from "./components/AppLayout/AppLayout";
 import OurService from "./pages/OurService/OurService.js";
 import WhyUs from "./pages/WhyUs";
-import BillPayUI from '../src/pages/services/BillPayUI.js'
+import BillPayUI from "../src/pages/services/BillPayUI.js";
 import OurPartner from "./pages/OurPartner";
 import BBPS from "./pages/BBPS";
 import Term from "./pages/Term";
-import PrivacyPolicy from './pages/PrivacyPolicy.js';
-import RefundPolicy from './pages/RefundPolicy.js';
-import History from './pages/History/History.js';
-import MyWallet from './pages/My_Wallet/MyWallet.js';
-import ProfileSetting from './pages/ProfileSetting/ProfileSetting.js';
-import PaymentCheck from './pages/My_Wallet/PaymentCheck.js';
-import PaymentMode from './pages/services/PaymentMode/PaymentMode.js';
-import TransferToBank from './pages/services/TransferToBank/TransferToBank.js';
-import RedeemPayback from './pages/services/Redeem/RedeemPayback.js';
-import WalletTransfer from './pages/services/WalletTransfer/WalletTransfer.js';
-import Page404 from './pages/Page404.js';
-import KYC from './pages/Kyc/KYC.js';
-import AadharCard from './pages/Kyc/AadharCard.js';
-import PaymentSuccessPage from './pages/PaymentSuccessPage/PaymentSuccessPage.js';
-import PaymentErrorPage from './pages/PaymentErrorPage/PaymentErrorPage.js';
-import PaymentRecipt from './pages/services/PaymentReciptPage/PaymentRecipt.js';
-
-
-
+import PrivacyPolicy from "./pages/PrivacyPolicy.js";
+import RefundPolicy from "./pages/RefundPolicy.js";
+import History from "./pages/History/History.js";
+import MyWallet from "./pages/My_Wallet/MyWallet.js";
+import ProfileSetting from "./pages/ProfileSetting/ProfileSetting.js";
+import PaymentCheck from "./pages/My_Wallet/PaymentCheck.js";
+import PaymentMode from "./pages/services/PaymentMode/PaymentMode.js";
+import TransferToBank from "./pages/services/TransferToBank/TransferToBank.js";
+import RedeemPayback from "./pages/services/Redeem/RedeemPayback.js";
+import WalletTransfer from "./pages/services/WalletTransfer/WalletTransfer.js";
+import Page404 from "./pages/Page404.js";
+import KYC from "./pages/Kyc/KYC.js";
+import AadharCard from "./pages/Kyc/AadharCard.js";
+import PaymentSuccessPage from "./pages/PaymentSuccessPage/PaymentSuccessPage.js";
+import PaymentErrorPage from "./pages/PaymentErrorPage/PaymentErrorPage.js";
+import PaymentRecipt from "./pages/services/PaymentReciptPage/PaymentRecipt.js";
 
 function App() {
   const router = createBrowserRouter([
@@ -84,7 +81,7 @@ function App() {
         },
         {
           path: "/paymentmode",
-          element: <PaymentMode />, 
+          element: <PaymentMode />,
         },
         {
           path: "/transfer-to-bank",
@@ -126,19 +123,18 @@ function App() {
           path: "/aadhar",
           element: <AadharCard />,
         },
-         {
+        {
           path: "/success",
-          element:<PaymentSuccessPage/>
-         },
-         {
+          element: <PaymentSuccessPage />,
+        },
+        {
           path: "/failure",
-          element: <PaymentErrorPage/>
-         },
-         {
-          path:"/receipt",
-          element:<PaymentRecipt/>
-         }
-       
+          element: <PaymentErrorPage />,
+        },
+        {
+          path: "/receipt",
+          element: <PaymentRecipt />,
+        },
       ],
     },
   ]);

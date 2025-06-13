@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import {  Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQInsurancePayment from "./FAQInsurancePayment";
+import "./Insurancee.css";
 
 const Insurance = () => {
   const [formData, setFormData] = useState({
@@ -26,23 +27,20 @@ const Insurance = () => {
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>
-              Secure Pay: Your Convenient Insurance Payment Solution
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
+              Insurance Payment Solution
             </h2>
-            <h3>
-              Secure your peace of mind through easy and timely insurance
-              payments, ensuring your financial protection remains intact.
-            </h3>
+            <h3>Pay Your Insurance Premiums Securely and On Time with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Insurance.svg"
                 alt="insurance"
                 height="300"
-                className="item-center"
+                className="item-center InsuranceeSideImg"
               />
             </div>
           </Col>
@@ -53,7 +51,12 @@ const Insurance = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Insurance Premium Payment Online</h3>
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
+                Insurance Premium Payment Online
+              </h3>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -107,7 +110,7 @@ const Insurance = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#001e50', color: 'white' }}
+                  style={{ backgroundColor: "#001e50", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Confirm

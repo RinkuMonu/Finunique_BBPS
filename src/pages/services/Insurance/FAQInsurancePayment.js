@@ -1,33 +1,107 @@
 import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const FAQInsurancePayment = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); 
+      setIsMobile(window.innerWidth <= 768);
     };
-
-    handleResize(); 
+    handleResize();
     window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const content = [
     {
-      title: 'About Insurance Premium Payment',
+      title: 'One Platform for All Your Insurance Payment Needs',
       body: (
         <>
           <p>
-            Insurance is just like a safety cushion that people avail for themselves in times of emergency. The insurance policy serves as a legal contract between the insurer and you. Premium payments are one of the conditions you need to follow to get the benefits you are promised in the insurance policy. The date and the frequency of the insurance premium payment are determined at the time of policy purchase.
+            <strong>ABDKS Solutions Private Ltd.</strong> offers a fast, reliable, and secure solution to pay your insurance premiums online.
+            Whether you’re paying for life, health, or vehicle insurance, our platform is designed to help you make payments effortlessly — with instant confirmation and support for leading insurers in India.
           </p>
-          <p>
-            ABDKS Solutions Private Limited provides an easy approach for making the insurance premium payment online via the website and application. The user interface is simple and accessible to an ordinary user. You can pay for different insurance providers like ICICI Prudential, Tata AIA, and Birla Sun Life Insurance. Using the ABDKS Solutions Private Limited application enables you to make the online insurance payment of premiums from the place and time of your convenience. You can make the payment without paying any extra costs.
-          </p>
+        </>
+      ),
+    },
+    {
+      title: 'Types of Insurance Supported',
+      body: (
+        <ul>
+          <li>Life Insurance</li>
+          <li>Health Insurance</li>
+          <li>Motor Insurance (Car/Bike)</li>
+          <li>Travel Insurance</li>
+          <li>Home & Property Insurance</li>
+        </ul>
+      ),
+    },
+    {
+      title: 'Insurance Providers Supported',
+      body: (
+        <ul>
+          <li>LIC (Life Insurance Corporation of India)</li>
+          <li>ICICI Prudential</li>
+          <li>HDFC Life</li>
+          <li>SBI Life Insurance</li>
+          <li>Max Life</li>
+          <li>Kotak Life Insurance</li>
+          <li>Reliance General Insurance</li>
+          <li>Star Health Insurance</li>
+          <li>Bajaj Allianz</li>
+          <li>Future Generali</li>
+          <li>And many more</li>
+        </ul>
+      ),
+    },
+    {
+      title: 'How to Pay Insurance Premiums Online with ABDKS',
+      body: (
+        <ol>
+          <li>Go to the Bill Payment section on the ABDKS app or website</li>
+          <li>Select Insurance as the bill category</li>
+          <li>Choose your insurance provider from the list</li>
+          <li>Enter your policy number or customer ID</li>
+          <li>The system will auto-fetch your premium details</li>
+          <li>Confirm the amount and complete the payment via UPI, card, wallet, or net banking</li>
+          <li>Receive instant payment confirmation and digital receipt</li>
+        </ol>
+      ),
+    },
+    {
+      title: 'Key Features',
+      body: (
+        <ul>
+          <li>24x7 Payment Availability – Pay anytime, even during non-banking hours</li>
+          <li>Instant Policy Updates – No delays in premium acknowledgment</li>
+          <li>Safe & Encrypted – RBI-authorized, secure payment gateways</li>
+          <li>Multi-Channel Payments – UPI, debit/credit card, wallet, net banking supported</li>
+          <li>Wide Insurer Network – Covers all major insurance providers</li>
+          <li>User-Friendly Interface – Easy to use for both individual users and retailers</li>
+        </ul>
+      ),
+    },
+    {
+      title: 'Benefits for Retailers & Digital Service Centers',
+      body: (
+        <ul>
+          <li>Attract more customers with value-added services</li>
+          <li>Earn commissions on every insurance premium paid</li>
+          <li>Support your community by simplifying policy renewals</li>
+          <li>Get full transaction tracking and real-time reporting</li>
+          <li>Expand your fintech service portfolio with zero investment</li>
+        </ul>
+      ),
+    },
+    {
+      title: 'About Insurance Premium Payment',
+      body: (
+        <>
+          <p>Insurance is just like a safety cushion that people avail for themselves in times of emergency...</p>
+          <p>ABDKS Solutions Private Limited provides an easy approach for making the insurance premium payment online via the website and application...</p>
         </>
       ),
     },
@@ -35,64 +109,90 @@ const FAQInsurancePayment = () => {
       title: 'How to Pay Life Insurance Premiums Online?',
       body: (
         <>
-          <p>
-            Using ABDKS Solutions Private Limited to make a life insurance online payment is fairly simple. You do not need to sign up every time you use the ABDKS Solutions Private Limited App or Website. Instead, follow the simple steps listed below, and you are done!
-          </p>
+          <p>Using ABDKS Solutions Private Limited to make a life insurance online payment is fairly simple...</p>
           <ol>
             <li>Download the ABDKS Solutions Private Limited App.</li>
             <li>Click on 'Recharge/ Bill Pay' option on the home page.</li>
-            <li>Now select 'Insurance' from the available options.</li>
+            <li>Select 'Insurance' from the available options.</li>
             <li>Select your insurance premium operator.</li>
             <li>Enter your policy number.</li>
-            <li>Enter your date of birth and proceed with the payment option.</li>
-            <li>You will get your premium details.</li>
-            <li>Click on the 'Make Payment' to conclude the procedure.</li>
+            <li>Enter your date of birth and proceed.</li>
+            <li>Get your premium details.</li>
+            <li>Click on 'Make Payment' to finish.</li>
           </ol>
         </>
       ),
     },
     {
-      title: 'Get Cashback Offers on Online Insurance Premium Payments On ABDKS Solutions Private Limited',
+      title: 'Get Cashback Offers on Online Insurance Premium Payments',
       body: (
-        <>
-          <p>
-            ABDKS Solutions Private Limited knows how to take care of its customers and seeks to reward you every time you use the app. For this, you get various offers such as cashback or discounts on each payment. To grab the insurance premium payment offers, you need to initiate the payment process using ABDKS Solutions Private Limited After selecting the preferred payment mode, you will have to provide your promo code. Next, make the payment to avail of the rewards. You can also go to 'Offers' to check out the latest insurance premium payment offers and deals.
-          </p>
-        </>
+        <p>ABDKS Solutions Private Limited knows how to take care of its customers and rewards you every time you use the app...</p>
       ),
     },
     {
       title: 'Make Your Life Insurance Premium Payment Online Securely',
       body: (
+        <p>All payments made using the ABDKS App or website vow full security. You do not have to disclose any private information...</p>
+      ),
+    },
+    {
+      title: 'The Flexibility Offered at ABDKS',
+      body: (
         <>
-          <p>
-            All the payments made using the ABDKS Solutions Private Limited App or website vow full security. You do not have to disclose any private information about yourself to ABDKS Solutions Private Limited The password will protect the basic transaction information, and you are advised not to share it with anyone.
-          </p>
+          <p>ABDKS offers complete flexibility in the modes you wish to make the payment:</p>
+          <ul>
+            <li>Payments using credit/debit cards (no CVV storage).</li>
+            <li>Net banking or direct transactions.</li>
+            <li>UPI ID-based payments.</li>
+            <li>ABDKS ZIP option for quick payments in a cash crunch.</li>
+          </ul>
         </>
       ),
     },
     {
-      title: 'The Flexibility Offered at the ABDKS Solutions Private Limited',
+      title: 'Frequently Asked Questions (FAQs)',
+      body: (
+        <Accordion flush>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>Can I pay premiums for LIC and private insurers?</Accordion.Header>
+            <Accordion.Body>Yes, both are supported.</Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>How fast is the payment processed?</Accordion.Header>
+            <Accordion.Body>Instantly and updated in real-time.</Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="2">
+            <Accordion.Header>Can I pay for another person’s insurance?</Accordion.Header>
+            <Accordion.Body>Yes, just use the correct policy number.</Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="3">
+            <Accordion.Header>Are there extra charges?</Accordion.Header>
+            <Accordion.Body>No extra service fees for standard payments.</Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      ),
+    },
+    {
+      title: 'Pay Insurance Premiums Easily with ABDKS',
       body: (
         <>
           <p>
-            ABDKS Solutions Private Limited offers complete flexibility in the modes they wish to make the payment. Some of the flexible methods are listed down:
+            Never miss a renewal again. Whether you're paying for yourself or assisting customers,
+            ABDKS makes insurance payments smooth, secure, and on time.
           </p>
-          <ul>
-            <li>You can directly make the payments using your credit card or debit card. ABDKS Solutions Private Limited does not store your CVV number, so no one without your knowledge will be able to use your credentials to make payments.</li>
-            <li>Net banking or direct transactions are also possible with the ABDKS Solutions Private Limited App or Website.</li>
-            <li>Payments via UPI ID are also simple and easy to make through the ABDKS Solutions Private Limited Platform.</li>
-            <li>Choose ABDKS Solutions Private Limited ZIP in case of cash crunch to make instant payments.</li>
-          </ul>
+          <div className="d-flex flex-wrap gap-3 mt-4">
+            <Button variant="primary" size="lg">Pay Insurance Now</Button>
+            <Button variant="outline-primary" size="lg">Become a Service Partner</Button>
+          </div>
         </>
       ),
     },
   ];
 
   return (
-    <>
+    <div className="container my-4">
       {isMobile ? (
-        <Accordion>
+        <Accordion className="mb-4">
           {content.map((item, index) => (
             <Accordion.Item eventKey={index.toString()} key={index}>
               <Accordion.Header>{item.title}</Accordion.Header>
@@ -101,16 +201,18 @@ const FAQInsurancePayment = () => {
           ))}
         </Accordion>
       ) : (
-        <div className='p-5'>
+        <div>
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: '1rem' }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
+            <Card key={index} className="mb-4">
+              <Card.Body>
+                <Card.Title className="h4 mb-3 text-warning-emphasis">{item.title}</Card.Title>
+                {item.body}
+              </Card.Body>
+            </Card>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

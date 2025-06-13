@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 const FAQBroadbandBillPayment = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -19,137 +21,126 @@ const FAQBroadbandBillPayment = () => {
 
   const content = [
     {
-      title: "About Broadband Bill Payment",
+      title: "Pay Your Broadband Bill Online with Ease",
       body: (
         <>
           <p>
-            ABDKS Solutions Private Limited introduces new service to their consumers
-            to pay their broadband bills online. Now there is no need to stand
-            in the long queue to pay their broadband bills for hours. ABDKS Solutions Private Limited
-            allows their consumers to pay BSNL Broadband, Tikona, Airtel
-            Broadband, Act Broadband, Hathway Broadband, MTNL Delhi Broadband,
-            MTNL Mumbai Broadband, Tata TeleServices (CDMA), Reliance
-            Communications, Connect Broadband bills online. Pay broadband bills
-            online using multiple payment options such as your debit cards,
-            credit cards, or net banking.
+            Stay connected without interruption. ABDKS Solutions Private Ltd. offers a secure and seamless platform to pay your broadband bills online — anytime, anywhere. Whether you're managing your home Wi-Fi or offering bill payment services at a retail shop, ABDKS ensures smooth transactions with instant confirmations.
+          </p>
+          <p><strong>Broadband bill payment</strong><br />
+            Fast, safe and convenient internet bill payment with ABDKS<br />
+            Easily pay your broadband bill online<br />
+            Stay connected without hindrance. ABDKS Solutions offers a safe and spontaneous platform to pay your broadband bills online - anytime, anywhere. Whether you are managing your home Wi-Fi or offering bill payment services at a retail shop, ABDKS ensures smooth transactions with immediate confirmation.
           </p>
         </>
       ),
     },
     {
-      title: "How to Recharge Broadband Bill, Instant & Safe!",
+      title: "Supported Broadband Service Providers",
       body: (
         <>
-          <p>
-            A user can easily make his/her broadband bill payment online within
-            a few minutes using the ABDKS Solutions Private Limited app or website and avail exciting
-            broadband bill payment offers. To make the broadband payment, a user
-            must follow these simple steps:
-          </p>
+          <p>Our platform supports broadband bill payments for leading providers such as:</p>
+          <ul>
+            <li>Airtel Broadband</li>
+            <li>ACT Fibernet</li>
+            <li>BSNL Broadband</li>
+            <li>JioFiber</li>
+            <li>Hathway</li>
+            <li>Tikona</li>
+            <li>YOU Broadband</li>
+            <li>MTNL</li>
+            <li>Excitel</li>
+            <li>RailWire</li>
+          </ul>
+          <p>Coverage may vary based on region and provider availability.</p>
+        </>
+      ),
+    },
+    {
+      title: "How to Pay a Broadband Bill with ABDKS",
+      body: (
+        <>
           <ol>
-            <li>
-              Click on ‘Broadband’ in the ‘Recharges & Bill Payments’ section on
-              the ABDKS Solutions Private Limited app or website.
-            </li>
-            <li>
-              Select your broadband provider from the ‘Operator’ dropdown menu.
-            </li>
-            <li>
-              Enter your account number/username/landline number (as applicable).
-            </li>
-            <li>
-              Click on ‘Continue’, select a payment mode, and confirm your
-              online broadband bill payment.
-            </li>
+            <li>Go to the bill payment section on ABDKS website or mobile app.</li>
+            <li>Choose broadband as service category.</li>
+            <li>Choose your operator from the list.</li>
+            <li>Enter your account number/user ID.</li>
+            <li>The system automatically receives your current bill details.</li>
+            <li>Confirm the amount and complete the payment using UPI, Debit/Credit Card, Wallet or Internet banking.</li>
+            <li>Get immediate payment confirmation and digital receipt.</li>
           </ol>
         </>
       ),
     },
     {
-      title: "Why Choose ABDKS Solutions Private Limited for Broadband Bill Payment",
+      title: "Key Benefits",
       body: (
         <>
-          <p>
-            ABDKS Solutions Private Limited, the pioneer of online recharges and bill payments, aims
-            to offer a seamless and easy payment process that ensures instant
-            broadband bill payment and also allows users to save on their
-            payments by availing broadband bill payment offers. Following are
-            the key benefits of using ABDKS Solutions Private Limited for broadband online payment:
-          </p>
           <ul>
-            <li>
-              <strong>Instant Payment:</strong> Users only need to follow a few
-              simple steps to pay broadband bills online using the ABDKS Solutions Private Limited app.
-            </li>
-            <li>
-              <strong>Exciting Offers:</strong> Users can avail huge broadband
-              bill payment offers, including cashback and discounts, ensuring
-              consistent savings.
-            </li>
-            <li>
-              <strong>Secure Transactions:</strong> Transactions on ABDKS Solutions Private Limited
-              are completely secure, and user data is never shared with third
-              parties.
-            </li>
+            <li><strong>24x7 Bill Payment</strong> - Recharge or Pay your Internet bill anytime.</li>
+            <li><strong>Real-Time Updates</strong> - Get updates immediately after real-time confirmation.</li>
+            <li><strong>Many Payment Methods</strong> - UPI, card, wallet and net banking supported.</li>
+            <li><strong>All Major ISP Supported</strong> - Manage all broadband bills at one place.</li>
+            <li><strong>Safe and Encrypted Transactions</strong> - Complete compliance with banking security criteria.</li>
+            <li><strong>Customized for Mobile</strong> - Android works easily on iOS and desktop devices.</li>
           </ul>
         </>
       ),
     },
     {
-      title: "Frequently Asked Questions on Broadband Bill Payment",
+      title: "For Retailers and Agents",
       body: (
-        <ul>
-          <li>
-            <strong>How do I pay my broadband bill online?</strong>
-            <br />
-            Users need to follow a few simple steps on the ABDKS Solutions Private Limited app or
-            website to complete their broadband bill payment by clicking on
-            ‘Broadband’ in the ‘Recharges and Bill Payments’ section and
-            populating the necessary details. Various payment modes are
-            available.
-          </li>
-          <li>
-            <strong>
-              How long does it take to process the Broadband Bill Payment?
-            </strong>
-            <br />
-            Payments on ABDKS Solutions Private Limited are instant and easy. Once a user confirms the
-            broadband bill payment, it is instantly reflected in their account.
-            Processing times by different broadband operators may vary.
-          </li>
-          <li>
-            <strong>
-              Does ABDKS Solutions Private Limited support all operators for Broadband Bill Payment?
-            </strong>
-            <br />
-            ABDKS Solutions Private Limited allows users to make online broadband bill payments across
-            a wide range of operators, including ACT Fibernet, Airtel, ASIANET,
-            BSNL, Comway, Connect, DEN, ION, and many more.
-          </li>
-          <li>
-            <strong>
-              What offers and cashback is ABDKS Solutions Private Limited providing for Broadband Bill
-              Payment?
-            </strong>
-            <br />
-            Users can browse through the available broadband bill payment offers
-            while making payments or check out the offer section for ongoing
-            broadband bill offers.
-          </li>
-          <li>
-            <strong>How can I check my broadband bill?</strong>
-            <br />
-            By selecting the ‘Broadband Bill Payment’ option on ABDKS Solutions Private Limited and
-            providing the necessary details, users can check their broadband
-            bills.
-          </li>
-        </ul>
+        <>
+          <p>Add broadband bill payment services to your current setup:</p>
+          <ul>
+            <li>Attract digital customers in your area</li>
+            <li>Offer bill payment for homes, offices and hostels</li>
+            <li>No technical skill is necessary</li>
+            <li>Earn commission on every transaction</li>
+            <li>Real-time support from our Jaipur-based team</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: "Frequently Asked Questions",
+      body: (
+        <Accordion flush>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>How quickly is the broadband bill paid?</Accordion.Header>
+            <Accordion.Body>Most payments are completed in real-time with instant status confirmation.</Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Which broadband providers are supported?</Accordion.Header>
+            <Accordion.Body>ABDKS supports Airtel, BSNL, JioFiber, ACT, Hathway, Tikona, and more.</Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="2">
+            <Accordion.Header>Can I pay broadband bills for others?</Accordion.Header>
+            <Accordion.Body>Yes, you can pay bills for any broadband account using valid details.</Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="3">
+            <Accordion.Header>Are there extra charges?</Accordion.Header>
+            <Accordion.Body>No additional transaction fees are charged for bill payments on ABDKS.</Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      ),
+    },
+    {
+      title: "Never Miss a Broadband Due Date Again",
+      body: (
+        <>
+          <p>Whether you're a user or a digital service provider, ABDKS helps you stay connected with fast, secure broadband bill payments — all in one place.</p>
+          <div className="d-flex flex-wrap gap-3 mt-4">
+            <Button variant="primary" size="lg">Pay Now</Button>
+            <Button variant="outline-primary" size="lg">Join as a Partner</Button>
+          </div>
+        </>
       ),
     },
   ];
 
   return (
-    <>
+    <div className="container my-4">
       {isMobile ? (
         <Accordion>
           {content.map((item, index) => (
@@ -160,16 +151,18 @@ const FAQBroadbandBillPayment = () => {
           ))}
         </Accordion>
       ) : (
-        <div className="p-5">
+        <div>
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: "1rem" }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
+            <Card key={index} className="mb-4">
+              <Card.Body>
+                <Card.Title className="h4 mb-3 text-warning-emphasis">{item.title}</Card.Title>
+                {item.body}
+              </Card.Body>
+            </Card>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

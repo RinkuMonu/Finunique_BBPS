@@ -1,42 +1,50 @@
-import React from 'react';
-import {  Row, Col,} from "react-bootstrap";
-import FAQeChallanPayments from './FAQeChallanPayments';
-import ShimmerUI from '../../ShimmerUI/ShimmerUI';
+import React, { useState } from "react";
+import { Row, Col, Form } from "react-bootstrap";
+import FAQeChallanPayments from "./FAQeChallanPayments";
+import ShimmerUI from "../../ShimmerUI/ShimmerUI";
 
 const TrafficChallan = () => {
-  // const [formData, setFormData] = useState({
-  //   operator: "Asianet Digital",
-  //   subscriberCode: "",
-  // });
+  const [formData, setFormData] = useState({
+    operator: "Asianet Digital",
+    subscriberCode: "",
+  });
 
-  // const handleChange = (e) => {
-  //   const { id, value } = e.target;
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     [id]: value,
-  //   }));
-  // };
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
 
-  // const isFormValid = formData.operator && formData.subscriberCode.trim();
+  const isFormValid = formData.operator && formData.subscriberCode.trim();
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (isFormValid) {
-  //     console.log("Form submitted:", formData);
-  //     // Add your form submission logic here
-  //   }
-  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isFormValid) {
+      console.log("Form submitted:", formData);
+      // Add your form submission logic here
+    }
+  };
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Hassle-free Traffic Ticket Settlement</h2>
-            <h3>
-              Navigate the fines and penalties seamlessly with online traffic challan payment.
-            </h3>
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
+              Pay Traffic Challans Online Safely and Instantly with ABDKS
+            </h2>
+            <h3>Clear Traffic Fines in Just a Few Clicks</h3>
+            <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="/assets/Gas Bill Solution.svg"
+                alt="piped gas"
+                height="300"
+                className="item-center pipegasSideImg"
+              />
+            </div>
           </Col>
 
           {/* Right Side Form */}
@@ -45,8 +53,13 @@ const TrafficChallan = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Online Traffic Challan Payment</h3>
-              {/* <Form onSubmit={handleSubmit}>
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
+                Online Traffic Challan Payment
+              </h3>
+              <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <Form.Label>Operator</Form.Label>
                   <Form.Select
@@ -68,17 +81,17 @@ const TrafficChallan = () => {
                   />
                 </Form.Group>
 
-                <Button
+                <button
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#664A86', color: 'white' }}
+                  style={{ backgroundColor: "#664A86", color: "white" }}
                   disabled={!isFormValid} // Disable button if form is not valid
                 >
                   Confirm
-                </Button>
-              </Form> */}
-              <ShimmerUI/>
+                </button>
+              </Form>
+              <ShimmerUI />
             </div>
           </Col>
         </Row>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import {  Row, Col, Form, Button } from "react-bootstrap";
-import FAQLoanEMIPayments from './FAQLoanEMIPayments';
+import React, { useState } from "react";
+import { Row, Col, Form, Button } from "react-bootstrap";
+import FAQLoanEMIPayments from "./FAQLoanEMIPayments";
 
 const Emi = () => {
   const [formData, setFormData] = useState({
@@ -28,15 +28,15 @@ const Emi = () => {
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Seamless online EMI payments.</h2>
-            <h3>
-              Streamline your financial commitments with effortless online loan
-              EMI payments.
-            </h3>
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
+              Pay Your Loan EMIs Online Quickly, Securely & Hassle-Free with
+              ABDKS
+            </h2>
+            <h3>One Platform to Manage All Your EMI Payments</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/EMI payments.svg"
@@ -53,7 +53,12 @@ const Emi = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Loan EMI Payment Online</h3>
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
+                Loan EMI Payment Online
+              </h3>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -87,8 +92,8 @@ const Emi = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#001e50', color: 'white' }}
-                  disabled={!isFormValid} 
+                  style={{ backgroundColor: "#001e50", color: "white" }}
+                  disabled={!isFormValid}
                 >
                   Confirm
                 </Button>

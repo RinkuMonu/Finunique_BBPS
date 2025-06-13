@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
-import FAQGooglePlayPayments from './FAQGooglePlayPayments';
+import FAQGooglePlayPayments from "./FAQGooglePlayPayments";
 
 const GooglePlay = () => {
   const [formData, setFormData] = useState({
-    amount: ""
+    amount: "",
   });
 
   const handleChange = (e) => {
@@ -15,18 +15,22 @@ const GooglePlay = () => {
     }));
   };
 
-  const isFormValid = formData.amount && !isNaN(formData.amount) && formData.amount >= 10 && formData.amount <= 5000;
+  const isFormValid =
+    formData.amount &&
+    !isNaN(formData.amount) &&
+    formData.amount >= 10 &&
+    formData.amount <= 5000;
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Effortless Google Play Recharge</h2>
-            <h3>
-              Empower your digital entertainment with seamless Google Play recharge.
-            </h3>
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
+              Instant Google Play Top-Up with ABDKS – Fast, Reliable & 24x7
+            </h2>
+            <h3>Recharge Your Google Play Balance Anytime, Anywhere</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Google Play Recharge.svg"
@@ -43,7 +47,12 @@ const GooglePlay = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Online Google Play Recharge</h3>
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
+                Online Google Play Recharge
+              </h3>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <Form.Label>Operator</Form.Label>
@@ -66,7 +75,7 @@ const GooglePlay = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#001e50', color: 'white' }}
+                  style={{ backgroundColor: "#001e50", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Confirm

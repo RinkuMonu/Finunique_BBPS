@@ -20,17 +20,14 @@ const Cable = () => {
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>
-              Cable Bill Ease: Simplify Your Viewing Experience.
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
+              Pay Your Cable TV Bills Online with ABDKS – Quick, Secure & Hassle-Free
             </h2>
-            <h3>
-              Streamline your entertainment with easy cable bill payments,
-              ensuring endless viewing pleasure.
-            </h3>
+            <h3>Simplifying Cable TV Payments for Every Household</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/cable bill.svg"
@@ -47,7 +44,12 @@ const Cable = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Online Cable Bill Payment</h3>
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
+                Online Cable Bill Payment
+              </h3>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -77,7 +79,7 @@ const Cable = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#001e50', color: 'white' }}
+                  style={{ backgroundColor: "#001e50", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Confirm

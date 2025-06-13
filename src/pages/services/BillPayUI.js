@@ -135,15 +135,10 @@ const BillPayUI = () => {
 
   return (
     <>
-      <nav className="py-4 bg-light border-bottom" style={{marginTop:"95px"}}>
-          {/* <div className="d-flex justify-content-end">
-          <img
-                height={40}
-                src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
-                alt="BBPS logo"
-                className="mt-1"
-              />
-          </div> */}
+      <nav
+        className="py-4 bg-light border-bottom"
+        style={{ marginTop: "95px" }}
+      >
         <Container>
           <Row className="text-center">
             {menuItems.map((item) => (
@@ -160,9 +155,10 @@ const BillPayUI = () => {
                 >
                   <div
                     style={{
-
-                      color: activeMenu === item.name ? "var(--themeht-primary-color)" : "var(--themeht-primary-color)",
-
+                      color:
+                        activeMenu === item.name
+                          ? "var(--themeht-primary-color)"
+                          : "var(--themeht-primary-color)",
                     }}
                   >
                     {item.icon}
@@ -170,8 +166,10 @@ const BillPayUI = () => {
                   <p
                     className="mb-0"
                     style={{
-
-                      color: activeMenu === item.name ? "var(--themeht-primary-color)" : "var(--themeht-primary-color)",
+                      color:
+                        activeMenu === item.name
+                          ? "var(--themeht-primary-color)"
+                          : "var(--themeht-primary-color)",
                       fontWeight: activeMenu === item.name ? "bold" : "bold",
                       position: "relative",
                       display: "inline-block",
@@ -183,9 +181,9 @@ const BillPayUI = () => {
                         style={{
                           position: "absolute",
                           bottom: "-5px",
-                          left: "0",
-                          right: "0",
-                          height: "4px",
+                          lefht: "0",
+                          heit: "0",
+                          rigght: "4px",
                           backgroundColor: "var(--themeht-primary-color)",
 
                           borderRadius: "20px",
@@ -197,19 +195,17 @@ const BillPayUI = () => {
               </Col>
             ))}
             <Col xs="auto">
-            
-        <img
-          height={40}
-          src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
-          alt="BBPS logo"
-          className="mt-1"
-        />
-      </Col>
+              <img
+                height={40}
+                src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+                alt="BBPS logo"
+                className="mt-1"
+              />
+            </Col>
           </Row>
         </Container>
-        
       </nav>
-              
+
       <div>
         {activeMenu === "Mobile" && <MobileRechargeUI />}
         {activeMenu === "DTH" && <DTHRecharge />}
@@ -228,7 +224,6 @@ const BillPayUI = () => {
         {activeMenu === "Challan" && <TrafficChallan />}
         {activeMenu === "Housing" && <HousingBillPayment />}
         {activeMenu === "LPG Booking" && <LpgBooking />}
-      
       </div>
       <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Body>
@@ -243,10 +238,15 @@ const BillPayUI = () => {
                   onClick={() => handleMoreItemClick(item.name)}
                   style={{ cursor: "pointer" }}
                 >
-                  <div className="icon" style={{ fontSize: "24px",color:"#ffb300" }}>
+                  <div
+                    className="icon"
+                    style={{ fontSize: "24px", color: "#ffb300" }}
+                  >
                     {item.icon}
                   </div>
-                  <p className="mb-0" style={{color:"#ffb300"}}>{item.name}</p>
+                  <p className="mb-0" style={{ color: "#ffb300" }}>
+                    {item.name}
+                  </p>
                 </Col>
               ))}
             </Row>

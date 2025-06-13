@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useState } from 'react';
-import {  Row, Col, Form, Button } from "react-bootstrap";
-import FAQWaterBillPayment from './FAQWaterBillPayment';
+import React, { useState } from "react";
+import { Row, Col, Form, Button } from "react-bootstrap";
+import FAQWaterBillPayment from "./FAQWaterBillPayment";
 
 const Water = () => {
   const [formData, setFormData] = useState({
@@ -21,14 +21,14 @@ const Water = () => {
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Online Water Bill Simplified</h2>
-            <h3>
-              Simplify your life with effortless online water bill payments, ensuring a continuous flow of convenience at your fingertips.
-            </h3>
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
+             Pay your water bills online-safe, fast and discomfort free-
+            </h2>
+            <h3>Simplified Water Bill Payments Across India</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Water Bill.svg"
@@ -45,7 +45,12 @@ const Water = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#001e50",fontWeight:"bold"}}>Online Water Bill Payment</h3>
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
+                Online Water Bill Payment
+              </h3>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -80,7 +85,7 @@ const Water = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#001e50', color: 'white' }}
+                  style={{ backgroundColor: "#001e50", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Confirm
