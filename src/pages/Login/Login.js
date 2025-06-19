@@ -5,13 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login, verifyOtp } from "../../Features/Auth/authSlice";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import loginimg from "../../Assets/images/login.png";
 
 const Login = ({ closePopup }) => {
-  const [flipState, setFlipState] = useState("signup");
+  const [flipState, setFlipState] = useState("login"); // default is login
   const [mobileNumber, setMobileNumber] = useState("");
   const [otp, setOtp] = useState("");
-  // const [otpMessage, setOtpMessage] = useState("");
   const [isValid, setIsValid] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
   const [isCheckboxValid, setIsCheckboxValid] = useState(true);
@@ -42,7 +40,7 @@ const Login = ({ closePopup }) => {
     setOtp(e.target.value);
   };
 
-  const handleSubmitSignUp = async (e) => {
+  const handleSubmitLogin = async (e) => {
     e.preventDefault();
     setErrorMessage("");
 
@@ -58,42 +56,39 @@ const Login = ({ closePopup }) => {
     }
 
     setIsCheckboxValid(true);
-    setIsLoading(true); // Start loader
+    setIsLoading(true);
 
     try {
       const response = await dispatch(login(mobileNumber)).unwrap();
       console.log("Login Success:", response);
 
       if (response.message === "OTP sent successfully") {
-        setFlipState("otp");
+        // Stay on same card, just show OTP input
+        setFlipState("login");
       }
     } catch (error) {
       console.error("Login failed:", error);
       setErrorMessage(error || "Something went wrong!");
     } finally {
-      setIsLoading(false); // Stop loader
+      setIsLoading(false);
     }
   };
 
   const handleSubmitOTP = async (e) => {
     e.preventDefault();
 
-    if (!otp) {
-      setErrorMessage("Please enter your OTP");
-      return;
-    }
-
-    if (otp.length !== 6) {
+    if (!otp || otp.length !== 6) {
       setErrorMessage("Please enter a valid 6-digit OTP");
       return;
     }
+
     setIsLoading(true);
     try {
       const response = await dispatch(
         verifyOtp({ mobileNumber, otp })
       ).unwrap();
-      console.log("OTP Verified:", response);
 
+      console.log("OTP Verified:", response);
       setShowPopup(true);
       setTimeout(() => {
         setShowPopup(false);
@@ -108,224 +103,124 @@ const Login = ({ closePopup }) => {
     }
   };
 
-  const handleBackToSignUp = () => {
-    setFlipState("signup");
-  };
   return (
     <>
       <div
         className="login-form-wrapper"
-        style={{
-          backgroundColor: "#EFF8FF",
-          borderRadius: "0px",
-        }}
+        style={{ backgroundColor: "#EFF8FF", borderRadius: "0px" }}
       >
-        <div className="container">
+        <div className="container mt-5">
           <div className="row main-section">
-            <div className="position-absolute bgImage  d-none d-md-block">
+            <div className="position-absolute bgImage d-none d-md-block">
               <img src="/assets/Home/login-pattern.png" alt="login-pattern" />
             </div>
             <div
               className="col-md-6 bg-img d-none d-md-block my-3"
               style={{ borderRadius: "30px 0px 0px 30px", zIndex: "2" }}
             ></div>
+
             <div className="col-md-6 my-3 padding-md">
               <div className="form-container">
-                <ReactCardFlip
-                  isFlipped={flipState !== "signup"}
-                  flipDirection="horizontal"
-                >
-                  {/* Front Side - Sign Up */}
-                  <div className="form-box login-Heading d-flex flex-column h-100">
-                    <h2>Login</h2>
-                    <form
-                      className="row g-3 needs-validation"
-                      noValidate
-                      onSubmit={handleSubmitSignUp}
-                    >
-                      <div className="mb-3">
-                        <label htmlFor="mobileNumber" className="form-label">
-                          Enter Mobile Number
-                        </label>
-                        <input
-                          type="number"
-                          className={`form-control ${
-                            isValid ? "" : "is-invalid"
-                          }`}
-                          id="mobileNumber"
-                          value={mobileNumber}
-                          onChange={handleMobileChange}
-                          placeholder="Enter Mobile Number"
-                          required
-                        />
-                        {!isValid && (
-                          <div className="invalid-feedback">{errorMessage}</div>
-                        )}
-                      </div>
-
-                      <div className="form-check">
-                        <input
-                          className={`form-check-input ${
-                            isCheckboxValid ? "" : "is-invalid"
-                          }`}
-                          type="checkbox"
-                          id="flexCheckChecked"
-                          checked={isChecked}
-                          onChange={handleCheckboxChange}
-                        />
-                        <label
-                          className="form-check-label ms-1"
-                          htmlFor="flexCheckChecked"
-                        >
-                          I agree to the{" "}
-                          <Link to={"/term"}>Terms & Conditions</Link>
-                        </label>
-                      </div>
-
-                      <button
-                        className="btn OtpBtn px-0"
-                        type="submit"
-                        disabled={isLoading}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        {isLoading ? (
-                          <DotLottieReact
-                            src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
-                            autoplay
-                            loop
-                            style={{ width: 30, height: 30 }}
-                          />
-                        ) : (
-                          "Get OTP"
-                        )}
-                      </button>
-                      {isLoading && (
-                        <p className="text-success mt-2">OTP sending...</p>
+                <div className="form-box login-Heading d-flex flex-column h-100">
+                  <h2>Welcome back!</h2>
+                  <form
+                    className="row g-3 needs-validation"
+                    noValidate
+                    onSubmit={handleSubmitLogin}
+                  >
+                    <div className="mb-3">
+                      <label htmlFor="mobileNumber" className="form-label">
+                        Enter Mobile Number
+                      </label>
+                      <input
+                        type="number"
+                        className={`form-control ${
+                          isValid ? "" : "is-invalid"
+                        }`}
+                        id="mobileNumber"
+                        value={mobileNumber}
+                        onChange={handleMobileChange}
+                        placeholder="Enter Mobile Number"
+                        required
+                      />
+                      {!isValid && (
+                        <div className="invalid-feedback">{errorMessage}</div>
                       )}
-                    </form>
-                    <hr style={{ margin: "100px 0 10px" }} />
-                    <div className="already-account mt-auto">
-                      <h3>
-                        Already have a ABDKS Solutions Private Limited small pvt
-                        ltd . Wallet?
-                      </h3>
-                      <button
-                        className="btn border-0 bg-white px-0"
-                        onClick={() => setFlipState("login")}
-                      >
-                        Login
-                      </button>
                     </div>
+
+                    <div className="form-check">
+                      <input
+                        className={`form-check-input ${
+                          isCheckboxValid ? "" : "is-invalid"
+                        }`}
+                        type="checkbox"
+                        id="flexCheckChecked"
+                        checked={isChecked}
+                        onChange={handleCheckboxChange}
+                      />
+                      <label
+                        className="form-check-label ms-1"
+                        htmlFor="flexCheckChecked"
+                      >
+                        I agree to the{" "}
+                        <Link to={"/term"}>Terms & Conditions</Link>
+                      </label>
+                    </div>
+
+                    <div className="mb-3">
+                      <label htmlFor="otp" className="form-label">
+                        Enter OTP
+                      </label>
+                      <input
+                        type="number"
+                        className="form-control"
+                        id="otp"
+                        value={otp}
+                        onChange={handleOtpChange}
+                        placeholder="Enter OTP"
+                        required
+                      />
+                      {errorMessage && (
+                        <div className="invalid-feedback">{errorMessage}</div>
+                      )}
+                    </div>
+
+                    <button
+                      className="btn OtpBtn px-0"
+                      type="submit"
+                      disabled={isLoading}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      {isLoading ? (
+                        <DotLottieReact
+                          src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
+                          autoplay
+                          loop
+                          style={{ width: 30, height: 30 }}
+                        />
+                      ) : (
+                        "Submit OTP"
+                      )}
+                    </button>
+                  </form>
+
+                  <hr style={{ margin: "100px 0 10px" }} />
+                  <div className="already-account mt-auto">
+                    <h3>New to ABDKS Solutions?</h3>
+                    <Link to={"/createaccount"}>
+                      <button
+                        className="btn border-0 bg-white px-0 text-decoration-underline"
+                        onClick={() => setFlipState("create")}
+                      >
+                        Create Account
+                      </button>
+                    </Link>
                   </div>
-
-                  {/* Back Side - OTP or Login */}
-                  <div className="form-box">
-                    {flipState === "otp" && (
-                      <>
-                        <h2>Enter OTP</h2>
-                        <p>
-                          OTP has been sent successfully to your registered
-                          mobile number.
-                        </p>
-                        <form
-                          className="row g-3 needs-validation"
-                          noValidate
-                          onSubmit={handleSubmitOTP}
-                        >
-                          <div className="mb-3">
-                            <label htmlFor="otpField" className="form-label">
-                              Enter OTP
-                            </label>
-                            <input
-                              type="number"
-                              className="form-control"
-                              id="otpField"
-                              value={otp}
-                              onChange={handleOtpChange}
-                              placeholder="Enter OTP"
-                              required
-                            />
-                            {errorMessage && (
-                              <div className="invalid-feedback">
-                                {errorMessage}
-                              </div>
-                            )}
-                          </div>
-
-                          <button
-                            className="btn  OtpBtn"
-                            type="submit"
-                            disabled={isLoading}
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                            }}
-                          >
-                            {isLoading ? (
-                              <DotLottieReact
-                                src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
-                                autoplay
-                                loop
-                                style={{ width: 30, height: 30 }}
-                              />
-                            ) : (
-                              "Submit OTP"
-                            )}
-                          </button>
-                        </form>
-                      </>
-                    )}
-
-                    {flipState === "login" && (
-                      <>
-                        <h2>Login</h2>
-                        <form className="row g-3 needs-validation">
-                          <div className="mb-3">
-                            <label
-                              htmlFor="loginMobileNumber"
-                              className="form-label"
-                            >
-                              Enter Mobile Number
-                            </label>
-                            <input
-                              type="number"
-                              className="form-control"
-                              id="loginMobileNumber"
-                              placeholder="Enter Mobile Number"
-                              required
-                            />
-                          </div>
-                          <button
-                            className="btn btn-primary OtpBtn"
-                            type="button"
-                          >
-                            Submit
-                          </button>
-                          <hr style={{ margin: "100px 0 10px" }} />
-                          <div className="already-account mt-auto">
-                            <h3>
-                              New to ABDKS Solutions Private Limited small pvt
-                              ltd .?
-                            </h3>
-                            <button
-                              className="btn border-0 bg-white px-0 d-block"
-                              onClick={() => setFlipState("signup")}
-                            >
-                              Create Wallet
-                            </button>
-                          </div>
-                        </form>
-                      </>
-                    )}
-                  </div>
-                </ReactCardFlip>
-
-                {/* Popup */}
+                </div>
                 {showPopup && (
                   <div className="popup-overlays">
                     <div className="popup-contents">

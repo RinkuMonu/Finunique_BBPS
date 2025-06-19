@@ -1,7 +1,14 @@
-"use client";
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Accordion, Card, Nav, Tab } from "react-bootstrap";
-
+import {
+  Container,
+  Row,
+  Col,
+  Accordion,
+  Card,
+  Nav,
+  Tab,
+} from "react-bootstrap";
+import privacyImg from "../Assets/images/policy.png"; 
 const PRIVACY_SECTIONS = [
   {
     key: "1",
@@ -66,8 +73,8 @@ const PRIVACY_SECTIONS = [
           geo-data.
         </li>
         <li className="mb-0">
-          <strong className="text-primary">Cookies:</strong> Session,
-          analytics, tracking.
+          <strong className="text-primary">Cookies:</strong> Session, analytics,
+          tracking.
         </li>
       </ul>
     ),
@@ -219,28 +226,90 @@ export default function PrivacyPolicy() {
 
   // Color palette
   const colors = {
-    primary: "orange",    
-    secondary: "#4f46e5",  
-    accent: "#22d3ee",     
-    light: "#dce8fc",      
-    dark: "#1e293b",        
-    text: "#334155",       
-    border: "#e2e8f0"       
+    primary: "orange",
+    secondary: "#4f46e5",
+    accent: "#22d3ee",
+    light: "#dce8fc",
+    dark: "#1e293b",
+    text: "#334155",
+    border: "#e2e8f0",
   };
 
   return (
-    <div className="privacy-policy-page" style={{ backgroundColor: colors.light }}>
+    <div
+      className="privacy-policy-page mt-4"
+      style={{ backgroundColor: colors.light }}
+    >
+      <div className="container pt-5">
+        <div className="row align-items-center">
+          {/* Image Column */}
+          <div className="col-md-6 mb-4 mb-md-0 text-center">
+            <img
+              src={privacyImg}
+              alt="Privacy Policy"
+              className="img-fluid"
+              style={{
+                maxHeight: "400px",
+                borderradius: "8px",
+                boxshadow: " 0 4px 20px rgba(0, 0, 0, 0.1)",
+              }}
+            />
+          </div>
+
+          {/* Text Column */}
+          <div className="col-md-6">
+            <h1 className="mb-3">Privacy Policy</h1>
+            <h5 className="text-muted mb-4">Your data, our responsibility.</h5>
+            <p>
+              We respect your privacy and are committed to protecting your
+              personal information. This Privacy Policy explains how we collect,
+              use, and safeguard your data when you use our application.
+            </p>
+            <p>
+              By using our services, you agree to the collection and use of
+              information in accordance with this policy.
+            </p>
+          </div>
+        </div>
+      </div>
       <Container>
         <Row className="justify-content-center mb-5">
           <Col lg={10} className="text-center">
             <div className="icon-wrapper my-5">
-              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke={colors.primary} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 16V12" stroke={colors.primary} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 8H12.01" stroke={colors.primary} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg
+                width="80"
+                height="80"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke={colors.primary}
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12 16V12"
+                  stroke={colors.primary}
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12 8H12.01"
+                  stroke={colors.primary}
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </div>
-            <h1 className="display-5 fw-bold mb-3" style={{ color: colors.dark }}>
+            <h1
+              className="display-5 fw-bold mb-3"
+              style={{ color: colors.dark }}
+            >
               Privacy Policy
             </h1>
             <p className="lead" style={{ color: colors.text }}>
@@ -251,11 +320,14 @@ export default function PrivacyPolicy() {
 
         <Row className="justify-content-center">
           <Col lg={10}>
-            <Card className="shadow-sm overflow-hidden" style={{ 
-              border: 'none', 
-              borderRadius: '12px',
-              backgroundColor: 'white'
-            }}>
+            <Card
+              className="shadow-sm overflow-hidden"
+              style={{
+                border: "none",
+                borderRadius: "12px",
+                backgroundColor: "white",
+              }}
+            >
               <Card.Body className="p-4 p-lg-5">
                 <section className="mb-5">
                   <h2 className="h4 mb-4" style={{ color: colors.primary }}>
@@ -273,19 +345,24 @@ export default function PrivacyPolicy() {
                       <Accordion.Item
                         key={item.key}
                         eventKey={index.toString()}
-                        style={{ 
+                        style={{
                           borderBottom: `1px solid ${colors.border}`,
-                          marginBottom: '1rem'
+                          marginBottom: "1rem",
                         }}
                       >
-                        <Accordion.Header 
-                          style={{ 
-                            fontWeight: '600',
+                        <Accordion.Header
+                          style={{
+                            fontWeight: "600",
                             color: colors.dark,
-                            backgroundColor: 'transparent'
+                            backgroundColor: "transparent",
                           }}
                         >
-                          <span style={{ color: colors.primary, marginRight: '8px' }}>
+                          <span
+                            style={{
+                              color: colors.primary,
+                              marginRight: "8px",
+                            }}
+                          >
                             {index + 1}.
                           </span>
                           {item.title}
@@ -300,28 +377,43 @@ export default function PrivacyPolicy() {
                   <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
                     <Row>
                       <Col md={4}>
-                        <Nav variant="pills" className="flex-column sticky-top" style={{ top: '20px' }}>
+                        <Nav
+                          variant="pills"
+                          className="flex-column sticky-top"
+                          style={{ top: "20px" }}
+                        >
                           {PRIVACY_SECTIONS.map((item, index) => (
                             <Nav.Item key={item.key} className="mb-2">
-                              <Nav.Link 
+                              <Nav.Link
                                 eventKey={index.toString()}
                                 style={{
-                                  color: activeKey === index.toString() ? 'white' : colors.text,
-                                  backgroundColor: activeKey === index.toString() ? colors.primary : 'transparent',
+                                  color:
+                                    activeKey === index.toString()
+                                      ? "white"
+                                      : colors.text,
+                                  backgroundColor:
+                                    activeKey === index.toString()
+                                      ? colors.primary
+                                      : "transparent",
                                   border: `1px solid ${colors.border}`,
-                                  borderRadius: '8px',
-                                  padding: '12px 16px',
-                                  fontWeight: '500',
-                                  transition: 'all 0.2s ease',
-                                  marginBottom: '4px'
+                                  borderRadius: "8px",
+                                  padding: "12px 16px",
+                                  fontWeight: "500",
+                                  transition: "all 0.2s ease",
+                                  marginBottom: "4px",
                                 }}
                                 className="hover-effect"
                               >
-                                <span style={{ 
-                                  color: activeKey === index.toString() ? 'white' : colors.primary,
-                                  fontWeight: '600',
-                                  marginRight: '8px'
-                                }}>
+                                <span
+                                  style={{
+                                    color:
+                                      activeKey === index.toString()
+                                        ? "white"
+                                        : colors.primary,
+                                    fontWeight: "600",
+                                    marginRight: "8px",
+                                  }}
+                                >
                                   {index + 1}.
                                 </span>
                                 {item.title}
@@ -333,22 +425,25 @@ export default function PrivacyPolicy() {
                       <Col md={8}>
                         <Tab.Content>
                           {PRIVACY_SECTIONS.map((item, index) => (
-                            <Tab.Pane key={item.key} eventKey={index.toString()}>
-                              <div 
-                                style={{ 
-                                  padding: '24px',
-                                  backgroundColor: 'lightblue',
-                                  borderRadius: '8px',
+                            <Tab.Pane
+                              key={item.key}
+                              eventKey={index.toString()}
+                            >
+                              <div
+                                style={{
+                                  padding: "24px",
+                                  backgroundColor: "lightblue",
+                                  borderRadius: "8px",
                                   border: `1px solid ${colors.border}`,
-                                  boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+                                  boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
                                 }}
                               >
-                                <h5 
+                                <h5
                                   style={{
                                     color: colors.primary,
-                                    fontWeight: '600',
-                                    marginBottom: '16px',
-                                    fontSize: '1.25rem'
+                                    fontWeight: "600",
+                                    marginBottom: "16px",
+                                    fontSize: "1.25rem",
                                   }}
                                 >
                                   {index + 1}. {item.title}
@@ -365,16 +460,19 @@ export default function PrivacyPolicy() {
                   </Tab.Container>
                 )}
 
-                <div 
+                <div
                   className="disclaimer mt-5 p-3 rounded"
-                  style={{ 
+                  style={{
                     backgroundColor: colors.light,
-                    borderLeft: `4px solid ${colors.accent}`
+                    borderLeft: `4px solid ${colors.accent}`,
                   }}
                 >
                   <p className="small mb-0" style={{ color: colors.text }}>
-                    <strong style={{ color: colors.primary }}>Disclaimer:</strong> This document ensures transparency and user
-                    rights. It supersedes all previous versions.
+                    <strong style={{ color: colors.primary }}>
+                      Disclaimer:
+                    </strong>{" "}
+                    This document ensures transparency and user rights. It
+                    supersedes all previous versions.
                   </p>
                 </div>
               </Card.Body>
@@ -416,7 +514,7 @@ export default function PrivacyPolicy() {
         }
         .hover-effect:hover {
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .icon-wrapper {
           background: ${colors.light};

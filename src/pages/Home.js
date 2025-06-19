@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./style/Home.css";
 import PageContent from "./PageContent";
 import img from "../Assets/images/HOME-BG.png";
 import { FiCheckCircle, FiArrowRight } from "react-icons/fi";
+import Context from "../components/services/context";
 
 const Home = () => {
+  const { setIsOpen } = useContext(Context);
   return (
     <>
       <section className="hero-section overflow-hidden">
@@ -38,11 +40,17 @@ const Home = () => {
               </div>
 
               <div className="cta-buttons ">
-                <button className="btn btn-primary cta-main">
+                <button
+                  className="btn btn-primary cta-main"
+                  onClick={() => setIsOpen(true)}
+                >
                   Start your BBPS business
                   <FiArrowRight className="cta-icon" />
                 </button>
-                <button className="btn btn-outline-secondary cta-secondary">
+                <button
+                  className="btn btn-outline-secondary cta-secondary"
+                  onClick={() => setIsOpen(true)}
+                >
                   Be a BBPS Retail Partner
                 </button>
               </div>

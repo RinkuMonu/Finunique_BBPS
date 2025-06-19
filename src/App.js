@@ -1,9 +1,16 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  Route,
+  Router,
+  RouterProvider,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import AboutUs from "./pages/AboutUs/AboutUs.js";
-import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
 import AppLayout from "./components/AppLayout/AppLayout";
 import OurService from "./pages/OurService/OurService.js";
@@ -28,121 +35,65 @@ import AadharCard from "./pages/Kyc/AadharCard.js";
 import PaymentSuccessPage from "./pages/PaymentSuccessPage/PaymentSuccessPage.js";
 import PaymentErrorPage from "./pages/PaymentErrorPage/PaymentErrorPage.js";
 import PaymentRecipt from "./pages/services/PaymentReciptPage/PaymentRecipt.js";
+import ContentPolicy from "./pages/contentPolicy.js";
+import LeadForm from "./pages/leadForm.js";
+import LeadFormPopup from "./pages/leadForm.js";
+import { ContextProvider } from "./components/services/context.js";
+import CreateAccount from "./pages/Login/page.js";
+import { useState } from "react";
+import Header from "./components/Header/Header.js";
+import Footer from "./components/Footer/Footer.js";
+import LoginPage from "./pages/Login/Login.js";
+import UserAccountCreation from "./pages/Login/userAccountCreation.js";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <AppLayout />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/AboutUs",
-          element: <AboutUs />,
-        },
-        {
-          path: "/ContactUs",
-          element: <ContactUs />,
-        },
-        {
-          path: "/Services",
-          element: <OurService />,
-        },
-        {
-          path: "/WhyUs",
-          element: <WhyUs />,
-        },
-        {
-          path: "/recharge",
-          element: <BillPayUI />,
-        },
-        {
-          path: "/OurPartner",
-          element: <OurPartner />,
-        },
-        {
-          path: "/BBPS",
-          element: <BBPS />,
-        },
-        {
-          path: "/term",
-          element: <Term />,
-        },
-        {
-          path: "/privacypolicy",
-          element: <PrivacyPolicy />,
-        },
-        {
-          path: "/RefundPolicy",
-          element: <RefundPolicy />,
-        },
-        {
-          path: "/paymentmode",
-          element: <PaymentMode />,
-        },
-        {
-          path: "/transfer-to-bank",
-          element: <TransferToBank />,
-        },
-        {
-          path: "/profilesetting",
-          element: <ProfileSetting />,
-        },
-        {
-          path: "/paymentcheck/:amount",
-          element: <PaymentCheck />,
-        },
-        {
-          path: "/redeem-payback-points",
-          element: <RedeemPayback />,
-        },
-        {
-          path: "/wallet-transfer",
-          element: <WalletTransfer />,
-        },
-        {
-          path: "/mywallet",
-          element: <MyWallet />,
-        },
-        {
-          path: "/history",
-          element: <History />,
-        },
-        {
-          path: "/404",
-          element: <Page404 />,
-        },
-        {
-          path: "/kyc",
-          element: <KYC />,
-        },
-        {
-          path: "/aadhar",
-          element: <AadharCard />,
-        },
-        {
-          path: "/success",
-          element: <PaymentSuccessPage />,
-        },
-        {
-          path: "/failure",
-          element: <PaymentErrorPage />,
-        },
-        {
-          path: "/receipt",
-          element: <PaymentRecipt />,
-        },
-      ],
-    },
-  ]);
+  // const { pathname } = useLocation();
+  // const hideLayout = pathname === "/createaccount";
+
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <ContextProvider>
+      <BrowserRouter>
+        <Header />
+        <LeadFormPopup />
+        <Routes>
+          <Route path="/createaccount" element={<CreateAccount />} />
+          <Route path="/" element={<AppLayout />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="/Services" element={<OurService />} />
+          <Route path="/WhyUs" element={<WhyUs />} />
+          <Route path="/recharge" element={<BillPayUI />} />
+          <Route path="/OurPartner" element={<OurPartner />} />
+          <Route path="/BBPS" element={<BBPS />} />
+          <Route path="/term" element={<Term />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/contentPolicy" element={<ContentPolicy />} />
+          <Route path="/RefundPolicy" element={<RefundPolicy />} />
+          <Route path="/paymentmode" element={<PaymentMode />} />
+          <Route path="/transfer-to-bank" element={<TransferToBank />} />
+          <Route path="/profilesetting" element={<ProfileSetting />} />
+          <Route path="/paymentcheck/:amount" element={<PaymentCheck />} />
+          <Route path="/redeem-payback-points" element={<RedeemPayback />} />
+          <Route path="/wallet-transfer" element={<WalletTransfer />} />
+          <Route path="/mywallet" element={<MyWallet />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/404" element={<Page404 />} />
+          <Route path="/kyc" element={<KYC />} />
+          <Route path="/aadhar" element={<AadharCard />} />
+          <Route path="/success" element={<PaymentSuccessPage />} />
+          <Route path="/failure" element={<PaymentErrorPage />} />
+          <Route path="/receipt" element={<PaymentRecipt />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register/useraccountcreation" element={<UserAccountCreation />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </ContextProvider>
   );
 }
 
 export default App;
+
+
+
+

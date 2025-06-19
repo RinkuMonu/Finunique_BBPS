@@ -14,10 +14,46 @@ import {
   FaEnvelope,
   FaHome,
 } from "react-icons/fa";
+import privacyImg from "../Assets/images/terms.png";
 
 export default function Term() {
+  
   return (
     <>
+      <div className="container pt-5 mt-5">
+        <div className="row align-items-center">
+          {/* Image Column */}
+          <div className="col-md-6 mb-4 mb-md-0 text-center">
+            <img
+              src={privacyImg}
+              alt="Privacy Policy"
+              className="img-fluid"
+              style={{
+                maxHeight: "400px",
+                borderradius: "8px",
+                boxshadow: " 0 4px 20px rgba(0, 0, 0, 0.1)",
+              }}
+            />
+          </div>
+
+          {/* Text Column */}
+          <div className="col-md-6">
+            <h1 className="mb-3">Terms and Conditions</h1>
+            <h5 className="text-muted mb-4">
+              Know your rights and responsibilities.
+            </h5>
+            <p>
+              By accessing or using our services, you agree to be bound by these
+              Terms and Conditions. Please read them carefully before using our
+              application or website.
+            </p>
+            <p>
+              These terms apply to all visitors, users, and others who access or
+              use the service. Violations may result in restricted access.
+            </p>
+          </div>
+        </div>
+      </div>
       <section className="py-5 bg-light mt-5">
         <div className="container">
           <div className="row justify-content-center mb-5">

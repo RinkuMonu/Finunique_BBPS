@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 
 function Footer() {
+  const goTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className="bg-dark text-white position-relative pt-5 pb-3 overflow-hidden">
       {/* Dark Background Shape */}
@@ -82,6 +89,7 @@ function Footer() {
                     <Link
                       to="/privacypolicy"
                       className="text-white text-decoration-none small"
+                      onClick={goTop}
                     >
                       Privacy Policy
                     </Link>
@@ -90,6 +98,7 @@ function Footer() {
                     <Link
                       to="/term"
                       className="text-white text-decoration-none small"
+                      onClick={goTop}
                     >
                       Terms Conditions
                     </Link>
@@ -98,8 +107,18 @@ function Footer() {
                     <Link
                       to="/RefundPolicy"
                       className="text-white text-decoration-none small"
+                      onClick={goTop}
                     >
                       Refund Cancellation
+                    </Link>
+                  </ListGroupItem>
+                  <ListGroupItem className="bg-transparent text-white border-secondary px-0 py-1">
+                    <Link
+                      to="/contentPolicy"
+                      className="text-white text-decoration-none small"
+                      onClick={goTop}
+                    >
+                      Content Policy
                     </Link>
                   </ListGroupItem>
                 </ListGroup>
@@ -112,6 +131,7 @@ function Footer() {
                     <Link
                       to="/BBPS"
                       className="text-white text-decoration-none small"
+                      onClick={goTop}
                     >
                       BBPS
                     </Link>
@@ -120,6 +140,7 @@ function Footer() {
                     <Link
                       to="/Services"
                       className="text-white text-decoration-none small"
+                      onClick={goTop}
                     >
                       Services
                     </Link>
@@ -128,6 +149,7 @@ function Footer() {
                     <Link
                       to="/OurPartner"
                       className="text-white text-decoration-none small"
+                      onClick={goTop}
                     >
                       Our Partners
                     </Link>

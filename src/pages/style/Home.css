@@ -45,19 +45,9 @@ body {
 
 .hero-headline .highlight {
   color: rgb(238, 162, 20);
-  position: relative;
 }
 
-.hero-headline .highlight::after {
-  content: "";
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  background: rgba(13, 110, 253, 0.2);
-  z-index: -1;
-}
+
 
 .hero-subheadline {
   font-size: 1.25rem;

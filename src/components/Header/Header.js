@@ -4,13 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import AddMoney from "./AddMoney";
 import { useDispatch } from "react-redux";
 import { logout } from "../../Features/Auth/authSlice";
-export default function Header({ onLoginClick }) {
+export default function Header() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleMouseEnter = () => setIsDropdownOpen(true);
   const handleMouseLeave = () => setIsDropdownOpen(false);
+  const [showUserOptions, setShowUserOptions] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -165,16 +166,6 @@ export default function Header({ onLoginClick }) {
                           <div class="arrow"></div>
                         </ul>
                       </li>
-                      {/* <li className="nav-item">
-                                                <Link className="nav-link" to={"/BBPS"}>
-                                                    BBPS
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link className="nav-link" to={"/OurPartner"}>
-                                                    Our Partners
-                                                </Link>
-                                            </li> */}
                       <li className="nav-item">
                         <Link className="nav-link" to={"/WhyUs"}>
                           Why Us?
@@ -187,13 +178,63 @@ export default function Header({ onLoginClick }) {
                       </li>
 
                       {!localStorage.getItem("token") ? (
-                        <li className="nav-item">
-                          <div className="nav-link header-right d-lg-flex align-items-center">
-                            <Link className="header-btn" onClick={onLoginClick}>
-                              Login <i className="bi bi-arrow-right"></i>
-                            </Link>
-                          </div>
-                        </li>
+                        <>
+                          <li className="nav-item">
+                            <div className="nav-link header-right d-lg-flex align-items-center">
+                              <Link className="header-btn" to={"/login"}>
+                                <i class="bi bi-box-arrow-in-right"></i>
+                              </Link>
+                            </div>
+                          </li>
+                          <li
+                            className="nav-item position-relative"
+                            onMouseEnter={() => setShowUserOptions(true)}
+                            onMouseLeave={() => setShowUserOptions(false)}
+                          >
+                            <div className="nav-link header-right d-lg-flex align-items-center create-account">
+                              <Link
+                                className="header-btn"
+                                onClick={() => {}}
+                                style={{ cursor: "pointer" }}
+                              >
+                                <i class="bi bi-person-add"></i>
+                              </Link>
+                              {showUserOptions && (
+                                <div
+                                  className="position-absolute bg-white shadow rounded p-2"
+                                  style={{
+                                    top: "100%",
+                                    left: 0,
+                                    minWidth: "150px",
+                                    zIndex: 1000,
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: "5px",
+                                  }}
+                                >
+                                  <Link
+                                    to="/register/useraccountcreation"
+                                    className="dropdown-item"
+                                  >
+                                    User
+                                  </Link>
+                                  <Link
+                                    to="/createaccount"
+                                    className="dropdown-item"
+                                  >
+                                    Retailer
+                                  </Link>
+                                  <Link
+                                    to="/createaccount"
+                                    className="dropdown-item"
+                                  >
+                                    Distributor
+                                  </Link>
+                                </div>
+                              )}
+                            </div>
+                          </li>
+                        </>
                       ) : (
                         <>
                           <li className="nav-item">
