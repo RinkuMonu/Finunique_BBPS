@@ -17,7 +17,7 @@ export default function ContactDetailsForm({ formData, updateFormData }) {
   });
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const validatePhone = (phone) => /^\d{10}$/.test(phone);
+  const validatePhone = (phone) => /^[6-9]\d{9}$/.test(phone);
 
   useEffect(() => {
     const nameValid = name.trim().length > 0;
@@ -77,10 +77,36 @@ export default function ContactDetailsForm({ formData, updateFormData }) {
           <input
             id="phone"
             type="tel"
+            inputMode="numeric"
+            pattern="[6-9]{1}[0-9]{9}"
+            maxLength={10}
             className={`form-control ${errors.phone ? "is-invalid" : ""}`}
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            placeholder="Enter your phone number"
+            onChange={(e) => {
+              const value = e.target.value.replace(/\D/g, "");
+              if (
+                value.length === 0 ||
+                (value.length === 1 && /^[6-9]$/.test(value))
+              ) {
+                setPhone(value);
+              } else if (value.length > 1 && value.length <= 10) {
+                if (/^[6-9]/.test(value)) {
+                  setPhone(value);
+                }
+              }
+            }}
+            onKeyDown={(e) => {
+              const allowedKeys = [
+                "Backspace",
+                "ArrowLeft",
+                "ArrowRight",
+                "Tab",
+              ];
+              if (!/[0-9]/.test(e.key) && !allowedKeys.includes(e.key)) {
+                e.preventDefault();
+              }
+            }}
+            placeholder="Enter your 10-digit phone number"
           />
           {!errors.phone && phone && (
             <Check

@@ -1,70 +1,105 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
 const documents = [
-  { id: "business-pan", label: "Business PAN", required: true },
-  { id: "certificate-of-incorporation", label: "Certificate of Incorporation", required: true },
-  { id: "gst-certificate", label: "GST Certificate", required: true },
-  { id: "moa-aoa", label: "MOA/AOA", required: false },
-  { id: "board-resolution", label: "Board Resolution for Authorised Person", required: true },
-  { id: "kyc-authorised-signatory", label: "KYC for Authorised Signatory", required: true },
-]
-
-const cipherOptions = [
-  { id: "cipher-connect", label: "1. Cipher Connect" },
-  { id: "cipher-payout", label: "2. Cipher Payout" },
-  { id: "cipher-reseller", label: "4. Cipher Reseller" },
-  { id: "cipher-aggregator", label: "5. Cipher Aggregator" },
-]
+  { id: "pan-card", label: "PAN Card", required: true },
+  { id: "aadhaar-card", label: "Aadhaar Card", required: true },
+  { id: "shop-photo", label: "Shop Photo", required: true },
+  { id: "passport-photo", label: "Passport Size Photo", required: true },
+  // { id: "bank-passbook", label: "Bank Passbook Photo", required: true },
+];
 
 export default function VerifyDocumentsForm({ formData, updateFormData }) {
-  const [activeDocument, setActiveDocument] = useState("business-pan")
+  const [activeDocument, setActiveDocument] = useState("pan-card");
   const [uploadedFiles, setUploadedFiles] = useState(
     formData.verifyDocuments.uploadedFiles || {
-      "business-pan": null,
-      "certificate-of-incorporation": null,
-      "gst-certificate": null,
-      "moa-aoa": null,
-      "board-resolution": null,
-      "kyc-authorised-signatory": null,
+      "pan-card": null,
+      "aadhaar-card": null,
+      "shop-photo": null,
+      "passport-photo": null,
+      // "bank-passbook": null,
     }
-  )
-  const [consensus, setConsensus] = useState(formData.verifyDocuments.consensus || [])
+  );
+
+  const [verificationData, setVerificationData] = useState({
+    "pan-card": { value: "", verified: false, loading: false, error: "" },
+    "aadhaar-card": { value: "", verified: false, loading: false, error: "" },
+  });
 
   const handleFileChange = (e, docId) => {
-    const file = e.target.files[0]
+    const file = e.target.files[0];
     if (file && isValidFileType(file) && isValidFileSize(file)) {
-      setUploadedFiles((prev) => ({ ...prev, [docId]: file }))
+      setUploadedFiles((prev) => ({ ...prev, [docId]: file }));
     }
-  }
+  };
 
   const removeFile = (docId) => {
-    setUploadedFiles((prev) => ({ ...prev, [docId]: null }))
-  }
-
-  const toggleConsensus = (id) => {
-    setConsensus((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
-    )
-  }
+    setUploadedFiles((prev) => ({ ...prev, [docId]: null }));
+  };
 
   const isValidFileType = (file) =>
-    ["image/jpeg", "image/jpg", "image/png"].includes(file.type)
+    ["image/jpeg", "image/jpg", "image/png"].includes(file.type);
 
-  const isValidFileSize = (file) => file.size <= 2 * 1024 * 1024
+  const isValidFileSize = (file) => file.size <= 2 * 1024 * 1024;
+
+  const handleVerify = async (docId) => {
+    const number = verificationData[docId].value.trim();
+    if (!number) {
+      setVerificationData((prev) => ({
+        ...prev,
+        [docId]: { ...prev[docId], error: "Please enter a valid number" },
+      }));
+      return;
+    }
+
+    setVerificationData((prev) => ({
+      ...prev,
+      [docId]: { ...prev[docId], loading: true, error: "" },
+    }));
+
+    try {
+      const res = await fetch(`/api/verify/${docId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ value: number }),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        setVerificationData((prev) => ({
+          ...prev,
+          [docId]: { ...prev[docId], verified: true, loading: false },
+        }));
+      } else {
+        setVerificationData((prev) => ({
+          ...prev,
+          [docId]: {
+            ...prev[docId],
+            loading: false,
+            error: result.message || "Verification failed",
+          },
+        }));
+      }
+    } catch (err) {
+      setVerificationData((prev) => ({
+        ...prev,
+        [docId]: { ...prev[docId], loading: false, error: "Network error" },
+      }));
+    }
+  };
 
   useEffect(() => {
     const requiredUploaded = documents
       .filter((doc) => doc.required)
-      .every((doc) => uploadedFiles[doc.id])
+      .every((doc) => uploadedFiles[doc.id]);
 
-    const isValid = requiredUploaded && consensus.length > 0
+    const isValid = requiredUploaded;
 
     updateFormData("verifyDocuments", {
       uploadedFiles,
-      consensus,
       isValid,
-    })
-  }, [uploadedFiles, consensus])
+    });
+  }, [uploadedFiles]);
 
   return (
     <div className="row">
@@ -79,8 +114,10 @@ export default function VerifyDocumentsForm({ formData, updateFormData }) {
               }`}
               onClick={() => setActiveDocument(doc.id)}
             >
-              {doc.label} {doc.required && <span className="text-danger">*</span>}
-              {uploadedFiles[doc.id] && <span className="badge bg-success float-end">✓</span>}
+              {doc.label} <span className="text-danger">*</span>
+              {uploadedFiles[doc.id] && (
+                <span className="badge bg-success float-end">✓</span>
+              )}
             </button>
           ))}
         </div>
@@ -95,8 +132,7 @@ export default function VerifyDocumentsForm({ formData, updateFormData }) {
         >
           {documents.map((doc) => (
             <option key={doc.id} value={doc.id}>
-              {doc.label} {doc.required ? "*" : ""}
-              {uploadedFiles[doc.id] ? " (Uploaded)" : ""}
+              {doc.label} *{uploadedFiles[doc.id] ? " (Uploaded)" : ""}
             </option>
           ))}
         </select>
@@ -109,15 +145,59 @@ export default function VerifyDocumentsForm({ formData, updateFormData }) {
             activeDocument === doc.id && (
               <div key={doc.id} className="mb-4">
                 <h5>
-                  {doc.label} {doc.required && <span className="text-danger">*</span>}
+                  {doc.label} <span className="text-danger">*</span>
                 </h5>
 
+                {/* Verification section for PAN & Aadhaar */}
+                {["pan-card", "aadhaar-card"].includes(doc.id) &&
+                  !verificationData[doc.id].verified && (
+                    <div className="mb-3">
+                      <label className="form-label">
+                        Enter {doc.label} Number
+                      </label>
+                      <div className="d-flex gap-2">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder={`Enter ${doc.label}`}
+                          value={verificationData[doc.id].value}
+                          onChange={(e) =>
+                            setVerificationData((prev) => ({
+                              ...prev,
+                              [doc.id]: {
+                                ...prev[doc.id],
+                                value: e.target.value.toUpperCase(),
+                                error: "",
+                              },
+                            }))
+                          }
+                        />
+                        <button
+                          className="btn btn-primary"
+                          disabled={verificationData[doc.id].loading}
+                          onClick={() => handleVerify(doc.id)}
+                        >
+                          {verificationData[doc.id].loading
+                            ? "Verifying..."
+                            : "Verify"}
+                        </button>
+                      </div>
+                      {verificationData[doc.id].error && (
+                        <div className="text-danger small mt-1">
+                          {verificationData[doc.id].error}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                {/* Upload File */}
                 {uploadedFiles[doc.id] ? (
                   <div className="border p-3 mb-3 bg-light d-flex justify-content-between align-items-center">
                     <div>
                       <strong>{uploadedFiles[doc.id].name}</strong>
                       <div className="text-muted small">
-                        {(uploadedFiles[doc.id].size / 1024 / 1024).toFixed(2)} MB
+                        {(uploadedFiles[doc.id].size / 1024 / 1024).toFixed(2)}{" "}
+                        MB
                       </div>
                     </div>
                     <button
@@ -126,6 +206,11 @@ export default function VerifyDocumentsForm({ formData, updateFormData }) {
                     >
                       Remove
                     </button>
+                  </div>
+                ) : ["pan-card", "aadhaar-card"].includes(doc.id) &&
+                  !verificationData[doc.id].verified ? (
+                  <div className="text-muted">
+                    Please verify {doc.label} to upload the file.
                   </div>
                 ) : (
                   <div className="mb-3">
@@ -143,34 +228,13 @@ export default function VerifyDocumentsForm({ formData, updateFormData }) {
                 )}
 
                 <div className="text-muted small mb-3">
-                  Details should be of the mentioned business only{" "}
+                  Upload a clear and valid {doc.label.toLowerCase()} image{" "}
                   <span className="text-danger">*</span>
                 </div>
-
-                {/* Consensus Section */}
-                {doc.id === "business-pan" && (
-                  <div className="mt-4">
-                    <h6>Please give consensus for:</h6>
-                    {cipherOptions.map((option) => (
-                      <div className="form-check" key={option.id}>
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id={option.id}
-                          checked={consensus.includes(option.id)}
-                          onChange={() => toggleConsensus(option.id)}
-                        />
-                        <label className="form-check-label" htmlFor={option.id}>
-                          {option.label}
-                        </label>
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
             )
         )}
       </div>
     </div>
-  )
+  );
 }
