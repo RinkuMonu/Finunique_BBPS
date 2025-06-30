@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 const FAQCreditCardPayment = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -166,12 +167,12 @@ const FAQCreditCardPayment = () => {
             Whether for personal use or retail business, ABDKS makes credit card bill payment secure, fast, and reliable — powered by BBPS and trusted across India.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Button variant="primary" size="lg">
+            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">
               Pay Now
-            </Button>
-            <Button variant="outline-primary" size="lg">
+            </Link>
+            <Link to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">
               Become a Partner
-            </Button>
+            </Link>
           </div>
         </>
       ),

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 const FAQMoneyTransfer = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -128,8 +129,8 @@ const FAQMoneyTransfer = () => {
             Whether you're transferring funds for family, business, or community support — trust ABDKS for fast, secure, and compliant online money transfers across India.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Button variant="primary" size="lg">Send Money Now</Button>
-            <Button variant="outline-primary" size="lg">Become a Money Transfer Agent</Button>
+            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">Send Money Now</Link>
+            <Link  to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">Become a Money Transfer Agent</Link>
           </div>
         </>
       ),

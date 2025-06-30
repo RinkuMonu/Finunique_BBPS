@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const FAQDthRecharge = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -117,8 +118,8 @@ const FAQDthRecharge = () => {
             Our platform is fast, secure, and ready to power your digital service business.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Button variant="primary" size="lg">Become a Partner</Button>
-            <Button variant="outline-primary" size="lg">Recharge Now</Button>
+            <Link  to="/createaccount" className="btn btn-primary cta-main" size="lg">Become a Partner</Link>
+            <Link  to="/ContactUs"className="btn btn-outline-secondary cta-secondary" size="lg">Recharge Now</Link>
           </div>
         </>
       ),

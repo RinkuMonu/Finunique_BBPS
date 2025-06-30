@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const FAQMobileRecharge = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -122,12 +123,12 @@ const FAQMobileRecharge = () => {
             Whether you're a new retailer or want to add services to your existing shop, ABDKS makes mobile recharges fast, secure, and commission-generating. Tap into India’s growing demand for digital transactions with our prepaid recharge BBPS and postpaid payment tools.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Button variant="primary" size="lg">
+            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">
               Start Recharging Now
-            </Button>
-            <Button variant="outline-primary" size="lg">
+            </Link>
+            <Link  to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">
               Become a Partner
-            </Button>
+            </Link>
           </div>
         </>
       ),

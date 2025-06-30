@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const FAQElectricityBill = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -136,12 +137,12 @@ const FAQElectricityBill = () => {
           Enjoy nationwide service, user-friendly experience, and complete transaction peace of mind.
         </p>
         <div className="d-flex flex-wrap gap-3 mt-4">
-          <Button variant="primary" size="lg">
+          <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">
             Pay Your Electricity Bill Now
-          </Button>
-          <Button variant="outline-primary" size="lg">
+          </Link>
+          <Link  to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">
             Become a BBPS Partner
-          </Button>
+          </Link>
         </div>
       </>
     ),

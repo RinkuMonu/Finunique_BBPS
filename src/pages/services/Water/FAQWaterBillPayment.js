@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const FAQWaterBillPayment = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -121,8 +122,8 @@ const FAQWaterBillPayment = () => {
             Avoid late fees, save time, and pay securely with ABDKS — your trusted digital utility payment partner.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Button variant="primary" size="lg">Pay Now</Button>
-            <Button variant="outline-primary" size="lg">Join as a Retail Partner</Button>
+            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">Pay Now</Link>
+            <Link  to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">Join as a Retail Partner</Link>
           </div>
         </>
       ),

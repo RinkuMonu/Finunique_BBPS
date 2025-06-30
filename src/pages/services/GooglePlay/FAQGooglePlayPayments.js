@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
 const FAQGooglePlayRecharge = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -91,8 +92,8 @@ const FAQGooglePlayRecharge = () => {
         <>
           <p>Whether for your own use or as a retailer service, Google Play recharge through ABDKS is fast, reliable, and always available.</p>
           <div className="d-flex flex-wrap gap-3 mt-3">
-            <Button variant="success" size="lg">Buy Now</Button>
-            <Button variant="outline-success" size="lg">Register as a Retailer</Button>
+            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">Buy Now</Link>
+            <Link  to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">Register as a Retailer</Link>
           </div>
         </>
       ),

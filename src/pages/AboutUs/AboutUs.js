@@ -100,7 +100,7 @@ const AboutUs = () => {
                       In 2024, fintech innovators{" "}
                       <strong>Mr. Dinesh Kumar</strong> and{" "}
                       <strong>Mr. Amit Balotia</strong> founded{" "}
-                      <strong>ABDKS Solutions Private Ltd.</strong> with a bold
+                      <strong>ABDKS Solutions Private Limited.</strong> with a bold
                       mission: to simplify and scale BBPS-smooth digital
                       financial services across India.
                     </p>

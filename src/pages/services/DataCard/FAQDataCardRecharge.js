@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 const FAQDataCardRecharge = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -161,8 +162,8 @@ const FAQDataCardRecharge = () => {
             Whether you're at home, traveling, or running a business — stay connected with ABDKS. Recharge online in seconds and enjoy uninterrupted browsing anytime, anywhere.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Button variant="primary" size="lg">Recharge Now</Button>
-            <Button variant="outline-primary" size="lg">Join as a Retail Partner</Button>
+            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">Recharge Now</Link>
+            <Link  to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">Join as a Retail Partner</Link>
           </div>
         </>
       ),

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const FAQLpgGasBooking = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -126,12 +127,12 @@ const FAQLpgGasBooking = () => {
             available 24x7 for you and your customers.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Button variant="primary" size="lg">
+            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">
               Book Now
-            </Button>
-            <Button variant="outline-primary" size="lg">
+            </Link>
+            <Link to="/ContactUs" className="btn btn-outline-secondary cta-secondary" size="lg">
               Become a Gas Booking Agent
-            </Button>
+            </Link>
           </div>
         </>
       ),

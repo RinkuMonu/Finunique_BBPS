@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 const FAQBroadbandBillPayment = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -131,8 +132,8 @@ const FAQBroadbandBillPayment = () => {
         <>
           <p>Whether you're a user or a digital service provider, ABDKS helps you stay connected with fast, secure broadband bill payments — all in one place.</p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Button variant="primary" size="lg">Pay Now</Button>
-            <Button variant="outline-primary" size="lg">Join as a Partner</Button>
+            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">Pay Now</Link>
+            <Link to="/createaccount" className="btn btn-outline-secondary cta-secondary" sizeLink>Join as a Partner</Link>
           </div>
         </>
       ),

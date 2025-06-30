@@ -45,6 +45,10 @@ import Header from "./components/Header/Header.js";
 import Footer from "./components/Footer/Footer.js";
 import LoginPage from "./pages/Login/Login.js";
 import UserAccountCreation from "./pages/Login/userAccountCreation.js";
+import Blog from "./pages/Blog/Blog.js";
+import BlogDetails from "./pages/Blog/BlogDetails.js";
+import SiteMape from "./pages/SiteMap/SiteMape.js";
+import BugBountyProgram from "./pages/BugBounty/BugBounty.js";
 
 function App() {
   // const { pathname } = useLocation();
@@ -84,6 +88,10 @@ function App() {
           <Route path="/failure" element={<PaymentErrorPage />} />
           <Route path="/receipt" element={<PaymentRecipt />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/blog" element={<Blog/>} />
+           <Route path="/blog_details" element={<BlogDetails/>} />
+             <Route path="/sitemap" element={<SiteMape/>} />
+             <Route path="/bug_bounty" element={<BugBountyProgram/>} />
           <Route path="/register/useraccountcreation" element={<UserAccountCreation />} />
         </Routes>
         <Footer />

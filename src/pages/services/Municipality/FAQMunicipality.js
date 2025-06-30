@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
 const FAQMunicipality = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -110,8 +111,8 @@ const FAQMunicipality = () => {
             Whether you're a resident or a digital retailer, ABDKS helps you manage all your civic dues from one trusted platform — quickly, securely, and without delay.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-3">
-            <Button variant="primary" size="lg">Pay Municipal Bill Now</Button>
-            <Button variant="outline-primary" size="lg">Become a Service Partner</Button>
+            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">Pay Municipal Bill Now</Link>
+            <Link  to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">Become a Service Partner</Link>
           </div>
         </>
       ),

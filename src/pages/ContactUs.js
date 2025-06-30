@@ -206,14 +206,14 @@ const ContactUs = () => {
                       <div>
                         <span>Phone</span>
                         <a
-                          href="tel:+91XXXXXXXXXX"
+                          href="tel:0141-4511098"
                           className="text-decoration-none"
                         >
-                          +91-XXXXXXXXXX
+                          0141-4511098
                         </a>
                       </div>
                     </li>
-                    <li>
+                    {/* <li>
                       <i className="bi bi-whatsapp fs-3"></i>
                       <div>
                         <span>WhatsApp</span>
@@ -224,7 +224,7 @@ const ContactUs = () => {
                           +91-XXXXXXXXXX
                         </a>
                       </div>
-                    </li>
+                    </li> */}
                     <li>
                       <i className="bi bi-clock fs-3"></i>
                       <div>
