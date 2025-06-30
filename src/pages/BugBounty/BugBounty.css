@@ -1,0 +1,20 @@
+
+.custom-color {
+  background-color: #efb33b !important; 
+}
+.custom-color-icon {
+ color: #efb33b !important; 
+}
+
+.custom-color:hover {
+  background-color: #f1ae29; 
+}
+
+
+.nav-pills .nav-link {
+  transition: all 0.3s ease;
+}
+
+.custom-color-hover:hover{
+     color: #efb33b !important; 
+}

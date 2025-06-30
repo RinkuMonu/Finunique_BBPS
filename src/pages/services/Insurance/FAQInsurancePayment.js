@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
 const FAQInsurancePayment = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -181,8 +182,8 @@ const FAQInsurancePayment = () => {
             ABDKS makes insurance payments smooth, secure, and on time.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Button variant="primary" size="lg">Pay Insurance Now</Button>
-            <Button variant="outline-primary" size="lg">Become a Service Partner</Button>
+            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">Pay Insurance Now</Link>
+            <Link  to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">Become a Service Partner</Link>
           </div>
         </>
       ),

@@ -197,7 +197,7 @@ export default function Header() {
                                 onClick={() => {}}
                                 style={{ cursor: "pointer" }}
                               >
-                                <i class="bi bi-person-add"></i>
+                                <i class="bi bi-person-add me-1"></i> Register
                               </Link>
                               {showUserOptions && (
                                 <div

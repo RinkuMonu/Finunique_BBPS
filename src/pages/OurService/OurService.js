@@ -3,6 +3,7 @@ import ServiceItem from "./ServiceItem";
 import "./OurService.css";
 import img from "../../Assets/images/services.png";
 import { FiCheckCircle, FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 function OurService() {
   const services = [
@@ -125,13 +126,13 @@ function OurService() {
               </div>
 
               <div className="cta-buttons">
-                <button className="btn btn-primary cta-main">
+                <Link className="btn btn-primary cta-main" to="/ContactUs">
                   Explore Our BBPS Services
                   <FiArrowRight className="cta-icon" />
-                </button>
-                <button className="btn btn-outline-secondary cta-secondary">
+                </Link>
+                <Link className="btn btn-outline-secondary cta-secondary" to="/createaccount">
                   Join the ABDKS Retailer Network
-                </button>
+                </Link>
               </div>
             </div>
 

@@ -1,5 +1,6 @@
 import React from "react";
 import "./style/Home.css";
+import { Link } from "react-router-dom";
 
 function PageContent() {
   return (
@@ -444,9 +445,9 @@ function PageContent() {
                   bill payment network. Easily, activate fast, and start earning
                   today.
                 </p>
-                <button className="btn btn-light btn-lg px-5">
+                <Link to={"/createaccount"} className="btn btn-light btn-lg px-5">
                   Now join as a BBPS Retailer
-                </button>
+                </Link>
               </div>
             </div>
           </div>

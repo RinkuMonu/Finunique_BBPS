@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import { Link } from "react-router-dom";
 
 const FAQLoanEMIPayments = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -129,8 +130,8 @@ const FAQLoanEMIPayments = () => {
             Avoid late fees and maintain a good credit score by paying EMIs on time — powered by ABDKS.
           </p>
           <div style={{ marginTop: '1rem' }}>
-            <button className="btn btn-primary me-2">Pay EMI Now</button>
-            <button className="btn btn-outline-secondary">Become a Retail Partner</button>
+            <Link to="/ContactUs" className="btn btn-primary me-2">Pay EMI Now</Link >
+            <Link  to="/createaccount" className="btn btn-outline-secondary">Become a Retail Partner</Link >
           </div>
         </>
       ),

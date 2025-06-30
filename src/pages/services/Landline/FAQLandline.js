@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 const FAQLandline = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -159,12 +160,12 @@ const FAQLandline = () => {
             Avoid late fees and disconnections. Pay your landline bills quickly and easily with ABDKS — anytime, anywhere.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Button variant="primary" size="lg">
+            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">
               Pay Your Landline Bill Now
-            </Button>
-            <Button variant="outline-primary" size="lg">
+            </Link>
+            <Link  to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">
               Become a Service Partner
-            </Button>
+            </Link>
           </div>
         </>
       ),

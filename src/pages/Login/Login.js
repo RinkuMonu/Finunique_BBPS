@@ -207,19 +207,21 @@ const Login = ({ closePopup }) => {
                       )}
                     </button>
                   </form>
-
-                  <hr style={{ margin: "100px 0 10px" }} />
-                  <div className="already-account mt-auto">
-                    <h3>New to ABDKS Solutions?</h3>
+                  <div className="already-account mt-3 d-flex ">
+                    <h3>New to ABDKS Solutions?
                     <Link to={"/createaccount"}>
                       <button
-                        className="btn border-0 bg-white px-0 text-decoration-underline"
+                        className="btn border-0 bg-white px-1 text-decoration-underline"
                         onClick={() => setFlipState("create")}
                       >
                         Create Account
                       </button>
                     </Link>
+                    </h3>
                   </div>
+
+                  <hr style={{ margin: "100px 0 10px" }} />
+                  
                 </div>
                 {showPopup && (
                   <div className="popup-overlays">
