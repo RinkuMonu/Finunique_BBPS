@@ -91,7 +91,7 @@ function App() {
           <Route path="/blog" element={<Blog/>} />
            <Route path="/blog_details" element={<BlogDetails/>} />
              <Route path="/sitemap" element={<SiteMape/>} />
-             <Route path="/bug_bounty" element={<BugBountyProgram/>} />
+             <Route path="/bug-bounty" element={<BugBountyProgram/>} />
           <Route path="/register/useraccountcreation" element={<UserAccountCreation />} />
         </Routes>
         <Footer />
