@@ -122,7 +122,7 @@ function Footer() {
               </ListGroupItem>
               <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
                 <Link
-                  to="/contentPolicy"
+                  to="/bug-bounty"
                   className="text-white text-decoration-none small"
                   onClick={goTop}
                 >

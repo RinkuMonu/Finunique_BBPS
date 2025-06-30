@@ -28,51 +28,7 @@ const Sitemap = () => {
           </ul>
         </Col>
 
-        {/* Offers Column */}
-        <Col md={3}>
-          <div className="border-bottom pb-2 mb-3">
-            <h3 className="h5 fw-semibold">Offers</h3>
-          </div>
-          <ul className="list-unstyled">
-            {['Offers', 'Recharge/Bills', 'Grocery', 'Travel', 'Food', 'Press'].map((item, index) => (
-              <li key={index} className="mb-2">
-                <Link to="/" className="text-decoration-none text-dark custom-color-hover">{item}</Link>
-              </li>
-            ))}
-          </ul>
-        </Col>
-
-        {/* Terms and Conditions Column */}
-        <Col md={3}>
-          <div className="border-bottom pb-2 mb-3">
-            <h3 className="h5 fw-semibold">Terms and Conditions</h3>
-          </div>
-          <ul className="list-unstyled">
-            {['Terms and Conditions', 'T&C - Users', 'T&C - Merchants', 'T&C - Offers'].map((item, index) => (
-              <li key={index} className="mb-2">
-                <Link to="/term" className="text-decoration-none text-dark custom-color-hover">{item}</Link>
-              </li>
-            ))}
-            <li className="mb-2">
-              <Link to="/" className="text-decoration-none text-dark custom-color-hover">Others</Link>
-            </li>
-            <li className="mb-2">
-              <Link to="/blog" className="text-decoration-none text-dark custom-color-hover">Blog</Link>
-            </li>
-            <li className="mb-2">
-              <Link to="/" className="text-decoration-none text-dark custom-color-hover">Refer and Earn</Link>
-            </li>
-            <li className="mb-2">
-              <Link to="/" className="text-decoration-none text-dark custom-color-hover">Apps</Link>
-            </li>
-            <li className="mb-2">
-              <Link to="/" className="text-decoration-none text-dark custom-color-hover">Addcash</Link>
-            </li>
-          </ul>
-        </Col>
-
-        {/* Company & Policy Column */}
-        <Col md={3}>
+         <Col md={3}>
           <div className="border-bottom pb-2 mb-3">
             <h3 className="h5 fw-semibold">Company & Policy</h3>
           </div>
@@ -100,6 +56,56 @@ const Sitemap = () => {
             </li>
           </ul>
         </Col>
+
+        {/* Offers Column */}
+        <Col md={3}>
+          <div className="border-bottom pb-2 mb-3">
+            <h3 className="h5 fw-semibold">Offers</h3>
+          </div>
+          <ul className="list-unstyled">
+            <li className="mb-2">
+              <Link to="/redeem-payback-points" className="text-decoration-none text-dark custom-color-hover">Redeen Payback Points</Link>
+            </li>
+            <li className="mb-2">
+              <Link to="/recharge" className="text-decoration-none text-dark custom-color-hover">'Recharge/Bills'</Link>
+            </li>
+            <li className="mb-2">
+              <Link to="/WhyUs" className="text-decoration-none text-dark custom-color-hover">Why Us</Link>
+            </li>
+          </ul>
+        </Col>
+
+        {/* Terms and Conditions Column */}
+        <Col md={3}>
+          <div className="border-bottom pb-2 mb-3">
+            <h3 className="h5 fw-semibold">Terms and Conditions</h3>
+          </div>
+          <ul className="list-unstyled">
+            {['Terms and Conditions'].map((item, index) => (
+              <li key={index} className="mb-2">
+                <Link to="/term" className="text-decoration-none text-dark custom-color-hover">{item}</Link>
+              </li>
+            ))}
+            <li className="mb-2">
+              <Link to="/" className="text-decoration-none text-dark custom-color-hover">Others</Link>
+            </li>
+            <li className="mb-2">
+              <Link to="/blog" className="text-decoration-none text-dark custom-color-hover">Blog</Link>
+            </li>
+            <li className="mb-2">
+              <Link to="/bug-bounty" className="text-decoration-none text-dark custom-color-hover">Bug Bounty</Link>
+            </li>
+            {/* <li className="mb-2">
+              <Link to="/" className="text-decoration-none text-dark custom-color-hover">Apps</Link>
+            </li>
+            <li className="mb-2">
+              <Link to="/" className="text-decoration-none text-dark custom-color-hover">Addcash</Link>
+            </li> */}
+          </ul>
+        </Col>
+
+        {/* Company & Policy Column */}
+       
       </Row>
 
     
