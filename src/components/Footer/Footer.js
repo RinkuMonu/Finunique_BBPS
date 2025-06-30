@@ -95,7 +95,7 @@ function Footer() {
               </ListGroupItem>
                <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
                 <Link
-                  to="/privacypolicy"
+                  to="/blog"
                   className="text-white text-decoration-none small"
                   onClick={goTop}
                 >
@@ -113,7 +113,7 @@ function Footer() {
               </ListGroupItem>
               <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
                 <Link
-                  to="/RefundPolicy"
+                  to="/sitemap"
                   className="text-white text-decoration-none small"
                   onClick={goTop}
                 >
