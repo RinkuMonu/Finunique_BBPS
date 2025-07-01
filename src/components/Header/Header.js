@@ -14,12 +14,16 @@ export default function Header() {
   const [showUserOptions, setShowUserOptions] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
+  const user= JSON.parse(localStorage.getItem("user"));
+
 
   const openModal = () => setIsOpen(true);
 
   const handlelogout = () => {
     dispatch(logout());
-    localStorage.removeItem("id");
+    localStorage.removeItem("token");
+    localStorage.removeItem("userid");
+    localStorage.removeItem("user");
     navigate("/");
   };
 
@@ -255,7 +259,7 @@ export default function Header() {
                                   fontSize: "12px",
                                 }}
                               >
-                                ₹0{" "}
+                                ₹{user.eWallet}{" "}
                                 <i
                                   class="bi bi-plus"
                                   style={{ color: "#404040", fontSize: "14px" }}
@@ -304,17 +308,17 @@ export default function Header() {
                                       Help?
                                     </Link>
                                   </div>
-                                  <h2 className="mb-1">Test User</h2>
-                                  <p className="mb-0">testuser@gmail.com</p>
-                                  <p>0123456789</p>
+                                  <h2 className="mb-1">{user.name}</h2>
+                                  <p className="mb-0">{user.email}</p>
+                                  <p>{user.mobileNumber}</p>
 
                                   <div className="d-flex align-items-baseline justify-content-between">
-                                    <span>Available Balance: ₹0</span>
+                                    <span>Available Balance: ₹{user.eWallet}</span>
                                     <button className="btn btn-primary btn-sm mt-2">
                                       Add
                                     </button>
                                   </div>
-                                  {localStorage.getItem("USER") ? (
+                                  {user.isKycVerified ===true ? (
                                     <>
                                       <p>Your KYC is Completed</p>
                                     </>

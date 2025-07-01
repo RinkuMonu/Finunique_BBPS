@@ -15,21 +15,21 @@ export default function PanDetails({pandata}) {
                                     <div className='aadhar_box'>
                                         <i class="bi bi-copy"></i>
                                         <h3>Pan Number</h3>
-                                        <p>{pandata.data.data.data.pan_number}</p>
+                                        <p>{pandata?.pan_number}</p>
                                     </div>
                                 </div>
                                 <div className='col-md-4 mb-3'>
                                     <div className='aadhar_box'>
                                         <i class="bi bi-copy"></i>
                                         <h3>Name</h3>
-                                        <p>{pandata.data.data.data.full_name }</p>
+                                        <p>{pandata?.full_name }</p>
                                     </div>
                                 </div>
                                 <div className='col-md-4 mb-3'>
                                     <div className='aadhar_box'>
                                         <i class="bi bi-copy"></i>
                                         <h3>Category</h3>
-                                        <p>{pandata.data.data.data.category}</p>
+                                        <p>{pandata?.category}</p>
                                     </div>
                                 </div>
                             </div>

@@ -1,22 +1,29 @@
-import React, { useState } from "react";
 import "./kyc.css";
 import AadharCard from "./AadharCard";
 import BankDetails from "./BankDetails";
+import React from "react";
+
 import PanDetails from "./PanDetails";
 import axios from "axios";
+
+import { useLocation, useParams } from "react-router-dom";
 // import ClipLoader from "react-spinners/ClipLoader";
 
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Swal from "sweetalert2";
 
 import { useNavigate } from "react-router-dom";
-// https://finpay-b2c-backend.onrender.com/api/auth/aadhar-verify
-const API_URL = "https://finpay-b2c-backend.onrender.com/api/auth/aadhar-verify";
+// import axios from "../../../Component/services/axios";
+import { useState } from "react";
+import axiosInstance from "../../axiosinstanse/axiosInstance";
 
-export default function KYC() {
-  const userId = localStorage.getItem("id");
-  console.log(userId);
 
+
+export default function UserAccountCreation() {
+  // const routeLocation = useLocation();
+  // const userId = routeLocation.state?.user;
+   const userId= localStorage.getItem("userid")
+   console.log(userId,"Usr iddddddddd")
   const [currentStep, setCurrentStep] = useState(1);
   const [showAadharDetails, setShowAadharDetails] = useState(false);
   const [data, setData] = useState("");
@@ -33,7 +40,7 @@ export default function KYC() {
   const [message, setMessage] = useState("");
   const [pandata, setpandata] = useState("");
   const [bankData, setBankData] = useState("");
-  const [color, setColor] = useState("#001e50");
+  const [color, setColor] = useState("#872d67");
   const [otp, setOtp] = useState("");
   const [formData, setFormData] = useState({
     aadharNumber: "",
@@ -63,9 +70,9 @@ export default function KYC() {
   };
 
   const handleNext = () => {
-      if (isStepValid() && currentStep < steps.length) {
-        setCurrentStep(currentStep + 1);
-    }
+    // if (isStepValid() && currentStep < steps.length) {
+    // }
+    setCurrentStep(currentStep + 1);
   };
 
   const handleBack = () => {
@@ -87,11 +94,11 @@ export default function KYC() {
     setSendingOtp(true);
 
     try {
-      const response = await axios.post(API_URL, { aadharNumber });
-      console.log("responseeeeee", response);
-      console.log("data", response.data.data.data.client_id);
+      const response = await axiosInstance.post("kyc/aadhar-verify", { aadharNumber });
+      // console.log("responseeeeee", response.data);
+      // console.log("data", response.data.data.data.data.client_id);
 
-      setClientId(response.data.data.data.client_id);
+      setClientId(response.data.data.data.data.client_id);
       setMessage("OTP Send sucessfully");
     } catch (error) {
       setMessage("Please try again for OTP ");
@@ -111,8 +118,7 @@ export default function KYC() {
     setVerifyingOtp(true);
 
     try {
-      const response = await axios.post(
-        "https://finpay-b2c-backend.onrender.com/api/auth/submit-aadhar-otp",
+      const response = await axiosInstance.post("kyc/submit-aadhar-otp",
         { aadharNumber, otp, client_id: clientId, userId },
         {
           // headers: {
@@ -123,9 +129,9 @@ export default function KYC() {
       console.log("responseeeeee", response);
       console.log("data", response.data.data.data.client_id);
       setMessage("OTP Sucessfull submited");
-      setData(response.data.data.data);
+      setData(response.data.data.data.data);
     } catch (error) {
-      setMessage("❌ OTP Failed");
+      setMessage("❌ OTP Verfication Failed");
     }
 
     setVerifyingOtp(false);
@@ -139,12 +145,11 @@ export default function KYC() {
     }
     setLoading(true);
     try {
-      const response = await axios.post(
-        "https://finpay-b2c-backend.onrender.com/api/auth/verifybank",
+      const response = await axiosInstance.post("kyc/verifybank",
         { id_number: bankAccount, ifsc, userId }
       );
-      setBankData(response);
-      console.log(".....", response);
+      setBankData(response?.data?.pandata?.data?.data);
+      console.log("resonse from bank", response?.data?.pandata?.data?.data);
       Swal.fire({
         title: "! Sucessfully Verfiy your Bank",
         text: "",
@@ -167,12 +172,11 @@ export default function KYC() {
     }
     setLoading(true);
     try {
-      const response = await axios.post(
-        "https://finpay-b2c-backend.onrender.com/api/auth/verifyPAN",
+      const response = await axiosInstance.post("kyc/verifyPAN",
         { id_number: panCard, userId }
       );
       console.log(".....pan", response);
-      setpandata(response);
+      setpandata(response?.data?.name?.data);
 
       Swal.fire({
         title: "! Sucessfully Verfiy your Pan",
@@ -194,8 +198,7 @@ export default function KYC() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "https://finpay-b2c-backend.onrender.com/api/auth/verifyUser",
+      const response = await axiosInstance.post("kyc/verifyUser",
         {
           userId: userId,
         }
@@ -212,7 +215,7 @@ export default function KYC() {
         text: "",
         icon: "success",
       });
-      location("/");
+      location("/dashboard");
 
       return "User verified successfully";
     } catch (error) {
@@ -466,9 +469,10 @@ export default function KYC() {
                       Back
                     </button>
                     <button
-                      className="btn NextBtn"
+                      className="btn btn-primary NextkBtn me-2"
+                      
                       onClick={handleNext}
-                      disabled={!isStepValid || currentStep === steps.length}
+                      // disabled={!isStepValid || currentStep === steps.length}
                     >
                       Next
                     </button>
@@ -482,3 +486,4 @@ export default function KYC() {
     </>
   );
 }
+

@@ -1,13 +1,13 @@
+"use client";
+
 import React, { useState } from "react";
 import "./login.css";
-import ReactCardFlip from "react-card-flip";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { login, verifyOtp } from "../../Features/Auth/authSlice";
+import Swal from "sweetalert2";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import axios from "axios";
 
 const Login = ({ closePopup }) => {
-  const [flipState, setFlipState] = useState("login"); // default is login
   const [mobileNumber, setMobileNumber] = useState("");
   const [otp, setOtp] = useState("");
   const [isValid, setIsValid] = useState(true);
@@ -15,9 +15,8 @@ const Login = ({ closePopup }) => {
   const [isCheckboxValid, setIsCheckboxValid] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
+  const [otpSent, setOtpSent] = useState(false);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const handleMobileChange = (e) => {
     const value = e.target.value;
@@ -40,7 +39,7 @@ const Login = ({ closePopup }) => {
     setOtp(e.target.value);
   };
 
-  const handleSubmitLogin = async (e) => {
+  const handleSendOtp = async (e) => {
     e.preventDefault();
     setErrorMessage("");
 
@@ -59,22 +58,38 @@ const Login = ({ closePopup }) => {
     setIsLoading(true);
 
     try {
-      const response = await dispatch(login(mobileNumber)).unwrap();
-      console.log("Login Success:", response);
+      const response = await axios.post("http://localhost:8080/api/v1/auth/send-otp", {
+        mobileNumber: mobileNumber,
+      });
 
-      if (response.message === "OTP sent successfully") {
-        // Stay on same card, just show OTP input
-        setFlipState("login");
+      if (response.status === 200) {
+        Swal.fire({
+          title: "OTP Sent Successfully",
+          icon: "success",
+          draggable: true,
+        });
+        setOtpSent(true);
       }
     } catch (error) {
-      console.error("Login failed:", error);
-      setErrorMessage(error || "Something went wrong!");
+      let errorMessage = "Something went wrong! Please try again.";
+
+      if (error.response) {
+        errorMessage = error.response.data?.message || "An error occurred";
+      } else if (error.request) {
+        errorMessage = "Network Error! Please check your internet connection.";
+      }
+
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: errorMessage,
+      });
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleSubmitOTP = async (e) => {
+  const handleVerifyOtp = async (e) => {
     e.preventDefault();
 
     if (!otp || otp.length !== 6) {
@@ -83,21 +98,46 @@ const Login = ({ closePopup }) => {
     }
 
     setIsLoading(true);
-    try {
-      const response = await dispatch(
-        verifyOtp({ mobileNumber, otp })
-      ).unwrap();
 
-      console.log("OTP Verified:", response);
-      setShowPopup(true);
-      setTimeout(() => {
-        setShowPopup(false);
-        closePopup();
-        navigate("/");
-      }, 3000);
+    try {
+      const response = await axios.post("http://localhost:8080/api/v1/auth/login", {
+        mobileNumber: mobileNumber,
+        otp: otp,
+      });
+
+      if (response.status === 200) {
+        console.log(response.data.user);
+        
+        const token = response.data.user.token;
+        localStorage.setItem("token", token);
+        localStorage.setItem("userid", response.data.user.id);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+
+        
+
+        Swal.fire({
+          title: "Login Successful",
+          icon: "success",
+          draggable: true,
+        }).then(() => {
+          // closePopup();
+          navigate("/");
+        });
+      }
     } catch (error) {
-      console.error("OTP Verification failed:", error);
-      setErrorMessage(error || "Invalid OTP, please try again!");
+      let errorMessage = "Something went wrong!";
+
+      if (error.response) {
+        errorMessage = error.response.data?.message || "User not Register";
+      } else if (error.request) {
+        errorMessage = "Network Error! Please check your internet connection.";
+      }
+
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: errorMessage,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -123,25 +163,20 @@ const Login = ({ closePopup }) => {
               <div className="form-container">
                 <div className="form-box login-Heading d-flex flex-column h-100">
                   <h2>Welcome back!</h2>
-                  <form
-                    className="row g-3 needs-validation"
-                    noValidate
-                    onSubmit={handleSubmitLogin}
-                  >
+                  <form className="row g-3 needs-validation" noValidate>
                     <div className="mb-3">
                       <label htmlFor="mobileNumber" className="form-label">
                         Enter Mobile Number
                       </label>
                       <input
                         type="number"
-                        className={`form-control ${
-                          isValid ? "" : "is-invalid"
-                        }`}
+                        className={`form-control ${isValid ? "" : "is-invalid"}`}
                         id="mobileNumber"
                         value={mobileNumber}
                         onChange={handleMobileChange}
                         placeholder="Enter Mobile Number"
                         required
+                        disabled={otpSent}
                       />
                       {!isValid && (
                         <div className="invalid-feedback">{errorMessage}</div>
@@ -157,6 +192,7 @@ const Login = ({ closePopup }) => {
                         id="flexCheckChecked"
                         checked={isChecked}
                         onChange={handleCheckboxChange}
+                        disabled={otpSent}
                       />
                       <label
                         className="form-check-label ms-1"
@@ -167,70 +203,93 @@ const Login = ({ closePopup }) => {
                       </label>
                     </div>
 
-                    <div className="mb-3">
-                      <label htmlFor="otp" className="form-label">
-                        Enter OTP
-                      </label>
-                      <input
-                        type="number"
-                        className="form-control"
-                        id="otp"
-                        value={otp}
-                        onChange={handleOtpChange}
-                        placeholder="Enter OTP"
-                        required
-                      />
-                      {errorMessage && (
-                        <div className="invalid-feedback">{errorMessage}</div>
-                      )}
-                    </div>
-
-                    <button
-                      className="btn OtpBtn px-0"
-                      type="submit"
-                      disabled={isLoading}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      {isLoading ? (
-                        <DotLottieReact
-                          src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
-                          autoplay
-                          loop
-                          style={{ width: 30, height: 30 }}
-                        />
-                      ) : (
-                        "Submit OTP"
-                      )}
-                    </button>
-                  </form>
-                  <div className="already-account mt-3 d-flex ">
-                    <h3>New to ABDKS Solutions?
-                    <Link to={"/createaccount"}>
+                    {!otpSent && (
                       <button
-                        className="btn border-0 bg-white px-1 text-decoration-underline"
-                        onClick={() => setFlipState("create")}
+                        className="btn OtpBtn px-0"
+                        type="button"
+                        disabled={isLoading}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                        onClick={handleSendOtp}
                       >
-                        Create Account
+                        {isLoading ? (
+                          <DotLottieReact
+                            src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
+                            autoplay
+                            loop
+                            style={{ width: 30, height: 30 }}
+                          />
+                        ) : (
+                          "Send OTP"
+                        )}
                       </button>
-                    </Link>
+                    )}
+
+                    {otpSent && (
+                      <>
+                        <div className="mb-3">
+                          <label htmlFor="otp" className="form-label">
+                            Enter OTP
+                          </label>
+                          <input
+                            type="number"
+                            className="form-control"
+                            id="otp"
+                            value={otp}
+                            onChange={handleOtpChange}
+                            placeholder="Enter OTP"
+                            required
+                          />
+                          {errorMessage && (
+                            <div className="invalid-feedback">{errorMessage}</div>
+                          )}
+                        </div>
+
+                        <button
+                          className="btn OtpBtn px-0"
+                          type="button"
+                          disabled={isLoading}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                          onClick={handleVerifyOtp}
+                        >
+                          {isLoading ? (
+                            <DotLottieReact
+                              src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
+                              autoplay
+                              loop
+                              style={{ width: 30, height: 30 }}
+                            />
+                          ) : (
+                            "Verify OTP"
+                          )}
+                        </button>
+                      </>
+                    )}
+                  </form>
+
+                  <div className="already-account mt-3 d-flex">
+                    <h3>
+                      New to ABDKS Solutions?
+                      <Link to={"/createaccount"}>
+                        <button
+                          className="btn border-0 bg-white px-1 text-decoration-underline"
+                          onClick={() => {}}
+                        >
+                          Create Account
+                        </button>
+                      </Link>
                     </h3>
                   </div>
 
                   <hr style={{ margin: "100px 0 10px" }} />
-                  
                 </div>
-                {showPopup && (
-                  <div className="popup-overlays">
-                    <div className="popup-contents">
-                      <h3>OTP Submitted Successfully!</h3>
-                      <iframe src="https://lottie.host/embed/03f271aa-e217-438b-9e50-9d37ddfbc9d5/OKoDas2PKt.lottie"></iframe>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           </div>

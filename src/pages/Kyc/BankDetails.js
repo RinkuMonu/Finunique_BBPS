@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function BankDetails({bankData}) {
-    console.log(bankData,"bank data")
+    console.log("bank dataAAA",bankData)
     
     return (
         <>
@@ -21,51 +21,51 @@ export default function BankDetails({bankData}) {
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Name</h3>
-                                    <p>{bankData.data.name}</p>
+                                    <p>{bankData?.beneficiary_name}</p>
                                 </div>
                             </div>
                             <div className='col-md-4 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Account Existing</h3>
-                                    <p>{bankData.data.pandata.data.account_exists}</p>
+                                    <p>{bankData?.account_exists}</p>
                                 </div>
                             </div>
                             <div className='col-md-4 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>IFSC</h3>
-                                    <p>{bankData.data.pandata.data.ifsc_details.ifsc}</p>
+                                    <p>{bankData?.beneficiary_ifsc}</p>
                                 </div>
                             </div>
-                            <div className='col-md-4 mb-3'> 
+                            {/* <div className='col-md-4 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Micr Number</h3>
-                                    <p>{bankData.data.pandata.data.ifsc_details.micr}</p>
+                                    <p>{bankData?.data?.name?.ifsc_details?.micr}</p>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className='col-md-4 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Bank Name</h3>
-                                    <p>{bankData.data.pandata.data.ifsc_details.bank_name}</p>
+                                    <p>{bankData?.bank_name}</p>
                                 </div>
                             </div>
                             <div className='col-md-4 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Branch</h3>
-                                    <p>{bankData.data.pandata.data.ifsc_details.branch}</p>
+                                    <p>{bankData?.branch_name}</p>
                                 </div>
                             </div>
-                            <div className='col-md-12 mb-3'> 
+                            {/* <div className='col-md-12 mb-3'> 
                                 <div className='aadhar_box'>
                                 <i class="bi bi-copy"></i>
                                     <h3>Address</h3>
-                                    <p>{bankData.data.pandata.data.ifsc_details.address}</p>
+                                    <p>{bankData?.data?.name?.ifsc_details?.address}</p>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
