@@ -1,7 +1,16 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://finpay-b2c-backend.onrender.com/api', 
+  // baseURL: 'https://finpay-b2c-backend.onrender.com/api', 
+  
+  baseURL: "http://192.168.1.88:8080/api/", 
+  // baseURL: "https://bbpsrepo.onrender.com/api/", 
+// baseURL:"http://localhost:3000/api",
+  // baseURL: 'https://7qcwg3jk-8080.inc1.devtunnels.ms/api/',
+  // baseURL: "https://bbpsrepo.onrender.com/api/",
+
+  // baseURL: 'https://1979-2401-4900-1c1b-b183-ad00-4f01-f61e-5178.ngrok-free.app/api/',
+  // baseURL: 'https://api.finuniques.in/api/',
   
   headers: {
     'Content-Type': 'application/json',
@@ -10,8 +19,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -24,10 +32,10 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
-    
     if (error.response && error.response.status === 401) {
-      console.error('Unauthorized! Redirecting to login...');
-     
+      localStorage.removeItem("token");
+
+      console.error("Unauthorized! Redirecting to login...");
     }
     return Promise.reject(error);
   }

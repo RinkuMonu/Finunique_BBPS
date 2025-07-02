@@ -37,6 +37,22 @@ import Emi from "./EMI/Emi";
 import TrafficChallan from "./TrafficChallan/TrafficChallan";
 import HousingBillPayment from "./HousingBillPayment/HousingBillPayment";
 import LpgBooking from "./LpgBooking/LpgBooking";
+import {
+  FaMoneyBillWave,
+  FaWifi,
+  FaLightbulb,
+  FaReceipt,
+
+  FaShieldAlt,
+  FaTint,
+  FaPhone,
+  FaTv,
+  FaCar,
+
+  FaCreditCard,
+  FaUniversity,
+} from "react-icons/fa";
+import { MdDataUsage } from "react-icons/md";
 
 const BillPayUI = () => {
   const [activeMenu, setActiveMenu] = useState("Mobile");
@@ -44,23 +60,27 @@ const BillPayUI = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const allItems = [
-    { name: "Mobile", icon: <FaMobileAlt size={24} /> },
-    { name: "DTH", icon: <FaSatelliteDish size={24} /> },
-    { name: "Electricity", icon: <MdElectricBolt size={24} /> },
-    { name: "Credit Card", icon: <MdCreditCard size={24} /> },
-    { name: "Datacard", icon: <GiUsbKey size={24} /> },
-    { name: "Landline", icon: <BiPhoneCall size={24} /> },
-    { name: "Broadband", icon: <GiWifiRouter size={24} /> },
-    { name: "Piped Gas", icon: <FaGasPump size={24} /> },
-    { name: "Insurance", icon: <FaUmbrella size={24} /> },
-    { name: "Water", icon: <GiTap size={24} /> },
-    { name: "Google Play", icon: <FaGooglePlay size={24} /> },
-    { name: "Cable", icon: <GiTv size={24} /> },
-    { name: "Municipality", icon: <GiVikingLonghouse size={24} /> },
-    { name: "EMI", icon: <HiCurrencyRupee size={24} /> },
-    { name: "Housing", icon: <FaHouseChimney size={24} /> },
-    { name: "LPG Booking", icon: <GiGasStove size={24} /> },
-    { name: "Challan", icon: <FaTrafficLight size={24} /> },
+    { name: "PREPAID", icon: <FaMobileAlt size={24} /> },
+    { name: "Postpaid", icon: <FaMobileAlt size={24} /> },
+    { name: "POST PAID", icon: <FaMobileAlt size={24} /> },
+    { name: "POSTPAID", icon: <FaMobileAlt size={24} /> },
+    { name: "EMI", icon: <FaMoneyBillWave size={24} /> },
+  { name: "Broadband", icon: <FaWifi size={24} /> },
+  { name: "Electricity", icon: <FaLightbulb size={24} /> },
+  { name: "BILL PAYMENT", icon: <FaReceipt size={24} /> },
+  { name: "Gas", icon: <GiGasStove size={24} /> },
+  { name: "Insurance", icon: <FaShieldAlt size={24} /> },
+  { name: "Water", icon: <FaTint size={24} /> },
+  { name: "DTH", icon: <FaSatelliteDish size={24} /> },
+  { name: "Landline", icon: <FaPhone size={24} /> },
+  { name: "Cable", icon: <FaTv size={24} /> },
+  { name: "Fastag", icon: <FaCar size={24} /> },
+  { name: "LPG", icon: <FaGasPump size={24} /> },
+  { name: "Bill Pay", icon: <FaCreditCard size={24} /> },
+  { name: "BroadBand", icon: <FaWifi size={24} /> },
+  { name: "Datacard Prepaid", icon: <MdDataUsage size={24} /> },
+  { name: "Datacard Postpaid", icon: <MdDataUsage size={24} /> },
+  { name: "Municipality", icon: <FaUniversity size={24} /> },
   ];
 
   const [menuItems, setMenuItems] = useState([]);

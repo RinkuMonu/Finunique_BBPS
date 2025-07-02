@@ -16,6 +16,7 @@ import AppLayout from "./components/AppLayout/AppLayout";
 import OurService from "./pages/OurService/OurService.js";
 import WhyUs from "./pages/WhyUs";
 import BillPayUI from "../src/pages/services/BillPayUI.js";
+import BillPayUI11 from "../src/pages/services/BillPayUI11.js";
 import OurPartner from "./pages/OurPartner";
 import BBPS from "./pages/BBPS";
 import Term from "./pages/Term";
@@ -49,6 +50,7 @@ import Blog from "./pages/Blog/Blog.js";
 import BlogDetails from "./pages/Blog/BlogDetails.js";
 import SiteMape from "./pages/SiteMap/SiteMape.js";
 import BugBountyProgram from "./pages/BugBounty/BugBounty.js";
+import BillPaymentSystem from "./pages/services/BillPaymentSystem.js";
 
 function App() {
   // const { pathname } = useLocation();
@@ -67,6 +69,8 @@ function App() {
           <Route path="/Services" element={<OurService />} />
           <Route path="/WhyUs" element={<WhyUs />} />
           <Route path="/recharge" element={<BillPayUI />} />
+          <Route path="/recharge1" element={<BillPayUI11 />} />
+          <Route path="/billpayment" element={<BillPaymentSystem />} />
           <Route path="/OurPartner" element={<OurPartner />} />
           <Route path="/BBPS" element={<BBPS />} />
           <Route path="/term" element={<Term />} />

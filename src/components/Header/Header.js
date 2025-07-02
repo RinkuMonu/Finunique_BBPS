@@ -107,7 +107,7 @@ export default function Header() {
                           aria-labelledby="servicesDropdown"
                         >
                           <li>
-                            <Link className="dropdown-item" to="/recharge">
+                            <Link className="dropdown-item" to="/billpayment">
                               <i class="bi bi-lightning-charge"></i>
                               Recharge & Bill Pay
                             </Link>
@@ -259,7 +259,7 @@ export default function Header() {
                                   fontSize: "12px",
                                 }}
                               >
-                                ₹{user.eWallet}{" "}
+                                ₹{user?.eWallet}{" "}
                                 <i
                                   class="bi bi-plus"
                                   style={{ color: "#404040", fontSize: "14px" }}
@@ -308,17 +308,17 @@ export default function Header() {
                                       Help?
                                     </Link>
                                   </div>
-                                  <h2 className="mb-1">{user.name}</h2>
-                                  <p className="mb-0">{user.email}</p>
-                                  <p>{user.mobileNumber}</p>
+                                  <h2 className="mb-1">{user?.name}</h2>
+                                  <p className="mb-0">{user?.email}</p>
+                                  <p>{user?.mobileNumber}</p>
 
                                   <div className="d-flex align-items-baseline justify-content-between">
-                                    <span>Available Balance: ₹{user.eWallet}</span>
+                                    <span>Available Balance: ₹{user?.eWallet}</span>
                                     <button className="btn btn-primary btn-sm mt-2">
                                       Add
                                     </button>
                                   </div>
-                                  {user.isKycVerified ===true ? (
+                                  {user?.isKycVerified ===true ? (
                                     <>
                                       <p>Your KYC is Completed</p>
                                     </>
