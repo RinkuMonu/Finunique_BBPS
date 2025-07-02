@@ -73,7 +73,7 @@ const BillPaymentSystem = () => {
   ];
 
   // State variables
-  const [selectedCategory, setSelectedCategory] = useState("Postpaid");
+  const [selectedCategory, setSelectedCategory] = useState("Prepaid");
   const [operators, setOperators] = useState([]);
   const [selectedOperator, setSelectedOperator] = useState("");
   const [accountNumber, setAccountNumber] = useState("");
@@ -91,7 +91,7 @@ const BillPaymentSystem = () => {
 
   // Menu items data
   const allItems = [
-    { name: "PREPAID", icon: <FaMobileAlt size={24} /> },
+    { name: "Prepaid", icon: <FaMobileAlt size={24} /> },
     { name: "Postpaid", icon: <FaMobileAlt size={24} /> },
     // { name: "POST PAID", icon: <FaMobileAlt size={24} /> },
     // { name: "POSTPAID", icon: <FaMobileAlt size={24} /> },
@@ -116,7 +116,7 @@ const BillPaymentSystem = () => {
 
   // Component mapping
   const categoryComponents = {
-    "PREPAID": MobileRechargeUI2,
+    "Prepaid": MobileRechargeUI2,
     "Postpaid": PostpaidRecharge1,
     // "POST PAID": MobileRechargeUI,
     // "POSTPAID": MobileRechargeUI,
@@ -447,7 +447,7 @@ const BillPaymentSystem = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 pb-8 pt-0 px-4">
+    <div className="min-h-screen bg-gray-100 pb-8 pt-0">
       {/* Icon-based Menu Navigation */}
       <nav className="py-4 bg-light border-bottom" style={{ marginTop: "95px" }}>
         <div>
@@ -507,7 +507,7 @@ const BillPaymentSystem = () => {
         </div>
       </nav>
 
-      <div className="max-w-6xl mx-auto p-4">
+      <div className="max-w-6xl mx-auto">
       
 
         {(loading || statusCheckLoading) && (
