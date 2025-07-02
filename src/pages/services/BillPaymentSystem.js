@@ -447,7 +447,7 @@ const BillPaymentSystem = () => {
     <div className="min-h-screen bg-gray-100 pb-8 pt-0 px-4">
       {/* Icon-based Menu Navigation */}
       <nav className="py-4 bg-light border-bottom" style={{ marginTop: "95px" }}>
-        <Container>
+        <div>
           <Row className="text-center">
             {menuItems.map((item) => (
               <Col
@@ -501,7 +501,7 @@ const BillPaymentSystem = () => {
               />
             </Col>
           </Row>
-        </Container>
+        </div>
       </nav>
 
       <div className="max-w-6xl mx-auto p-4">

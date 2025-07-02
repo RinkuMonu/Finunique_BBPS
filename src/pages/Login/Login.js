@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import axios from "axios";
+import axiosInstance from "../../components/services/AxiosInstance";
 
 const Login = ({ closePopup }) => {
   const [mobileNumber, setMobileNumber] = useState("");
@@ -58,7 +59,7 @@ const Login = ({ closePopup }) => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8080/api/v1/auth/send-otp", {
+      const response = await axiosInstance.post("/v1/auth/send-otp", {
         mobileNumber: mobileNumber,
       });
 
@@ -100,7 +101,7 @@ const Login = ({ closePopup }) => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8080/api/v1/auth/login", {
+      const response = await axiosInstance.post("/v1/auth/login", {
         mobileNumber: mobileNumber,
         otp: otp,
       });
