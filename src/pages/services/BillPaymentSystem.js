@@ -130,7 +130,7 @@ const BillPaymentSystem = () => {
     "Fastag": Fastag1,
     "LPG": LpgBooking1,
     "Bill Pay": ElectricityBillPayment,
-    "BroadBand": Broadband,
+    "BroadBand": Broadband1,
     "Datacard Prepaid": DatacardPrepaidRecharge,
     "Datacard Postpaid": DatacardPostpaidRecharge,
     "Municipality": Municipality1

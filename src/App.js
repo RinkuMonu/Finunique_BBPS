@@ -51,6 +51,7 @@ import BlogDetails from "./pages/Blog/BlogDetails.js";
 import SiteMape from "./pages/SiteMap/SiteMape.js";
 import BugBountyProgram from "./pages/BugBounty/BugBounty.js";
 import BillPaymentSystem from "./pages/services/BillPaymentSystem.js";
+import SnakeGame from "./pages/Game/SnakeGame.js";
 
 function App() {
   // const { pathname } = useLocation();
@@ -97,6 +98,7 @@ function App() {
              <Route path="/sitemap" element={<SiteMape/>} />
              <Route path="/bug-bounty" element={<BugBountyProgram/>} />
           <Route path="/register/useraccountcreation" element={<UserAccountCreation />} />
+          <Route path="/game" element={<SnakeGame />} />
         </Routes>
         <Footer />
       </BrowserRouter>

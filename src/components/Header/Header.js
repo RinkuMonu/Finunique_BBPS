@@ -94,6 +94,11 @@ export default function Header() {
                           About Us
                         </Link>
                       </li>
+                      <li className="nav-item">
+                        <Link className="nav-link" to={"/game"}>
+                         Game
+                        </Link>
+                      </li>
                       <li className="nav-item dropdown">
                         {/* Hoverable Services Menu */}
                         <Link className="nav-link" to="/Services">
