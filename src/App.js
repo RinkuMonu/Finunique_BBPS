@@ -98,7 +98,7 @@ function App() {
              <Route path="/sitemap" element={<SiteMape/>} />
              <Route path="/bug-bounty" element={<BugBountyProgram/>} />
           <Route path="/register/useraccountcreation" element={<UserAccountCreation />} />
-          <Route path="/game" element={<SnakeGame />} />
+          {/* <Route path="/game" element={<SnakeGame />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>
