@@ -23,7 +23,7 @@ import {
 } from "react-icons/fa";
 import { MdDataUsage } from "react-icons/md";
 import axiosInstance from "../../components/services/AxiosInstance";
-import MobileRechargeUI from "./Mobile_Recharge/MobileRechargeUI";
+
 
 import Broadband from "./Broadband/Broadband";
 import ElectricityBillPayment from "./ElectricityBillPayment/ElectricityBillPayment";
@@ -52,6 +52,9 @@ import Fastag1 from "./Fastag/Fastag1";
 import PostpaidRecharge1 from "./Postpaid/PostpaidRecharge1";
 import DatacardPostpaidRecharge from "./DatacardPostpaid/DatacardPostpaidRecharge";
 import DatacardPrepaidRecharge from "./DatacardPrepaid/DatacardPrepaidRecharge";
+import MobileRechargeUI1 from "./Mobile_Recharge/MobileRechargeUI1";
+import MobileRechargeUI2 from "./Mobile_Recharge/MobileRechargeUI2";
+import DTHRecharge1 from "./DTH_Recharge/DTHRecharge1";
 
 const BillPaymentSystem = () => {
   // API endpoints
@@ -88,7 +91,7 @@ const BillPaymentSystem = () => {
 
   // Menu items data
   const allItems = [
-    // { name: "PREPAID", icon: <FaMobileAlt size={24} /> },
+    { name: "PREPAID", icon: <FaMobileAlt size={24} /> },
     { name: "Postpaid", icon: <FaMobileAlt size={24} /> },
     // { name: "POST PAID", icon: <FaMobileAlt size={24} /> },
     // { name: "POSTPAID", icon: <FaMobileAlt size={24} /> },
@@ -113,7 +116,7 @@ const BillPaymentSystem = () => {
 
   // Component mapping
   const categoryComponents = {
-    // "PREPAID": MobileRechargeUI,
+    "PREPAID": MobileRechargeUI2,
     "Postpaid": PostpaidRecharge1,
     // "POST PAID": MobileRechargeUI,
     // "POSTPAID": MobileRechargeUI,
@@ -124,7 +127,7 @@ const BillPaymentSystem = () => {
     "Gas": PipedGas1,
     "Insurance": Insurance1,
     "Water": Water1,
-    "DTH": DTHRecharge,
+    "DTH": DTHRecharge1,
     "Landline": Landline1,
     "Cable": Cable1,
     "Fastag": Fastag1,
