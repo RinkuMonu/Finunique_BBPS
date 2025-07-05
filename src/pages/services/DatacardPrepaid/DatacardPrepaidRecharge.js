@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 
 import FAQDatacardPrepaid from "./FAQDatacardPrepaid"; // <-- Adjust to your actual FAQ component
+import Swal from "sweetalert2";
 
 const DatacardPrepaidRecharge = ({
   selectedCategory,
@@ -67,6 +68,22 @@ const DatacardPrepaidRecharge = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+     const token = localStorage.getItem("token");
+      if (!token) {
+    Swal.fire({
+      title: "Login Required",
+      text: "Please login to continue with Datacard Prepaid bill payment.",
+      icon: "warning",
+      confirmButtonColor: "#001e50",
+      confirmButtonText: "Login Now",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/login"; 
+      }
+    });
+    return;
+  }
     if (formData.operator && formData.datacardNumber && !inputError) {
       onProceed();
     }

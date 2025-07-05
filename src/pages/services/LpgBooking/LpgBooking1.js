@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQLpgGasBooking from './FAQLpgGasBooking';
+import Swal from 'sweetalert2';
 
 const LpgBooking1 = ({
   selectedCategory,
@@ -109,7 +110,21 @@ const LpgBooking1 = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+     const token = localStorage.getItem("token");
+      if (!token) {
+    Swal.fire({
+      title: "Login Required",
+      text: "Please login to continue with LPG bill payment.",
+      icon: "warning",
+      confirmButtonColor: "#001e50",
+      confirmButtonText: "Login Now",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/login"; 
+      }
+    });
+    return;
+  }
     // Validate contact number
     if (!validateField(formData.registeredContactNumber, "^[0-9]{10}$")) {
       setInputError("Please enter a valid 10-digit contact number");

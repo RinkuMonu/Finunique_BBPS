@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQGasBillPayment from "./FAQGasBillPayment";
 import "./pipegas.css";
+import Swal from "sweetalert2";
 
 const PipedGas1 = ({ 
   selectedCategory,
@@ -63,13 +64,29 @@ const PipedGas1 = ({
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formData.operator && formData.caNumber && !inputError) {
-      onProceed();
-    }
-  };
+ const handleSubmit = (e) => {
+  e.preventDefault();
 
+  const token = localStorage.getItem("token"); 
+  if (!token) {
+    Swal.fire({
+      title: "Login Required",
+      text: "Please login to continue with broadband bill payment.",
+      icon: "warning",
+      confirmButtonColor: "#001e50",
+      confirmButtonText: "Login Now",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/login"; 
+      }
+    });
+    return;
+  }
+
+  if (formData.operator && formData.telephoneNumber && !inputError) {
+    onProceed();
+  }
+};
   return (
     <>
       <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>

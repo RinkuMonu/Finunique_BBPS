@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQLoanEMIPayments from "./FAQLoanEMIPayments";
+import Swal from "sweetalert2";
 
 const Emi1 = ({ 
   selectedCategory,
@@ -62,12 +63,22 @@ const Emi1 = ({
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formData.operator && formData.applicationId && !inputError) {
-      onProceed();
-    }
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const token = localStorage.getItem("token"); // Replace with your actual token key
+
+  if (!token) {
+    Swal.fire("Login Required", "Please login to continue with EMI payment.", "warning").then(() => {
+      window.location.href = "/login"; // Adjust this path as per your route
+    });
+    return;
+  }
+
+  if (formData.operator && formData.applicationId && !inputError) {
+    onProceed();
+  }
+};
 
   return (
     <>

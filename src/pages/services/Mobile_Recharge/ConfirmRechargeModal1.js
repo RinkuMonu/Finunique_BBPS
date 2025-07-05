@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import axiosInstance from "../../../components/services/AxiosInstance";
 import Swal from "sweetalert2";
+import { useUser } from "../../../context/UserContext";
 
 const ConfirmRechargeModal1 = ({ show, handleClose, formData }) => {
   const [showMpinModal, setShowMpinModal] = useState(false);
   const [mpin, setMpin] = useState("");
-
+  const {fetchUserfree} = useUser();
   const handleRechargeNow = () => {
     setShowMpinModal(true);
   };
@@ -33,6 +34,7 @@ const ConfirmRechargeModal1 = ({ show, handleClose, formData }) => {
         setShowMpinModal(false);
         handleClose();
         setMpin("");
+        fetchUserfree()
       } else {
         Swal.fire("Failed ❌", res.data.message, "error");
       }

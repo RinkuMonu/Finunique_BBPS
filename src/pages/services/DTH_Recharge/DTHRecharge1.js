@@ -4,6 +4,7 @@ import { Row, Col, Form, Button, Modal } from "react-bootstrap";
 import FAQDthRecharge from "./FAQDthRecharge";
 import Swal from "sweetalert2";
 import axiosInstance from "../../../components/services/AxiosInstance";
+import { useUser } from "../../../context/UserContext";
 
 const DTHRecharge1 = () => {
   const [operators, setOperators] = useState([]);
@@ -12,7 +13,7 @@ const DTHRecharge1 = () => {
   const [showMpinModal, setShowMpinModal] = useState(false);
   const [mpin, setMpin] = useState("");
   const [planInfo, setPlanInfo] = useState(null);
-
+ const {fetchUserfree} = useUser();
   const [formData, setFormData] = useState({
     operator: "",
     customerId: "",
@@ -106,10 +107,20 @@ const DTHRecharge1 = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setShowConfirmModal(true);
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    Swal.fire("Login Required", "Please log in to continue with the recharge.", "warning").then(() => {
+      window.location.href = "/login"; // Adjust to your app's login route
+    });
+    return;
+  }
+
+  setShowConfirmModal(true);
+};  
 
   const handleRecharge = async () => {
     if (!mpin) {
@@ -136,6 +147,7 @@ const DTHRecharge1 = () => {
         setMpin("");
         setFormData({ operator: "", customerId: "", amount: "" });
         setPlanInfo(null);
+        fetchUserfree()
       } else {
         Swal.fire("Failed ❌", res.data.message, "error");
       }

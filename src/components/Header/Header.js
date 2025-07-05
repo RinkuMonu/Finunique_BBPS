@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import AddMoney from "./AddMoney";
 import { useDispatch } from "react-redux";
 import { logout } from "../../Features/Auth/authSlice";
+import { useUser } from "../../context/UserContext";
 export default function Header() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -14,7 +15,8 @@ export default function Header() {
   const [showUserOptions, setShowUserOptions] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
-  const user= JSON.parse(localStorage.getItem("user"));
+  const { data } = useUser();
+  // const user= JSON.parse(localStorage.getItem("user"));
 
 
   const openModal = () => setIsOpen(true);
@@ -264,7 +266,7 @@ export default function Header() {
                                   fontSize: "12px",
                                 }}
                               >
-                                ₹{user?.eWallet}{" "}
+                                ₹{data?.eWallet}{" "}
                                 <i
                                   class="bi bi-plus"
                                   style={{ color: "#404040", fontSize: "14px" }}
@@ -313,17 +315,17 @@ export default function Header() {
                                       Help?
                                     </Link>
                                   </div>
-                                  <h2 className="mb-1">{user?.name}</h2>
-                                  <p className="mb-0">{user?.email}</p>
-                                  <p>{user?.mobileNumber}</p>
+                                  <h2 className="mb-1">{data?.name}</h2>
+                                  <p className="mb-0">{data?.email}</p>
+                                  <p>{data?.mobileNumber}</p>
 
                                   <div className="d-flex align-items-baseline justify-content-between">
-                                    <span>Available Balance: ₹{user?.eWallet}</span>
+                                    <span>Available Balance: ₹{data?.eWallet}</span>
                                     <button className="btn btn-primary btn-sm mt-2">
                                       Add
                                     </button>
                                   </div>
-                                  {user?.isKycVerified ===true ? (
+                                  {data?.isKycVerified ===true ? (
                                     <>
                                       <p>Your KYC is Completed</p>
                                     </>

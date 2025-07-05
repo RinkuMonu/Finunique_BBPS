@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQInsurancePayment from "./FAQInsurancePayment";
 import "./Insurancee.css";
+import Swal from "sweetalert2";
 
 const Insurance1 = ({ 
   selectedCategory,
@@ -98,18 +99,35 @@ const Insurance1 = ({
     setFormData(prev => ({ ...prev, mobileNumber: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formData.operator && formData.policyNumber && !inputError) {
-      onProceed({
-        ...formData,
-        additionalData: additionalFields.reduce((acc, field) => {
-          acc[field.id] = formData[field.id] || '';
-          return acc;
-        }, {})
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const token = localStorage.getItem("token");
+   if (!token) {
+      Swal.fire({
+        title: "Login Required",
+        text: "Please login to continue with Insurance bill payment.",
+        icon: "warning",
+        confirmButtonColor: "#001e50",
+        confirmButtonText: "Login Now",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/login"; 
+        }
       });
+      return;
     }
-  };
+
+  if (formData.operator && formData.policyNumber && !inputError) {
+    onProceed({
+      ...formData,
+      additionalData: additionalFields.reduce((acc, field) => {
+        acc[field.id] = formData[field.id] || '';
+        return acc;
+      }, {})
+    });
+  }
+};
 
   const isFormValid = () => {
     return formData.operator && 

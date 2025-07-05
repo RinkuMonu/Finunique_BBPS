@@ -2,13 +2,10 @@
 import React, { useState } from "react";
 import { Row, Col, Form, Button, Modal } from "react-bootstrap";
 import FAQMobileRecharge from "./FAQMobileRecharge";
-import MobileBrowsePlans from "./MobileBrowsePlans";
-import ConfirmRechargeModal from "./ConfirmRechargeModal";
-import axiosInstance from "../../../components/services/AxiosInstance";
-import ConfirmRechargeModal1 from "./ConfirmRechargeModal1";
 import MobileBrowsePlans1 from "./MobileBrowsePlans1";
+import ConfirmRechargeModal1 from "./ConfirmRechargeModal1";
+import axiosInstance from "../../../components/services/AxiosInstance";
 
-// ✅ Improved operator list
 const rechargeOperators = [
   "Airtel",
   "BSNL",
@@ -23,7 +20,6 @@ const rechargeOperators = [
   "MTS",
 ];
 
-// ✅ Improved circle list
 const circles = [
   "Andhra Pradesh",
   "Assam",
@@ -87,10 +83,20 @@ const MobileRechargeUI2 = () => {
     setShowPlansModal(false);
   };
 
-  const handleConfirmModalOpen = () => setShowConfirmModal(true);
+  const handleConfirmModalOpen = () => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      alert("Please login to continue with the recharge.");
+      window.location.href = "/login";
+      return;
+    }
+
+    setShowConfirmModal(true);
+  };
+
   const handleConfirmModalClose = () => setShowConfirmModal(false);
 
-  // HLR check on blur
   const handleNumberBlur = async () => {
     if (formData.mobileNumber.length < 10) return;
 
@@ -119,7 +125,7 @@ const MobileRechargeUI2 = () => {
       <div className="py-5 px-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{ color: " #001e50" }}>
+            <h2 className="fw-bold" style={{ color: "#001e50" }}>
               Instant Mobile Recharge
             </h2>
             <h3>
@@ -163,7 +169,9 @@ const MobileRechargeUI2 = () => {
                   <Form.Select value={formData.operator} onChange={handleChange}>
                     <option value="">Select Operator</option>
                     {rechargeOperators.map((op) => (
-                      <option key={op} value={op}>{op}</option>
+                      <option key={op} value={op}>
+                        {op}
+                      </option>
                     ))}
                   </Form.Select>
                 </Form.Group>
@@ -173,7 +181,9 @@ const MobileRechargeUI2 = () => {
                   <Form.Select value={formData.circle} onChange={handleChange}>
                     <option value="">Select Circle</option>
                     {circles.map((c) => (
-                      <option key={c} value={c}>{c}</option>
+                      <option key={c} value={c}>
+                        {c}
+                      </option>
                     ))}
                   </Form.Select>
                 </Form.Group>

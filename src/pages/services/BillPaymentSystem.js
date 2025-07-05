@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import OperatorSelection from "./OperatorSelection";
 import BillDetailsSection from "./BillDetailsSection";
 import PaymentStatusSection from "./PaymentStatusSection";
-import OperatorSelection1 from "./OperatorSelection1";
 import { Container, Row, Col, Modal } from "react-bootstrap";
 import {
   FaMobileAlt,
   FaMoneyBillWave,
   FaWifi,
   FaLightbulb,
-  FaReceipt,
+  
   FaShieldAlt,
   FaTint,
   FaSatelliteDish,
@@ -18,24 +16,16 @@ import {
   FaTv,
   FaCar,
   FaGasPump,
-  FaCreditCard,
+ 
   FaUniversity,
 } from "react-icons/fa";
 import { MdDataUsage } from "react-icons/md";
 import axiosInstance from "../../components/services/AxiosInstance";
 
 
-import Broadband from "./Broadband/Broadband";
+
 import ElectricityBillPayment from "./ElectricityBillPayment/ElectricityBillPayment";
-import PipedGas from "./PipedGas/PipedGas";
-import Insurance from "./Insurance/Insurance";
-import Water from "./Water/Water";
-import DTHRecharge from "./DTH_Recharge/DTHRecharge";
-import Landline from "./Landline/Landline";
-import { Cable } from "lucide-react";
-import TrafficChallan from "./TrafficChallan/TrafficChallan";
-import LpgBooking from "./LpgBooking/LpgBooking";
-import DataCardRecharge from "./DataCard/DataCardRecharge";
+
 
 import Emi1 from "./EMI/Emi1";
 import Broadband1 from "./Broadband/Broadband1";
@@ -52,9 +42,9 @@ import Fastag1 from "./Fastag/Fastag1";
 import PostpaidRecharge1 from "./Postpaid/PostpaidRecharge1";
 import DatacardPostpaidRecharge from "./DatacardPostpaid/DatacardPostpaidRecharge";
 import DatacardPrepaidRecharge from "./DatacardPrepaid/DatacardPrepaidRecharge";
-import MobileRechargeUI1 from "./Mobile_Recharge/MobileRechargeUI1";
 import MobileRechargeUI2 from "./Mobile_Recharge/MobileRechargeUI2";
 import DTHRecharge1 from "./DTH_Recharge/DTHRecharge1";
+import { useUser } from "../../context/UserContext";
 
 const BillPaymentSystem = () => {
   // API endpoints
@@ -88,7 +78,7 @@ const BillPaymentSystem = () => {
   const [moreItems, setMoreItems] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
+  const {fetchUserfree} = useUser();
   // Menu items data
   const allItems = [
     { name: "Prepaid", icon: <FaMobileAlt size={24} /> },
@@ -381,6 +371,7 @@ const BillPaymentSystem = () => {
         setLoading(false);
         checkPaymentStatus(referenceId);
         setStep(4);
+        fetchUserfree()
       })
       .catch((err) => {
         showErrorAlert("Payment failed. Please try again.");
