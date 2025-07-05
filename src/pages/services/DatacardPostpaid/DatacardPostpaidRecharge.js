@@ -83,7 +83,7 @@ const DatacardPostpaidRecharge = ({
       if (!token) {
     Swal.fire({
       title: "Login Required",
-      text: "Please login to continue with broadband bill payment.",
+      text: "Please login to continue with Datacard Postpaid bill payment.",
       icon: "warning",
       confirmButtonColor: "#001e50",
       confirmButtonText: "Login Now",
