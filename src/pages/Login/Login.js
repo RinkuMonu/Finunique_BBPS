@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import axios from "axios";
 import axiosInstance from "../../components/services/AxiosInstance";
+import { useUser } from "../../context/UserContext";
 
 const Login = ({ closePopup }) => {
   const [mobileNumber, setMobileNumber] = useState("");
@@ -18,7 +19,7 @@ const Login = ({ closePopup }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [otpSent, setOtpSent] = useState(false);
   const navigate = useNavigate();
-
+  const {fetchUserfree} = useUser();
   const handleMobileChange = (e) => {
     const value = e.target.value;
     setMobileNumber(value);
@@ -113,7 +114,7 @@ const Login = ({ closePopup }) => {
         localStorage.setItem("token", token);
         localStorage.setItem("userid", response.data.user.id);
         localStorage.setItem("user", JSON.stringify(response.data.user));
-
+        fetchUserfree()
         
 
         Swal.fire({
