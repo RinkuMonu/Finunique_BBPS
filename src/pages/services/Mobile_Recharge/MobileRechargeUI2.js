@@ -59,19 +59,66 @@ const MobileRechargeUI2 = () => {
     validity: "",
   });
 
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [id]: value,
-    }));
+  const [errors, setErrors] = useState({
+    mobileNumber: "",
+    amount: "",
+  });
+
+  const validateMobileNumber = (number) => /^[6-9]\d{9}$/.test(number);
+  const validateAmount = (amount) => {
+    const num = Number(amount);
+    return !isNaN(num) && num > 0;
   };
 
   const isFormValid =
-    formData.mobileNumber &&
+    validateMobileNumber(formData.mobileNumber) &&
+    validateAmount(formData.amount) &&
     formData.operator &&
-    formData.circle &&
-    formData.amount;
+    formData.circle;
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+
+    // Custom logic for mobileNumber input
+    if (id === "mobileNumber") {
+      if (/^\d*$/.test(value)) {
+        setFormData((prev) => ({ ...prev, mobileNumber: value }));
+
+        if (value.length === 10 && !validateMobileNumber(value)) {
+          setErrors((prev) => ({
+            ...prev,
+            mobileNumber: "Invalid mobile number format.",
+          }));
+        } else if (value.length !== 10) {
+          setErrors((prev) => ({
+            ...prev,
+            mobileNumber: "Mobile number must be 10 digits.",
+          }));
+        } else {
+          setErrors((prev) => ({ ...prev, mobileNumber: "" }));
+        }
+      }
+      return;
+    }
+
+    // Amount validation
+    if (id === "amount") {
+      setFormData((prev) => ({ ...prev, amount: value }));
+
+      if (!validateAmount(value)) {
+        setErrors((prev) => ({
+          ...prev,
+          amount: "Please enter a valid amount.",
+        }));
+      } else {
+        setErrors((prev) => ({ ...prev, amount: "" }));
+      }
+      return;
+    }
+
+    // For operator and circle
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
 
   const handlePlanSelect = (plan) => {
     setFormData((prevData) => ({
@@ -81,6 +128,7 @@ const MobileRechargeUI2 = () => {
       validity: plan.validity,
     }));
     setShowPlansModal(false);
+    setErrors((prev) => ({ ...prev, amount: "" }));
   };
 
   const handleConfirmModalOpen = () => {
@@ -98,7 +146,7 @@ const MobileRechargeUI2 = () => {
   const handleConfirmModalClose = () => setShowConfirmModal(false);
 
   const handleNumberBlur = async () => {
-    if (formData.mobileNumber.length < 10) return;
+    if (!validateMobileNumber(formData.mobileNumber)) return;
 
     try {
       const res = await axiosInstance.post("/v1/s3/recharge/hlrcheck", {
@@ -128,9 +176,7 @@ const MobileRechargeUI2 = () => {
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
               Instant Mobile Recharge
             </h2>
-            <h3>
-              Recharge your mobile number securely and instantly.
-            </h3>
+            <h3>Recharge your mobile number securely and instantly.</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Mobile Recharge.svg"
@@ -161,12 +207,20 @@ const MobileRechargeUI2 = () => {
                     value={formData.mobileNumber}
                     onChange={handleChange}
                     onBlur={handleNumberBlur}
+                    isInvalid={!!errors.mobileNumber}
+                    maxLength={10}
                   />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.mobileNumber}
+                  </Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="operator">
                   <Form.Label>Operator</Form.Label>
-                  <Form.Select value={formData.operator} onChange={handleChange}>
+                  <Form.Select
+                    value={formData.operator}
+                    onChange={handleChange}
+                  >
                     <option value="">Select Operator</option>
                     {rechargeOperators.map((op) => (
                       <option key={op} value={op}>
@@ -178,7 +232,10 @@ const MobileRechargeUI2 = () => {
 
                 <Form.Group className="mb-3" controlId="circle">
                   <Form.Label>Circle</Form.Label>
-                  <Form.Select value={formData.circle} onChange={handleChange}>
+                  <Form.Select
+                    value={formData.circle}
+                    onChange={handleChange}
+                  >
                     <option value="">Select Circle</option>
                     {circles.map((c) => (
                       <option key={c} value={c}>
@@ -196,6 +253,7 @@ const MobileRechargeUI2 = () => {
                       placeholder="₹ Amount"
                       value={formData.amount}
                       onChange={handleChange}
+                      isInvalid={!!errors.amount}
                     />
                     <button
                       className="btn btn-outline-secondary"
@@ -204,6 +262,9 @@ const MobileRechargeUI2 = () => {
                     >
                       Check Plans
                     </button>
+                    <Form.Control.Feedback type="invalid">
+                      {errors.amount}
+                    </Form.Control.Feedback>
                   </div>
                 </Form.Group>
 

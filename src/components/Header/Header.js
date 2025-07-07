@@ -40,7 +40,7 @@ export default function Header() {
                   <Link className="navbar-brand logo" to={"/"}>
                     <img
                       className="img-fluid"
-                      src="/assets/Home/logo2.png"
+                      src="/logo/abdkslogo.png"
                       alt=""
                     />
                   </Link>
@@ -106,7 +106,7 @@ export default function Header() {
                         <Link className="nav-link" to="/Services">
                           Our Services
                           <button className=" dropdown-toggle bg-white border-0">
-                            <i className="bi bi-chevron-down"></i>
+                            {/* <i className="bi bi-chevron-down"></i> */}
                           </button>
                         </Link>
                         <ul

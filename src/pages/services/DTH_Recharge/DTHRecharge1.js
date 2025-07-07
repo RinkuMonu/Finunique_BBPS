@@ -13,14 +13,14 @@ const DTHRecharge1 = () => {
   const [showMpinModal, setShowMpinModal] = useState(false);
   const [mpin, setMpin] = useState("");
   const [planInfo, setPlanInfo] = useState(null);
- const {fetchUserfree} = useUser();
+  const { fetchUserfree } = useUser();
+
   const [formData, setFormData] = useState({
     operator: "",
     customerId: "",
     amount: "",
   });
 
-  // Fetch operator list on mount
   useEffect(() => {
     const fetchOperators = async () => {
       try {
@@ -39,6 +39,12 @@ const DTHRecharge1 = () => {
 
   const handleChange = (e) => {
     const { id, value } = e.target;
+
+    // Allow only numeric values for customerId and amount
+    if ((id === "customerId" || id === "amount") && !/^\d*$/.test(value)) {
+      return;
+    }
+
     setFormData((prev) => ({
       ...prev,
       [id]: value,
@@ -58,8 +64,6 @@ const DTHRecharge1 = () => {
 
       if (res.data?.data?.status) {
         const detectedOperator = res.data.data.info.operator;
-
-        // Find matching operator from fetched list
         const matchedOp = operators.find((op) =>
           detectedOperator.toLowerCase().includes(op.name.toLowerCase())
         );
@@ -107,20 +111,20 @@ const DTHRecharge1 = () => {
     }
   };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
 
-  if (!token) {
-    Swal.fire("Login Required", "Please log in to continue with the recharge.", "warning").then(() => {
-      window.location.href = "/login"; // Adjust to your app's login route
-    });
-    return;
-  }
+    if (!token) {
+      Swal.fire("Login Required", "Please log in to continue with the recharge.", "warning").then(() => {
+        window.location.href = "/login";
+      });
+      return;
+    }
 
-  setShowConfirmModal(true);
-};  
+    setShowConfirmModal(true);
+  };
 
   const handleRecharge = async () => {
     if (!mpin) {
@@ -130,8 +134,7 @@ const handleSubmit = (e) => {
 
     try {
       const payload = {
-        // amount: formData.amount,
-         amount: "10",
+        amount: formData.amount,
         canumber: formData.customerId,
         category: "dth",
         mpin: mpin,
@@ -147,7 +150,7 @@ const handleSubmit = (e) => {
         setMpin("");
         setFormData({ operator: "", customerId: "", amount: "" });
         setPlanInfo(null);
-        fetchUserfree()
+        fetchUserfree();
       } else {
         Swal.fire("Failed ❌", res.data.message, "error");
       }
@@ -174,10 +177,7 @@ const handleSubmit = (e) => {
           </Col>
 
           <Col md={6}>
-            <div
-              className="p-4 rounded bg-white shadow"
-              style={{ maxWidth: "500px", margin: "0 auto" }}
-            >
+            <div className="p-4 rounded bg-white shadow" style={{ maxWidth: "500px", margin: "0 auto" }}>
               <h3 className="mb-4" style={{ color: "#001e50", fontWeight: "bold" }}>
                 DTH Recharge
               </h3>
@@ -186,6 +186,8 @@ const handleSubmit = (e) => {
                   <Form.Label>Customer ID</Form.Label>
                   <Form.Control
                     type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
                     placeholder="Enter Customer ID"
                     value={formData.customerId}
                     onChange={handleChange}
@@ -209,16 +211,14 @@ const handleSubmit = (e) => {
                   <Form.Label>Amount</Form.Label>
                   <div className="input-group">
                     <Form.Control
-                      type="number"
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
                       placeholder="₹ Amount"
                       value={formData.amount}
                       onChange={handleChange}
                     />
-                    <button
-                      className="btn btn-outline-secondary"
-                      type="button"
-                      onClick={handlePlanModalOpen}
-                    >
+                    <button className="btn btn-outline-secondary" type="button" onClick={handlePlanModalOpen}>
                       Check Plan
                     </button>
                   </div>
@@ -261,9 +261,7 @@ const handleSubmit = (e) => {
           )}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowPlanModal(false)}>
-            Close
-          </Button>
+          <Button variant="secondary" onClick={() => setShowPlanModal(false)}>Close</Button>
         </Modal.Footer>
       </Modal>
 
@@ -278,9 +276,7 @@ const handleSubmit = (e) => {
           <p>Amount: ₹{formData.amount}</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowConfirmModal(false)}>
-            Cancel
-          </Button>
+          <Button variant="secondary" onClick={() => setShowConfirmModal(false)}>Cancel</Button>
           <Button
             variant="primary"
             onClick={() => {
@@ -310,12 +306,8 @@ const handleSubmit = (e) => {
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowMpinModal(false)}>
-            Cancel
-          </Button>
-          <Button variant="primary" onClick={handleRecharge}>
-            Submit MPIN
-          </Button>
+          <Button variant="secondary" onClick={() => setShowMpinModal(false)}>Cancel</Button>
+          <Button variant="primary" onClick={handleRecharge}>Submit MPIN</Button>
         </Modal.Footer>
       </Modal>
     </>

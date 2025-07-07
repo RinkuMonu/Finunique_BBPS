@@ -348,36 +348,39 @@ const BillPaymentSystem = () => {
   };
 
   // Process payment
-  const processPayment = () => {
-    if (!mpin || !billDetails) {
-      showErrorAlert("Please enter MPIN and fetch bill details first");
-      return;
-    }
+const processPayment = () => {
+  if (!mpin || !billDetails) {
+    showErrorAlert("Please enter MPIN and fetch bill details first");
+    return;
+  }
 
-    setLoading(true);
-    axiosInstance
-      .post(PAYMENT_API, {
-        operator: selectedOperator,
-        canumber: accountNumber,
-        amount: billDetails.amount.toString(),
-        referenceid: referenceId,
-        latitude: "1.25787874",
-        longitude: "1.75784512",
-        bill_fetch: billDetails.bill_fetch,
-        mpin: mpin,
-      })
-      .then((response) => {
-        showSuccessAlert("Payment processed successfully! Checking status...");
-        setLoading(false);
-        checkPaymentStatus(referenceId);
-        setStep(4);
-        fetchUserfree()
-      })
-      .catch((err) => {
-        showErrorAlert("Payment failed. Please try again.");
-        setLoading(false);
-      });
-  };
+  setLoading(true);
+  axiosInstance
+    .post(PAYMENT_API, {
+      operator: selectedOperator,
+      canumber: accountNumber,
+      amount: billDetails.amount.toString(),
+      referenceid: referenceId,
+      latitude: "1.25787874",
+      longitude: "1.75784512",
+      bill_fetch: billDetails.bill_fetch,
+      mpin: mpin,
+    })
+    .then((response) => {
+      showSuccessAlert("Payment processed successfully! Checking status...");
+      setLoading(false);
+      checkPaymentStatus(referenceId);
+      setStep(4);
+      fetchUserfree();
+    })
+    .catch((err) => {
+      const errorMessage =
+        err?.response?.data?.message || "Payment failed. Please try again.";
+      showErrorAlert(errorMessage);
+      setLoading(false);
+    });
+};
+
 
   // Alert functions
   const showSuccessAlert = (message) => {

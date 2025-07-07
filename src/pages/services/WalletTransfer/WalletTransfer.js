@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import wallet from "../../../Assets/images/wallet-transfer.png";
-import "./wallet.css"
+import "./wallet.css";
 
 import {
   Container,
@@ -12,8 +12,10 @@ import {
   Card,
   Accordion,
 } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const WalletTransfer = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     mobileNumber: "",
     amount: "",
@@ -23,10 +25,38 @@ const WalletTransfer = () => {
   });
 
   const [activeTab, setActiveTab] = useState("wallet");
-
+  const [ifscCodeError, setIfscCodeError] = useState("");
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
+    let validatedValue = value;
+
+    switch (id) {
+      case "beneficiaryName":
+        validatedValue = value.replace(/[^a-zA-Z\s]/g, "");
+        break;
+      case "accountNumber":
+        validatedValue = value.replace(/\D/g, "");
+        break;
+      case "amount":
+        validatedValue = value.replace(/\D/g, "");
+        break;
+      case "mobileNumber":
+        validatedValue = value.replace(/\D/g, "").slice(0, 10);
+        break;
+      case "ifscCode":
+        validatedValue = value.toUpperCase();
+        const ifscRegex = /^[A-Z]{4}0[A-Z0-9]{6}$/;
+        if (validatedValue.length > 0 && !ifscRegex.test(validatedValue)) {
+          setIfscCodeError("Invalid IFSC Code format");
+        } else {
+          setIfscCodeError("");
+        }
+        break;
+      default:
+        break;
+    }
+
+    setFormData({ ...formData, [id]: validatedValue });
   };
 
   const handleTabChange = (tab) => {
@@ -40,7 +70,6 @@ const WalletTransfer = () => {
     formData.ifscCode &&
     formData.amount;
 
-  // Color palette
   const colors = {
     primary: "orange",
     secondary: "#4f46e5",
@@ -55,125 +84,15 @@ const WalletTransfer = () => {
     <Container className="py-5 my-lg-5" style={{ maxWidth: "1200px" }}>
       <Row className="g-4">
         <Col lg={6} className="pe-lg-4">
-          {/* Left Column - Content */}
-          <div className="mb-5">
-            <Row className="align-items-center">
-              <Col xs={12} md={8}>
-                <h1
-                  className="display-5 fw-bold mb-3"
-                  style={{ color: colors.dark }}
-                >
-                  Wallet Transfer
-                </h1>
-                <p className="lead mb-4" style={{ color: colors.primary }}>
-                  Instant & Secure Fund Transfers
-                </p>
-              </Col>
-              <Col xs={12} md={4} className="text-md-end">
-                <img
-                  src={wallet}
-                  alt="Wallet Transfer"
-                  className="img-fluid mb-4 rounded"
-                  style={{ maxWidth: "200px" }}
-                />
-              </Col>
-            </Row>
-            <p style={{ color: colors.text }}>
-              ABDKS Solutions Private Ltd. empowers users and retailers with a fast
-              and secure wallet transfer feature. Whether you're distributing
-              commission, transferring balance between sub-users, or managing
-              operational funds, our wallet-to-wallet transfer system makes it
-              easy.
-            </p>
-          </div>
-
-          <Row className="g-4">
-            <Col md={6}>
-              <Card className="border-0 shadow-sm h-100">
-                <Card.Body>
-                  <h3 className="h4 mb-3" style={{ color: colors.dark }}>
-                    <i
-                      className="bi bi-lightning-charge-fill me-2"
-                      style={{ color: colors.primary }}
-                    ></i>
-                    Key Features
-                  </h3>
-                  <ul className="list-check">
-                    <li>
-                      <strong>Instant Transfers</strong> – Real-time balance updates
-                    </li>
-                    <li>
-                      <strong>24x7 Availability</strong> – No weekend or holiday
-                      delays
-                    </li>
-                    <li>
-                      <strong>No Bank Dependency</strong> – Purely internal
-                      wallet-based
-                    </li>
-                    <li>
-                      <strong>Zero Transfer Fees</strong> – Completely free
-                    </li>
-                    <li>
-                      <strong>Role-Based Transfers</strong> – Controlled by user
-                      level
-                    </li>
-                    <li>
-                      <strong>Transaction Logs</strong> – Fully auditable
-                    </li>
-                  </ul>
-                </Card.Body>
-              </Card>
-            </Col>
-            
-            <Col md={6}>
-              <Card className="border-0 shadow-sm h-100">
-                <Card.Body>
-                  <h3 className="h4 mb-3" style={{ color: colors.dark }}>
-                    <i
-                      className="bi bi-people-fill me-2"
-                      style={{ color: colors.primary }}
-                    ></i>
-                    Who Can Use It?
-                  </h3>
-                  <ul className="list-icon">
-                    <li>
-                      <i
-                        className="bi bi-person-fill me-2"
-                        style={{ color: colors.primary }}
-                      ></i>{" "}
-                      Super Distributors
-                    </li>
-                    <li>
-                      <i
-                        className="bi bi-people-fill me-2"
-                        style={{ color: colors.primary }}
-                      ></i>{" "}
-                      Retailers
-                    </li>
-                    <li>
-                      <i
-                        className="bi bi-headset me-2"
-                        style={{ color: colors.primary }}
-                      ></i>{" "}
-                      Support Teams
-                    </li>
-                    <li>
-                      <i
-                        className="bi bi-geo-alt-fill me-2"
-                        style={{ color: colors.primary }}
-                      ></i>{" "}
-                      Multi-Location Operators
-                    </li>
-                  </ul>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
+          <img
+            src={wallet}
+            alt="Wallet Transfer"
+            className="img-fluid rounded"
+          />
         </Col>
 
-        {/* Right Column - Form */}
         <Col lg={6} className="ps-lg-4">
-          <Card className="border-0 shadow-sm " style={{ top: "20px" }}>
+          <Card className="border-0 shadow-sm" style={{ top: "20px" }}>
             <Card.Body className="p-4">
               <Nav variant="tabs" className="mb-4 border-bottom-0">
                 <Nav.Item>
@@ -242,7 +161,7 @@ const WalletTransfer = () => {
                         ₹
                       </span>
                       <Form.Control
-                        type="number"
+                        type="text"
                         placeholder="Enter Amount"
                         value={formData.amount}
                         onChange={handleChange}
@@ -309,8 +228,13 @@ const WalletTransfer = () => {
                       style={{
                         borderColor: colors.border,
                         padding: "10px 15px",
+                        textTransform: "uppercase",
                       }}
+                      isInvalid={!!ifscCodeError}
                     />
+                    <Form.Control.Feedback type="invalid">
+                      {ifscCodeError}
+                    </Form.Control.Feedback>
                   </Form.Group>
 
                   <Form.Group className="mb-4" controlId="amount">
@@ -323,7 +247,7 @@ const WalletTransfer = () => {
                         ₹
                       </span>
                       <Form.Control
-                        type="number"
+                        type="text"
                         placeholder="Enter Amount"
                         value={formData.amount}
                         onChange={handleChange}
@@ -488,6 +412,7 @@ const WalletTransfer = () => {
                 border: "none",
                 padding: "12px 24px",
               }}
+              onClick={() => navigate("/login")}
             >
               Login to Transfer Wallet Funds
             </Button>
@@ -499,6 +424,7 @@ const WalletTransfer = () => {
                 color: colors.primary,
                 padding: "12px 24px",
               }}
+              onClick={() => navigate("/createaccount")}
             >
               Become a Distributor
             </Button>

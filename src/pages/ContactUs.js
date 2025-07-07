@@ -74,7 +74,8 @@ const ContactUs = () => {
               <p className="hero-subheadline">
                 Whether you're a retailer ready to join our BBPS network, a
                 distributor seeking a fintech partnership, or a customer needing
-                support — the ABDKS team is available 24/7 with fast and reliable service.
+                support — the ABDKS team is available 24/7 with fast and
+                reliable service.
               </p>
             </div>
             <div className="col-lg-5 col-md-12 image-content hero-image-container">
@@ -95,7 +96,10 @@ const ContactUs = () => {
               <div className="col-lg-7 col-md-12 ps-lg-10 order-lg-1">
                 <div className="theme-title">
                   <h2>Stay in Touch</h2>
-                  <p>Fill out the form, and our team will get back to you shortly.</p>
+                  <p>
+                    Fill out the form, and our team will get back to you
+                    shortly.
+                  </p>
                 </div>
                 {responseMessage && (
                   <div
@@ -109,9 +113,10 @@ const ContactUs = () => {
                   </div>
                 )}
                 <form onSubmit={handleSubmit}>
+                  {/* Row 1: Name and Mobile Number */}
                   <div className="row">
-                    <div className="col-md-4">
-                      <div className="form-group">
+                    <div className="col-md-6">
+                      <div className="form-group mb-3">
                         <input
                           type="text"
                           name="fullName"
@@ -123,21 +128,8 @@ const ContactUs = () => {
                         />
                       </div>
                     </div>
-                    <div className="col-md-4">
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          name="email"
-                          className="form-control"
-                          placeholder="Email Address"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="form-group">
+                    <div className="col-md-6">
+                      <div className="form-group mb-3">
                         <input
                           type="tel"
                           name="number"
@@ -150,17 +142,42 @@ const ContactUs = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="form-group mb-4">
-                    <textarea
-                      name="message"
-                      className="form-control"
-                      placeholder="Message / Query"
-                      rows="4"
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                    ></textarea>
+
+                  {/* Row 2: Email */}
+                  <div className="row">
+                    <div className="col-12">
+                      <div className="form-group mb-3">
+                        <input
+                          type="email"
+                          name="email"
+                          className="form-control"
+                          placeholder="Email Address"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
                   </div>
+
+                  {/* Row 3: Message / Query */}
+                  <div className="row">
+                    <div className="col-12">
+                      <div className="form-group mb-4">
+                        <textarea
+                          name="message"
+                          className="form-control"
+                          placeholder="Message / Query"
+                          rows="4"
+                          required
+                          value={formData.message}
+                          onChange={handleChange}
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Submit Button */}
                   <button
                     type="submit"
                     className="themeht-btn primary-btn mt-4"
@@ -254,8 +271,9 @@ const ContactUs = () => {
               <div className="col-lg-12 text-center">
                 <h4>Partner With Us</h4>
                 <p>
-                  Interested in becoming a BBPS retailer, distributor, or service
-                  partner with ABDKS? Let’s strengthen India’s digital payment future together.
+                  Interested in becoming a BBPS retailer, distributor, or
+                  service partner with ABDKS? Let’s strengthen India’s digital
+                  payment future together.
                 </p>
                 <a href="#" className="btn btn-primary px-4 mt-2">
                   Be a Partner <FiArrowRight className="ms-2" />

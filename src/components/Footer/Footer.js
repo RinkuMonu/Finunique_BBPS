@@ -27,7 +27,9 @@ function Footer() {
         <Row className="g-4">
           {/* Contact Information */}
           <Col lg={4} md={6}>
-            <h5 className="text-uppercase fw-bold mb-4 text-white">Connect With Us</h5>
+            <h5 className="text-uppercase fw-bold mb-4 text-white">
+              Connect With Us
+            </h5>
             <ListGroup variant="flush" className="bg-transparent">
               <ListGroupItem className="bg-transparent text-white border-0 d-flex align-items-start px-0 py-2">
                 <div className="me-3 mt-1">
@@ -82,126 +84,135 @@ function Footer() {
           <Col lg={4} md={6}>
             <Row>
               <Col md={6}>
-              <h5 className="text-uppercase fw-bold mb-4 text-white">Company</h5>
-            <ListGroup variant="flush" className="bg-transparent">
-              <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
-                <Link
-                  to="/aboutus"
-                  className="text-white text-decoration-none small"
-                  onClick={goTop}
-                >
-                  About
-                </Link>
-              </ListGroupItem>
-               <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
-                <Link
-                  to="/blog"
-                  className="text-white text-decoration-none small"
-                  onClick={goTop}
-                >
-                  Blog
-                </Link>
-              </ListGroupItem>
-              <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
-                <Link
-                  to="/ContactUs"
-                  className="text-white text-decoration-none small"
-                  onClick={goTop}
-                >
-                  Contact
-                </Link>
-              </ListGroupItem>
-              <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
-                <Link
-                  to="/sitemap"
-                  className="text-white text-decoration-none small"
-                  onClick={goTop}
-                >
-                  Sitemap
-                </Link>
-              </ListGroupItem>
-              <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
-                <Link
-                  to="/bug-bounty"
-                  className="text-white text-decoration-none small"
-                  onClick={goTop}
-                >
-                  Bug bounty
-                </Link>
-              </ListGroupItem>
-            </ListGroup>
+                <h5 className="text-uppercase fw-bold mb-4 text-white">
+                  Company
+                </h5>
+                <ListGroup variant="flush" className="bg-transparent">
+                  <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
+                    <Link
+                      to="/aboutus"
+                      className="text-white text-decoration-none small"
+                      onClick={goTop}
+                    >
+                      About
+                    </Link>
+                  </ListGroupItem>
+                  <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
+                    <Link
+                      to="/blog"
+                      className="text-white text-decoration-none small"
+                      onClick={goTop}
+                    >
+                      Blog
+                    </Link>
+                  </ListGroupItem>
+                  <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
+                    <Link
+                      to="/ContactUs"
+                      className="text-white text-decoration-none small"
+                      onClick={goTop}
+                    >
+                      Contact
+                    </Link>
+                  </ListGroupItem>
+                  <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
+                    <Link
+                      to="/sitemap"
+                      className="text-white text-decoration-none small"
+                      onClick={goTop}
+                    >
+                      Sitemap
+                    </Link>
+                  </ListGroupItem>
+                  <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
+                    <Link
+                      to="/bug-bounty"
+                      className="text-white text-decoration-none small"
+                      onClick={goTop}
+                    >
+                      Bug bounty
+                    </Link>
+                  </ListGroupItem>
+                </ListGroup>
               </Col>
-               <Col md={6}>
-            <h5 className="text-uppercase fw-bold mb-4 text-white">Help & Support</h5>
-            <ListGroup variant="flush" className="bg-transparent">
-              <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
-                <Link
-                  to="/"
-                  className="text-white text-decoration-none small"
-                  onClick={goTop}
-                >
-                  Home
-                </Link>
-              </ListGroupItem>
-              <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
-                <Link
-                  to="/recharge"
-                  className="text-white text-decoration-none small"
-                  onClick={goTop}
-                >
-                  Recharge & Bill Pay
-                </Link>
-              </ListGroupItem>
-              <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
-                <Link
-                  to="/transfer"
-                  className="text-white text-decoration-none small"
-                  onClick={goTop}
-                >
-                  Transfer To Bank
-                </Link>
-              </ListGroupItem>
-              <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
-                <Link
-                  to="/redeem-payback-points"
-                  className="text-white text-decoration-none small"
-                  onClick={goTop}
-                >
-                  Redeem Payback Points
-                </Link>
-              </ListGroupItem>
-              <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
-                <Link
-                  to="/wallet-transfer"
-                  className="text-white text-decoration-none small"
-                  onClick={goTop}
-                >
-                  Wallet Transfer
-                </Link>
-              </ListGroupItem>
-               <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
-                <Link
-                  to="/createaccount"
-                  className="text-white text-decoration-none small"
-                  onClick={goTop}
-                >
-                 Become a Partner
-                </Link>
-              </ListGroupItem>
-            </ListGroup>
-
-          </Col>
+              <Col md={6}>
+                <h5 className="text-uppercase fw-bold mb-4 text-white">
+                  Help & Support
+                </h5>
+                <ListGroup variant="flush" className="bg-transparent">
+                  <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
+                    <Link
+                      to="/"
+                      className="text-white text-decoration-none small"
+                      onClick={goTop}
+                    >
+                      Home
+                    </Link>
+                  </ListGroupItem>
+                  <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
+                    <Link
+                      to="/recharge"
+                      className="text-white text-decoration-none small"
+                      onClick={goTop}
+                    >
+                      Recharge & Bill Pay
+                    </Link>
+                  </ListGroupItem>
+                  <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
+                    <Link
+                      to="/transfer-to-bank"
+                      className="text-white text-decoration-none small"
+                      onClick={goTop}
+                    >
+                      Transfer To Bank
+                    </Link>
+                  </ListGroupItem>
+                  <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
+                    <Link
+                      to="/redeem-payback-points"
+                      className="text-white text-decoration-none small"
+                      onClick={goTop}
+                    >
+                      Redeem Payback Points
+                    </Link>
+                  </ListGroupItem>
+                  <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
+                    <Link
+                      to="/wallet-transfer"
+                      className="text-white text-decoration-none small"
+                      onClick={goTop}
+                    >
+                      Wallet Transfer
+                    </Link>
+                  </ListGroupItem>
+                  <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
+                    <Link
+                      to="/createaccount"
+                      className="text-white text-decoration-none small"
+                      onClick={goTop}
+                    >
+                      Become a Partner
+                    </Link>
+                  </ListGroupItem>
+                </ListGroup>
+              </Col>
             </Row>
           </Col>
           {/* Quick Links */}
-         
 
           {/* Social Media */}
           <Col lg={4} md={6} className="mt-4">
             <h5 className="text-uppercase fw-bold mb-4 text-white">ABDKS</h5>
-            <p> ABDKS is authorized to provide essential utility services including but not limited to electricity, water, gas, mobile recharge, DTH, and other bill payments. ABDKS is also an integrated service provider under the BBPS framework, offering secure, seamless, and interoperable bill payment solutions across India. 
-               </p>
-            <div className="d-flex gap-3">
+            <p>
+              {" "}
+              ABDKS is authorized to provide essential utility services
+              including but not limited to electricity, water, gas, mobile
+              recharge, DTH, and other bill payments. ABDKS is also an
+              integrated service provider under the BBPS framework, offering
+              secure, seamless, and interoperable bill payment
+              solutions across India.
+            </p>
+            {/* <div className="d-flex gap-3">
               <a href="#" className="text-white fs-4">
                 <i className="bi bi-facebook"></i>
               </a>
@@ -214,7 +225,7 @@ function Footer() {
               <a href="#" className="text-white fs-4">
                 <i className="bi bi-linkedin"></i>
               </a>
-            </div>
+            </div> */}
 
             {/* Newsletter Subscription (Optional) */}
             {/* <div className="mt-4">
@@ -238,13 +249,17 @@ function Footer() {
       </Container>
       {/* Copyright Section */}
       <Container>
-        <Row className="mt-4 pt-3 border-top border-0">
-          <Col className="text-center">
+        <Row className="mt-4 pt-3 border-top border-0 align-items-center">
+          {/* Left Side: Copyright and Policy Links */}
+          <Col md={8} className="text-md-start text-center">
             <p className="mb-0 small">
               © {new Date().getFullYear()} ABDKS Solutions Private Limited. All
               rights reserved.
             </p>
-            <ListGroup variant="flush" className="bg-transparent d-flex flex-row gap-2 flex-wrap justify-content-center mt-1">
+            <ListGroup
+              variant="flush"
+              className="bg-transparent d-flex flex-row gap-2 flex-wrap mt-1 justify-content-md-start justify-content-center"
+            >
               {[
                 { to: "/privacypolicy", label: "Privacy Policy" },
                 { to: "/term", label: "Terms Conditions" },
@@ -266,7 +281,24 @@ function Footer() {
                 </ListGroupItem>
               ))}
             </ListGroup>
+          </Col>
 
+          {/* Right Side: Social Media Icons */}
+          <Col md={4} className="text-md-end text-center mt-3 mt-md-0">
+            <div className="d-flex justify-content-md-end justify-content-center gap-3">
+              <a href="#" className="text-white fs-4">
+                <i className="bi bi-facebook"></i>
+              </a>
+              <a href="#" className="text-white fs-4">
+                <i className="bi bi-instagram"></i>
+              </a>
+              <a href="#" className="text-white fs-4">
+                <i className="bi bi-twitter-x"></i>
+              </a>
+              <a href="#" className="text-white fs-4">
+                <i className="bi bi-linkedin"></i>
+              </a>
+            </div>
           </Col>
         </Row>
       </Container>

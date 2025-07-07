@@ -14,6 +14,7 @@ import {
   FiZap,
 } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const WhyUs = () => {
   const fadeIn = {
@@ -120,12 +121,16 @@ const WhyUs = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
               >
-                <button className="btn text-warning-emphasis bg-body-secondary btn-lg me-3">
-                  Get Started Now
-                </button>
-                <button className="btn bg-body-secondary btn-lg">
-                  Learn More
-                </button>
+                <Link to="/createaccount">
+                  <button className="btn text-warning-emphasis bg-body-secondary btn-lg me-3">
+                    Get Started Now
+                  </button>
+                </Link>
+                <Link to="/ContactUs">
+                  <button className="btn bg-body-secondary btn-lg">
+                    Learn More
+                  </button>
+                </Link>
               </motion.div>
             </div>
             <div className="col-lg-5 col-md-12 image-content hero-image-container">
@@ -318,12 +323,16 @@ const WhyUs = () => {
                   services — and empower your customers with every transaction.
                 </p>
                 <div className="d-flex justify-content-center flex-wrap gap-3">
-                  <button className="btn btn-primary btn-lg px-4">
-                    Become a BBPS Partner
-                  </button>
-                  <button className="btn btn-outline-secondary btn-lg px-4">
-                    Contact Our Team
-                  </button>
+                  <Link to="/createaccount">
+                    <button className="btn btn-primary btn-lg px-4">
+                      Become a BBPS Partner
+                    </button>
+                  </Link>
+                  <Link to="/ContactUs">
+                    <button className="btn btn-outline-secondary btn-lg px-4">
+                      Contact Our Team
+                    </button>
+                  </Link>
                 </div>
               </motion.div>
             </div>

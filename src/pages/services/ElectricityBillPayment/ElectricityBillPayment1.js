@@ -20,6 +20,8 @@ const ElectricityBillPayment1 = ({
     consumerNumber: "",
   });
   const [currentOperator, setCurrentOperator] = useState(null);
+  const [isValidating, setIsValidating] = useState(false);
+  const [hasTyped, setHasTyped] = useState(false); // New state to track typing
 
   // Set default operator if only one exists
   useEffect(() => {
@@ -33,61 +35,105 @@ const ElectricityBillPayment1 = ({
     }
   }, [operators, selectedOperator, setSelectedOperator]);
 
+  const validateInput = (value, regexPattern, fieldName) => {
+    if (!value) return { isValid: false, error: `Please enter your ${fieldName}` };
+    if (!regexPattern) return { isValid: true, error: "" };
+    
+    try {
+      const regex = new RegExp(regexPattern);
+      const isValid = regex.test(value);
+      return {
+        isValid,
+        error: isValid ? "" : `Please enter a valid ${fieldName} (Format: ${regexPattern})`
+      };
+    } catch (err) {
+      console.error("Invalid regex pattern:", regexPattern);
+      return {
+        isValid: false,
+        error: "Invalid validation pattern. Please contact support."
+      };
+    }
+  };
+
   const handleOperatorChange = (e) => {
     const value = e.target.value;
     setFormData(prev => ({ ...prev, operator: value, consumerNumber: "" }));
     setSelectedOperator(value);
     setAccountNumber("");
     setInputError("");
+    setHasTyped(false); // Reset typing state when operator changes
     
     const operator = operators.find(op => op.id === value);
     setCurrentOperator(operator);
   };
 
   const handleConsumerNumberChange = (e) => {
-    const value = e.target.value;
+    let value = e.target.value;
+    setHasTyped(true); // Set hasTyped to true when user types
+    
+    // Sanitize input based on operator requirements
+    if (currentOperator?.inputType === "number") {
+      value = value.replace(/\D/g, '');
+    }
+    
     setFormData(prev => ({ ...prev, consumerNumber: value }));
     setAccountNumber(value);
     
-    // Validate input if operator has regex
-    if (currentOperator?.regex) {
-      try {
-        const regex = new RegExp(currentOperator.regex);
-        if (!regex.test(value)) {
-          setInputError(`Please enter a valid ${currentOperator.displayname || "consumer number"}`);
-        } else {
-          setInputError("");
-        }
-      } catch (err) {
-        console.error("Invalid regex pattern:", currentOperator.regex);
-      }
-    }
+    // Real-time validation
+    const validation = validateInput(
+      value,
+      currentOperator?.regex,
+      currentOperator?.displayname || "consumer number"
+    );
+    setInputError(validation.error);
   };
 
-  const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsValidating(true);
 
-  const token = localStorage.getItem("token");
-  if (!token) {
-    Swal.fire({
-          title: "Login Required",
-          text: "Please login to continue with Electricity bill payment.",
-          icon: "warning",
-          confirmButtonColor: "#001e50",
-          confirmButtonText: "Login Now",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = "/login"; 
-          }
-        });
-    return;
-  }
+    // 1. Check if user is logged in
+    const token = localStorage.getItem("token");
+    if (!token) {
+      Swal.fire({
+        title: "Login Required",
+        text: "Please login to continue with Electricity bill payment.",
+        icon: "warning",
+        confirmButtonColor: "#001e50",
+        confirmButtonText: "Login Now",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/login"; 
+        }
+      });
+      setIsValidating(false);
+      return;
+    }
 
-  if (formData.operator && formData.consumerNumber && !inputError) {
+    // 2. Validate operator is selected
+    if (!formData.operator) {
+      setInputError("Please select an electricity provider");
+      setIsValidating(false);
+      return;
+    }
+
+    // 3. Validate consumer number
+    const validation = validateInput(
+      formData.consumerNumber,
+      currentOperator?.regex,
+      currentOperator?.displayname || "consumer number"
+    );
+    if (!validation.isValid) {
+      setInputError(validation.error);
+      setIsValidating(false);
+      return;
+    }
+
+    // All validations passed
+    setInputError("");
     onProceed();
-  }
-};
-
+    setIsValidating(false);
+  };
 
   return (
     <>
@@ -138,6 +184,8 @@ const ElectricityBillPayment1 = ({
                   <Form.Select
                     value={formData.operator}
                     onChange={handleOperatorChange}
+                    required
+                    isInvalid={!formData.operator && formData.consumerNumber}
                   >
                     <option value="">Select Operator</option>
                     {operators.map((operator) => (
@@ -154,35 +202,39 @@ const ElectricityBillPayment1 = ({
                       {currentOperator?.displayname || "Consumer Number"}
                     </Form.Label>
                     <Form.Control
-                      type="text"
+                      type={currentOperator?.inputType || "text"}
                       placeholder={
                         currentOperator?.displayname 
-                          ? `Enter ${currentOperator.displayname}`
+                          ? `Enter ${currentOperator.displayname} (Format: ${currentOperator.regex})`
                           : "Enter Consumer Number"
                       }
                       value={formData.consumerNumber}
                       onChange={handleConsumerNumberChange}
+                      maxLength={currentOperator?.maxLength || 16}
+                      required
+                      isInvalid={!!inputError}
                     />
                     {currentOperator?.regex && (
                       <Form.Text className="text-muted">
                         Required format: {currentOperator.regex}
                       </Form.Text>
                     )}
-                    {inputError && (
-                      <div className="text-danger">{inputError}</div>
-                    )}
+                    <Form.Control.Feedback type="invalid">
+                      {inputError}
+                    </Form.Control.Feedback>
                   </Form.Group>
                 )}
 
-                {formData.operator && formData.consumerNumber && (
+                {/* Show button when user starts typing or has entered something */}
+                {(hasTyped || formData.consumerNumber) && (
                   <Button
                     variant="primary"
                     type="submit"
-                    className="w-100"
+                    className="w-100 mt-3"
                     style={{ backgroundColor: "#001e50", color: "white" }}
-                    disabled={!!inputError}
+                    disabled={!formData.operator || !!inputError || isValidating}
                   >
-                    Confirm
+                    {isValidating ? "Validating..." : "Confirm"}
                   </Button>
                 )}
               </Form>
