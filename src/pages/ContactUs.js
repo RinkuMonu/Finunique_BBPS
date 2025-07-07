@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import "./styles/contact.css";
 import img from "../Assets/images/contact-us.png";
 import { FiCheckCircle, FiArrowRight } from "react-icons/fi";
+import axios from "axios";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     fullName: "",
-    email: "",
     number: "",
+    email: "",
     message: "",
   });
 
@@ -16,44 +17,89 @@ const ContactUs = () => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setResponseMessage(null);
+
+  //   try {
+  //     const response = await fetch(
+  //       "https://finpay-b2c-backend.onrender.com/api/query/submit-form",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(formData),
+  //       }
+  //     );
+
+  //     const result = await response.json();
+  //     if (response.ok) {
+  //       setResponseMessage({
+  //         type: "success",
+  //         text: "Message sent successfully!",
+  //       });
+  //       setFormData({ fullName: "", email: "", number: "", message: "" });
+  //     } else {
+  //       setResponseMessage({
+  //         type: "error",
+  //         text: result.message || "Something went wrong!",
+  //       });
+  //     }
+  //   } catch (error) {
+  //     setResponseMessage({
+  //       type: "error",
+  //       text: "Failed to send message. Try again later.",
+  //     });
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setResponseMessage(null);
+
+    const postData = {
+      name: formData.fullName,
+      email: formData.email,
+      phone: formData.number,
+      message: formData.message,
+      service: "N/A",
+      website_id: 5,
+    };
 
     try {
-      const response = await fetch(
-        "https://finpay-b2c-backend.onrender.com/api/query/submit-form",
+      const response = await axios.post(
+        "https://cms.sevenunique.com/apis/contact-query/set-contact-details.php",
+        postData,
         {
-          method: "POST",
           headers: {
+            Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
         }
       );
 
-      const result = await response.json();
-      if (response.ok) {
-        setResponseMessage({
-          type: "success",
-          text: "Message sent successfully!",
-        });
-        setFormData({ fullName: "", email: "", number: "", message: "" });
-      } else {
-        setResponseMessage({
-          type: "error",
-          text: result.message || "Something went wrong!",
-        });
-      }
-    } catch (error) {
-      setResponseMessage({
-        type: "error",
-        text: "Failed to send message. Try again later.",
+      console.log("Response:", response.data);
+      alert("Message sent successfully!");
+      setFormData({
+        fullName: "",
+        number: "",
+        email: "",
+        message: "",
       });
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Failed to send message.");
     } finally {
       setLoading(false);
     }
