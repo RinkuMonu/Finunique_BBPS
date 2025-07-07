@@ -323,17 +323,10 @@ function Footer() {
                   href={item.account_link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white fs-4 d-flex align-items-center"
+                  className="text-white fs-4"
                   title={item.platform_name}
                 >
-                  <span
-                    dangerouslySetInnerHTML={{ __html: item.icon_class }}
-                    style={{
-                      display: "inline-block",
-                      width: "24px",
-                      height: "24px",
-                    }}
-                  />
+                  <span dangerouslySetInnerHTML={{ __html: item.icon_class }} />
                 </a>
               ))}
             </div>
