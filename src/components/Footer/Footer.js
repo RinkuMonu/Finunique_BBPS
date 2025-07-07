@@ -324,7 +324,7 @@ console.log(socialLinks,"Social media link")
                   href={item.account_link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white fs-4"
+                  className="text-white fs-5"
                   title={item.platform_name}
                 >
                   <span dangerouslySetInnerHTML={{ __html: item.icon_class }} />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQPostpaid from "./FAQPostpaid";
 import Swal from "sweetalert2";
+import Login1 from "../../Login/Login1";
 
 const PostpaidRecharge1 = ({
   selectedCategory,
@@ -20,6 +21,7 @@ const PostpaidRecharge1 = ({
   });
   const [currentOperator, setCurrentOperator] = useState(null);
   const [isValidating, setIsValidating] = useState(false);
+ const [showLoginModal, setShowLoginModal] = useState(false);
 
   useEffect(() => {
     if (selectedOperator) {
@@ -73,21 +75,11 @@ const PostpaidRecharge1 = ({
 
     // 1. Check if user is logged in
     const token = localStorage.getItem("token");
-    if (!token) {
-      Swal.fire({
-        title: "Login Required",
-        text: "Please login to continue with Postpaid bill payment.",
-        icon: "warning",
-        confirmButtonColor: "#001e50",
-        confirmButtonText: "Login Now",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = "/login"; 
-        }
-      });
-      setIsValidating(false);
-      return;
-    }
+   if (!token) {
+  setShowLoginModal(true);
+  setIsValidating(false);
+  return;
+}
 
     // 2. Validate operator is selected
     if (!formData.operator) {
@@ -229,6 +221,9 @@ const PostpaidRecharge1 = ({
         </Row>
       </div>
       <FAQPostpaid />
+      {showLoginModal && (
+  <Login1 onClose={() => setShowLoginModal(false)} />
+)}
     </>
   );
 };
