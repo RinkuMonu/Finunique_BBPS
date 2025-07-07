@@ -1,14 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "react-bootstrap";
+import axios from "axios";
 
 function Footer() {
+  const [socialLinks, setSocialLinks] = useState([]);
   const goTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
+
+  useEffect(() => {
+    const fetchSocialLinks = async () => {
+      try {
+        const response = await axios.get(
+          "https://cms.sevenunique.com/apis/social-media/get-social-accounts.php?website_id=5",
+          {
+            headers: {
+              Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
+            },
+          }
+        );
+
+        const result = await response.json();
+        if (result.status === "success") {
+          const activeLinks = result.data.filter(
+            (item) => item.status === "Active"
+          );
+          setSocialLinks(activeLinks);
+        } else {
+          console.error("Failed to load social media links.");
+        }
+      } catch (error) {
+        console.error("Error fetching social links:", error);
+      }
+    };
+
+    fetchSocialLinks();
+  }, []);
 
   return (
     <footer className="bg-black text-white position-relative pt-5 pb-3 overflow-hidden">
@@ -286,18 +317,25 @@ function Footer() {
           {/* Right Side: Social Media Icons */}
           <Col md={4} className="text-md-end text-center mt-3 mt-md-0">
             <div className="d-flex justify-content-md-end justify-content-center gap-3">
-              <a href="#" className="text-white fs-4">
-                <i className="bi bi-facebook"></i>
-              </a>
-              <a href="#" className="text-white fs-4">
-                <i className="bi bi-instagram"></i>
-              </a>
-              <a href="#" className="text-white fs-4">
-                <i className="bi bi-twitter-x"></i>
-              </a>
-              <a href="#" className="text-white fs-4">
-                <i className="bi bi-linkedin"></i>
-              </a>
+              {socialLinks.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.account_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white fs-4 d-flex align-items-center"
+                  title={item.platform_name}
+                >
+                  <span
+                    dangerouslySetInnerHTML={{ __html: item.icon_class }}
+                    style={{
+                      display: "inline-block",
+                      width: "24px",
+                      height: "24px",
+                    }}
+                  />
+                </a>
+              ))}
             </div>
           </Col>
         </Row>
