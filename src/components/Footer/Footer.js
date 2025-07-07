@@ -11,35 +11,36 @@ function Footer() {
       behavior: "smooth",
     });
   };
-
-  useEffect(() => {
-    const fetchSocialLinks = async () => {
-      try {
-        const response = await axios.get(
-          "https://cms.sevenunique.com/apis/social-media/get-social-accounts.php?website_id=5",
-          {
-            headers: {
-              Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
-            },
-          }
-        );
-
-        const result = await response.json();
-        if (result.status === "success") {
-          const activeLinks = result.data.filter(
-            (item) => item.status === "Active"
-          );
-          setSocialLinks(activeLinks);
-        } else {
-          console.error("Failed to load social media links.");
+console.log(socialLinks,"Social media link")
+ useEffect(() => {
+  const fetchSocialLinks = async () => {
+    try {
+      const response = await axios.get(
+        "https://cms.sevenunique.com/apis/social-media/get-social-accounts.php?website_id=5",
+        {
+          headers: {
+            Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
+          },
         }
-      } catch (error) {
-        console.error("Error fetching social links:", error);
-      }
-    };
+      );
 
-    fetchSocialLinks();
-  }, []);
+      // With axios, the data is directly available in response.data
+      const result = response.data;
+      if (result.status === "success") {
+        const activeLinks = result.data.filter(
+          (item) => item.status === "Active"
+        );
+        setSocialLinks(activeLinks);
+      } else {
+        console.error("Failed to load social media links.");
+      }
+    } catch (error) {
+      console.error("Error fetching social links:", error);
+    }
+  };
+
+  fetchSocialLinks();
+}, []);
 
   return (
     <footer className="bg-black text-white position-relative pt-5 pb-3 overflow-hidden">
