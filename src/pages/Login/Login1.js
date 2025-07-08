@@ -143,17 +143,17 @@ const Login1 = ({ onClose, onLoginSuccess }) => {
 
   return (
     <>
-      <div className="container mt-5">
+      <div className="container">
         <div className="row main-section">
           <div className="position-absolute bgImage d-none d-md-block">
-            <img src="/assets/Home/login-pattern.png" alt="login-pattern" />
+            {/* <img src="/assets/Home/login-pattern.png" alt="login-pattern" /> */}
           </div>
           <div
-            className="col-md-6 bg-img d-none d-md-block my-3"
+            className="col-md-6 bg-img d-none"
             style={{ borderRadius: "30px 0px 0px 30px", zIndex: "2" }}
           ></div>
 
-          <div className="col-md-6 my-3 padding-md">
+          <div className="col-md-12 padding-md">
             <div className="form-container">
               <div className="form-box login-Heading d-flex flex-column h-100">
                 {/* Close Button */}
