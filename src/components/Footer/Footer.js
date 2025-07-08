@@ -5,42 +5,56 @@ import axios from "axios";
 
 function Footer() {
   const [socialLinks, setSocialLinks] = useState([]);
+  const [contactDetails, setContactDetails] = useState(null);
+
   const goTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
-console.log(socialLinks,"Social media link")
- useEffect(() => {
-  const fetchSocialLinks = async () => {
-    try {
-      const response = await axios.get(
-        "https://cms.sevenunique.com/apis/social-media/get-social-accounts.php?website_id=5",
-        {
-          headers: {
-            Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
-          },
-        }
-      );
+  console.log(socialLinks, "Social media link");
+  useEffect(() => {
+    const headers = {
+      Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
+    };
 
-      // With axios, the data is directly available in response.data
-      const result = response.data;
-      if (result.status === "success") {
-        const activeLinks = result.data.filter(
-          (item) => item.status === "Active"
+    const fetchSocialLinks = async () => {
+      try {
+        const response = await axios.get(
+          "https://cms.sevenunique.com/apis/social-media/get-social-accounts.php?website_id=5",
+          { headers }
         );
-        setSocialLinks(activeLinks);
-      } else {
-        console.error("Failed to load social media links.");
+        const result = response.data;
+        if (result.status === "success") {
+          const activeLinks = result.data.filter(
+            (item) => item.status === "Active"
+          );
+          setSocialLinks(activeLinks);
+        }
+      } catch (error) {
+        console.error("Error fetching social links:", error);
       }
-    } catch (error) {
-      console.error("Error fetching social links:", error);
-    }
-  };
+    };
 
-  fetchSocialLinks();
-}, []);
+    const fetchContactDetails = async () => {
+      try {
+        const response = await axios.get(
+          "https://cms.sevenunique.com/apis/contact/get-contact-details.php?website_id=5",
+          { headers }
+        );
+        const result = response.data;
+        if (result.status === "success") {
+          setContactDetails(result.data);
+        }
+      } catch (error) {
+        console.error("Error fetching contact details:", error);
+      }
+    };
+
+    fetchSocialLinks();
+    fetchContactDetails();
+  }, []);
 
   return (
     <footer className="bg-black text-white position-relative pt-5 pb-3 overflow-hidden">
@@ -69,8 +83,7 @@ console.log(socialLinks,"Social media link")
                 </div>
                 <div>
                   <p className="mb-0 small">
-                    Plot No 97, Dakshinpuri - I, Shrikishan, Sanganer,
-                    Jagatpura, Jaipur Rajasthan, India, 302017
+                    {contactDetails?.address || "Loading address..."}
                   </p>
                 </div>
               </ListGroupItem>
@@ -85,10 +98,10 @@ console.log(socialLinks,"Social media link")
                 </div>
                 <div>
                   <a
-                    href="mailto:info@abdks.com"
+                    href={`mailto:${contactDetails?.email}`}
                     className="text-white text-decoration-none small"
                   >
-                    info@abdks.com
+                    {contactDetails?.email || "Loading email..."}
                   </a>
                 </div>
               </ListGroupItem>
@@ -103,10 +116,10 @@ console.log(socialLinks,"Social media link")
                 </div>
                 <div>
                   <a
-                    href="tel:01414511098"
+                    href={`tel:${contactDetails?.phone}`}
                     className="text-white text-decoration-none small"
                   >
-                    0141-4511098
+                    {contactDetails?.phone || "Loading phone..."}
                   </a>
                 </div>
               </ListGroupItem>

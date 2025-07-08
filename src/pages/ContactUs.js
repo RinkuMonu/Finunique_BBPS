@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/contact.css";
 import img from "../Assets/images/contact-us.png";
 import { FiCheckCircle, FiArrowRight } from "react-icons/fi";
@@ -15,7 +15,7 @@ const ContactUs = () => {
 
   const [responseMessage, setResponseMessage] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  const [contactDetails, setContactDetails] = useState(null);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -104,6 +104,28 @@ const ContactUs = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const fetchContactDetails = async () => {
+      try {
+        const response = await axios.get(
+          "https://cms.sevenunique.com/apis/contact/get-contact-details.php?website_id=5",
+          {
+            headers: {
+              Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
+            },
+          }
+        );
+        const result = response.data;
+        if (result.status === "success") {
+          setContactDetails(result.data);
+        }
+      } catch (error) {
+        console.error("Error fetching contact details:", error);
+      }
+    };
+    fetchContactDetails();
+  }, []);
 
   return (
     <div>
@@ -246,10 +268,7 @@ const ContactUs = () => {
                       <div>
                         <span>Head Office</span>
                         <b>ABDKS Solutions Private Limited</b>
-                        <p>
-                          Plot No 97, Darakshapuri - I, Srikishan, Sangner,
-                          Jagatpura, Jaipur, Rajasthan, India - 302017
-                        </p>
+                        <p>{contactDetails?.address || "Loading address..."}</p>
                       </div>
                     </li>
                     <li>
@@ -257,10 +276,10 @@ const ContactUs = () => {
                       <div>
                         <span>Email</span>
                         <a
-                          href="mailto:support@abdks.com"
+                          href={`mailto:${contactDetails?.email}`}
                           className="text-decoration-none"
                         >
-                          support@abdks.com
+                          {contactDetails?.email || "Loading email..."}
                         </a>
                       </div>
                     </li>
@@ -269,10 +288,10 @@ const ContactUs = () => {
                       <div>
                         <span>Phone</span>
                         <a
-                          href="tel:0141-4511098"
+                          href={`tel:${contactDetails?.phone}`}
                           className="text-decoration-none"
                         >
-                          0141-4511098
+                          {contactDetails?.phone || "Loading phone..."}
                         </a>
                       </div>
                     </li>
