@@ -5,6 +5,8 @@ import FAQMobileRecharge from "./FAQMobileRecharge";
 import MobileBrowsePlans1 from "./MobileBrowsePlans1";
 import ConfirmRechargeModal1 from "./ConfirmRechargeModal1";
 import axiosInstance from "../../../components/services/AxiosInstance";
+import LoginModal from "../../Login/LoginModal";
+
 
 const rechargeOperators = [
   "Airtel",
@@ -49,6 +51,7 @@ const circles = [
 const MobileRechargeUI2 = () => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showPlansModal, setShowPlansModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   const [formData, setFormData] = useState({
     mobileNumber: "",
@@ -135,8 +138,7 @@ const MobileRechargeUI2 = () => {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      alert("Please login to continue with the recharge.");
-      window.location.href = "/login";
+      setShowLoginModal(true); // Show login modal instead of redirecting
       return;
     }
 
@@ -144,6 +146,11 @@ const MobileRechargeUI2 = () => {
   };
 
   const handleConfirmModalClose = () => setShowConfirmModal(false);
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    setShowConfirmModal(true); // Show confirm modal after successful login
+  };
 
   const handleNumberBlur = async () => {
     if (!validateMobileNumber(formData.mobileNumber)) return;
@@ -314,6 +321,12 @@ const MobileRechargeUI2 = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      <LoginModal
+        show={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };

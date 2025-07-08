@@ -5,12 +5,15 @@ import FAQDthRecharge from "./FAQDthRecharge";
 import Swal from "sweetalert2";
 import axiosInstance from "../../../components/services/AxiosInstance";
 import { useUser } from "../../../context/UserContext";
+import LoginModal from "../../Login/LoginModal";
+
 
 const DTHRecharge1 = () => {
   const [operators, setOperators] = useState([]);
   const [showPlanModal, setShowPlanModal] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showMpinModal, setShowMpinModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false); // New state for login modal
   const [mpin, setMpin] = useState("");
   const [planInfo, setPlanInfo] = useState(null);
   const { fetchUserfree } = useUser();
@@ -117,13 +120,16 @@ const DTHRecharge1 = () => {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      Swal.fire("Login Required", "Please log in to continue with the recharge.", "warning").then(() => {
-        window.location.href = "/login";
-      });
+      setShowLoginModal(true); // Show login modal instead of redirecting
       return;
     }
 
     setShowConfirmModal(true);
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    setShowConfirmModal(true); // Show confirm modal after successful login
   };
 
   const handleRecharge = async () => {
@@ -310,6 +316,13 @@ const DTHRecharge1 = () => {
           <Button variant="primary" onClick={handleRecharge}>Submit MPIN</Button>
         </Modal.Footer>
       </Modal>
+
+      {/* Login Modal */}
+      <LoginModal
+        show={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };
