@@ -187,7 +187,7 @@ function BlogsDetails() {
                     {relatedPosts.data.map((relatedPost) => (
                       <div className="col-md-4" key={relatedPost.id}>
                         <Link
-                          to={`/blog/post/${relatedPost.slug}`}
+                          to={`/blog_details/${relatedPost.slug}`}
                           className="card h-100 text-decoration-none"
                         >
                           <img
@@ -213,7 +213,7 @@ function BlogsDetails() {
             {/* Sidebar */}
             <div className="col-lg-4">
               {/* Search Box */}
-              <div className="bg-white rounded-4 shadow-sm p-4 mb-4">
+              {/* <div className="bg-white rounded-4 shadow-sm p-4 mb-4">
                 <h5 className="fw-bold mb-3">Search</h5>
                 <div className="position-relative">
                   <input
@@ -232,7 +232,7 @@ function BlogsDetails() {
                     }}
                   ></i>
                 </div>
-              </div>
+              </div> */}
 
               {/* Categories */}
               <div className="bg-white rounded-4 shadow-sm p-4 mb-4">
