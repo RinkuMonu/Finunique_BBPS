@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQPostpaid from "./FAQPostpaid";
 import Swal from "sweetalert2";
-import Login1 from "../../Login/Login1";
+import LoginModal from "../../Login/LoginModal";
+
 
 const PostpaidRecharge1 = ({
   selectedCategory,
@@ -13,7 +14,7 @@ const PostpaidRecharge1 = ({
   setAccountNumber,
   inputError,
   setInputError,
-  operators
+  operators,
 }) => {
   const [formData, setFormData] = useState({
     operator: "",
@@ -21,11 +22,12 @@ const PostpaidRecharge1 = ({
   });
   const [currentOperator, setCurrentOperator] = useState(null);
   const [isValidating, setIsValidating] = useState(false);
- const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [loginCallback, setLoginCallback] = useState(null);
 
   useEffect(() => {
     if (selectedOperator) {
-      const operator = operators.find(op => op.id === selectedOperator);
+      const operator = operators.find((op) => op.id === selectedOperator);
       setCurrentOperator(operator);
     } else {
       setCurrentOperator(null);
@@ -34,7 +36,7 @@ const PostpaidRecharge1 = ({
 
   const handleOperatorChange = (e) => {
     const value = e.target.value;
-    setFormData(prev => ({ ...prev, operator: value, mobileNumber: "" }));
+    setFormData((prev) => ({ ...prev, operator: value, mobileNumber: "" }));
     setSelectedOperator(value);
     setAccountNumber("");
     setInputError("");
@@ -42,21 +44,23 @@ const PostpaidRecharge1 = ({
 
   const handleMobileChange = (e) => {
     let value = e.target.value;
-    
-    // Remove any non-digit characters if this is a mobile number field
+
     if (currentOperator?.type === "mobile") {
-      value = value.replace(/\D/g, '');
+      value = value.replace(/\D/g, "");
     }
-    
-    setFormData(prev => ({ ...prev, mobileNumber: value }));
+
+    setFormData((prev) => ({ ...prev, mobileNumber: value }));
     setAccountNumber(value);
 
-    // Real-time validation
     if (currentOperator?.regex && value) {
       try {
         const regex = new RegExp(currentOperator.regex);
         if (!regex.test(value)) {
-          setInputError(`Please enter a valid ${currentOperator.displayname || "mobile number"}`);
+          setInputError(
+            `Please enter a valid ${
+              currentOperator.displayname || "mobile number"
+            }`
+          );
         } else {
           setInputError("");
         }
@@ -75,12 +79,22 @@ const PostpaidRecharge1 = ({
 
     // 1. Check if user is logged in
     const token = localStorage.getItem("token");
-   if (!token) {
-  setShowLoginModal(true);
-  setIsValidating(false);
-  return;
-}
+    if (!token) {
+      // Store the callback function to proceed after login
+      setLoginCallback(() => () => {
+        // Re-run the validation after login
+        validateAndProceed();
+      });
+      setShowLoginModal(true);
+      setIsValidating(false);
+      return;
+    }
 
+    // If user is logged in, proceed with validation
+    validateAndProceed();
+  };
+
+  const validateAndProceed = () => {
     // 2. Validate operator is selected
     if (!formData.operator) {
       setInputError("Please select an operator");
@@ -90,7 +104,9 @@ const PostpaidRecharge1 = ({
 
     // 3. Validate mobile number/account number is entered
     if (!formData.mobileNumber) {
-      setInputError(`Please enter your ${currentOperator?.displayname || "mobile number"}`);
+      setInputError(
+        `Please enter your ${currentOperator?.displayname || "mobile number"}`
+      );
       setIsValidating(false);
       return;
     }
@@ -100,7 +116,11 @@ const PostpaidRecharge1 = ({
       try {
         const regex = new RegExp(currentOperator.regex);
         if (!regex.test(formData.mobileNumber)) {
-          setInputError(`Please enter a valid ${currentOperator.displayname || "mobile number"}`);
+          setInputError(
+            `Please enter a valid ${
+              currentOperator.displayname || "mobile number"
+            }`
+          );
           setIsValidating(false);
           return;
         }
@@ -123,6 +143,13 @@ const PostpaidRecharge1 = ({
     setIsValidating(false);
   };
 
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    if (loginCallback) {
+      loginCallback();
+    }
+  };
+
   return (
     <>
       <div className="p-5" style={{ backgroundColor: "#F5F9FF" }}>
@@ -135,7 +162,7 @@ const PostpaidRecharge1 = ({
             <h3>Pay Your Postpaid Bills Instantly with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Mobile Recharge.svg" 
+                src="/assets/Mobile Recharge.svg"
                 alt="Postpaid Recharge"
                 height="300"
                 className="item-center postpaidSideImg"
@@ -149,7 +176,10 @@ const PostpaidRecharge1 = ({
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{ color: "#002244", fontWeight: "bold" }}>
+              <h3
+                className="mb-4"
+                style={{ color: "#002244", fontWeight: "bold" }}
+              >
                 Pay Your Mobile Postpaid Bill
               </h3>
               <Form onSubmit={handleSubmit}>
@@ -221,9 +251,11 @@ const PostpaidRecharge1 = ({
         </Row>
       </div>
       <FAQPostpaid />
-      {showLoginModal && (
-  <Login1 onClose={() => setShowLoginModal(false)} />
-)}
+      <LoginModal 
+        show={showLoginModal} 
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };

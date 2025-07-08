@@ -317,6 +317,7 @@ console.log(socialLinks,"Social media link")
 
           {/* Right Side: Social Media Icons */}
           <Col md={4} className="text-md-end text-center mt-3 mt-md-0">
+            <div>Connect With US</div>
             <div className="d-flex justify-content-md-end justify-content-center gap-3">
               {socialLinks.map((item) => (
                 <a
