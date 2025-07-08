@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQDatacardPostpaid from "./FAQDatacardPostpaid";
-import Swal from "sweetalert2";
+import LoginModal from "../../Login/LoginModal";
 
 const DatacardPostpaidRecharge = ({
   selectedCategory,
@@ -19,6 +19,9 @@ const DatacardPostpaidRecharge = ({
     mobileNumber: accountNumber || "",
   });
   const [currentOperator, setCurrentOperator] = useState(null);
+  const [isValidating, setIsValidating] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [loginCallback, setLoginCallback] = useState(null);
 
   // Filter only Datacard Postpaid operators
   const filteredOperators = operators.filter(op => op.category === "Datacard Postpaid");
@@ -76,32 +79,73 @@ const DatacardPostpaidRecharge = ({
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsValidating(true);
 
-     const token = localStorage.getItem("token");
-      if (!token) {
-    Swal.fire({
-      title: "Login Required",
-      text: "Please login to continue with Datacard Postpaid bill payment.",
-      icon: "warning",
-      confirmButtonColor: "#001e50",
-      confirmButtonText: "Login Now",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "/login"; 
-      }
-    });
-    return;
-  }
-    if (!formData.operator || !formData.mobileNumber) {
-      setInputError("Please fill all required fields");
+    // 1. Check if user is logged in
+    const token = localStorage.getItem("token");
+    if (!token) {
+      // Store the callback function to proceed after login
+      setLoginCallback(() => () => {
+        validateAndProceed();
+      });
+      setShowLoginModal(true);
+      setIsValidating(false);
       return;
     }
-    
-    if (inputError) return;
-    
+
+    // If user is logged in, proceed with validation
+    validateAndProceed();
+  };
+
+  const validateAndProceed = () => {
+    // 2. Validate operator is selected
+    if (!formData.operator) {
+      setInputError("Please select a datacard provider");
+      setIsValidating(false);
+      return;
+    }
+
+    // 3. Validate mobile number is entered
+    if (!formData.mobileNumber) {
+      setInputError(
+        `Please enter your ${currentOperator?.displayname || "mobile number"}`
+      );
+      setIsValidating(false);
+      return;
+    }
+
+    // 4. Validate against regex pattern if exists
+    if (currentOperator?.regex) {
+      try {
+        const regex = new RegExp(currentOperator.regex);
+        if (!regex.test(formData.mobileNumber)) {
+          setInputError(
+            `Please enter a valid ${currentOperator.displayname || "mobile number"}`
+          );
+          setIsValidating(false);
+          return;
+        }
+      } catch (err) {
+        console.error("Invalid regex pattern:", currentOperator.regex);
+        setInputError("Invalid validation pattern. Please contact support.");
+        setIsValidating(false);
+        return;
+      }
+    }
+
+    // All validations passed
+    setInputError("");
     onProceed();
+    setIsValidating(false);
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    if (loginCallback) {
+      loginCallback();
+    }
   };
 
   if (selectedCategory !== "Datacard Postpaid") return null;
@@ -149,6 +193,7 @@ const DatacardPostpaidRecharge = ({
                     value={formData.operator}
                     onChange={handleOperatorChange}
                     disabled={filteredOperators.length === 0}
+                    required
                   >
                     <option value="">Select Operator</option>
                     {filteredOperators.map((operator) => (
@@ -186,6 +231,7 @@ const DatacardPostpaidRecharge = ({
                         onChange={handleMobileChange}
                         maxLength={10}
                         isInvalid={!!inputError}
+                        required
                       />
                     </div>
                     {currentOperator?.regex && (
@@ -207,9 +253,9 @@ const DatacardPostpaidRecharge = ({
                   type="submit"
                   className="w-100 mt-3"
                   style={{ backgroundColor: "#002244", color: "white" }}
-                  disabled={!formData.operator || !formData.mobileNumber || !!inputError}
+                  disabled={!formData.operator || !formData.mobileNumber || !!inputError || isValidating}
                 >
-                  Proceed to Recharge
+                  {isValidating ? "Validating..." : "Proceed to Recharge"}
                 </Button>
               </Form>
             </div>
@@ -217,6 +263,11 @@ const DatacardPostpaidRecharge = ({
         </Row>
       </div>
       <FAQDatacardPostpaid />
+      <LoginModal
+        show={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };

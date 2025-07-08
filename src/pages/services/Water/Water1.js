@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQWaterBillPayment from "./FAQWaterBillPayment";
-import Swal from "sweetalert2";
+import LoginModal from "../../Login/LoginModal";
 
 const Water1 = ({ 
   selectedCategory,
@@ -19,6 +19,9 @@ const Water1 = ({
     rrNumber: "",
   });
   const [currentOperator, setCurrentOperator] = useState(null);
+  const [isValidating, setIsValidating] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [loginCallback, setLoginCallback] = useState(null);
 
   // Set default operator if only one exists
   useEffect(() => {
@@ -63,27 +66,72 @@ const Water1 = ({
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsValidating(true);
 
+    // 1. Check if user is logged in
+    const token = localStorage.getItem("token");
+    if (!token) {
+      // Store the callback function to proceed after login
+      setLoginCallback(() => () => {
+        validateAndProceed();
+      });
+      setShowLoginModal(true);
+      setIsValidating(false);
+      return;
+    }
 
-     const token = localStorage.getItem("token");
-     if (!token) {
-        Swal.fire({
-          title: "Login Required",
-          text: "Please login to continue with Water bill payment.",
-          icon: "warning",
-          confirmButtonColor: "#001e50",
-          confirmButtonText: "Login Now",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = "/login"; 
-          }
-        });
+    // If user is logged in, proceed with validation
+    validateAndProceed();
+  };
+
+  const validateAndProceed = () => {
+    // 2. Validate operator is selected
+    if (!formData.operator) {
+      setInputError("Please select a water provider");
+      setIsValidating(false);
+      return;
+    }
+
+    // 3. Validate RR number is entered
+    if (!formData.rrNumber) {
+      setInputError(
+        `Please enter your ${currentOperator?.displayname || "RR number"}`
+      );
+      setIsValidating(false);
+      return;
+    }
+
+    // 4. Validate against regex pattern if exists
+    if (currentOperator?.regex) {
+      try {
+        const regex = new RegExp(currentOperator.regex);
+        if (!regex.test(formData.rrNumber)) {
+          setInputError(
+            `Please enter a valid ${currentOperator.displayname || "RR number"}`
+          );
+          setIsValidating(false);
+          return;
+        }
+      } catch (err) {
+        console.error("Invalid regex pattern:", currentOperator.regex);
+        setInputError("Invalid validation pattern. Please contact support.");
+        setIsValidating(false);
         return;
       }
-    if (formData.operator && formData.rrNumber && !inputError) {
-      onProceed();
+    }
+
+    // All validations passed
+    setInputError("");
+    onProceed();
+    setIsValidating(false);
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    if (loginCallback) {
+      loginCallback();
     }
   };
 
@@ -132,6 +180,7 @@ const Water1 = ({
                   <Form.Select
                     value={formData.operator}
                     onChange={handleOperatorChange}
+                    required
                   >
                     <option value="">Select Operator</option>
                     {operators.map((operator) => (
@@ -156,6 +205,7 @@ const Water1 = ({
                       }
                       value={formData.rrNumber}
                       onChange={handleRrNumberChange}
+                      required
                     />
                     {currentOperator?.regex && (
                       <Form.Text className="text-muted">
@@ -174,9 +224,9 @@ const Water1 = ({
                     type="submit"
                     className="w-100"
                     style={{ backgroundColor: "#001e50", color: "white" }}
-                    disabled={!!inputError}
+                    disabled={!!inputError || isValidating}
                   >
-                    Confirm
+                    {isValidating ? "Validating..." : "Confirm"}
                   </Button>
                 )}
               </Form>
@@ -185,6 +235,11 @@ const Water1 = ({
         </Row>
       </div>
       <FAQWaterBillPayment />
+      <LoginModal
+        show={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };

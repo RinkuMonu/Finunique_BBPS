@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQInsurancePayment from "./FAQInsurancePayment";
 import "./Insurancee.css";
-import Swal from "sweetalert2";
+import LoginModal from "../../Login/LoginModal";
 
 const Insurance1 = ({ 
   selectedCategory,
@@ -23,6 +23,9 @@ const Insurance1 = ({
   });
   const [currentOperator, setCurrentOperator] = useState(null);
   const [additionalFields, setAdditionalFields] = useState([]);
+  const [isValidating, setIsValidating] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [loginCallback, setLoginCallback] = useState(null);
 
   // Set default operator if only one exists
   useEffect(() => {
@@ -95,30 +98,84 @@ const Insurance1 = ({
   };
 
   const handleMobileNumberChange = (e) => {
-    const value = e.target.value;
+    const value = e.target.value.replace(/\D/g, '').slice(0, 10);
     setFormData(prev => ({ ...prev, mobileNumber: value }));
   };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsValidating(true);
 
-  const token = localStorage.getItem("token");
-   if (!token) {
-      Swal.fire({
-        title: "Login Required",
-        text: "Please login to continue with Insurance bill payment.",
-        icon: "warning",
-        confirmButtonColor: "#001e50",
-        confirmButtonText: "Login Now",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = "/login"; 
-        }
+    // 1. Check if user is logged in
+    const token = localStorage.getItem("token");
+    if (!token) {
+      // Store the callback function to proceed after login
+      setLoginCallback(() => () => {
+        validateAndProceed();
       });
+      setShowLoginModal(true);
+      setIsValidating(false);
       return;
     }
 
-  if (formData.operator && formData.policyNumber && !inputError) {
+    // If user is logged in, proceed with validation
+    validateAndProceed();
+  };
+
+  const validateAndProceed = () => {
+    // 2. Validate operator is selected
+    if (!formData.operator) {
+      setInputError("Please select an insurance provider");
+      setIsValidating(false);
+      return;
+    }
+
+    // 3. Validate policy number
+    if (!formData.policyNumber) {
+      setInputError(
+        `Please enter your ${currentOperator?.displayname || "policy number"}`
+      );
+      setIsValidating(false);
+      return;
+    }
+
+    // 4. Validate against regex pattern if exists
+    if (currentOperator?.regex) {
+      try {
+        const regex = new RegExp(currentOperator.regex);
+        if (!regex.test(formData.policyNumber)) {
+          setInputError(
+            `Please enter a valid ${currentOperator.displayname || "policy number"}`
+          );
+          setIsValidating(false);
+          return;
+        }
+      } catch (err) {
+        console.error("Invalid regex pattern:", currentOperator.regex);
+        setInputError("Invalid validation pattern. Please contact support.");
+        setIsValidating(false);
+        return;
+      }
+    }
+
+    // 5. Validate mobile number
+    if (!formData.mobileNumber || formData.mobileNumber.length !== 10) {
+      setInputError("Please enter a valid 10-digit mobile number");
+      setIsValidating(false);
+      return;
+    }
+
+    // 6. Validate additional required fields
+    for (const field of additionalFields) {
+      if (!formData[field.id]) {
+        setInputError(`Please enter ${field.label}`);
+        setIsValidating(false);
+        return;
+      }
+    }
+
+    // All validations passed
+    setInputError("");
     onProceed({
       ...formData,
       additionalData: additionalFields.reduce((acc, field) => {
@@ -126,14 +183,21 @@ const handleSubmit = (e) => {
         return acc;
       }, {})
     });
-  }
-};
+    setIsValidating(false);
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    if (loginCallback) {
+      loginCallback();
+    }
+  };
 
   const isFormValid = () => {
     return formData.operator && 
            formData.policyNumber && 
-           (!currentOperator?.ad1_name || formData.dateofBirth) &&
-           formData.mobileNumber &&
+           formData.mobileNumber?.length === 10 &&
+           additionalFields.every(field => formData[field.id]) &&
            !inputError;
   };
 
@@ -182,6 +246,7 @@ const handleSubmit = (e) => {
                   <Form.Select
                     value={formData.operator}
                     onChange={handleOperatorChange}
+                    required
                   >
                     <option value="">Select Operator</option>
                     {operators.map((operator) => (
@@ -207,6 +272,7 @@ const handleSubmit = (e) => {
                         }
                         value={formData.policyNumber}
                         onChange={handlePolicyNumberChange}
+                        required
                       />
                       {currentOperator?.regex && (
                         <Form.Text className="text-muted">
@@ -233,16 +299,13 @@ const handleSubmit = (e) => {
                     <Form.Group className="mb-3" controlId="mobileNumber">
                       <Form.Label>Mobile Number</Form.Label>
                       <Form.Control
-                        type="text"
-                        placeholder="Mobile Number"
+                        type="tel"
+                        placeholder="Enter 10-digit mobile number"
                         value={formData.mobileNumber}
                         onChange={handleMobileNumberChange}
-                        pattern="[0-9]{10}"
+                        maxLength={10}
                         required
                       />
-                      <Form.Text className="text-muted">
-                        10 digit mobile number
-                      </Form.Text>
                     </Form.Group>
                   </>
                 )}
@@ -253,9 +316,9 @@ const handleSubmit = (e) => {
                     type="submit"
                     className="w-100"
                     style={{ backgroundColor: "#001e50", color: "white" }}
-                    disabled={!isFormValid()}
+                    disabled={!isFormValid() || isValidating}
                   >
-                    Confirm
+                    {isValidating ? "Validating..." : "Confirm"}
                   </Button>
                 )}
               </Form>
@@ -264,6 +327,11 @@ const handleSubmit = (e) => {
         </Row>
       </div>
       <FAQInsurancePayment />
+      <LoginModal
+        show={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };

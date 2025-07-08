@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQBroadbandBillPayment from "./FAQBroadbandBillPayment";
 import "./broadband.css";
-import Swal from "sweetalert2";
+import LoginModal from "../../Login/LoginModal";
 
 const Broadband1 = ({ 
   selectedCategory,
@@ -20,6 +20,9 @@ const Broadband1 = ({
     telephoneNumber: "",
   });
   const [currentOperator, setCurrentOperator] = useState(null);
+  const [isValidating, setIsValidating] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [loginCallback, setLoginCallback] = useState(null);
 
   // Set default operator if only one exists
   useEffect(() => {
@@ -64,30 +67,80 @@ const Broadband1 = ({
     }
   };
 
-  const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsValidating(true);
 
-  const token = localStorage.getItem("token"); 
-  if (!token) {
-    Swal.fire({
-      title: "Login Required",
-      text: "Please login to continue with broadband bill payment.",
-      icon: "warning",
-      confirmButtonColor: "#001e50",
-      confirmButtonText: "Login Now",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "/login"; 
+    // 1. Check if user is logged in
+    const token = localStorage.getItem("token");
+    if (!token) {
+      // Store the callback function to proceed after login
+      setLoginCallback(() => () => {
+        // Re-run the validation after login
+        validateAndProceed();
+      });
+      setShowLoginModal(true);
+      setIsValidating(false);
+      return;
+    }
+
+    // If user is logged in, proceed with validation
+    validateAndProceed();
+  };
+
+  const validateAndProceed = () => {
+    // 2. Validate operator is selected
+    if (!formData.operator) {
+      setInputError("Please select an operator");
+      setIsValidating(false);
+      return;
+    }
+
+    // 3. Validate telephone number is entered
+    if (!formData.telephoneNumber) {
+      setInputError(
+        `Please enter your ${currentOperator?.displayname || "telephone number"}`
+      );
+      setIsValidating(false);
+      return;
+    }
+
+    // 4. Validate against regex pattern if exists
+    if (currentOperator?.regex) {
+      try {
+        const regex = new RegExp(currentOperator.regex);
+        if (!regex.test(formData.telephoneNumber)) {
+          setInputError(
+            `Please enter a valid ${currentOperator.displayname || "telephone number"}`
+          );
+          setIsValidating(false);
+          return;
+        }
+      } catch (err) {
+        console.error("Invalid regex pattern:", currentOperator.regex);
+        setInputError("Invalid validation pattern. Please contact support.");
+        setIsValidating(false);
+        return;
       }
-    });
-    return;
-  }
+    }
 
-  if (formData.operator && formData.telephoneNumber && !inputError) {
-    onProceed();
-  }
-};
+    // 5. Clear any previous errors if all validations pass
+    setInputError("");
 
+    // 6. Only proceed if all validations pass
+    if (formData.operator && formData.telephoneNumber && !inputError) {
+      onProceed();
+    }
+
+    setIsValidating(false);
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    if (loginCallback) {
+      loginCallback();
+    }
+  };
 
   return (
     <>
@@ -136,6 +189,7 @@ const Broadband1 = ({
                   <Form.Select
                     value={formData.operator}
                     onChange={handleOperatorChange}
+                    required
                   >
                     <option value="">Select Operator</option>
                     {operators.map((operator) => (
@@ -160,6 +214,7 @@ const Broadband1 = ({
                       }
                       value={formData.telephoneNumber}
                       onChange={handleTelephoneChange}
+                      required
                     />
                     {currentOperator?.regex && (
                       <Form.Text className="text-muted">
@@ -178,9 +233,9 @@ const Broadband1 = ({
                     type="submit"
                     className="w-100"
                     style={{ backgroundColor: "#001e50", color: "white" }}
-                    disabled={!!inputError}
+                    disabled={!!inputError || isValidating}
                   >
-                    Confirm
+                    {isValidating ? "Validating..." : "Confirm"}
                   </Button>
                 )}
               </Form>
@@ -189,6 +244,11 @@ const Broadband1 = ({
         </Row>
       </div>
       <FAQBroadbandBillPayment />
+      <LoginModal
+        show={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };

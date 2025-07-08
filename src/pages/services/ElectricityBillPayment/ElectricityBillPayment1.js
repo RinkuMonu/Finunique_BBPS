@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQElectricityBill from "./FAQElectricityBill";
 import "./elebillpay.css";
-import Swal from "sweetalert2";
+import LoginModal from "../../Login/LoginModal";
 
 const ElectricityBillPayment1 = ({ 
   selectedCategory,
@@ -21,7 +21,9 @@ const ElectricityBillPayment1 = ({
   });
   const [currentOperator, setCurrentOperator] = useState(null);
   const [isValidating, setIsValidating] = useState(false);
-  const [hasTyped, setHasTyped] = useState(false); // New state to track typing
+  const [hasTyped, setHasTyped] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [loginCallback, setLoginCallback] = useState(null);
 
   // Set default operator if only one exists
   useEffect(() => {
@@ -61,7 +63,7 @@ const ElectricityBillPayment1 = ({
     setSelectedOperator(value);
     setAccountNumber("");
     setInputError("");
-    setHasTyped(false); // Reset typing state when operator changes
+    setHasTyped(false);
     
     const operator = operators.find(op => op.id === value);
     setCurrentOperator(operator);
@@ -69,9 +71,8 @@ const ElectricityBillPayment1 = ({
 
   const handleConsumerNumberChange = (e) => {
     let value = e.target.value;
-    setHasTyped(true); // Set hasTyped to true when user types
+    setHasTyped(true);
     
-    // Sanitize input based on operator requirements
     if (currentOperator?.inputType === "number") {
       value = value.replace(/\D/g, '');
     }
@@ -79,7 +80,6 @@ const ElectricityBillPayment1 = ({
     setFormData(prev => ({ ...prev, consumerNumber: value }));
     setAccountNumber(value);
     
-    // Real-time validation
     const validation = validateInput(
       value,
       currentOperator?.regex,
@@ -95,21 +95,20 @@ const ElectricityBillPayment1 = ({
     // 1. Check if user is logged in
     const token = localStorage.getItem("token");
     if (!token) {
-      Swal.fire({
-        title: "Login Required",
-        text: "Please login to continue with Electricity bill payment.",
-        icon: "warning",
-        confirmButtonColor: "#001e50",
-        confirmButtonText: "Login Now",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = "/login"; 
-        }
+      // Store the callback function to proceed after login
+      setLoginCallback(() => () => {
+        validateAndProceed();
       });
+      setShowLoginModal(true);
       setIsValidating(false);
       return;
     }
 
+    // If user is logged in, proceed with validation
+    validateAndProceed();
+  };
+
+  const validateAndProceed = () => {
     // 2. Validate operator is selected
     if (!formData.operator) {
       setInputError("Please select an electricity provider");
@@ -133,6 +132,13 @@ const ElectricityBillPayment1 = ({
     setInputError("");
     onProceed();
     setIsValidating(false);
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    if (loginCallback) {
+      loginCallback();
+    }
   };
 
   return (
@@ -225,7 +231,6 @@ const ElectricityBillPayment1 = ({
                   </Form.Group>
                 )}
 
-                {/* Show button when user starts typing or has entered something */}
                 {(hasTyped || formData.consumerNumber) && (
                   <Button
                     variant="primary"
@@ -243,6 +248,11 @@ const ElectricityBillPayment1 = ({
         </Row>
       </div>
       <FAQElectricityBill />
+      <LoginModal
+        show={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };

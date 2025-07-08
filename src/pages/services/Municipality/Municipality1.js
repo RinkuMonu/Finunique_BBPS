@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQMunicipality from "./FAQMunicipality";
-import Swal from "sweetalert2";
-
+import LoginModal from "../../Login/LoginModal";
 
 const Municipality1 = ({ 
   selectedCategory,
@@ -20,6 +19,9 @@ const Municipality1 = ({
     houseNumber: "",
   });
   const [currentOperator, setCurrentOperator] = useState(null);
+  const [isValidating, setIsValidating] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [loginCallback, setLoginCallback] = useState(null);
 
   useEffect(() => {
     if (selectedOperator) {
@@ -58,26 +60,72 @@ const Municipality1 = ({
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsValidating(true);
 
-     const token = localStorage.getItem("token");
-      if (!token) {
-    Swal.fire({
-      title: "Login Required",
-      text: "Please login to continue with broadband bill payment.",
-      icon: "warning",
-      confirmButtonColor: "#001e50",
-      confirmButtonText: "Login Now",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "/login"; 
+    // 1. Check if user is logged in
+    const token = localStorage.getItem("token");
+    if (!token) {
+      // Store the callback function to proceed after login
+      setLoginCallback(() => () => {
+        validateAndProceed();
+      });
+      setShowLoginModal(true);
+      setIsValidating(false);
+      return;
+    }
+
+    // If user is logged in, proceed with validation
+    validateAndProceed();
+  };
+
+  const validateAndProceed = () => {
+    // 2. Validate operator is selected
+    if (!formData.operator) {
+      setInputError("Please select a municipality");
+      setIsValidating(false);
+      return;
+    }
+
+    // 3. Validate house number is entered
+    if (!formData.houseNumber) {
+      setInputError(
+        `Please enter your ${currentOperator?.displayname || "house number"}`
+      );
+      setIsValidating(false);
+      return;
+    }
+
+    // 4. Validate against regex pattern if exists
+    if (currentOperator?.regex) {
+      try {
+        const regex = new RegExp(currentOperator.regex);
+        if (!regex.test(formData.houseNumber)) {
+          setInputError(
+            `Please enter a valid ${currentOperator.displayname || "house number"}`
+          );
+          setIsValidating(false);
+          return;
+        }
+      } catch (err) {
+        console.error("Invalid regex pattern:", currentOperator.regex);
+        setInputError("Invalid validation pattern. Please contact support.");
+        setIsValidating(false);
+        return;
       }
-    });
-    return;
-  }
-    if (formData.operator && formData.houseNumber && !inputError) {
-      onProceed();
+    }
+
+    // All validations passed
+    setInputError("");
+    onProceed();
+    setIsValidating(false);
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    if (loginCallback) {
+      loginCallback();
     }
   };
 
@@ -126,6 +174,7 @@ const Municipality1 = ({
                   <Form.Select
                     value={formData.operator}
                     onChange={handleOperatorChange}
+                    required
                   >
                     <option value="">Select Operator</option>
                     {operators.map((operator) => (
@@ -150,6 +199,7 @@ const Municipality1 = ({
                       }
                       value={formData.houseNumber}
                       onChange={handleHouseNumberChange}
+                      required
                     />
                     {currentOperator?.regex && (
                       <Form.Text className="text-muted">
@@ -168,9 +218,9 @@ const Municipality1 = ({
                     type="submit"
                     className="w-100"
                     style={{ backgroundColor: "#001e50", color: "white" }}
-                    disabled={!!inputError}
+                    disabled={!!inputError || isValidating}
                   >
-                    Confirm
+                    {isValidating ? "Validating..." : "Confirm"}
                   </Button>
                 )}
               </Form>
@@ -179,8 +229,13 @@ const Municipality1 = ({
         </Row>
       </div>
       <FAQMunicipality />
+      <LoginModal
+        show={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };
 
-export default Municipality1;   
+export default Municipality1;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQLpgGasBooking from './FAQLpgGasBooking';
-import Swal from 'sweetalert2';
+import LoginModal from '../../Login/LoginModal';
 
 const LpgBooking1 = ({
   selectedCategory,
@@ -24,6 +24,9 @@ const LpgBooking1 = ({
   });
   const [currentOperator, setCurrentOperator] = useState(null);
   const [additionalFields, setAdditionalFields] = useState([]);
+  const [isValidating, setIsValidating] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [loginCallback, setLoginCallback] = useState(null);
 
   useEffect(() => {
     if (operators.length === 1 && !selectedOperator) {
@@ -39,10 +42,9 @@ const LpgBooking1 = ({
     setCurrentOperator(operator);
     setInputError("");
     
-    // Setup form data based on operator requirements
     const newFormData = {
       operator: operator.id,
-      registeredContactNumber: formData.registeredContactNumber, // Keep existing contact number
+      registeredContactNumber: formData.registeredContactNumber,
       subscriberCode: "",
       state: "",
       district: "",
@@ -51,7 +53,6 @@ const LpgBooking1 = ({
     setFormData(newFormData);
     setAccountNumber("");
 
-    // Configure additional fields dynamically
     const fields = [];
     if (operator.ad1_name) fields.push(createFieldConfig(operator, 'ad1'));
     if (operator.ad2_name) fields.push(createFieldConfig(operator, 'ad2'));
@@ -86,7 +87,6 @@ const LpgBooking1 = ({
       return false;
     }
 
-    // Operator-specific validation
     if (currentOperator?.regex) {
       const fieldToValidate = currentOperator.displayname === "Registered Contact Number" 
         ? formData.registeredContactNumber 
@@ -97,7 +97,6 @@ const LpgBooking1 = ({
       }
     }
 
-    // Validate additional fields
     return additionalFields.every(field => 
       !field.regex || validateField(formData[field.name], field.regex)
     );
@@ -108,30 +107,34 @@ const LpgBooking1 = ({
     if (operator) initializeOperator(operator);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-     const token = localStorage.getItem("token");
-      if (!token) {
-    Swal.fire({
-      title: "Login Required",
-      text: "Please login to continue with LPG bill payment.",
-      icon: "warning",
-      confirmButtonColor: "#001e50",
-      confirmButtonText: "Login Now",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "/login"; 
-      }
-    });
-    return;
-  }
-    // Validate contact number
-    if (!validateField(formData.registeredContactNumber, "^[0-9]{10}$")) {
-      setInputError("Please enter a valid 10-digit contact number");
+    setIsValidating(true);
+
+    // 1. Check if user is logged in
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setLoginCallback(() => () => {
+        validateAndProceed();
+      });
+      setShowLoginModal(true);
+      setIsValidating(false);
       return;
     }
 
-    // Operator-specific validation
+    // If user is logged in, proceed with validation
+    validateAndProceed();
+  };
+
+  const validateAndProceed = () => {
+    // 2. Validate contact number
+    if (!validateField(formData.registeredContactNumber, "^[0-9]{10}$")) {
+      setInputError("Please enter a valid 10-digit contact number");
+      setIsValidating(false);
+      return;
+    }
+
+    // 3. Operator-specific validation
     if (currentOperator?.regex) {
       const fieldToValidate = currentOperator.displayname === "Registered Contact Number" 
         ? formData.registeredContactNumber 
@@ -139,22 +142,33 @@ const LpgBooking1 = ({
       
       if (!validateField(fieldToValidate, currentOperator.regex)) {
         setInputError(`Please enter a valid ${currentOperator.displayname}`);
+        setIsValidating(false);
         return;
       }
       
-      // Set account number based on operator requirements
       setAccountNumber(fieldToValidate);
     }
 
-    // Validate additional fields
+    // 4. Validate additional fields
     for (const field of additionalFields) {
       if (field.regex && !validateField(formData[field.name], field.regex)) {
         setInputError(`Please enter a valid ${field.displayName}`);
+        setIsValidating(false);
         return;
       }
     }
 
-    if (isFormValid()) onProceed();
+    // All validations passed
+    setInputError("");
+    onProceed();
+    setIsValidating(false);
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    if (loginCallback) {
+      loginCallback();
+    }
   };
 
   const renderMainInputField = () => {
@@ -169,6 +183,7 @@ const LpgBooking1 = ({
           value={formData.registeredContactNumber}
           onChange={handleChange}
           maxLength="10"
+          required
         />
         <Form.Text className="text-muted">
           Format: 10 digit number
@@ -182,6 +197,7 @@ const LpgBooking1 = ({
           placeholder={`Enter ${currentOperator.displayname}`}
           value={formData.subscriberCode}
           onChange={handleChange}
+          required
         />
         {currentOperator.regex && (
           <Form.Text className="text-muted">
@@ -213,7 +229,11 @@ const LpgBooking1 = ({
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <Form.Label>Operator</Form.Label>
-                  <Form.Select value={formData.operator} onChange={handleOperatorChange}>
+                  <Form.Select 
+                    value={formData.operator} 
+                    onChange={handleOperatorChange}
+                    required
+                  >
                     <option value="">Select Operator</option>
                     {operators.map(operator => (
                       <option key={operator.id} value={operator.id}>
@@ -233,6 +253,7 @@ const LpgBooking1 = ({
                       placeholder={`Enter ${field.displayName}`}
                       value={formData[field.name]}
                       onChange={handleChange}
+                      required={!!field.regex}
                     />
                     {field.regex && (
                       <Form.Text className="text-muted">
@@ -251,6 +272,7 @@ const LpgBooking1 = ({
                       value={formData.registeredContactNumber}
                       onChange={handleChange}
                       maxLength="10"
+                      required
                     />
                   </Form.Group>
                 )}
@@ -262,9 +284,9 @@ const LpgBooking1 = ({
                   type="submit"
                   className="w-100"
                   style={{ backgroundColor: '#001e50', color: 'white' }}
-                  disabled={!isFormValid()}
+                  disabled={!isFormValid() || isValidating}
                 >
-                  Confirm
+                  {isValidating ? "Validating..." : "Confirm"}
                 </Button>
               </Form>
             </div>
@@ -272,6 +294,11 @@ const LpgBooking1 = ({
         </Row>
       </div>
       <FAQLpgGasBooking />
+      <LoginModal
+        show={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };
