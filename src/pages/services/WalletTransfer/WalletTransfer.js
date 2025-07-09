@@ -13,8 +13,11 @@ import {
   Accordion,
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import SEO from "../../../components/SEO/SEO";
+import { useUser } from "../../../context/UserContext";
 
 const WalletTransfer = () => {
+  const {seo} = useUser()
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     mobileNumber: "",
@@ -81,7 +84,20 @@ const WalletTransfer = () => {
   };
 
   return (
-    <Container className="py-5 my-lg-5" style={{ maxWidth: "1200px" }}>
+   <>
+    <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
+     <Container className="py-5 my-lg-5" style={{ maxWidth: "1200px" }}>
       <Row className="g-4">
         <Col lg={6} className="pe-lg-4">
           <img
@@ -493,6 +509,7 @@ const WalletTransfer = () => {
         }
       `}</style>
     </Container>
+   </>
   );
 };
 

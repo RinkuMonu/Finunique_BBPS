@@ -2,8 +2,11 @@ import React from "react";
 import "./styles/ourpartner.css";
 import img from "../Assets//images/partners.png";
 import { FiCheckCircle } from "react-icons/fi";
+import SEO from "../components/SEO/SEO";
+import { useUser } from "../context/UserContext";
 
 const OurPartener = () => {
+  const {seo} = useUser()
   const reasonsToPartner = [
     "Earn recurring income from every financial transaction",
     "Easy setup — just a smartphone and internet connection",
@@ -54,6 +57,18 @@ const OurPartener = () => {
 
   return (
     <div>
+     <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
       <section className="hero-section heroaabout overflow-hidden">
         <div className="container-fluid p-0 d-flex flex-column align-items-center">
           <div className="row align-items-center hero-content-wrapper">

@@ -10,9 +10,9 @@ export default function PersonalAndBusinessDetailsForm({ formData, updateFormDat
   const [businessName, setBusinessName] = useState(formData.businessDetails.businessName || "");
   const [businessType, setBusinessType] = useState(formData.businessDetails.businessType || "");
   const [address, setAddress] = useState(formData.businessDetails.address || "");
-  const [pincode, setPincode] = useState(formData.businessDetails.pincode || "");
+  const [pincode, setPincode] = useState(formData.contactDetails.pincode || "");
   const [ownerPhoto, setOwnerPhoto] = useState(formData.businessDetails.ownerPhoto || null);
-  const [shopPhotos, setShopPhotos] = useState(formData.businessDetails.shopPhotos || []);
+  const [shopPhoto, setShopPhotos] = useState(formData.businessDetails.shopPhoto || []);
 
   const [errors, setErrors] = useState({
     name: "",
@@ -51,6 +51,7 @@ export default function PersonalAndBusinessDetailsForm({ formData, updateFormDat
       phone, 
       email, 
       mpin,
+      pincode,
       isValid: isContactValid 
     });
     
@@ -58,9 +59,9 @@ export default function PersonalAndBusinessDetailsForm({ formData, updateFormDat
       businessName,
       businessType,
       address,
-      pincode,
+      
       ownerPhoto,
-      shopPhotos,
+      shopPhoto,
       isValid: isBusinessValid,
     });
 
@@ -74,7 +75,7 @@ export default function PersonalAndBusinessDetailsForm({ formData, updateFormDat
       address: addressValid ? "" : "Address is required",
       pincode: pincodeValid ? "" : "Pincode must be exactly 6 digits",
     });
-  }, [name, phone, email, mpin, businessName, businessType, address, pincode, ownerPhoto, shopPhotos]);
+  }, [name, phone, email, mpin, businessName, businessType, address, pincode, ownerPhoto, shopPhoto]);
 
   return (
     <div className="mb-4">
@@ -313,9 +314,9 @@ export default function PersonalAndBusinessDetailsForm({ formData, updateFormDat
                     }
                   }}
                 />
-                {shopPhotos.length > 0 && (
+                {shopPhoto.length > 0 && (
                   <ul className="mt-2 ps-3">
-                    {shopPhotos.map((f, i) => (
+                    {shopPhoto.map((f, i) => (
                       <li key={i} className="small text-muted">{f.name}</li>
                     ))}
                   </ul>

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Row, Col, Form, Button, Alert } from "react-bootstrap";
 import FAQMoneyTransfer from "./FAQMoneyTransfer";
 import "./transfer.css";
+import SEO from "../../../components/SEO/SEO";
+import { useUser } from "../../../context/UserContext";
 
 const TransferToBank = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +12,7 @@ const TransferToBank = () => {
     ifscCode: "",
     amount: "",
   });
-
+  const {seo} = useUser()
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
@@ -85,6 +87,18 @@ const TransferToBank = () => {
 
   return (
     <>
+     <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
       <div className="p-5 mt-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           <Col md={6} className="text-center text-md-start">

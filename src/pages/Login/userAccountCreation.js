@@ -12,8 +12,11 @@ import {
 import axiosInstance from "../../axiosinstanse/axiosInstance";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import SEO from "../../components/SEO/SEO";
+import { useUser } from "../../context/UserContext";
 
 export default function UserAccountCreation() {
+  const {seo} = useUser()
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
@@ -110,7 +113,20 @@ export default function UserAccountCreation() {
   };
 
   return (
-    <div
+   <>
+    <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
+     <div
       className="container max-w-4xl mx-auto p-4 user-account-creation"
       style={{ margintop: "200px" }}
     >
@@ -409,5 +425,6 @@ export default function UserAccountCreation() {
         </div>
       )}
     </div>
+   </>
   );
 }

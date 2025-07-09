@@ -9,6 +9,8 @@ import {
   Tab,
 } from "react-bootstrap";
 import privacyImg from "../Assets/images/policy.png"; 
+import SEO from "../components/SEO/SEO";
+import { useUser } from "../context/UserContext";
 const PRIVACY_SECTIONS = [
   {
     key: "1",
@@ -216,7 +218,7 @@ const PRIVACY_SECTIONS = [
 export default function PrivacyPolicy() {
   const [isMobile, setIsMobile] = useState(false);
   const [activeKey, setActiveKey] = useState("0");
-
+ const {seo} = useUser()
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 992);
     checkMobile();
@@ -236,7 +238,20 @@ export default function PrivacyPolicy() {
   };
 
   return (
-    <div
+   <>
+    <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
+     <div
       className="privacy-policy-page mt-4"
       style={{ backgroundColor: colors.light }}
     >
@@ -528,5 +543,6 @@ export default function PrivacyPolicy() {
         }
       `}</style>
     </div>
+   </>
   );
 }

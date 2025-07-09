@@ -6,16 +6,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { UserProvider } from "./context/UserContext";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+  <BrowserRouter>
     <Provider store={store}>
      <UserProvider>
 
       <App />
      </UserProvider>
     </Provider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

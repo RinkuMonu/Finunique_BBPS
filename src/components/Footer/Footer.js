@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import axios from "axios";
+import SEO from "../SEO/SEO";
+import { useUser } from "../../context/UserContext";
 
 function Footer() {
+  const {seo} = useUser()
   const [socialLinks, setSocialLinks] = useState([]);
   const [contactDetails, setContactDetails] = useState(null);
 
@@ -57,7 +60,20 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="bg-black text-white position-relative pt-5 pb-3 overflow-hidden">
+   <>
+    <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
+     <footer className="bg-black text-white position-relative pt-5 pb-3 overflow-hidden">
       {/* Dark Background Shape */}
       <div
         className="position-absolute top-0 start-0 w-100 h-100 bg-secondary opacity-10"
@@ -349,6 +365,7 @@ function Footer() {
         </Row>
       </Container>
     </footer>
+   </>
   );
 }
 

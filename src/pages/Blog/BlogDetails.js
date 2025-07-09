@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import DOMPurify from "dompurify";
 import homebanner from "../../Assets/images/homebnner.png";
+import SEO from "../../components/SEO/SEO";
+import { useUser } from "../../context/UserContext";
 
 const cleanContent = (html) => {
   return DOMPurify.sanitize(html, {
@@ -10,6 +12,7 @@ const cleanContent = (html) => {
 };
 
 function BlogsDetails() {
+  const {seo} = useUser()
   const { slug } = useParams();
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -107,7 +110,20 @@ function BlogsDetails() {
   }
 
   return (
-    <div>
+    <>
+     <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
+      <div>
       <section className="d-flex align-items-center justify-content-center text-white position-relative">
         <div className="container text-center position-relative">
           <h1 className="hero-title pt-5">{blog.title}</h1>
@@ -285,6 +301,7 @@ function BlogsDetails() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

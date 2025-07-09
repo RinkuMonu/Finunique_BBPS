@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import SEO from "../../../components/SEO/SEO";
+import { useUser } from "../../../context/UserContext";
 
 const RedeemPayback = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [error, setError] = useState("");
-
+  const {seo} = useUser()
   const handleChange = (e) => {
     const value = e.target.value;
     if (/^\d{0,10}$/.test(value)) {
@@ -25,7 +27,20 @@ const RedeemPayback = () => {
   };
 
   return (
-    <Container className="py-5 mt-5">
+    <>
+     <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
+      <Container className="py-5 mt-5">
       <Row className="align-items-center">
         {/* Left Side Content */}
         <Col md={6} className="text-center text-md-start mb-4 mb-md-0">
@@ -97,6 +112,7 @@ const RedeemPayback = () => {
         </Col>
       </Row>
     </Container>
+    </>
   );
 };
 

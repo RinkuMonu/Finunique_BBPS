@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Nav, Card, ListGroup, Badge, Table } from 'react-bootstrap';
   import "./BugBounty.css"
+import SEO from '../../components/SEO/SEO';
+import { useUser } from '../../context/UserContext';
 
 const BugBountyProgram = () => {
+  const {seo} = useUser()
   const [activeTab, setActiveTab] = useState('guidelines');
 
 
@@ -108,7 +111,20 @@ const BugBountyProgram = () => {
   };
 
   return (
-    <Container className="py-5">
+   <>
+    <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
+     <Container className="py-5">
       {/* Hero Section */}
       <Row className="mb-5">
         <Col md={12} className="text-center pt-5">
@@ -165,6 +181,7 @@ const BugBountyProgram = () => {
         </Col>
       </Row>
     </Container>
+   </>
   );
 };
 

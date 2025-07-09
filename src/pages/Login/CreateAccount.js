@@ -8,6 +8,8 @@ import BankDetailsForm from "./form-steps/BankDetailsForm";
 import axiosInstance from "../../axiosinstanse/axiosInstance";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
+import SEO from "../../components/SEO/SEO";
+import { useUser } from "../../context/UserContext";
 
 const steps = [
   { id: "contact-details", title: "Contact Details", component: PersonalAndBusinessDetailsForm },
@@ -140,6 +142,7 @@ const MobileVerification = ({ onVerified }) => {
 };
 
 const CreateAccount = () => {
+  const {seo} = useUser()
   const [searchParams] = useSearchParams();
   const roleFromParams = searchParams.get('role') || 'User';
   
@@ -222,8 +225,7 @@ const CreateAccount = () => {
         form.append("address", businessDetails.address);
         form.append("pinCode", contactDetails.pincode);
         form.append("mpin", contactDetails.mpin);
-        form.append("role", role); // Using the role from state
-
+        form.append("role", role); 
         if (businessDetails.ownerPhoto) {
           form.append("ownerPhoto", businessDetails.ownerPhoto);
         }
@@ -233,8 +235,12 @@ const CreateAccount = () => {
             form.append("shopPhotos", file);
           });
         }
-
-        const response = await axiosInstance.post("/v1/auth/register", form);
+          const config = {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        };
+        const response = await axiosInstance.post("/v1/auth/register", form,config);
         const userId = response.data?.newUser?._id;
         // localStorage.setItem('token', response.data.token);
         setRegisteredUserId(userId);
@@ -278,7 +284,20 @@ const CreateAccount = () => {
   }
 
   return (
-    <Container className="py-5 mt-5">
+   <>
+    <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
+     <Container className="py-5 mt-5">
       <Card className="shadow border-0 overflow-hidden">
         <Card.Header className="bg-gradient bg-warning text-white fs-5 fw-semibold">
           {steps[currentStep].title}
@@ -389,6 +408,7 @@ const CreateAccount = () => {
         </div>
       )}
     </Container>
+   </>
   );
 };
 

@@ -16,6 +16,8 @@ import { useNavigate } from "react-router-dom";
 // import axios from "../../../Component/services/axios";
 import { useState } from "react";
 import axiosInstance from "../../axiosinstanse/axiosInstance";
+import SEO from "../../components/SEO/SEO";
+import { useUser } from "../../context/UserContext";
 
 
 
@@ -50,7 +52,7 @@ export default function UserAccountCreation() {
   });
 
   const [otpSent, setOtpSent] = useState(false);
-
+ const {seo} = useUser()
   const location = useNavigate();
 
   const steps = [
@@ -226,6 +228,18 @@ export default function UserAccountCreation() {
 
   return (
     <>
+     <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
       <section className="hero-section-container">
         <div className="container">
           <div className="row">

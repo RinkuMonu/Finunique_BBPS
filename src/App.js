@@ -59,7 +59,7 @@ function App() {
 
   return (
     <ContextProvider>
-      <BrowserRouter>
+   
         <Header />
         <LeadFormPopup />
         <Routes>
@@ -96,13 +96,13 @@ function App() {
           {/* <Route path="/login1" element={<LoginPage />} /> */}
           <Route path="/blog" element={<Blog/>} />
            <Route path="/blog_details/:slug" element={<BlogDetails/>} />
-             <Route path="/sitemap" element={<SiteMape/>} />
+             {/* <Route path="/sitemap" element={<SiteMape/>} /> */}
              <Route path="/bug-bounty" element={<BugBountyProgram/>} />
           <Route path="/register/useraccountcreation" element={<UserAccountCreation />} />
           {/* <Route path="/game" element={<SnakeGame />} /> */}
         </Routes>
         <Footer />
-      </BrowserRouter>
+     
     </ContextProvider>
   );
 }

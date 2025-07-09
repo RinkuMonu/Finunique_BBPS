@@ -1,13 +1,28 @@
 import React, { useState } from "react";
 import './MyWallet.css'
 import AddMoney from "../../components/Header/AddMoney.js";
+import SEO from "../../components/SEO/SEO.js";
+import { useUser } from "../../context/UserContext.js";
 
 function MyWallet() {
     const [isOpen, setIsOpen] = useState(false);
-
+    const {seo} = useUser()
     const openModal   = () => setIsOpen(true);
     return (
-        <div className='w100'>
+      <>
+       <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
+          <div className='w100'>
             <section className='hero-section-container'>
                 <section className='overlay'>
                     <section className='hero-section-wrapper padding pb-0'>
@@ -211,6 +226,7 @@ function MyWallet() {
             </section>
             {isOpen && <AddMoney setIsOpen={setIsOpen} />}
         </div >
+      </>
     )
 }
 

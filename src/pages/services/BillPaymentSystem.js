@@ -45,8 +45,10 @@ import DatacardPrepaidRecharge from "./DatacardPrepaid/DatacardPrepaidRecharge";
 import MobileRechargeUI2 from "./Mobile_Recharge/MobileRechargeUI2";
 import DTHRecharge1 from "./DTH_Recharge/DTHRecharge1";
 import { useUser } from "../../context/UserContext";
+import SEO from "../../components/SEO/SEO";
 
 const BillPaymentSystem = () => {
+
   // API endpoints
   const OPERATORS_API = "/v1/s3/bill/operators";
   const DETAILS_API = "/v1/s3/bill/details";
@@ -78,7 +80,7 @@ const BillPaymentSystem = () => {
   const [moreItems, setMoreItems] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const {fetchUserfree} = useUser();
+  const {fetchUserfree,seo} = useUser();
   // Menu items data
   const allItems = [
     { name: "Prepaid", icon: <FaMobileAlt size={24} /> },
@@ -442,6 +444,18 @@ const processPayment = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 pb-8 pt-0">
+     <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
       {/* Icon-based Menu Navigation */}
       <nav className="py-4 bg-light border-bottom" style={{ marginTop: "95px" }}>
         <div>

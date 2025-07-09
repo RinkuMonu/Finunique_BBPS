@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import homebanner from "../../Assets/images/homebnner.png";
+import SEO from "../../components/SEO/SEO";
+import { useUser } from "../../context/UserContext";
 
 export default function Blog() {
   const [blogs, setBlogs] = useState([]);
-
+ const {seo} = useUser()
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
@@ -32,7 +34,20 @@ export default function Blog() {
   }, []);
 
   return (
-    <div>
+    <>
+     <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
+<div>
       <section className="blog-section d-flex align-items-center mt-5">
         <div className="hero-overlay"></div>
         <div className="container text-center position-relative">
@@ -117,5 +132,7 @@ export default function Blog() {
         </div>
       </div>
     </div>
+    </>
+    
   );
 }
