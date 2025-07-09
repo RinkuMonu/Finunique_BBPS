@@ -7,7 +7,6 @@ import ConfirmRechargeModal1 from "./ConfirmRechargeModal1";
 import axiosInstance from "../../../components/services/AxiosInstance";
 import LoginModal from "../../Login/LoginModal";
 
-
 const rechargeOperators = [
   "Airtel",
   "BSNL",
@@ -70,7 +69,7 @@ const MobileRechargeUI2 = () => {
   const validateMobileNumber = (number) => /^[6-9]\d{9}$/.test(number);
   const validateAmount = (amount) => {
     const num = Number(amount);
-    return !isNaN(num) && num > 0;
+    return !isNaN(num) && num > 0 && /^\d+\.?\d*$/.test(amount);
   };
 
   const isFormValid =
@@ -104,17 +103,20 @@ const MobileRechargeUI2 = () => {
       return;
     }
 
-    // Amount validation
+    // Amount validation - only allow numbers and decimal points
     if (id === "amount") {
-      setFormData((prev) => ({ ...prev, amount: value }));
+      // Allow only numbers and decimal point
+      if (/^\d*\.?\d*$/.test(value)) {
+        setFormData((prev) => ({ ...prev, amount: value }));
 
-      if (!validateAmount(value)) {
-        setErrors((prev) => ({
-          ...prev,
-          amount: "Please enter a valid amount.",
-        }));
-      } else {
-        setErrors((prev) => ({ ...prev, amount: "" }));
+        if (!validateAmount(value)) {
+          setErrors((prev) => ({
+            ...prev,
+            amount: "Please enter a valid amount.",
+          }));
+        } else {
+          setErrors((prev) => ({ ...prev, amount: "" }));
+        }
       }
       return;
     }
@@ -256,7 +258,7 @@ const MobileRechargeUI2 = () => {
                   <Form.Label>Amount</Form.Label>
                   <div className="input-group">
                     <Form.Control
-                      type="number"
+                      type="text"
                       placeholder="₹ Amount"
                       value={formData.amount}
                       onChange={handleChange}

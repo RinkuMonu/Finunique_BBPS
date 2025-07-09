@@ -224,19 +224,19 @@ export default function Header() {
                                   }}
                                 >
                                   <Link
-                                    to="/register/useraccountcreation"
+                                    to="/register/useraccountcreation?role=User"
                                     className="dropdown-item"
                                   >
                                     User
                                   </Link>
                                   <Link
-                                    to="/createaccount"
+                                    to="/createaccount?role=Retailer"
                                     className="dropdown-item"
                                   >
                                     Retailer
                                   </Link>
                                   <Link
-                                    to="/createaccount"
+                                    to="/createaccount?role=Distributor"
                                     className="dropdown-item"
                                   >
                                     Distributor

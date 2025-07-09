@@ -40,7 +40,7 @@ import ContentPolicy from "./pages/contentPolicy.js";
 import LeadForm from "./pages/leadForm.js";
 import LeadFormPopup from "./pages/leadForm.js";
 import { ContextProvider } from "./components/services/context.js";
-import CreateAccount from "./pages/Login/page.js";
+import CreateAccount from "./pages/Login/CreateAccount.js";
 import { useState } from "react";
 import Header from "./components/Header/Header.js";
 import Footer from "./components/Footer/Footer.js";
