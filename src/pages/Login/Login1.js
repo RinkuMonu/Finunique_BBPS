@@ -169,7 +169,7 @@ const Login1 = ({ onClose, onLoginSuccess }) => {
         </div>
 
         {/* Right Side - Login Form */}
-        <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center px-3 px-md-5 py-5">
+        <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center px-3 px-md-5 py-3">
           <div className="w-100" style={{ maxWidth: "500px" }}>
             <div className="d-flex justify-content-end">
               <button

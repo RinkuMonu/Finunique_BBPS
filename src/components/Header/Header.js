@@ -193,7 +193,7 @@ export default function Header() {
                           <li className="nav-item">
                             <div className="nav-link header-right d-lg-flex align-items-center">
                               <Link className="header-btn" to={"/login"}>
-                                <i class="bi bi-box-arrow-in-right"></i>
+                                <i class="bi bi-box-arrow-in-right me-1"></i>Login
                               </Link>
                             </div>
                           </li>
