@@ -16,19 +16,19 @@ const SEO = ({
   return (
     <Helmet>
       <title>
-        {meta_title || "Finunique Real Cash Games | 100% Legal & Secure"}
+        {meta_title || "India's Trusted Bharat Bill Payment System (BBPS) Platform | Recharge & Bill Pay"}
       </title>
       <meta
         name="description"
         content={
           meta_description ||
-          "Read more about Finunique – A 100% legal & certified real money gaming app. Trusted by pro gamers across India."
+          "Start your digital business with India’s most reliable Bharat Bill Payment System (BBPS) platform. Offer mobile recharge, electricity, gas & DTH bill payments. Enjoy instant settlements, 24/7 support & zero maintenance fees."
         }
       />
       <meta
         name="keywords"
         content={
-          meta_keywords || "play rummy, play poker, play pool, play & win cash"
+          meta_keywords || "bbps, bbps services, bill pay, digital payment."
         }
       />
 
@@ -40,7 +40,7 @@ const SEO = ({
       <meta property="og:type" content={og_type || "website"} />
       <meta property="og:url" content={og_url || ""} />
       <meta property="og:image" content={og_image || ""} />
-      <meta property="og:site_name" content={og_site_name || "Finunique"} />
+      <meta property="og:site_name" content={og_site_name || "ABDKS"} />
 
       {/* Canonical */}
       <link rel="canonical" href={canonical_tag || og_url} />
