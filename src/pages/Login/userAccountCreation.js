@@ -244,20 +244,20 @@ export default function UserAccountCreation() {
 
         {/* Step Content */}
         <div className="card">
-         {/* <div className="card-header">
+         <div className="card-header">
             <h5 className="card-title mb-1">
               Step {currentStep}: {steps[currentStep - 1].title}
             </h5>
-          </div> */}
+          </div>
           <div className="card-body">
             {currentStep === 1 && (
               <Container className="">
-                <Card className=" border-0" style={{ minHeight: "550px" }}>
+                <Card className=" border-0" style={{ minHeight: "250px" }}>
                   <Card.Body className="p-4 h-100 d-flex flex-column justify-content-center">
                     <Row className="align-items-center h-100">
                       <Col xs={12} md={6} className="text-center mb-4 mb-md-0 d-none d-md-block">
                         <img
-                          src="./assets/register.png"
+                          src="../assets/register.png"
                           alt="OTP Verification Animation"
                           className="img-fluid"
                           style={{
