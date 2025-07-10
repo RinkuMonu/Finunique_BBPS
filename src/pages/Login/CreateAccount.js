@@ -79,7 +79,7 @@ const MobileVerification = ({ onVerified }) => {
     <Container className="py-5 mt-5">
       <Card
         className="rounded-4 shadow border-0"
-        style={{ minHeight: "100%", height: "100%", minHeight: "550px" }}
+        style={{  height: "100%", minHeight: "450px" }}
       >
         <Card.Body className="p-4 h-100 d-flex flex-column justify-content-center">
           <Row className="align-items-center h-100">
