@@ -146,7 +146,7 @@ export default function SnakeGame() {
     <div
       style={{
         background: COLORS.background,
-        padding: '20px',
+        padding: '100px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
