@@ -151,7 +151,7 @@ const Login = ({ closePopup }) => {
       className="login-form-wrapper"
       style={{ backgroundColor: "#EFF8FF", borderRadius: "0px" }}
     >
-      <div className="container mt-5">
+      <div className="container mt-5 py-5">
         <div className="row main-section">
           <div className="position-absolute bgImage d-none d-md-block">
             <img src="/assets/Home/login-pattern.png" alt="login-pattern" />

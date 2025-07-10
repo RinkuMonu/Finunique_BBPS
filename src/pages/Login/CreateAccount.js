@@ -89,7 +89,7 @@ const MobileVerification = ({ onVerified }) => {
               className="text-center mb-4 mb-md-0 d-none d-md-block"
             >
               <img
-                src="./assets/register.png"
+                src="/assets/register.png"
                 alt="OTP Verification Animation"
                 className="img-fluid"
                 style={{
