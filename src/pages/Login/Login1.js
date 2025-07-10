@@ -17,24 +17,31 @@ const Login1 = ({ onClose, onLoginSuccess }) => {
   const { fetchUserfree } = useUser();
 
   const handleMobileChange = (e) => {
-    const value = e.target.value;
-    setMobileNumber(value);
+    const value = e.target.value.replace(/\D/g, "");
+    if (value.length <= 10) {
+      setMobileNumber(value);
+      if (value.length === 10) {
+        setIsValid(true);
+        setErrorMessage("");
+      } else {
+        setIsValid(false);
+        setErrorMessage("Please enter a valid 10-digit mobile number");
+      }
+    }
+  };
 
-    if (value.length === 0 || value.length === 10) {
-      setIsValid(true);
-      setErrorMessage("");
-    } else {
-      setIsValid(false);
-      setErrorMessage("Please enter a valid 10-digit mobile number");
+  const handleOtpChange = (e) => {
+    const value = e.target.value.replace(/\D/g, "");
+    if (value.length <= 6) {
+      setOtp(value);
+      if (value.length === 6) {
+        setErrorMessage("");
+      }
     }
   };
 
   const handleCheckboxChange = (e) => {
     setIsChecked(e.target.checked);
-  };
-
-  const handleOtpChange = (e) => {
-    setOtp(e.target.value);
   };
 
   const handleSendOtp = async (e) => {
@@ -72,7 +79,6 @@ const Login1 = ({ onClose, onLoginSuccess }) => {
       }
     } catch (error) {
       let errorMessage = "Something went wrong! Please try again.";
-
       if (error.response) {
         errorMessage = error.response.data?.message || "An error occurred";
       } else if (error.request) {
@@ -124,7 +130,6 @@ const Login1 = ({ onClose, onLoginSuccess }) => {
       }
     } catch (error) {
       let errorMessage = "Something went wrong!";
-
       if (error.response) {
         errorMessage = error.response.data?.message || "Invalid OTP";
       } else if (error.request) {
@@ -142,158 +147,159 @@ const Login1 = ({ onClose, onLoginSuccess }) => {
   };
 
   return (
-    <>
-      <div className="container">
-        <div className="row main-section">
-          <div className="position-absolute bgImage d-none d-md-block">
-            {/* <img src="/assets/Home/login-pattern.png" alt="login-pattern" /> */}
+    <div className="container-fluid p-0">
+      <div className="row g-0 min-vh-100">
+        {/* Left Side - Image */}
+        <div className="col-lg-6 d-none d-lg-flex align-items-center justify-content-center position-relative">
+          <div className="position-absolute bgImage w-100 h-100">
+            <img
+              src="/assets/Home/login-pattern.png"
+              alt="login-pattern"
+              className="img-fluid w-100 h-100 object-fit-cover"
+            />
           </div>
-          <div
-            className="col-md-6 bg-img d-none"
-            style={{ borderRadius: "30px 0px 0px 30px", zIndex: "2" }}
-          ></div>
+          <div className="text-center p-4 p-xl-5" style={{ zIndex: 2 }}>
+            <img
+              src="/assets/login.png"
+              alt="Login Visual"
+              className="img-fluid"
+              style={{ maxHeight: "80vh", borderRadius: "20px" }}
+            />
+          </div>
+        </div>
 
-          <div className="col-md-12 padding-md">
-            <div className="form-container">
-              <div className="form-box login-Heading d-flex flex-column h-100">
-                {/* Close Button */}
-                <div className="d-flex justify-content-end">
-                  <button
-                    type="button"
-                    className="btn-close"
-                    aria-label="Close"
-                    onClick={onClose}
-                    style={{ fontSize: "1.2rem" }}
-                  ></button>
-                </div>
+        {/* Right Side - Login Form */}
+        <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center px-3 px-md-5 py-5">
+          <div className="w-100" style={{ maxWidth: "500px" }}>
+            <div className="d-flex justify-content-end">
+              <button
+                type="button"
+                className="btn-close"
+                aria-label="Close"
+                onClick={onClose}
+                style={{ fontSize: "1.2rem" }}
+              ></button>
+            </div>
 
-                <h2>Welcome back!</h2>
-                <form className="row g-3 needs-validation" noValidate>
+            <h2 className="mb-4 text-center text-lg-start">Welcome back!</h2>
+
+            <form className="row g-3 needs-validation" noValidate>
+              <div className="mb-3">
+                <label htmlFor="mobileNumber" className="form-label">
+                  Enter Mobile Number
+                </label>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  pattern="\d*"
+                  className={`form-control ${isValid ? "" : "is-invalid"}`}
+                  id="mobileNumber"
+                  value={mobileNumber}
+                  onChange={handleMobileChange}
+                  placeholder="Enter Mobile Number"
+                  required
+                  disabled={otpSent}
+                />
+                {!isValid && (
+                  <div className="invalid-feedback">{errorMessage}</div>
+                )}
+              </div>
+
+              <div className="form-check">
+                <input
+                  className={`form-check-input ${isCheckboxValid ? "" : "is-invalid"}`}
+                  type="checkbox"
+                  id="flexCheckChecked"
+                  checked={isChecked}
+                  onChange={handleCheckboxChange}
+                  disabled={otpSent}
+                />
+                <label className="form-check-label ms-1" htmlFor="flexCheckChecked">
+                  I agree to the <Link to={"/term"}>Terms & Conditions</Link>
+                </label>
+              </div>
+
+              {!otpSent && (
+                <button
+                  className="btn OtpBtn w-100 d-flex align-items-center justify-content-center"
+                  type="button"
+                  disabled={isLoading}
+                  onClick={handleSendOtp}
+                >
+                  {isLoading ? (
+                    <DotLottieReact
+                      src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
+                      autoplay
+                      loop
+                      style={{ width: 30, height: 30 }}
+                    />
+                  ) : (
+                    "Send OTP"
+                  )}
+                </button>
+              )}
+
+              {otpSent && (
+                <>
                   <div className="mb-3">
-                    <label htmlFor="mobileNumber" className="form-label">
-                      Enter Mobile Number
+                    <label htmlFor="otp" className="form-label">
+                      Enter OTP
                     </label>
                     <input
-                      type="number"
-                      className={`form-control ${isValid ? "" : "is-invalid"}`}
-                      id="mobileNumber"
-                      value={mobileNumber}
-                      onChange={handleMobileChange}
-                      placeholder="Enter Mobile Number"
+                      type="text"
+                      inputMode="numeric"
+                      pattern="\d*"
+                      className="form-control"
+                      id="otp"
+                      value={otp}
+                      onChange={handleOtpChange}
+                      placeholder="Enter OTP"
                       required
-                      disabled={otpSent}
                     />
-                    {!isValid && (
-                      <div className="invalid-feedback">{errorMessage}</div>
+                    {errorMessage && (
+                      <div className="invalid-feedback d-block">{errorMessage}</div>
                     )}
                   </div>
 
-                  <div className="form-check">
-                    <input
-                      className={`form-check-input ${isCheckboxValid ? "" : "is-invalid"}`}
-                      type="checkbox"
-                      id="flexCheckChecked"
-                      checked={isChecked}
-                      onChange={handleCheckboxChange}
-                      disabled={otpSent}
-                    />
-                    <label className="form-check-label ms-1" htmlFor="flexCheckChecked">
-                      I agree to the <Link to={"/term"}>Terms & Conditions</Link>
-                    </label>
-                  </div>
+                  <button
+                    className="btn OtpBtn w-100 d-flex align-items-center justify-content-center"
+                    type="button"
+                    disabled={isLoading}
+                    onClick={handleVerifyOtp}
+                  >
+                    {isLoading ? (
+                      <DotLottieReact
+                        src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
+                        autoplay
+                        loop
+                        style={{ width: 30, height: 30 }}
+                      />
+                    ) : (
+                      "Verify OTP"
+                    )}
+                  </button>
+                </>
+              )}
+            </form>
 
-                  {!otpSent && (
-                    <button
-                      className="btn OtpBtn px-0"
-                      type="button"
-                      disabled={isLoading}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                      onClick={handleSendOtp}
-                    >
-                      {isLoading ? (
-                        <DotLottieReact
-                          src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
-                          autoplay
-                          loop
-                          style={{ width: 30, height: 30 }}
-                        />
-                      ) : (
-                        "Send OTP"
-                      )}
-                    </button>
-                  )}
-
-                  {otpSent && (
-                    <>
-                      <div className="mb-3">
-                        <label htmlFor="otp" className="form-label">
-                          Enter OTP
-                        </label>
-                        <input
-                          type="number"
-                          className="form-control"
-                          id="otp"
-                          value={otp}
-                          onChange={handleOtpChange}
-                          placeholder="Enter OTP"
-                          required
-                        />
-                        {errorMessage && (
-                          <div className="invalid-feedback">{errorMessage}</div>
-                        )}
-                      </div>
-
-                      <button
-                        className="btn OtpBtn px-0"
-                        type="button"
-                        disabled={isLoading}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                        onClick={handleVerifyOtp}
-                      >
-                        {isLoading ? (
-                          <DotLottieReact
-                            src="https://lottie.host/faaf7fb5-6078-4f3e-9f15-05b0964cdb4f/XCcsBA5RNq.lottie"
-                            autoplay
-                            loop
-                            style={{ width: 30, height: 30 }}
-                          />
-                        ) : (
-                          "Verify OTP"
-                        )}
-                      </button>
-                    </>
-                  )}
-                </form>
-
-                <div className="already-account mt-3 d-flex">
-                  <h3>
-                    New to ABDKS Solutions?
-                    <Link to={"/createaccount"}>
-                      <button
-                        className="btn border-0 bg-white px-1 text-decoration-underline"
-                        onClick={() => {}}
-                      >
-                        Create Account
-                      </button>
-                    </Link>
-                  </h3>
-                </div>
-
-                <hr style={{ margin: "100px 0 10px" }} />
-              </div>
+            <div className="already-account mt-4 text-center">
+              <h3 className="fs-6 fw-normal">
+                New to ABDKS Solutions?{" "}
+                <Link to="/createaccount">
+                  <button
+                    className="btn border-0 bg-white px-1 text-decoration-underline"
+                  >
+                    Create Account
+                  </button>
+                </Link>
+              </h3>
             </div>
+
+            <hr className="my-5" />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
