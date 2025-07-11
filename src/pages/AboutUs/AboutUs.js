@@ -17,6 +17,7 @@ import {
 } from "react-icons/fi";
 import SEO from "../../components/SEO/SEO";
 import { useUser } from "../../context/UserContext";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   const{seo}=  useUser()
@@ -65,13 +66,13 @@ const AboutUs = () => {
                 </div>
 
                 <div className="cta-buttons ">
-                  <button className="btn btn-primary cta-main">
+                  <Link to={'/Services'} className="btn btn-primary cta-main">
                     Explore Our BBPS Services
                     <FiArrowRight className="cta-icon" />
-                  </button>
-                  <button className="btn btn-outline-secondary cta-secondary">
+                  </Link>
+                  <Link to={'/createaccount?role=Retailer'} className="btn btn-outline-secondary cta-secondary">
                     Join the ABDKS Retailer Network
-                  </button>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-5 col-md-12 image-content hero-image-container">

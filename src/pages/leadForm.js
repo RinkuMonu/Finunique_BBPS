@@ -20,63 +20,68 @@ const LeadFormPopup = () => {
     }));
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const payload = {
-    name: formData.name,
-    email: formData.email,
-    phone: formData.phone,
-    message: "This Leads from ABDKS",
-    service: "N/A",
-    website_id: 5,
-  };
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: "This Leads from ABDKS",
+      service: "N/A",
+      website_id: 5,
+    };
 
-  try {
-    const response = await fetch("https://cms.sevenunique.com/apis/contact-query/set-contact-details.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    const result = await response.json();
-    console.log("API Response:", result);
-
-    if (response.ok) {
-      Swal.fire({
-        icon: "success",
-        title: "Success!",
-        text: "Your details have been submitted successfully.",
-         customClass: {
-      popup: "custom-swal-popup"
-    }
+    try {
+      const response = await fetch("https://cms.sevenunique.com/apis/contact-query/set-contact-details.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
+        },
+        body: JSON.stringify(payload),
       });
-      closePopup();
-    } else {
+
+      const result = await response.json();
+      console.log("API Response:", result);
+
+      if (response.ok) {
+        Swal.fire({
+          icon: "success",
+          title: "Thank You!",
+          text: "Your details have been submitted successfully.",
+          customClass: {
+            popup: "custom-swal-popup"
+          }
+        });
+        closePopup();
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+        })
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: result?.message || "Something went wrong. Please try again.",
+          customClass: {
+            popup: "custom-swal-popup"
+          }
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: result?.message || "Something went wrong. Please try again.",
+        title: "Error",
+        text: "Failed to submit form. Please try again later.",
         customClass: {
-      popup: "custom-swal-popup"
-    }
+          popup: "custom-swal-popup"
+        }
       });
     }
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "Failed to submit form. Please try again later.",
-       customClass: {
-    popup: "custom-swal-popup"
-  }
-    });
-  }
-};
+  };
 
 
   return (
@@ -92,7 +97,7 @@ const handleSubmit = async (e) => {
                   alt="Marketing"
                   style={styles.image}
                 />
-              </div> 
+              </div>
 
               {/* Right side with form */}
               <div style={styles.formContainer}>
@@ -150,8 +155,15 @@ const handleSubmit = async (e) => {
                       style={styles.input}
                       value={formData.phone}
                       onChange={handleChange}
+                      maxLength={10}
+                      onKeyPress={(e) => {
+                        if (!/[0-9]/.test(e.key)) {
+                          e.preventDefault();
+                        }
+                      }}
                     />
                   </div>
+
 
                   <button type="submit" style={styles.submitButton}>
                     Submit
@@ -190,7 +202,7 @@ const styles = {
       boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
     },
   },
-  
+
   overlay: {
     position: "fixed",
     top: 0,
@@ -272,7 +284,7 @@ const styles = {
     color: "#555",
     fontWeight: "500",
   },
-  
+
   input: {
     padding: "12px 15px",
     borderRadius: "6px",

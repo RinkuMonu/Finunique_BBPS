@@ -4,7 +4,7 @@ import Login1 from './Login1';
 
 const LoginModal = ({ show, onClose, onLoginSuccess }) => {
  const modalStyle = {
-  height: "80vh",
+
   overflowY: "hidden",
 };
   return (

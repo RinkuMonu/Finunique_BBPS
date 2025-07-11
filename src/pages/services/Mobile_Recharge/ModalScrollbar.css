@@ -37,4 +37,58 @@
     cursor: pointer;
   }
   
+  /*  */
+  .timeline {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 3px solid #ffb300;
+  }
+  
+  .timeline-card {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .timeline-marker {
+    position: absolute;
+    left: -31px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #ffb300, #ff6f00);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(255, 179, 0, 0.5);
+  }
+  
+  .glassy-bg {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #ffb300, #ff6f00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .timeline-content p {
+    line-height: 1.6;
+  }
+  
+  .btn-warning {
+    background: linear-gradient(135deg, #ffb300, #ff6f00);
+    border: none;
+  }
+  
+  .btn-warning:hover {
+    background: linear-gradient(135deg, #ffcc33, #ff8f00);
+  }
+  
+  .btn-outline-secondary:hover {
+    background: #a3a3a3;
+  }
+  
   

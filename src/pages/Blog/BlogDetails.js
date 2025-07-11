@@ -124,7 +124,7 @@ function BlogsDetails() {
         canonical_tag={seo?.canonical_tag}
       />
       <div>
-      <section className="d-flex align-items-center justify-content-center text-white position-relative">
+      <section className="d-flex mt-5 align-items-center justify-content-center text-white position-relative">
         <div className="container text-center position-relative">
           <h1 className="hero-title pt-5">{blog.title}</h1>
           <p className="text-black fw-bold">

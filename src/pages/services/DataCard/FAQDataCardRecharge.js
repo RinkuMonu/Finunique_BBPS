@@ -162,7 +162,7 @@ const FAQDataCardRecharge = () => {
             Whether you're at home, traveling, or running a business — stay connected with ABDKS. Recharge online in seconds and enjoy uninterrupted browsing anytime, anywhere.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">Recharge Now</Link>
+            <Link to="#" className="btn btn-primary cta-main" size="lg">Recharge Now</Link>
             <Link  to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">Join as a Retail Partner</Link>
           </div>
         </>
