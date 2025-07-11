@@ -440,7 +440,7 @@ const WalletTransfer = () => {
                 color: colors.primary,
                 padding: "12px 24px",
               }}
-              onClick={() => navigate("/createaccount")}
+              onClick={() => navigate("/createaccount?role=Distributor")}
             >
               Become a Distributor
             </Button>

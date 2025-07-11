@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const FAQBroadbandBillPayment = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -11,13 +10,9 @@ const FAQBroadbandBillPayment = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const content = [
@@ -26,21 +21,19 @@ const FAQBroadbandBillPayment = () => {
       body: (
         <>
           <p>
-            Stay connected without interruption. ABDKS Solutions Private Ltd. offers a secure and seamless platform to pay your broadband bills online — anytime, anywhere. Whether you're managing your home Wi-Fi or offering bill payment services at a retail shop, ABDKS ensures smooth transactions with instant confirmations.
+            Stay connected seamlessly. ABDKS offers a secure, quick, and intuitive platform to pay your broadband bills online. Manage your home Wi-Fi or provide bill payment services to customers — all with instant confirmations.
           </p>
-          <p><strong>Broadband bill payment</strong><br />
-            Fast, safe and convenient internet bill payment with ABDKS<br />
-            Easily pay your broadband bill online<br />
-            Stay connected without hindrance. ABDKS Solutions offers a safe and spontaneous platform to pay your broadband bills online - anytime, anywhere. Whether you are managing your home Wi-Fi or offering bill payment services at a retail shop, ABDKS ensures smooth transactions with immediate confirmation.
+          <p>
+            <strong>Broadband bill payment made simple.</strong> Fast, safe, and convenient — anytime, anywhere.
           </p>
         </>
       ),
     },
     {
-      title: "Supported Broadband Service Providers",
+      title: "Supported Broadband Providers",
       body: (
         <>
-          <p>Our platform supports broadband bill payments for leading providers such as:</p>
+          <p>Recharge or pay bills for:</p>
           <ul>
             <li>Airtel Broadband</li>
             <li>ACT Fibernet</li>
@@ -53,52 +46,48 @@ const FAQBroadbandBillPayment = () => {
             <li>Excitel</li>
             <li>RailWire</li>
           </ul>
-          <p>Coverage may vary based on region and provider availability.</p>
+          <p>Coverage may vary by region.</p>
         </>
       ),
     },
     {
-      title: "How to Pay a Broadband Bill with ABDKS",
+      title: "How to Pay Your Broadband Bill",
       body: (
-        <>
-          <ol>
-            <li>Go to the bill payment section on ABDKS website or mobile app.</li>
-            <li>Choose broadband as service category.</li>
-            <li>Choose your operator from the list.</li>
-            <li>Enter your account number/user ID.</li>
-            <li>The system automatically receives your current bill details.</li>
-            <li>Confirm the amount and complete the payment using UPI, Debit/Credit Card, Wallet or Internet banking.</li>
-            <li>Get immediate payment confirmation and digital receipt.</li>
-          </ol>
-        </>
+        <ol>
+          <li>Visit the bill payment section on ABDKS platform.</li>
+          <li>Select broadband as service category.</li>
+          <li>Choose your provider.</li>
+          <li>Enter account/user ID.</li>
+          <li>Check and confirm your bill details.</li>
+          <li>Pay via UPI, card, wallet, or net banking.</li>
+          <li>Receive instant confirmation and digital receipt.</li>
+        </ol>
       ),
     },
     {
       title: "Key Benefits",
       body: (
-        <>
-          <ul>
-            <li><strong>24x7 Bill Payment</strong> - Recharge or Pay your Internet bill anytime.</li>
-            <li><strong>Real-Time Updates</strong> - Get updates immediately after real-time confirmation.</li>
-            <li><strong>Many Payment Methods</strong> - UPI, card, wallet and net banking supported.</li>
-            <li><strong>All Major ISP Supported</strong> - Manage all broadband bills at one place.</li>
-            <li><strong>Safe and Encrypted Transactions</strong> - Complete compliance with banking security criteria.</li>
-            <li><strong>Customized for Mobile</strong> - Android works easily on iOS and desktop devices.</li>
-          </ul>
-        </>
+        <ul>
+          <li><strong>24x7 Access</strong> — Pay anytime.</li>
+          <li><strong>Real-Time Updates</strong> — Instant confirmation.</li>
+          <li><strong>Multiple Payment Options</strong> — UPI, cards, wallets.</li>
+          <li><strong>All Major ISPs Supported</strong> — Manage all bills in one place.</li>
+          <li><strong>Secure & Encrypted</strong> — Fully compliant with banking security.</li>
+          <li><strong>Mobile-Friendly</strong> — Works great on any device.</li>
+        </ul>
       ),
     },
     {
-      title: "For Retailers and Agents",
+      title: "For Retailers & Agents",
       body: (
         <>
-          <p>Add broadband bill payment services to your current setup:</p>
+          <p>Add broadband bill payments to your services and boost revenue:</p>
           <ul>
-            <li>Attract digital customers in your area</li>
-            <li>Offer bill payment for homes, offices and hostels</li>
-            <li>No technical skill is necessary</li>
-            <li>Earn commission on every transaction</li>
-            <li>Real-time support from our Jaipur-based team</li>
+            <li>Attract more customers.</li>
+            <li>Serve residential and business clients.</li>
+            <li>No technical expertise required.</li>
+            <li>Earn commission per payment.</li>
+            <li>Real-time support from our team.</li>
           </ul>
         </>
       ),
@@ -108,32 +97,32 @@ const FAQBroadbandBillPayment = () => {
       body: (
         <Accordion flush>
           <Accordion.Item eventKey="0">
-            <Accordion.Header>How quickly is the broadband bill paid?</Accordion.Header>
-            <Accordion.Body>Most payments are completed in real-time with instant status confirmation.</Accordion.Body>
+            <Accordion.Header>How fast are broadband bill payments processed?</Accordion.Header>
+            <Accordion.Body>Most are processed instantly with real-time confirmation.</Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
-            <Accordion.Header>Which broadband providers are supported?</Accordion.Header>
-            <Accordion.Body>ABDKS supports Airtel, BSNL, JioFiber, ACT, Hathway, Tikona, and more.</Accordion.Body>
+            <Accordion.Header>Can I pay bills for any provider?</Accordion.Header>
+            <Accordion.Body>Yes, we support all major ISPs like Airtel, BSNL, JioFiber, ACT, and more.</Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="2">
-            <Accordion.Header>Can I pay broadband bills for others?</Accordion.Header>
-            <Accordion.Body>Yes, you can pay bills for any broadband account using valid details.</Accordion.Body>
+            <Accordion.Header>Can I pay for someone else?</Accordion.Header>
+            <Accordion.Body>Yes! Just enter their valid account/user ID.</Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="3">
             <Accordion.Header>Are there extra charges?</Accordion.Header>
-            <Accordion.Body>No additional transaction fees are charged for bill payments on ABDKS.</Accordion.Body>
+            <Accordion.Body>No extra transaction fees on ABDKS platform.</Accordion.Body>
           </Accordion.Item>
         </Accordion>
       ),
     },
     {
-      title: "Never Miss a Broadband Due Date Again",
+      title: "Stay Connected Without Worry",
       body: (
         <>
-          <p>Whether you're a user or a digital service provider, ABDKS helps you stay connected with fast, secure broadband bill payments — all in one place.</p>
-          <div className="d-flex flex-wrap gap-3 mt-4">
-            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">Pay Now</Link>
-            <Link to="/createaccount" className="btn btn-outline-secondary cta-secondary" sizeLink>Join as a Partner</Link>
+          <p>With ABDKS, pay broadband bills securely and stay online — whether for your home, office, or your customers.</p>
+          <div className="d-flex flex-wrap gap-3 mt-3">
+            <Link to="#" className="btn btn-warning text-dark fw-semibold shadow-sm px-4">Pay Now</Link>
+            <Link to="/createaccount?role=Retailer" className="btn btn-outline-secondary fw-semibold px-4">Join as Partner</Link>
           </div>
         </>
       ),
@@ -141,25 +130,33 @@ const FAQBroadbandBillPayment = () => {
   ];
 
   return (
-    <div className="container my-4">
+    <div className="container my-5">
       {isMobile ? (
         <Accordion>
           {content.map((item, index) => (
-            <Accordion.Item eventKey={index.toString()} key={index}>
+            <Accordion.Item eventKey={index.toString()} key={index} className="faq-accordion-item">
               <Accordion.Header>{item.title}</Accordion.Header>
               <Accordion.Body>{item.body}</Accordion.Body>
             </Accordion.Item>
           ))}
         </Accordion>
       ) : (
-        <div>
+        <div className="timeline">
           {content.map((item, index) => (
-            <Card key={index} className="mb-4">
-              <Card.Body>
-                <Card.Title className="h4 mb-3 text-warning-emphasis">{item.title}</Card.Title>
+            <motion.div
+              key={index}
+              className="timeline-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="timeline-marker"></div>
+              <div className="timeline-content glassy-bg p-4 shadow-sm rounded">
+                <h4 className="fw-bold mb-3 text-gradient">{item.title}</h4>
                 {item.body}
-              </Card.Body>
-            </Card>
+              </div>
+            </motion.div>
           ))}
         </div>
       )}

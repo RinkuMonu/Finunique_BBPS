@@ -148,7 +148,7 @@ const Login1 = ({ onClose, onLoginSuccess }) => {
 
   return (
     <div className="container-fluid p-0">
-      <div className="row g-0 min-vh-100">
+      <div className="row g-0">
         {/* Left Side - Image */}
         <div className="col-lg-6 d-none d-lg-flex align-items-center justify-content-center position-relative">
           <div className="position-absolute bgImage w-100 h-100">

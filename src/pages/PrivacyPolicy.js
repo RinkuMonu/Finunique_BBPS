@@ -190,7 +190,7 @@ const PRIVACY_SECTIONS = [
           <a href="mailto:grievance@abdks.com">grievance@abdks.com</a>
         </p>
         <p>
-          <strong>Phone:</strong> +91-XXXXXXXXXX
+          <strong>Phone:</strong> 0141-4511098
         </p>
         <p>
           <strong>Address:</strong> Plot No 97, Dakshinpuri-I, Shrikishanpura,

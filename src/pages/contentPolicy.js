@@ -448,7 +448,7 @@ export default function ContentPolicy() {
                         </p>
                         <p className="mb-0">
                           <FaPhone className="me-2" />
-                          Phone: +91-XXXXXXXXXX
+                          Phone: 0141-4511098
                         </p>
                         <p className="mt-2">
                           <strong>Response Time:</strong> Within 10 working days

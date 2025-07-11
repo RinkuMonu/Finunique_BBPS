@@ -6,100 +6,67 @@ import { FiCheckCircle, FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import SEO from "../../components/SEO/SEO";
 import { useUser } from "../../context/UserContext";
+import { motion } from "framer-motion";
 
 function OurService() {
-  const {seo} = useUser()
+  const { seo } = useUser();
+
   const services = [
     {
       imgSrc: "/assets/BBPS.png",
       title: "Bharat Bill Payment System (BBPS)",
-      description:
-        "Enable your customers to pay bills in real time with our safe, NPCI-demonstrated BBPS recharge system.",
+      description: "Enable real-time bill payments securely with NPCI-approved BBPS platform.",
       features: [
-        "Electricity bill",
-        "Water supply bill",
-        "Gas (PNG/LPG) bill",
-        "Broadband and landline bill",
-        "Insurance premium payment",
-        "Loan EMI collection",
-        "Municipal tax payment",
-        "Fastag recharge",
+        "Electricity bills", "Water supply", "Gas bills", "Broadband & landline", "Insurance premium", "EMI collection", "Municipal taxes", "Fastag recharge"
       ],
     },
     {
       imgSrc: "/assets/DTH.png",
-      title: "Mobile & DTH recharge services",
-      description:
-        "Provide prepaid and postpaid mobile recharge and DTH services in all major networks through our fast BBPS-supported backend.",
-      features: [
-        "Prepaid mobile recharge",
-        "Postage bill payment",
-        "DTH Recharge BBPS",
-      ],
+      title: "Mobile & DTH Recharges",
+      description: "Offer seamless prepaid & postpaid mobile recharges plus DTH services via BBPS.",
+      features: ["Prepaid recharge", "Postpaid bill payment", "DTH recharge"],
     },
     {
       imgSrc: "/assets/Utility.png",
-      title: "Credit card payment Acceptance",
-      description:
-        "Accept the credit card payment from customers safely through our integrated payment gateway.",
-      features: [
-        "Real time payment processing",
-        "End-to-end encryption & fraud protection",
-        "Digital receipts & transactions report",
-      ],
+      title: "Credit Card Payments",
+      description: "Accept credit card payments safely through integrated payment gateway solutions.",
+      features: ["Real-time processing", "Fraud protection", "Digital receipts"],
     },
     {
       imgSrc: "/assets/Mobile.png",
       title: "Micro ATM Services",
-      description:
-        "With our micro ATM solutions, distribute banking services to low financial access areas.",
+      description: "Enable banking services in low-access areas via micro ATMs.",
       features: ["Cash withdrawal", "Balance inquiry", "Mini statement"],
     },
     {
       imgSrc: "/assets/Utility.png",
       title: "Aadhaar Enabled Payment System (AEPS)",
-      description:
-        "Use AEPS authentication to provide secure transactions to users without debit cards or internet access.",
-      features: [
-        "Aadhaar-Based Withdrawals",
-        "Balance Checks",
-        "Interbank Fund Transfers",
-      ],
+      description: "Provide secure Aadhaar-based transactions without debit cards or internet.",
+      features: ["Withdrawals", "Balance checks", "Fund transfers"],
     },
     {
       imgSrc: "/assets/Utility.png",
       title: "PAN Card Services",
-      description:
-        "Help customers with new PAN card applications or corrections.",
-      features: [
-        "Paperless PAN Card Applications",
-        "Status Tracking and Support",
-        "Full Customer Assistance from Start to Finish",
-      ],
+      description: "Help customers with new PAN applications or updates, paperless and fast.",
+      features: ["Paperless applications", "Status tracking", "Full support"],
     },
     {
       imgSrc: "/assets/Utility.png",
-      title: "Insurance services",
-      description:
-        "Participate with top insurers to offer several schemes from your local store.",
-      features: [
-        "Insurance",
-        "Health insurance",
-        "Motor and general insurance",
-      ],
+      title: "Insurance Services",
+      description: "Partner with insurers to offer health, motor, and general insurance schemes.",
+      features: ["Life insurance", "Health plans", "Motor insurance"],
     },
     {
       imgSrc: "/assets/Mobile.png",
-      title: "Credit services",
-      description:
-        "Enable your customers to apply for a loan directly from your platform.",
-      features: ["Individual debt", "Trade loan", "Home loan"],
+      title: "Credit Services",
+      description: "Enable customers to apply for various loans directly from your platform.",
+      features: ["Personal loans", "Business loans", "Home loans"],
     },
   ];
 
   return (
     <>
-     <SEO
+      <SEO
         meta_title={seo?.meta_title}
         meta_description={seo?.meta_description}
         meta_keywords={seo?.meta_keywords}
@@ -111,91 +78,106 @@ function OurService() {
         og_site_name={seo?.og_site_name}
         canonical_tag={seo?.canonical_tag}
       />
+
       {/* Hero Section */}
-      <section className="hero-section heroaabout overflow-hidden">
-        <div className="container-fluid p-0 d-flex flex-column align-items-center">
-          <div className="row align-items-center hero-content-wrapper">
-            <div className="col-lg-7 col-md-12 text-content px-4 px-lg-5">
-              <h1 className="hero-headline">
-                Driving India's Digital Payment Future with{" "}
-                <span className="highlight">BBPS Innovation</span>
-              </h1>
-              <p className="hero-subheadline">
-                One platform for mobile recharges, bill payments, and card
-                transactions – powered by BBPS.
-              </p>
-
-              <div className="hero-features mb-4">
-                <div className="feature-item">
-                  <FiCheckCircle className="feature-icon" />
-                  <span>Zero Maintenance Fees</span>
-                </div>
-                <div className="feature-item">
-                  <FiCheckCircle className="feature-icon" />
-                  <span>Instant Settlements</span>
-                </div>
-                <div className="feature-item">
-                  <FiCheckCircle className="feature-icon" />
-                  <span>24/7 Support</span>
-                </div>
-              </div>
-
-              <div className="cta-buttons">
-                <Link className="btn btn-primary cta-main" to="/ContactUs">
-                  Explore Our BBPS Services
-                  <FiArrowRight className="cta-icon" />
-                </Link>
-                <Link className="btn btn-outline-secondary cta-secondary" to="/createaccount">
-                  Join the ABDKS Retailer Network
-                </Link>
-              </div>
+      <section
+        className="hero-section text-white"
+        // style={{ background: "linear-gradient(135deg, #ffb300, #ff6f00)" }}
+      >
+        <div className="container py-5 d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="flex-fill"
+          >
+            <h1 className="display-5 text-black fw-bold mb-3">
+              Driving India's Digital Future with <span className="text-warning">BBPS Innovation</span>
+            </h1>
+            <p className="lead text-black mb-4">
+              One platform for mobile recharges, bill payments, and card transactions — all powered securely by BBPS.
+            </p>
+            <div className="d-flex gap-3 flex-wrap">
+              <Link to="/billpayment">
+                <button className="btn btn-light btn-md text-dark fw-semibold">
+                  Explore BBPS Services <FiArrowRight className="ms-1" />
+                </button>
+              </Link>
+              <Link to="/createaccount?role=Retailer">
+                <button className="btn btn-outline-light border text-black btn-md fw-semibold">Join as Retailer</button>
+              </Link>
             </div>
-
-            <div className="col-lg-5 col-md-12 image-content hero-image-container">
-              <img
-                src={img}
-                alt="Retail Partner"
-                className="img-fluid hero-image"
-              />
-            </div>
-          </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex-fill text-center"
+          >
+            <img src={img} alt="Retail Partner" className="img-fluid rounded " style={{ maxHeight: 500, width: 500,  }} />
+          </motion.div>
         </div>
       </section>
 
       {/* Service Overview Section */}
-      <section className="page-content text-col marginTop">
-        <div className="container">
-          <div className="row justify-content-center text-center">
-            <div className="col-lg-8 col-md-12">
-              <div className="theme-title">
-                <h2 className="fw-400">
-                  Empower digital transactions across India at{" "}
-                  <span>ABDKS Solutions Private Ltd.</span>
-                  <br />
-                  We offer a comprehensive suite of BBPS-based and digital
-                  financial services designed to streamline daily transactions
-                  for retailers, distributors, and customers across India. Our
-                  platform is safe, scalable, and designed for India's digital
-                  economy's development needs.
-                </h2>
-              </div>
+      <section className="py-5 bg-light">
+  <div className="container">
+    <div className="row justify-content-center text-center mb-5">
+      <div className="col-lg-10">
+        <motion.h2
+          className="fw-bold mb-3 display-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Empower India's Digital Transactions with <span className="text-warning">ABDKS</span>
+        </motion.h2>
+        <p className="lead text-muted mb-0">
+          We offer a robust suite of BBPS-based and digital financial services to help retailers and customers transact securely, confidently, and seamlessly across India.
+        </p>
+      </div>
+    </div>
+
+    <div className="row g-4">
+      {services.map((service, index) => (
+        <motion.div
+          className="col-sm-6 col-lg-4"
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+        >
+          <div className="service-card h-100 d-flex flex-column">
+            <div className="service-card-img-wrapper">
+              <img
+                src={service.imgSrc}
+                alt={service.title}
+                className="img-fluid service-card-img"
+              />
+            </div>
+            <div className="p-4 d-flex flex-column flex-grow-1">
+              <h5 className="fw-bold mb-2">{service.title}</h5>
+              <p className="text-muted flex-grow-1">{service.description}</p>
+              <ul className="list-unstyled mb-3">
+                {service.features.slice(0, 3).map((feat, i) => (
+                  <li key={i}>
+                    <FiCheckCircle className="me-1 text-success" /> {feat}
+                  </li>
+                ))}
+              </ul>
+              <Link to="/billpayment" className="btn btn-outline-warning btn-sm mt-auto fw-semibold">
+                Learn More
+              </Link>
             </div>
           </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
-          {/* Services Grid */}
-          <div className="row gy-5">
-            {services.map((service, index) => (
-              <ServiceItem
-                key={index}
-                imgSrc={service.imgSrc}
-                title={service.title}
-                description={service.description}
-                features={service.features}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }

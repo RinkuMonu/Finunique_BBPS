@@ -124,7 +124,7 @@ const FAQDatacardPostpaid = () => {
         <>
           <p>Don't let your datacard run out of balance. Recharge it easily with ABDKS and stay connected.</p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Link to="/ContactUs" className="btn btn-primary cta-main">
+            <Link to="#" className="btn btn-primary cta-main">
               Recharge Now
             </Link>
             <Link to="/createaccount" className="btn btn-outline-secondary cta-secondary">

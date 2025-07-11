@@ -6,6 +6,8 @@ import { FiCheckCircle, FiArrowRight } from "react-icons/fi";
 import axios from "axios";
 import SEO from "../components/SEO/SEO";
 import { useUser } from "../context/UserContext";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ContactUs = () => {
   const { seo } = useUser();
@@ -80,7 +82,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     const postData = {
       name: formData.fullName,
       email: formData.email,
@@ -89,7 +91,7 @@ const ContactUs = () => {
       service: "N/A",
       website_id: 5,
     };
-
+  
     try {
       const response = await axios.post(
         "https://cms.sevenunique.com/apis/contact-query/set-contact-details.php",
@@ -101,9 +103,16 @@ const ContactUs = () => {
           },
         }
       );
-
+  
       console.log("Response:", response.data);
-      alert("Message sent successfully!");
+  
+      Swal.fire({
+        icon: "success",
+        title: "Success!",
+        text: "Your message has been sent successfully.",
+        confirmButtonColor: "#ffb300",
+      });
+  
       setFormData({
         fullName: "",
         number: "",
@@ -112,11 +121,18 @@ const ContactUs = () => {
       });
     } catch (error) {
       console.error("Error sending message:", error);
-      alert("Failed to send message.");
+  
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: "Failed to send message. Please try again later.",
+        confirmButtonColor: "#ffb300",
+      });
     } finally {
       setLoading(false);
     }
   };
+  
 
   useEffect(() => {
     const fetchContactDetails = async () => {
@@ -233,6 +249,12 @@ const ContactUs = () => {
                           inputMode="numeric"
                           value={formData.number}
                           onChange={handleChange}
+                          maxLength={10}
+                          onKeyPress={(e) => {
+                            if (!/[0-9]/.test(e.key)) {
+                              e.preventDefault();
+                            }
+                          }}
                         />
                       </div>
                     </div>
@@ -359,17 +381,17 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div className="row mt-5">
+            <div className="row my-5">
               <div className="col-lg-12 text-center">
-                <h4>Partner With Us</h4>
-                <p>
-                  Interested in becoming a BBPS retailer, distributor, or
-                  service partner with ABDKS? Let’s strengthen India’s digital
-                  payment future together.
-                </p>
-                <a href="#" className="btn btn-primary px-4 mt-2">
-                  Be a Partner <FiArrowRight className="ms-2" />
-                </a>
+                <div className="partner-box p-5 rounded shadow-sm">
+                  <h2 className="fw-bold mb-3 text-gradient">Partner With Us</h2>
+                  <p className="lead text-muted mb-4">
+                    Interested in becoming a BBPS retailer, distributor, or service partner with ABDKS? Let’s shape India’s digital payment future together.
+                  </p>
+                  <Link to={"/createaccount?role=Retailer"} className="btn btn-warning text-dark fw-semibold d-inline-flex align-items-center px-4 py-2 shadow-sm">
+                    Be a Partner <FiArrowRight className="ms-2" size={18} />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

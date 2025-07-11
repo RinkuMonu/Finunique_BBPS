@@ -445,7 +445,7 @@ function PageContent() {
                   bill payment network. Easily, activate fast, and start earning
                   today.
                 </p>
-                <Link to={"/createaccount"} className="btn btn-light btn-lg px-5">
+                <Link to={"/createaccount?role=Retailer"} className="btn btn-light btn-lg px-5">
                   Now join as a BBPS Retailer
                 </Link>
               </div>

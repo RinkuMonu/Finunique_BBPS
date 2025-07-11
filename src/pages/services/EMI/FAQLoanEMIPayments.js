@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const FAQLoanEMIPayments = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -20,10 +21,10 @@ const FAQLoanEMIPayments = () => {
       body: (
         <>
           <p>
-            ABDKS Solutions Private Ltd. enables you to pay your loan EMIs online from the comfort of your home or through your nearest digital service point. Whether it’s a personal loan, vehicle loan, home loan, or consumer durable loan — ABDKS ensures secure, instant, and reliable EMI transactions for all major NBFCs and banks.
+            Pay your loan EMIs easily from home or your nearest retailer using ABDKS. Whether it's a personal loan, vehicle loan, or home loan — our platform ensures instant, secure, and reliable transactions across major NBFCs and banks.
           </p>
           <p>
-            No more missed due dates, long queues, or delayed payments. With ABDKS, your EMI payments are just a few clicks away.
+            Forget queues and delays — pay on time and stay worry-free.
           </p>
         </>
       ),
@@ -33,13 +34,13 @@ const FAQLoanEMIPayments = () => {
       body: (
         <ul>
           <li>Personal Loans</li>
-          <li>Business Loans</li>
           <li>Home Loans</li>
-          <li>Car or Bike Loans</li>
-          <li>Consumer Durable Loans</li>
+          <li>Car/Bike Loans</li>
+          <li>Business Loans</li>
           <li>Education Loans</li>
+          <li>Consumer Durable Loans</li>
           <li>Gold Loans</li>
-          <li>Digital Credit Cards (BNPL / Pay Later)</li>
+          <li>BNPL & Digital Credit</li>
         </ul>
       ),
     },
@@ -55,7 +56,6 @@ const FAQLoanEMIPayments = () => {
           <li>Indiabulls</li>
           <li>Home Credit</li>
           <li>Kissht</li>
-          <li>FlexPay</li>
           <li>ZestMoney</li>
           <li>Paysense</li>
           <li>And many more</li>
@@ -63,15 +63,15 @@ const FAQLoanEMIPayments = () => {
       ),
     },
     {
-      title: "How to Pay EMI Online via ABDKS",
+      title: "How to Pay EMI via ABDKS",
       body: (
         <ol>
-          <li>Visit the EMI Payment section on the ABDKS website or app</li>
-          <li>Select the financial institution or NBFC</li>
-          <li>Enter your loan/account number or mobile number</li>
-          <li>View the outstanding EMI and due date</li>
-          <li>Proceed to pay via UPI, card, wallet, or net banking</li>
-          <li>Receive instant confirmation and receipt</li>
+          <li>Go to EMI Payment on ABDKS website/app.</li>
+          <li>Select your bank or NBFC.</li>
+          <li>Enter account or mobile number.</li>
+          <li>View outstanding amount & due date.</li>
+          <li>Pay using UPI, card, wallet, or net banking.</li>
+          <li>Get instant receipt and confirmation.</li>
         </ol>
       ),
     },
@@ -79,12 +79,11 @@ const FAQLoanEMIPayments = () => {
       title: "Features & Benefits",
       body: (
         <ul>
-          <li>Instant Payment & Confirmation</li>
-          <li>24x7 Access – Pay anytime</li>
-          <li>Secure Transactions – Fully encrypted</li>
-          <li>Multiple Payment Modes – UPI, cards, net banking</li>
-          <li>Supports All Major NBFCs & Lenders</li>
-          <li>Mobile-Friendly Interface</li>
+          <li>Instant confirmation & receipts</li>
+          <li>24x7 access — pay anytime</li>
+          <li>Supports major lenders</li>
+          <li>Multiple payment options</li>
+          <li>Mobile & desktop friendly</li>
         </ul>
       ),
     },
@@ -92,10 +91,10 @@ const FAQLoanEMIPayments = () => {
       title: "For Retailers & Agents",
       body: (
         <ul>
-          <li>Serve customers who need to pay EMIs</li>
-          <li>Earn commissions on every transaction</li>
-          <li>Use ABDKS dashboard to manage services</li>
-          <li>Access real-time support from our Jaipur-based team</li>
+          <li>Serve walk-in customers for EMI payments</li>
+          <li>Earn commission per transaction</li>
+          <li>Easy-to-use ABDKS dashboard</li>
+          <li>Dedicated support team</li>
         </ul>
       ),
     },
@@ -104,20 +103,20 @@ const FAQLoanEMIPayments = () => {
       body: (
         <ul>
           <li>
-            <strong>Can I pay EMI for any NBFC or bank through ABDKS?</strong><br />
-            We support most major NBFCs and banks. Check the partner list in the portal.
+            <strong>Can I pay EMI for any bank?</strong><br />
+            Yes, we support most leading NBFCs & banks. Check our partner list on the portal.
           </li>
           <li>
-            <strong>Do I get a receipt for my EMI payment?</strong><br />
-            Yes, a digital receipt is sent via SMS/email immediately after payment.
+            <strong>Do I get a receipt?</strong><br />
+            Yes. You’ll receive a digital receipt via SMS and email immediately.
           </li>
           <li>
-            <strong>Can I pay for someone else’s loan EMI?</strong><br />
-            Yes. Enter their valid account/loan number or registered mobile number.
+            <strong>Can I pay for someone else?</strong><br />
+            Yes. Just use their valid account/loan or mobile number.
           </li>
           <li>
-            <strong>Is there any extra charge for using ABDKS?</strong><br />
-            No additional service charge is applied for standard EMI payments.
+            <strong>Are there any extra charges?</strong><br />
+            No hidden charges for standard EMI payments.
           </li>
         </ul>
       ),
@@ -127,11 +126,11 @@ const FAQLoanEMIPayments = () => {
       body: (
         <>
           <p>
-            Avoid late fees and maintain a good credit score by paying EMIs on time — powered by ABDKS.
+            Avoid penalties and keep your credit score healthy — pay EMIs securely and on time with ABDKS.
           </p>
-          <div style={{ marginTop: '1rem' }}>
-            <Link to="/ContactUs" className="btn btn-primary me-2">Pay EMI Now</Link >
-            <Link  to="/createaccount" className="btn btn-outline-secondary">Become a Retail Partner</Link >
+          <div className="d-flex flex-wrap gap-3 mt-3">
+            <Link to="#" className="btn px-4 btn-warning text-dark fw-semibold shadow-sm">Pay EMI Now</Link>
+            <Link to="/createaccount?role=Retailer" className="btn px-4 btn-outline-secondary fw-semibold">Become a Retail Partner</Link>
           </div>
         </>
       ),
@@ -139,27 +138,37 @@ const FAQLoanEMIPayments = () => {
   ];
 
   return (
-    <>
+    <div className="container my-5">
       {isMobile ? (
         <Accordion>
           {content.map((item, index) => (
-            <Accordion.Item eventKey={index.toString()} key={index}>
+            <Accordion.Item eventKey={index.toString()} key={index} className="faq-accordion-item">
               <Accordion.Header>{item.title}</Accordion.Header>
               <Accordion.Body>{item.body}</Accordion.Body>
             </Accordion.Item>
           ))}
         </Accordion>
       ) : (
-        <div className="p-5">
+        <div className="timeline">
           {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: "2rem" }}>
-              <h3>{item.title}</h3>
-              <div>{item.body}</div>
-            </div>
+            <motion.div
+              key={index}
+              className="timeline-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="timeline-marker"></div>
+              <div className="timeline-content glassy-bg p-4 shadow-sm rounded">
+                <h4 className="fw-bold mb-3 text-gradient">{item.title}</h4>
+                {item.body}
+              </div>
+            </motion.div>
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

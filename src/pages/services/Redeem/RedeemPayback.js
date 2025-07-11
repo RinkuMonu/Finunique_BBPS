@@ -89,6 +89,11 @@ const RedeemPayback = () => {
                   value={phoneNumber}
                   onChange={handleChange}
                   maxLength="10"
+                  onKeyPress={(e) => {
+                    if (!/[0-9]/.test(e.key)) {
+                      e.preventDefault();
+                    }
+                  }}
                 />
                 {error && (
                   <div className="text-danger mt-2 small">{error}</div>
