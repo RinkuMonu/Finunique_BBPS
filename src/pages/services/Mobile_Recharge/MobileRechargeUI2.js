@@ -24,7 +24,7 @@ const rechargeOperators = [
 const circles = [
   "Andhra Pradesh",
   "Assam",
-  "Bihar & Jharkhand",
+  "Bihar Jharkhand",
   "Chennai",
   "Delhi NCR",
   "Gujarat",
