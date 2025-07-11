@@ -1,15 +1,7 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  BrowserRouter,
-  createBrowserRouter,
-  Route,
-  Router,
-  RouterProvider,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import {Route,Routes} from "react-router-dom";
 import AboutUs from "./pages/AboutUs/AboutUs.js";
 import ContactUs from "./pages/ContactUs";
 import AppLayout from "./components/AppLayout/AppLayout";
@@ -37,21 +29,20 @@ import PaymentSuccessPage from "./pages/PaymentSuccessPage/PaymentSuccessPage.js
 import PaymentErrorPage from "./pages/PaymentErrorPage/PaymentErrorPage.js";
 import PaymentRecipt from "./pages/services/PaymentReciptPage/PaymentRecipt.js";
 import ContentPolicy from "./pages/contentPolicy.js";
-import LeadForm from "./pages/leadForm.js";
 import LeadFormPopup from "./pages/leadForm.js";
 import { ContextProvider } from "./components/services/context.js";
 import CreateAccount from "./pages/Login/CreateAccount.js";
-import { useState } from "react";
+
 import Header from "./components/Header/Header.js";
 import Footer from "./components/Footer/Footer.js";
 import LoginPage from "./pages/Login/Login.js";
 import UserAccountCreation from "./pages/Login/userAccountCreation.js";
 import Blog from "./pages/Blog/Blog.js";
 import BlogDetails from "./pages/Blog/BlogDetails.js";
-import SiteMape from "./pages/SiteMap/SiteMape.js";
+
 import BugBountyProgram from "./pages/BugBounty/BugBounty.js";
 import BillPaymentSystem from "./pages/services/BillPaymentSystem.js";
-import SnakeGame from "./pages/Game/SnakeGame.js";
+
 
 function App() {
   // const { pathname } = useLocation();
