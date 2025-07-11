@@ -4,6 +4,7 @@ import PageContent from "./PageContent";
 import img from "../Assets/images/HOME-BG.png";
 import { FiCheckCircle, FiArrowRight } from "react-icons/fi";
 import Context from "../components/services/context";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { setIsOpen } = useContext(Context);
@@ -47,12 +48,13 @@ const Home = () => {
                   Start your BBPS business
                   <FiArrowRight className="cta-icon" />
                 </button>
-                <button
+                <Link
+                to="/createaccount?role=Retailer"
                   className="btn btn-outline-secondary cta-secondary"
-                  onClick={() => setIsOpen(true)}
+                  
                 >
                   Be a BBPS Retail Partner
-                </button>
+                </Link>
               </div>
 
               <div className="trust-badge mt-4">

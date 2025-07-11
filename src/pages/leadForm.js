@@ -50,6 +50,9 @@ const handleSubmit = async (e) => {
         icon: "success",
         title: "Success!",
         text: "Your details have been submitted successfully.",
+         customClass: {
+      popup: "custom-swal-popup"
+    }
       });
       closePopup();
     } else {
@@ -57,6 +60,9 @@ const handleSubmit = async (e) => {
         icon: "error",
         title: "Oops...",
         text: result?.message || "Something went wrong. Please try again.",
+        customClass: {
+      popup: "custom-swal-popup"
+    }
       });
     }
   } catch (error) {
@@ -65,6 +71,9 @@ const handleSubmit = async (e) => {
       icon: "error",
       title: "Error",
       text: "Failed to submit form. Please try again later.",
+       customClass: {
+    popup: "custom-swal-popup"
+  }
     });
   }
 };
@@ -156,7 +165,13 @@ const handleSubmit = async (e) => {
     </div>
   );
 };
-
+<style>
+  {`
+    .custom-swal-popup {
+      z-index: 10001 !important;
+    }
+  `}
+</style>
 const styles = {
   openButton: {
     padding: "12px 24px",
