@@ -8,7 +8,7 @@ import SEO from "../components/SEO/SEO";
 import { useUser } from "../context/UserContext";
 
 const ContactUs = () => {
-  const {seo}=useUser()
+  const { seo } = useUser();
   const [formData, setFormData] = useState({
     fullName: "",
     number: "",
@@ -19,13 +19,23 @@ const ContactUs = () => {
   const [responseMessage, setResponseMessage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [contactDetails, setContactDetails] = useState(null);
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+ const handleChange = (e) => {
+  const { name, value } = e.target;
+
+  if (name === "number") {
+    const numericValue = value.replace(/\D/g, "");
+    setFormData((prev) => ({
+      ...prev,
+      [name]: numericValue,
+    }));
+  } else {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
-  };
+  }
+};
+
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -132,18 +142,18 @@ const ContactUs = () => {
 
   return (
     <div>
-     <SEO
-            meta_title={seo?.meta_title}
-            meta_description={seo?.meta_description}
-            meta_keywords={seo?.meta_keywords}
-            og_title={seo?.og_title}
-            og_description={seo?.og_description}
-            og_type={seo?.og_type}
-            og_url={seo?.og_url}
-            og_image={seo?.og_image}
-            og_site_name={seo?.og_site_name}
-            canonical_tag={seo?.canonical_tag}
-          />
+      <SEO
+        meta_title={seo?.meta_title}
+        meta_description={seo?.meta_description}
+        meta_keywords={seo?.meta_keywords}
+        og_title={seo?.og_title}
+        og_description={seo?.og_description}
+        og_type={seo?.og_type}
+        og_url={seo?.og_url}
+        og_image={seo?.og_image}
+        og_site_name={seo?.og_site_name}
+        canonical_tag={seo?.canonical_tag}
+      />
       <section className="hero-section heroaabout overflow-hidden">
         <div className="container-fluid p-0 d-flex  flex-column align-items-center">
           <div className="row align-items-center hero-content-wrapper ">
@@ -219,6 +229,8 @@ const ContactUs = () => {
                           className="form-control"
                           placeholder="Mobile Number"
                           required
+                          pattern="[0-9]*"
+                          inputMode="numeric"
                           value={formData.number}
                           onChange={handleChange}
                         />
