@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import Context from "../components/services/context";
+import Swal from "sweetalert2";
 
 const LeadFormPopup = () => {
   const { isOpen, setIsOpen } = useContext(Context);
@@ -19,11 +20,55 @@ const LeadFormPopup = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    closePopup();
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const payload = {
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone,
+    message: "This Leads from ABDKS",
+    service: "N/A",
+    website_id: 5,
   };
+
+  try {
+    const response = await fetch("https://cms.sevenunique.com/apis/contact-query/set-contact-details.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json();
+    console.log("API Response:", result);
+
+    if (response.ok) {
+      Swal.fire({
+        icon: "success",
+        title: "Success!",
+        text: "Your details have been submitted successfully.",
+      });
+      closePopup();
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: result?.message || "Something went wrong. Please try again.",
+      });
+    }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Failed to submit form. Please try again later.",
+    });
+  }
+};
+
 
   return (
     <div>
@@ -38,7 +83,7 @@ const LeadFormPopup = () => {
                   alt="Marketing"
                   style={styles.image}
                 />
-              </div>
+              </div> 
 
               {/* Right side with form */}
               <div style={styles.formContainer}>
@@ -92,7 +137,7 @@ const LeadFormPopup = () => {
                       type="tel"
                       id="phone"
                       name="phone"
-                      placeholder="+1 (___) ___-____"
+                      placeholder="Enter your phone number"
                       style={styles.input}
                       value={formData.phone}
                       onChange={handleChange}
@@ -130,6 +175,7 @@ const styles = {
       boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
     },
   },
+  
   overlay: {
     position: "fixed",
     top: 0,
@@ -211,6 +257,7 @@ const styles = {
     color: "#555",
     fontWeight: "500",
   },
+  
   input: {
     padding: "12px 15px",
     borderRadius: "6px",
