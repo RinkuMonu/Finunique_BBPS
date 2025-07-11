@@ -15,7 +15,7 @@ export default function Blog() {
           "https://cms.sevenunique.com/apis/blogs/get-blogs.php?website_id=5&status=2",
           {
             headers: {
-              Authorization: "Bearer jibhfiugh84t3324fefei#*fef", // ✅ Your token here
+              Authorization: "Bearer jibhfiugh84t3324fefei#*fef", 
             },
           }
         );
