@@ -176,7 +176,7 @@ function Footer() {
                       Contact
                     </Link>
                   </ListGroupItem>
-                  <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
+                  {/* <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
                     <Link
                       to="/sitemap"
                       className="text-white text-decoration-none small"
@@ -184,7 +184,7 @@ function Footer() {
                     >
                       Sitemap
                     </Link>
-                  </ListGroupItem>
+                  </ListGroupItem> */}
                   <ListGroupItem className="bg-transparent text-white border-0 px-0 py-1">
                     <Link
                       to="/bug-bounty"

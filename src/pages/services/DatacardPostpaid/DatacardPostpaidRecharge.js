@@ -161,7 +161,7 @@ const DatacardPostpaidRecharge = ({
             <h3>Recharge Your Datacard Postpaid Connection with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/datacard.svg"
+                src="/assets/Datacard.svg"
                 alt="Datacard Recharge"
                 height="300"
                 className="item-center postpaidSideImg"

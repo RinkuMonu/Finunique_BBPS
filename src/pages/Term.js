@@ -716,7 +716,7 @@ export default function Term() {
                     </h3>
                     <div className="row">
                       <div className="col-md-6">
-                        <div className="card mb-3 border-0 shadow-sm">
+                        <div className="card mb-3 h-100 border-0 shadow-sm">
                           <div className="card-body">
                             <h5 className="card-title d-flex align-items-center">
                               <FaEnvelope className="me-2 text-primary" /> Email
@@ -737,7 +737,7 @@ export default function Term() {
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div className="card mb-3 border-0 shadow-sm">
+                        <div className="card mb-3 h-100 border-0 shadow-sm">
                           <div className="card-body">
                             <h5 className="card-title d-flex align-items-center">
                               <FaPhone className="me-2 text-primary" /> Phone &
@@ -745,11 +745,10 @@ export default function Term() {
                             </h5>
                             <ul className="list-unstyled">
                               <li className="mb-2">
-                                <strong>Phone:</strong> +91-XXXXXXXXXX
+                                <strong>Phone:</strong> 0141-4511098
                               </li>
                               <li className="mb-2">
-                                <strong>Registered Office:</strong> [Insert Full
-                                Address]
+                                <strong>Registered Office:</strong> Plot No 97, Dakshinpuri - I, Shrikishan, Sanganer, Jagatpura, Jaipur Rajasthan, India, 302017
                               </li>
                               <li>
                                 <strong>Website:</strong> www.abdks.in

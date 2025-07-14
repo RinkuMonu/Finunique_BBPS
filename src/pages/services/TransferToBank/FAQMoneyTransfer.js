@@ -129,8 +129,8 @@ const FAQMoneyTransfer = () => {
             Whether you're transferring funds for family, business, or community support — trust ABDKS for fast, secure, and compliant online money transfers across India.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">Send Money Now</Link>
-            <Link  to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">Become a Money Transfer Agent</Link>
+            <Link to="#" className="btn btn-primary cta-main" size="lg">Send Money Now</Link>
+            <Link  to="/createaccount?role=Retailer" className="btn btn-outline-secondary cta-secondary" size="lg">Become a Money Transfer Agent</Link>
           </div>
         </>
       ),

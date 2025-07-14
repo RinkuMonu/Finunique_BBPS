@@ -1,0 +1,107 @@
+.blog-card {
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-img-wrapper img {
+    transition: transform 0.3s ease;
+  }
+  
+  .blog-card:hover .blog-img-wrapper img {
+    transform: scale(1.05);
+  }
+  
+  .divider {
+    border-radius: 50px;
+  }
+  
+  .bg-light {
+    background-color: #f9fafc !important;
+  }
+  .blog-summary {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 👈 You can set 2 or 3 as needed */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-img-wrapper {
+    position: relative;
+  }
+  
+  .blog-img {
+    transition: transform 0.5s ease;
+  }
+  
+  .blog-card:hover .blog-img {
+    transform: scale(1.08);
+  }
+  
+  .blog-overlay-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  }
+  
+  .blog-content-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+    border-top: 4px solid #ffb300;
+  }
+  
+  .blog-title {
+    color: #222;
+  }
+  
+  .blog-summary {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pagination .page-item.active .page-link {
+    background: linear-gradient(135deg, #ffb300, #ff6f00);
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .pagination .page-item .page-link {
+    color: #333;
+    padding: 6px 12px;
+    border: none;
+    margin: 0 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .pagination .page-item .page-link:hover {
+    background: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .pagination .page-item.disabled .page-link {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+        
