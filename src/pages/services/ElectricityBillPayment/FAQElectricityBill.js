@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const FAQElectricityBill = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -111,12 +111,8 @@ const FAQElectricityBill = () => {
         <>
           <p>Enjoy a fast, secure, commission-free electricity bill payment experience nationwide.</p>
           <div className="d-flex flex-wrap gap-3 mt-4">
-            <Link to="/ContactUs" className="btn btn-primary px-4">
-              Pay Your Bill
-            </Link>
-            <Link to="/createaccount" className="btn btn-outline-secondary px-4">
-              Become a Partner
-            </Link>
+            <Link to="/billpayment" className="btn btn-warning text-dark fw-semibold shadow-sm px-4">Pay Your Bill</Link>
+            <Link to="/createaccount" className="btn btn-outline-secondary fw-semibold px-4">Become a Partner</Link>
           </div>
         </>
       ),
@@ -128,34 +124,61 @@ const FAQElectricityBill = () => {
       {isMobile ? (
         <Accordion>
           {content.map((item, index) => (
-            <Accordion.Item eventKey={index.toString()} key={index}>
+            <Accordion.Item eventKey={index.toString()} key={index} className="faq-accordion-item">
               <Accordion.Header>{item.title}</Accordion.Header>
               <Accordion.Body>{item.body}</Accordion.Body>
             </Accordion.Item>
           ))}
         </Accordion>
       ) : (
-        <div className="row">
+        <div className="timeline">
           {content.map((item, index) => (
-            <div className="col-md-6 mb-4" key={index}>
-              <Card className="shadow-sm border-0 rounded-4 h-100 faq-card">
-                <Card.Body>
-                  <Card.Title className="h5 fw-bold mb-3 text-primary">{item.title}</Card.Title>
-                  <div>{item.body}</div>
-                </Card.Body>
-              </Card>
-            </div>
+            <motion.div
+              key={index}
+              className="timeline-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="timeline-marker"></div>
+              <div className="timeline-content glassy-bg p-4 shadow-sm rounded">
+                <h4 className="fw-bold mb-3 text-gradient">{item.title}</h4>
+                {item.body}
+              </div>
+            </motion.div>
           ))}
         </div>
       )}
 
       <style jsx>{`
-        .faq-card {
-          transition: all 0.3s ease;
+        .timeline {
+          position: relative;
+          margin-left: 20px;
         }
-        .faq-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        .timeline-card {
+          position: relative;
+          margin-bottom: 50px;
+        }
+        .timeline-marker {
+          position: absolute;
+          left: -27px;
+          top: 20px;
+          width: 12px;
+          height: 12px;
+          background: #fcbf49;
+          border-radius: 50%;
+          border: 2px solid #fff;
+          box-shadow: 0 0 0 4px rgba(252, 191, 73, 0.3);
+        }
+        .glassy-bg {
+          background: rgba(255, 255, 255, 0.6);
+          backdrop-filter: blur(8px);
+        }
+        .text-gradient {
+          background: linear-gradient(90deg, #ff8a00, #e52e71);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       `}</style>
     </div>
