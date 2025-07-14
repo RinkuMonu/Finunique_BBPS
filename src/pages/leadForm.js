@@ -145,12 +145,13 @@ const LeadFormPopup = () => {
 
                   <div style={styles.inputGroup}>
                     <label htmlFor="phone" style={styles.label}>
-                      Phone (Optional)
+                      Phone 
                     </label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
+                      required
                       placeholder="Enter your phone number"
                       style={styles.input}
                       value={formData.phone}

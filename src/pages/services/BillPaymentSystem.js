@@ -344,7 +344,7 @@ const BillPaymentSystem = () => {
         setStep(2);
       })
       .catch((err) => {
-        showErrorAlert("Failed to fetch bill details");
+        showErrorAlert(err?.response?.data?.message);
         setLoading(false);
       });
   };

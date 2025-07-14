@@ -51,6 +51,7 @@ const MobileRechargeUI2 = () => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showPlansModal, setShowPlansModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [isFetchingDetails, setIsFetchingDetails] = useState(false);
 
   const [formData, setFormData] = useState({
     mobileNumber: "",
@@ -157,6 +158,7 @@ const MobileRechargeUI2 = () => {
   const handleNumberBlur = async () => {
     if (!validateMobileNumber(formData.mobileNumber)) return;
 
+    setIsFetchingDetails(true);
     try {
       const res = await axiosInstance.post("/v1/s3/recharge/hlrcheck", {
         number: formData.mobileNumber,
@@ -174,6 +176,8 @@ const MobileRechargeUI2 = () => {
       }
     } catch (err) {
       console.error("HLR API Error:", err);
+    } finally {
+      setIsFetchingDetails(false);
     }
   };
 
@@ -222,6 +226,9 @@ const MobileRechargeUI2 = () => {
                   <Form.Control.Feedback type="invalid">
                     {errors.mobileNumber}
                   </Form.Control.Feedback>
+                  {isFetchingDetails && (
+                    <small className="text-muted">Fetching details...</small>
+                  )}
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="operator">
@@ -229,6 +236,7 @@ const MobileRechargeUI2 = () => {
                   <Form.Select
                     value={formData.operator}
                     onChange={handleChange}
+                    disabled={isFetchingDetails}
                   >
                     <option value="">Select Operator</option>
                     {rechargeOperators.map((op) => (
@@ -244,6 +252,7 @@ const MobileRechargeUI2 = () => {
                   <Form.Select
                     value={formData.circle}
                     onChange={handleChange}
+                    disabled={isFetchingDetails}
                   >
                     <option value="">Select Circle</option>
                     {circles.map((c) => (
@@ -268,6 +277,7 @@ const MobileRechargeUI2 = () => {
                       className="btn btn-outline-secondary"
                       type="button"
                       onClick={() => setShowPlansModal(true)}
+                      disabled={!formData.operator || !formData.circle}
                     >
                       Check Plans
                     </button>
@@ -282,10 +292,10 @@ const MobileRechargeUI2 = () => {
                   type="button"
                   className="w-100"
                   style={{ backgroundColor: "#001e50", color: "white" }}
-                  disabled={!isFormValid}
+                  disabled={!isFormValid || isFetchingDetails}
                   onClick={handleConfirmModalOpen}
                 >
-                  Confirm
+                  {isFetchingDetails ? "Processing..." : "Confirm"}
                 </Button>
               </Form>
             </div>

@@ -7,15 +7,15 @@ import axiosInstance from "../../../components/services/AxiosInstance";
 import { useUser } from "../../../context/UserContext";
 import LoginModal from "../../Login/LoginModal";
 
-
 const DTHRecharge1 = () => {
   const [operators, setOperators] = useState([]);
   const [showPlanModal, setShowPlanModal] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showMpinModal, setShowMpinModal] = useState(false);
-  const [showLoginModal, setShowLoginModal] = useState(false); // New state for login modal
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const [mpin, setMpin] = useState("");
   const [planInfo, setPlanInfo] = useState(null);
+  const [isDetectingOperator, setIsDetectingOperator] = useState(false);
   const { fetchUserfree } = useUser();
 
   const [formData, setFormData] = useState({
@@ -23,6 +23,14 @@ const DTHRecharge1 = () => {
     customerId: "",
     amount: "",
   });
+
+  // Operator name mappings for better matching
+  const operatorAliases = {
+    'Airtel Digital TV': ['Airtel', 'Airtel DTH', 'Airtel Digital'],
+    'Tata Sky': ['TataSky', 'Tata Play', 'Tata'],
+    'Dish TV': ['Dish', 'DishTV'],
+    'Sun Direct': ['Sun', 'SunDirect'],
+  };
 
   useEffect(() => {
     const fetchOperators = async () => {
@@ -43,7 +51,6 @@ const DTHRecharge1 = () => {
   const handleChange = (e) => {
     const { id, value } = e.target;
 
-    // Allow only numeric values for customerId and amount
     if ((id === "customerId" || id === "amount") && !/^\d*$/.test(value)) {
       return;
     }
@@ -57,6 +64,7 @@ const DTHRecharge1 = () => {
   const handleNumberBlur = async () => {
     if (!formData.customerId || formData.customerId.length < 5) return;
 
+    setIsDetectingOperator(true);
     try {
       const payload = {
         number: formData.customerId,
@@ -67,24 +75,72 @@ const DTHRecharge1 = () => {
 
       if (res.data?.data?.status) {
         const detectedOperator = res.data.data.info.operator;
-        const matchedOp = operators.find((op) =>
-          detectedOperator.toLowerCase().includes(op.name.toLowerCase())
-        );
+        
+        // Try different matching strategies
+        const matchedOp = operators.find(op => {
+          // Exact match (case insensitive)
+          if (op.name.toLowerCase() === detectedOperator.toLowerCase()) {
+            return true;
+          }
+          
+          // Partial match (remove spaces)
+          const opNameNormalized = op.name.toLowerCase().replace(/\s+/g, '');
+          const detectedNormalized = detectedOperator.toLowerCase().replace(/\s+/g, '');
+          if (opNameNormalized === detectedNormalized) {
+            return true;
+          }
+          
+          // Contains match
+          if (detectedOperator.toLowerCase().includes(op.name.toLowerCase())) {
+            return true;
+          }
+          
+          // Check aliases
+          const aliases = operatorAliases[op.name] || [];
+          return aliases.some(alias => 
+            detectedOperator.toLowerCase().includes(alias.toLowerCase())
+          );
+        });
 
         if (matchedOp) {
-          setFormData((prev) => ({
+          setFormData(prev => ({
             ...prev,
             operator: matchedOp.name,
           }));
         } else {
-          Swal.fire("Warning", "Operator detected but not matched with list.", "warning");
+          // Try to find a partial match to suggest
+          const suggestedOp = operators.find(op => 
+            detectedOperator.toLowerCase().includes(op.name.toLowerCase().split(' ')[0])
+          );
+          
+          if (suggestedOp) {
+            setFormData(prev => ({
+              ...prev,
+              operator: suggestedOp.name,
+            }));
+            Swal.fire({
+              title: "Operator Detected",
+              text: `We think this might be ${suggestedOp.name}. Please confirm or select manually.`,
+              icon: "info"
+            });
+          } else {
+            Swal.fire(
+              "Warning",
+              `Operator detected (${detectedOperator}) but not matched with our list. Please select manually.`,
+              "warning"
+            );
+          }
         }
       } else {
-        Swal.fire("Error", "HLR Check failed.", "error");
+        Swal.fire("Error", res?.data?.data?.message || "Could not detect operator", "error");
       }
     } catch (err) {
       console.error("HLR API Error:", err);
-      Swal.fire("Error", "HLR Check failed.", "error");
+      const errorMessage =
+        err?.response?.data?.message || "An unexpected error occurred.";
+      Swal.fire("Error", errorMessage, "error");
+    } finally {
+      setIsDetectingOperator(false);
     }
   };
 
@@ -106,7 +162,11 @@ const DTHRecharge1 = () => {
         setPlanInfo(res.data.info[0]);
         setShowPlanModal(true);
       } else {
-        Swal.fire("Error", res.data.message || "Unable to fetch plan.", "error");
+        Swal.fire(
+          "Error",
+          res.data.message || "Unable to fetch plan.",
+          "error"
+        );
       }
     } catch (err) {
       console.error("DTH Plan API Error:", err);
@@ -120,7 +180,7 @@ const DTHRecharge1 = () => {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      setShowLoginModal(true); // Show login modal instead of redirecting
+      setShowLoginModal(true);
       return;
     }
 
@@ -129,7 +189,7 @@ const DTHRecharge1 = () => {
 
   const handleLoginSuccess = () => {
     setShowLoginModal(false);
-    setShowConfirmModal(true); // Show confirm modal after successful login
+    setShowConfirmModal(true);
   };
 
   const handleRecharge = async () => {
@@ -147,10 +207,17 @@ const DTHRecharge1 = () => {
         operator: formData.operator,
       };
 
-      const res = await axiosInstance.post("/v1/s3/recharge/dorecharge", payload);
+      const res = await axiosInstance.post(
+        "/v1/s3/recharge/dorecharge",
+        payload
+      );
 
       if (res.data.status === "success") {
-        Swal.fire("Success ✅", `${res.data.message}\nRef ID: ${res.data.refid}`, "success");
+        Swal.fire(
+          "Success ✅",
+          `${res.data.message}\nRef ID: ${res.data.refid}`,
+          "success"
+        );
         setShowMpinModal(false);
         setShowConfirmModal(false);
         setMpin("");
@@ -166,7 +233,8 @@ const DTHRecharge1 = () => {
     }
   };
 
-  const isFormValid = formData.operator && formData.customerId && formData.amount;
+  const isFormValid =
+    formData.operator && formData.customerId && formData.amount;
 
   return (
     <>
@@ -183,27 +251,45 @@ const DTHRecharge1 = () => {
           </Col>
 
           <Col md={6}>
-            <div className="p-4 rounded bg-white shadow" style={{ maxWidth: "500px", margin: "0 auto" }}>
-              <h3 className="mb-4" style={{ color: "#001e50", fontWeight: "bold" }}>
+            <div
+              className="p-4 rounded bg-white shadow"
+              style={{ maxWidth: "500px", margin: "0 auto" }}
+            >
+              <h3
+                className="mb-4"
+                style={{ color: "#001e50", fontWeight: "bold" }}
+              >
                 DTH Recharge
               </h3>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="customerId">
                   <Form.Label>Customer ID</Form.Label>
-                  <Form.Control
-                    type="text"
-                    inputMode="numeric"
-                    pattern="[0-9]*"
-                    placeholder="Enter Customer ID"
-                    value={formData.customerId}
-                    onChange={handleChange}
-                    onBlur={handleNumberBlur}
-                  />
+                  <div className="position-relative">
+                    <Form.Control
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
+                      placeholder="Enter Customer ID"
+                      value={formData.customerId}
+                      onChange={handleChange}
+                      onBlur={handleNumberBlur}
+                    />
+                    {isDetectingOperator && (
+                      <div className="position-absolute top-50 end-0 translate-middle-y me-2">
+                        <div className="spinner-border spinner-border-sm" role="status">
+                          <span className="visually-hidden">Loading...</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="operator">
                   <Form.Label>Operator</Form.Label>
-                  <Form.Select value={formData.operator} onChange={handleChange}>
+                  <Form.Select
+                    value={formData.operator}
+                    onChange={handleChange}
+                  >
                     <option value="">Select Operator</option>
                     {operators.map((op) => (
                       <option key={op.id} value={op.name}>
@@ -224,7 +310,11 @@ const DTHRecharge1 = () => {
                       value={formData.amount}
                       onChange={handleChange}
                     />
-                    <button className="btn btn-outline-secondary" type="button" onClick={handlePlanModalOpen}>
+                    <button
+                      className="btn btn-outline-secondary"
+                      type="button"
+                      onClick={handlePlanModalOpen}
+                    >
                       Check Plan
                     </button>
                   </div>
@@ -248,31 +338,50 @@ const DTHRecharge1 = () => {
       <FAQDthRecharge />
 
       {/* Plan Modal */}
-      <Modal show={showPlanModal} onHide={() => setShowPlanModal(false)} centered>
+      <Modal
+        show={showPlanModal}
+        onHide={() => setShowPlanModal(false)}
+        centered
+      >
         <Modal.Header closeButton>
           <Modal.Title>Customer Plan Details</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {planInfo ? (
-            <>
-              <p><b>Customer Name:</b> {planInfo.customerName}</p>
-              <p><b>Status:</b> {planInfo.status}</p>
-              <p><b>Balance:</b> ₹{planInfo.Balance}</p>
-              <p><b>Next Recharge Date:</b> {planInfo.NextRechargeDate}</p>
-              <p><b>Plan Name:</b> {planInfo.planname}</p>
-              <p><b>Monthly Recharge:</b> ₹{planInfo.MonthlyRecharge}</p>
-            </>
-          ) : (
-            <p>No plan info available.</p>
-          )}
+      <>
+        {planInfo.status === 0 && planInfo.desc === "Customer Not Found" ? (
+          <div className="text-center text-danger">
+            <h5>Customer Not Found</h5>
+            <p>Please check the customer ID and try again.</p>
+          </div>
+        ) : (
+          <>
+            <p><b>Customer Name:</b> {planInfo.customerName || 'N/A'}</p>
+            <p><b>Status:</b> {planInfo.status || 'N/A'}</p>
+            <p><b>Balance:</b> ₹{planInfo.Balance || 'N/A'}</p>
+            <p><b>Next Recharge Date:</b> {planInfo.NextRechargeDate || 'N/A'}</p>
+            <p><b>Plan Name:</b> {planInfo.planname || 'N/A'}</p>
+            <p><b>Monthly Recharge:</b> ₹{planInfo.MonthlyRecharge || 'N/A'}</p>
+          </>
+        )}
+      </>
+    ) : (
+      <p>No plan information available.</p>
+    )}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowPlanModal(false)}>Close</Button>
+          <Button variant="secondary" onClick={() => setShowPlanModal(false)}>
+            Close
+          </Button>
         </Modal.Footer>
       </Modal>
 
       {/* Confirm Modal */}
-      <Modal show={showConfirmModal} onHide={() => setShowConfirmModal(false)} centered>
+      <Modal
+        show={showConfirmModal}
+        onHide={() => setShowConfirmModal(false)}
+        centered
+      >
         <Modal.Header closeButton>
           <Modal.Title>Confirm Recharge</Modal.Title>
         </Modal.Header>
@@ -282,7 +391,12 @@ const DTHRecharge1 = () => {
           <p>Amount: ₹{formData.amount}</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowConfirmModal(false)}>Cancel</Button>
+          <Button
+            variant="secondary"
+            onClick={() => setShowConfirmModal(false)}
+          >
+            Cancel
+          </Button>
           <Button
             variant="primary"
             onClick={() => {
@@ -296,7 +410,11 @@ const DTHRecharge1 = () => {
       </Modal>
 
       {/* MPIN Modal */}
-      <Modal show={showMpinModal} onHide={() => setShowMpinModal(false)} centered>
+      <Modal
+        show={showMpinModal}
+        onHide={() => setShowMpinModal(false)}
+        centered
+      >
         <Modal.Header closeButton>
           <Modal.Title>Enter MPIN</Modal.Title>
         </Modal.Header>
@@ -312,8 +430,12 @@ const DTHRecharge1 = () => {
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowMpinModal(false)}>Cancel</Button>
-          <Button variant="primary" onClick={handleRecharge}>Submit MPIN</Button>
+          <Button variant="secondary" onClick={() => setShowMpinModal(false)}>
+            Cancel
+          </Button>
+          <Button variant="primary" onClick={handleRecharge}>
+            Submit MPIN
+          </Button>
         </Modal.Footer>
       </Modal>
 
