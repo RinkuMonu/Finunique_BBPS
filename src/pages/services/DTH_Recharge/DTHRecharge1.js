@@ -144,35 +144,65 @@ const DTHRecharge1 = () => {
     }
   };
 
-  const handlePlanModalOpen = async () => {
-    if (!formData.customerId || !formData.operator) {
-      Swal.fire("Error", "Please enter Customer ID first.", "error");
-      return;
-    }
+const handlePlanModalOpen = async () => {
+  if (!formData.customerId || !formData.operator) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Missing Information',
+      text: 'Please enter Customer ID and select an operator first.',
+      confirmButtonColor: '#001e50'
+    });
+    return;
+  }
 
-    try {
-      const payload = {
-        canumber: formData.customerId,
-        op: formData.operator,
-      };
+  try {
+    const payload = {
+      canumber: formData.customerId,
+      op: formData.operator,
+    };
 
-      const res = await axiosInstance.post("/v1/s3/recharge/dthPlan", payload);
+    const res = await axiosInstance.post("/v1/s3/recharge/dthPlan", payload);
 
-      if (res.data.status) {
-        setPlanInfo(res.data.info[0]);
+    // Check if the customer was found
+    // if (res.data.info && res.data.info.status === 0 && res.data.info.desc === "Customer Not Found") {
+    //   Swal.fire({
+    //     icon: 'error',
+    //     title: 'Customer Not Found',
+    //     text: 'The system could not find this customer ID. Please verify the number and try again.',
+    //     confirmButtonColor: '#001e50'
+    //   });
+    //   return;
+    // }
+
+    // Check if we have valid plan info
+    if (res.data.status && res.data.info) {
+      // Handle both array and object responses
+      const planData = Array.isArray(res.data.info) ? res.data.info[0] : res.data.info;
+      
+      if (planData) {
+        setPlanInfo(planData);
         setShowPlanModal(true);
       } else {
-        Swal.fire(
-          "Error",
-          res.data.message || "Unable to fetch plan.",
-          "error"
-        );
+        throw new Error('Plan information is empty');
       }
-    } catch (err) {
-      console.error("DTH Plan API Error:", err);
-      Swal.fire("Error", "Failed to fetch plan info.", "error");
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: res.data.message || 'Unable to fetch plan information',
+        confirmButtonColor: '#001e50'
+      });
     }
-  };
+  } catch (err) {
+    console.error("DTH Plan API Error:", err);
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: err.response?.data?.message || 'Failed to fetch plan info. Please try again later.',
+      confirmButtonColor: '#001e50'
+    });
+  }
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();

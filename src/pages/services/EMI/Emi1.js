@@ -214,11 +214,11 @@ const Emi1 = ({
                       onChange={handleApplicationIdChange}
                       required
                     />
-                    {currentOperator?.regex && (
+                    {/* {currentOperator?.regex && (
                       <Form.Text className="text-muted">
                         Required format: {currentOperator.regex}
                       </Form.Text>
-                    )}
+                    )} */}
                     {inputError && (
                       <div className="text-danger">{inputError}</div>
                     )}

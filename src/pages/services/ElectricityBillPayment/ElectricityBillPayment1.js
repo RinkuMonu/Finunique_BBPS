@@ -220,11 +220,11 @@ const ElectricityBillPayment1 = ({
                       required
                       isInvalid={!!inputError}
                     />
-                    {currentOperator?.regex && (
+                    {/* {currentOperator?.regex && (
                       <Form.Text className="text-muted">
                         Required format: {currentOperator.regex}
                       </Form.Text>
-                    )}
+                    )} */}
                     <Form.Control.Feedback type="invalid">
                       {inputError}
                     </Form.Control.Feedback>
