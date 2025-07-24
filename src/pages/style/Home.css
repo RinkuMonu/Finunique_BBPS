@@ -28,6 +28,7 @@ body {
 
 .hero-content-wrapper {
   min-height: 70vh;
+  padding-top:3rem ;
 }
 
 .text-content {
