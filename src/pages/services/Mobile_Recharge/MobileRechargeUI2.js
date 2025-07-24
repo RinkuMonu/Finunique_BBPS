@@ -183,7 +183,7 @@ const MobileRechargeUI2 = () => {
 
   return (
     <>
-      <div className="py-5 px-5" style={{ backgroundColor: "#EFF8FF" }}>
+      <div className="py-5 px-5 hero-section" >
         <Row>
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: "#001e50" }}>

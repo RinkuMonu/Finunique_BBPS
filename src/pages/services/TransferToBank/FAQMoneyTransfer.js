@@ -20,6 +20,12 @@ const FAQMoneyTransfer = () => {
     };
   }, []);
 
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   const content = [
     {
       title: "About Domestic Money Transfer via ABDKS",
@@ -138,29 +144,49 @@ const FAQMoneyTransfer = () => {
   ];
 
   return (
-    <div className="container my-4">
+     <div className="container my-4">
       {isMobile ? (
-        <Accordion>
+        <div className="accordion-container">
           {content.map((item, index) => (
-            <Accordion.Item eventKey={index.toString()} key={index}>
-              <Accordion.Header>{item.title}</Accordion.Header>
-              <Accordion.Body>{item.body}</Accordion.Body>
-            </Accordion.Item>
+            <div key={index} className="accordion-item">
+              <div className="accordion-header">
+                <button 
+                  className={`accordion-button ${activeIndex === index ? 'active' : ''}`}
+                  onClick={() => toggleAccordion(index)}
+                >
+                  <span className="h5 mb-0 text-warning-emphasis">
+                    {item.title}
+                  </span>
+                  <span className="accordion-icon">{activeIndex === index ? '−' : '+'}</span>
+                </button>
+              </div>
+              <div className={`accordion-content ${activeIndex === index ? 'show' : ''}`}>
+                <div className="accordion-body">
+                  {item.body}
+                </div>
+              </div>
+            </div>
           ))}
-        </Accordion>
+        </div>
       ) : (
-        <div>
+        <div className="">
           {content.map((item, index) => (
-            <Card key={index} className="mb-4">
-              <Card.Body>
-                <Card.Title className="h4 mb-3 text-warning-emphasis">{item.title}</Card.Title>
+            <div key={index} className="custom-card my-5">
+              <div className="card-header">
+                <h4 className="h4 text-warning-emphasis">
+                  {item.title}
+                </h4>
+              </div>
+              <div className="card-body">
                 {item.body}
-              </Card.Body>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       )}
     </div>
+ 
+
   );
 };
 

@@ -40,16 +40,16 @@ const RedeemPayback = () => {
         og_site_name={seo?.og_site_name}
         canonical_tag={seo?.canonical_tag}
       />
-      <Container className="py-5 mt-5">
+      <div className="p-5 mt-5 hero-section">
       <Row className="align-items-center">
         {/* Left Side Content */}
         <Col md={6} className="text-center text-md-start mb-4 mb-md-0">
-          <h2 className="fw-bold" style={{ color: "#001e50" }}>
+          <h2 className="hero-headline" >
             The best reward for loyalty? Money.
-          </h2>
-          <h4 className="mt-3">
+        
+          <span className="highlight">
             Redeem Your Payback Points Instantly with ABDKS Solutions Private Ltd.
-          </h4>
+          </span>  </h2>
           <p className="mt-3 fs-5 text-muted">
             Turn your unused PAYBACK points into real cash or discounts in
             seconds. With ABDKS, loyalty truly pays off — securely, instantly,
@@ -104,7 +104,7 @@ const RedeemPayback = () => {
                 variant="primary"
                 type="submit"
                 className="mt-3 w-100 py-2 fw-semibold"
-                style={{ backgroundColor: "#001e50", border: "none" }}
+   
               >
                 Proceed to Redeem
               </Button>
@@ -116,7 +116,7 @@ const RedeemPayback = () => {
           </div>
         </Col>
       </Row>
-    </Container>
+    </div>
     </>
   );
 };

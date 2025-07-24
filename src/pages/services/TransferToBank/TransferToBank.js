@@ -99,13 +99,13 @@ const TransferToBank = () => {
         og_site_name={seo?.og_site_name}
         canonical_tag={seo?.canonical_tag}
       />
-      <div className="p-5 mt-5" style={{ backgroundColor: "#EFF8FF" }}>
+      <div className="p-5 mt-5 hero-section" >
         <Row>
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{ color: "#664A86" }}>
+            <h1 className="hero-headline">
               Send Money Securely Across India – Powered by ABDKS
-            </h2>
-            <h3>Fast, Reliable & Compliant Domestic Money Transfers</h3>
+          
+            <span className="highlight">Fast, Reliable & Compliant Domestic Money Transfers</span>  </h1>
             <div className="d-flex justify-content-center align-items-center transferBankSideImg">
               <img
                 src="/assets/Transfer to Bank.svg"
@@ -188,7 +188,7 @@ const TransferToBank = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: "#664A86", color: "white" }}
+             
                 >
                   Go
                 </Button>
