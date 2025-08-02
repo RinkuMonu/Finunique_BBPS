@@ -124,7 +124,7 @@ function BlogsDetails() {
         canonical_tag={seo?.canonical_tag}
       />
       <div>
-      <section className="d-flex mt-5 align-items-center justify-content-center text-white position-relative">
+      <section className="d-flex mt-5 align-items-center justify-content-center text-white position-relative ">
         <div className="container text-center position-relative">
           <h1 className="hero-title pt-5">{blog.title}</h1>
           <p className="text-black fw-bold">
@@ -171,17 +171,17 @@ function BlogsDetails() {
 
                 <div className="p-4 p-md-5">
                   <div className="d-flex flex-wrap gap-3 mb-4">
-                    <span className="badge bg-primary fs-6 px-3 py-2">
+                    <span className="badge  fs-6 px-3 py-2">
                       <i className="bi bi-person me-2"></i>
                       FinUnique Team
                     </span>
                     {categoryname?.data?.name && (
-                      <span className="badge bg-success fs-6 px-3 py-2">
+                      <span className="badge  fs-6 px-3 py-2">
                         <i className="bi bi-tag me-2"></i>
                         {categoryname.data.name}
                       </span>
                     )}
-                    <span className="badge bg-secondary fs-6 px-3 py-2">
+                    <span className="badge  fs-6 px-3 py-2">
                       <i className="bi bi-eye me-2"></i>
                       {blog.views || "0"} views
                     </span>
@@ -256,14 +256,14 @@ function BlogsDetails() {
                 <div className="list-group list-group-flush">
                   {["Uncategorized", "Technology", "Business & Marketing", "Digital Agency"].map(
                     (category, index) => (
-                      <a
+                      <Link
                         href="#"
                         key={index}
                         className="list-group-item list-group-item-action border-0 px-0 py-3 d-flex justify-content-between align-items-center"
                       >
                         <span>{category}</span>
-                        <span className="badge bg-primary rounded-pill">{Math.floor(Math.random() * 100)}</span>
-                      </a>
+                        <span className="badge rounded-pill">{Math.floor(Math.random() * 100)}</span>
+                      </Link>
                     )
                   )}
                 </div>
@@ -272,7 +272,7 @@ function BlogsDetails() {
               {/* Recent Posts */}
               <div className="bg-white rounded-4 shadow-sm p-4">
                 <h5 className="fw-bold mb-4">Recent Posts</h5>
-                <div className="d-flex flex-column gap-4">
+                <div className="d-flex flex-column gap-4 overflow-hidden">
                   {relatedPosts?.data?.slice(0, 3).map((post) => (
                     <div key={post.id} className="d-flex gap-3">
                       <div className="flex-shrink-0">

@@ -193,7 +193,9 @@ const LeadFormPopup = () => {
                     {!errors.phone && <div style={{ minHeight: "16px" }}></div>}
                   </div>
 
-                  <button type="submit" style={styles.submitButton}>Submit</button>
+                  <button type="submit" disabled={isLoading} style={styles.submitButton}>
+  {isLoading ? "Submitting..." : "Submit"}
+</button>
                 </form>
               </div>
             </div>

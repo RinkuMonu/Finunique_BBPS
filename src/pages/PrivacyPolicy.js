@@ -218,13 +218,28 @@ const PRIVACY_SECTIONS = [
 export default function PrivacyPolicy() {
   const [isMobile, setIsMobile] = useState(false);
   const [activeKey, setActiveKey] = useState("0");
+const sectionRefs = React.useRef([]);
  const {seo} = useUser()
+   if (sectionRefs.current.length !== PRIVACY_SECTIONS.length) {
+    sectionRefs.current = Array(PRIVACY_SECTIONS.length)
+      .fill()
+      .map((_, i) => sectionRefs.current[i] || React.createRef());
+  }
+
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 992);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+ React.useEffect(() => {
+    if (!isMobile && sectionRefs.current[activeKey]) {
+      sectionRefs.current[activeKey].current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [activeKey, isMobile]);
 
   // Color palette
   const colors = {
@@ -437,12 +452,13 @@ export default function PrivacyPolicy() {
                           ))}
                         </Nav>
                       </Col>
-                      <Col md={8}>
+                      <Col md={8} >
                         <Tab.Content>
                           {PRIVACY_SECTIONS.map((item, index) => (
                             <Tab.Pane
                               key={item.key}
                               eventKey={index.toString()}
+                              ref={sectionRefs.current[index]}
                             >
                               <div
                                 style={{

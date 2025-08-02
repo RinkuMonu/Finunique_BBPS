@@ -17,6 +17,7 @@ import {
 import privacyImg from "../Assets/images/terms.png";
 import SEO from "../components/SEO/SEO";
 import { useUser } from "../context/UserContext";
+import { Link } from "react-router-dom";
 
 export default function Term() {
   const {seo} = useUser()
@@ -73,7 +74,8 @@ export default function Term() {
           <div className="row justify-content-center mb-5">
             <div className="col-lg-10 text-center">
               <h1 className="display-5 fw-bold text-warning-emphasis mb-3">
-                <FaGavel className="me-2" /> Terms & Conditions
+                {/* <FaGavel className="me-2" />  */}
+                Terms & Conditions
               </h1>
               <p className="lead text-muted">
                 Please read these terms carefully before using our services
@@ -291,7 +293,8 @@ export default function Term() {
                   {/* 5. Account Registration and Access */}
                   <div className="mb-5">
                     <h3 className="fw-bold text-warning-emphasis mb-4 d-flex align-items-center">
-                      <FaLock className="me-3" /> 5. Account Registration and
+                      {/* <FaLock className="me-3" />  */}
+                      5. Account Registration and
                       Access
                     </h3>
                     <p className="mb-3">
@@ -299,7 +302,7 @@ export default function Term() {
                     </p>
                     <div className="steps">
                       <div className="step mb-3">
-                        <div className="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center me-3">
+                        <div className="step-number   rounded-circle d-inline-flex align-items-center justify-content-center me-3">
                           1
                         </div>
                         <span>
@@ -308,7 +311,7 @@ export default function Term() {
                         </span>
                       </div>
                       <div className="step mb-3">
-                        <div className="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center me-3">
+                        <div className="step-number   rounded-circle d-inline-flex align-items-center justify-content-center me-3">
                           2
                         </div>
                         <span>
@@ -317,7 +320,7 @@ export default function Term() {
                         </span>
                       </div>
                       <div className="step mb-3">
-                        <div className="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center me-3">
+                        <div className="step-number   rounded-circle d-inline-flex align-items-center justify-content-center me-3">
                           3
                         </div>
                         <span>
@@ -336,7 +339,8 @@ export default function Term() {
                   {/* 6. Service Usage Terms */}
                   <div className="mb-5">
                     <h3 className="fw-bold text-warning-emphasis mb-4 d-flex align-items-center">
-                      <FaHandshake className="me-3" /> 6. Service Usage Terms
+                      {/* <FaHandshake className="me-3" /> */}
+                       6. Service Usage Terms
                     </h3>
                     <p className="mb-4">
                       Our BBPS utility services are governed by RBI, NPCI, and
@@ -406,7 +410,8 @@ export default function Term() {
                   {/* 7. Fees, Payments, and Billing */}
                   <div className="mb-5">
                     <h3 className="fw-bold text-warning-emphasis mb-4 d-flex align-items-center">
-                      <FaMoneyBillWave className="me-3" /> 7. Fees, Payments,
+                      {/* <FaMoneyBillWave className="me-3" /> */}
+                       7. Fees, Payments,
                       and Billing
                     </h3>
 
@@ -478,7 +483,8 @@ export default function Term() {
                   {/* 8. Refund and Cancellation Reference */}
                   <div className="mb-5">
                     <h3 className="fw-bold text-warning-emphasis mb-4 d-flex align-items-center">
-                      <FaBan className="me-3" /> 8. Refund and Cancellation
+                      {/* <FaBan className="me-3" />  */}
+                      8. Refund and Cancellation
                       Reference
                     </h3>
                     <p className="mb-4">
@@ -558,7 +564,8 @@ export default function Term() {
                   {/* 9. Intellectual Property Rights */}
                   <div className="mb-5">
                     <h3 className="fw-bold text-warning-emphasis mb-4 d-flex align-items-center">
-                      <FaExclamationTriangle className="me-3" /> 9. Intellectual
+                      {/* <FaExclamationTriangle className="me-3" />  */}
+                      9. Intellectual
                       Property Rights
                     </h3>
 
@@ -672,7 +679,8 @@ export default function Term() {
                   {/* 10. Privacy Policy Reference */}
                   <div className="mb-5">
                     <h3 className="fw-bold text-warning-emphasis mb-4 d-flex align-items-center">
-                      <FaLock className="me-3" /> 10. Privacy Policy Reference
+                      {/* <FaLock className="me-3" /> */}
+                       10. Privacy Policy Reference
                     </h3>
                     <p className="mb-3">
                       ABDKS is committed to protecting user data in compliance
@@ -712,7 +720,7 @@ export default function Term() {
                   {/* Contact Information */}
                   <div className="mt-5 pt-4 border-top">
                     <h3 className="fw-bold text-warning-emphasis mb-4">
-                      20. Contact Information
+                      11. Contact Information
                     </h3>
                     <div className="row">
                       <div className="col-md-6">
@@ -751,7 +759,7 @@ export default function Term() {
                                 <strong>Registered Office:</strong> Plot No 97, Dakshinpuri - I, Shrikishan, Sanganer, Jagatpura, Jaipur Rajasthan, India, 302017
                               </li>
                               <li>
-                                <strong>Website:</strong> www.abdks.in
+                                <strong>Website:</strong>  <Link to="https://www.abdks.com/">www.abdks.com</Link>
                               </li>
                             </ul>
                           </div>

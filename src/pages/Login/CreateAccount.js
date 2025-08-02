@@ -109,6 +109,7 @@ const MobileVerification = ({ onVerified }) => {
                   type="tel"
                   value={mobile}
                   onChange={(e) => setMobile(e.target.value.replace(/\D/g, ""))}
+                  required={true}
                   placeholder="Enter 10-digit mobile number"
                   maxLength={10}
                   className="py-2"
@@ -137,6 +138,7 @@ const MobileVerification = ({ onVerified }) => {
                         setOtp(e.target.value.replace(/\D/g, ""))
                       }
                       placeholder="Enter 6-digit OTP"
+                        required={true}
                       maxLength={6}
                       className="py-2"
                     />

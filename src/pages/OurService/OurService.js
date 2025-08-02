@@ -84,27 +84,27 @@ function OurService() {
         className="hero-section text-white"
         // style={{ background: "linear-gradient(135deg, #ffb300, #ff6f00)" }}
       >
-        <div className="container py-5 d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
+        <div className="container py-5 d-flex flex-column flex-lg-row align-items-center  justify-content-between gap-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="flex-fill"
           >
-            <h1 className="display-5 text-black fw-bold mb-3">
-              Driving India's Digital Future with <span className="text-warning">BBPS Innovation</span>
+            <h1 className=" text-black fw-bold mb-3 hero-headline">
+              Driving India's Digital Future with <span className="highlight">BBPS Innovation</span>
             </h1>
             <p className="lead text-black mb-4">
               One platform for mobile recharges, bill payments, and card transactions — all powered securely by BBPS.
             </p>
             <div className="d-flex gap-3 flex-wrap">
               <Link to="/billpayment">
-                <button className="btn btn-light btn-md text-dark fw-semibold">
+                <button className="btn btn-primary btn-md text-dark fw-semibold">
                   Explore BBPS Services <FiArrowRight className="ms-1" />
                 </button>
               </Link>
-              <Link to="/createaccount?role=Retailer">
-                <button className="btn btn-outline-light border text-black btn-md fw-semibold">Join as Retailer</button>
+              <Link to="/createaccount?role=Retailer"
+                className="btn border-radius btn-outline-secondary cta-secondary">Join as Retailer
               </Link>
             </div>
           </motion.div>

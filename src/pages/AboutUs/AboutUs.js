@@ -24,7 +24,7 @@ import Testinomials from "../../components/Testinomials/Testinomials";
 const AboutUs = () => {
     const storyItems = [
     {
-      content: "In 2024, fintech innovators Mr. Dinesh Kumar and Mr. Amit Balotia founded ABDKS Solutions Private Limited. with a bold mission: to simplify and scale BBPS-smooth digital financial services across India.",
+      content: "In 2024, fintech innovators Mr. Dinesh Kumar and Mr. Amit Balotiya founded ABDKS Solutions Private Limited. with a bold mission: to simplify and scale BBPS-smooth digital financial services across India.",
       icon: "bi bi-lightbulb"
     },
     {
@@ -199,7 +199,7 @@ const AboutUs = () => {
                     <img
                       src={vision}
                       alt="Vision"
-                      className="img-fluid me-3"
+                      className="img-fluid me-1"
                       style={{ width: "50px" }}
                     />
                   </div>
@@ -288,7 +288,7 @@ const AboutUs = () => {
                    <img
                       src={value}
                       alt="Values"
-                      className="img-fluid me-3"
+                      className="img-fluid me-1"
                       style={{ width: "40px" }}
                     />
                   </div>
