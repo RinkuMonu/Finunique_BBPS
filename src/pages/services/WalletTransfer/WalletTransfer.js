@@ -418,7 +418,7 @@ const WalletTransfer = () => {
           </Row>
 
           {/* CTA Section */}
-          <Row className="mt-5 text-center">
+          <Row className="my-5 text-center">
             <Col>
               <div className="d-flex flex-column flex-md-row justify-content-center gap-3">
                 <Button
@@ -434,7 +434,7 @@ const WalletTransfer = () => {
                   Login to Transfer Wallet Funds
                 </Button>
               <button
-                  className="btn btn-outline-warning btn-lg mt-auto fw-semibold"
+                  className="btn btn-outline-warning btn-lg mt-auto fw-semibold border-radius"
                   onClick={() => navigate("/createaccount?role=Distributor")}
                 >
                   Become a Distributor

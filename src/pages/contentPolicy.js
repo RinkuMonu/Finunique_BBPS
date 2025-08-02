@@ -7,6 +7,7 @@ import {
 import privacyImg from "../Assets/images/terms.png";
 import SEO from "../components/SEO/SEO";
 import { useUser } from "../context/UserContext";
+import { Link } from "react-router-dom";
 
 export default function ContentPolicy() {
   const {seo} = useUser()
@@ -65,7 +66,8 @@ export default function ContentPolicy() {
           <div className="row justify-content-center mb-5">
             <div className="col-lg-10 text-center">
               <h1 className="display-5 fw-bold text-warning-emphasis mb-3">
-                <FaGavel className="me-2" /> Content Policy
+                {/* <FaGavel className="me-2" />  */}
+                Content Policy
               </h1>
               <p className="lead text-muted">
                 Guidelines for content submission and usage on ABDKS platforms
@@ -437,7 +439,7 @@ export default function ContentPolicy() {
                     <div className="card bg-light mb-4">
                       <div className="card-body">
                         <p className="mb-2">
-                          <strong>Mr. Dinesh Kumar</strong>
+                          <strong>Mr. Dinesh Kumar and Mr.Amit Balotiya</strong>
                         </p>
                         <p className="mb-2">
                           Grievance Officer – ABDKS Solutions Private Limited
@@ -485,7 +487,7 @@ export default function ContentPolicy() {
                     </div>
                     <div className="text-center mt-4">
                       <h5>ABDKS Solutions Private Limited</h5>
-                      <p>Website: www.abdks.com</p>
+                      <p>Website: <Link to="https://www.abdks.com/">www.abdks.com</Link></p>
                     </div>
                   </div>
                 </div>

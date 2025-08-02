@@ -220,6 +220,7 @@ const MobileRechargeUI2 = () => {
                     value={formData.mobileNumber}
                     onChange={handleChange}
                     onBlur={handleNumberBlur}
+                    required={true}
                     isInvalid={!!errors.mobileNumber}
                     maxLength={10}
                   />
@@ -237,6 +238,7 @@ const MobileRechargeUI2 = () => {
                     value={formData.operator}
                     onChange={handleChange}
                     disabled={isFetchingDetails}
+                    required={true}
                   >
                     <option value="">Select Operator</option>
                     {rechargeOperators.map((op) => (
@@ -253,6 +255,7 @@ const MobileRechargeUI2 = () => {
                     value={formData.circle}
                     onChange={handleChange}
                     disabled={isFetchingDetails}
+                    required={true}
                   >
                     <option value="">Select Circle</option>
                     {circles.map((c) => (
@@ -272,6 +275,7 @@ const MobileRechargeUI2 = () => {
                       value={formData.amount}
                       onChange={handleChange}
                       isInvalid={!!errors.amount}
+                      required={true}
                     />
                     <button
                       className="btn btn-outline-secondary"

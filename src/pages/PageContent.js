@@ -41,9 +41,9 @@ function PageContent() {
               {/* Content Column */}
               <div className="col-lg-6">
                 <div className="ps-lg-4">
-                  <span className="badge bg-ffb200-10 text-ffb200-800 rounded-pill px-3 py-2 mb-3 d-inline-block">
+                  {/* <span className="badge bg-ffb200-10 text-ffb200-800 rounded-pill px-3 py-2 mb-3 d-inline-block">
                     About Us
-                  </span>
+                  </span> */}
                   <h2 className="display-5 fw-bold mb-4">
                     Fast <span className="text-ffb200">BBPS</span> Recharge Solutions<br />
                     for Your <span className="text-dark">Digital Business</span>

@@ -59,7 +59,7 @@ const FAQMoneyTransfer = () => {
       title: "How to Send Money Online via ABDKS",
       body: (
         <>
-          <ol>
+          <ul>
             <li>Log in to your ABDKS dashboard or mobile app</li>
             <li>Navigate to Money Transfer / DMT section</li>
             <li>Enter the recipient’s name, bank account number, and IFSC code</li>
@@ -67,7 +67,7 @@ const FAQMoneyTransfer = () => {
             <li>Choose your preferred transfer method: IMPS, NEFT, or UPI</li>
             <li>Confirm payment using your ABDKS wallet balance or linked payment method</li>
             <li>Receive instant confirmation and transaction ID</li>
-          </ol>
+          </ul>
         </>
       ),
     },

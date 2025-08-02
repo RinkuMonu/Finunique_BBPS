@@ -1,16 +1,30 @@
 
 /* ---- 5. Testimonial Section ---- */
-.testimonial-section {
-    
+/* Default for large screens */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
+
+/* Medium screens (e.g., tablets) */
+@media (max-width: 1024px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens (e.g., mobiles) */
+@media (max-width: 640px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .testimonial-section .section-header p {
     color: var(--light-text);
 }
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
+
 .testimonial-card {
     background-color: var(--white-color);
     padding: 30px;

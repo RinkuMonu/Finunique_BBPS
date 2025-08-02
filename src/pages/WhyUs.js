@@ -23,7 +23,7 @@ const WhyUs = () => {
 
   const features = [
     {
-      icon: <FiPieChart />,
+      icon: <FiPieChart className=""/>,
       title: "Comprehensive Service Suite",
       desc: "One platform for BBPS billers, recharge, credit card payments, micro ATM & more.",
     },
@@ -77,18 +77,18 @@ const WhyUs = () => {
             transition={{ duration: 0.7 }}
             className="flex-fill"
           >
-            <h1 className="display-5 fw-bold mb-3">
-              India's Most Trusted <span className="text-warning">BBPS Platform</span>
+            <h1 className="display-5 fw-bold mb-3 hero-heading">
+              India's Most Trusted <span className="highlight">BBPS Platform</span>
             </h1>
             <p className="lead text-black mb-4">
               Recharge mobile, DTH & pay all your bills in one secure, scalable platform.
             </p>
             <div className="d-flex gap-3 flex-wrap">
               <Link to="/createaccount">
-                <button className="btn btn-warning btn-md px-3">Get Started</button>
+                <button className="btn btn-primary cta-main">Get Started</button>
               </Link>
-              <Link to="/ContactUs">
-                <button className="btn btn-outline-light border text-black btn-md px-3">Learn More</button>
+              <Link to="/AboutUs">
+                <button className="btn border-radius btn-outline-secondary  cta-secondary">Learn More</button>
               </Link>
             </div>
           </motion.div>
@@ -133,7 +133,7 @@ const WhyUs = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="feature-icon-container">
+                <div className="feature-icon-container accordion-icon">
                   {feature.icon}
                 </div>
                 <span  className="highlight fs-5 fw-bold">{feature.title}</span>
@@ -229,7 +229,7 @@ const WhyUs = () => {
     <div className="d-md-flex gap-3 justify-content-center">
       <Link
         to="/createaccount"
-        className="btn btn-premium btn-lg px-5 py-3 fw-bold shadow-hover"
+        className="btn btn-premium btn-lg px-5 py-3 fw-bold shadow-hover border-radius"
       >
         <span className="btn-content">
           Become a BBPS Partner
@@ -238,11 +238,11 @@ const WhyUs = () => {
       </Link>
       <Link
         to="/ContactUs"
-        className="btn btn-premium-outline btn-lg px-5 py-3 fw-bold shadow-hover"
+        className="btn border-radius btn-outline-secondary d-flex align-items-center cta-secondary"
       >
-        <span className="btn-content">
+        
           Contact Our Team
-        </span>
+       
       </Link>
     </div>
   </div>

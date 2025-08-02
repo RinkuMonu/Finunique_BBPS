@@ -50,7 +50,7 @@ const Home = () => {
                 </button>
                 <Link
                 to="/createaccount?role=Retailer"
-                  className="btn btn-outline-secondary cta-secondary"
+                  className="btn border-radius btn-outline-secondary  cta-secondary"
                   
                 >
                   Be a BBPS Retail Partner
