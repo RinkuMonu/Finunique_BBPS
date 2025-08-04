@@ -142,6 +142,7 @@ const MobileRechargeUI = () => {
                         id="prepaid"
                         label="Prepaid"
                         value="Prepaid"
+                        required={true}
                         checked={formData.connectionType === "Prepaid"}
                         onChange={handleRadioChange}
                         inline
@@ -151,6 +152,7 @@ const MobileRechargeUI = () => {
                         id="postpaid"
                         label="Postpaid"
                         value="Postpaid"
+                        required={true}
                         checked={formData.connectionType === "Postpaid"}
                         onChange={handleRadioChange}
                         inline
@@ -174,6 +176,7 @@ const MobileRechargeUI = () => {
                   <Form.Select
                     value={formData.operator}
                     onChange={handleChange}
+                    required={true}
                   >
                     <option value="">Select Operator</option>
                     <option value="1">Airtel</option>
@@ -183,7 +186,7 @@ const MobileRechargeUI = () => {
 
                 <Form.Group className="mb-3" controlId="circle">
                   <Form.Label>Circle</Form.Label>
-                  <Form.Select value={formData.circle} onChange={handleChange}>
+                  <Form.Select value={formData.circle} onChange={handleChange} required={true}>
                     <option value="">Select Circle</option>
                     <option value="Mumbai">Mumbai</option>
                     <option value="Delhi">Delhi</option>
@@ -198,6 +201,7 @@ const MobileRechargeUI = () => {
                       placeholder="₹ Amount"
                       value={formData.amount}
                       onChange={handleChange}
+                      required={true}
                     />
                     {formData.connectionType !== "Postpaid" && (
                       <button

@@ -3,16 +3,32 @@ import { Link } from "react-router-dom";
 
 
 export default function AddMoney({ setIsOpen }) {
- 
     const [amount, setAmount] = useState("");
+const [error, setError] = useState("");
+
 
     const closeModal = () => setIsOpen(false);
 
     const handleAmountClick = (value) => {
-        setAmount(value); 
+         setAmount(value.toString());
+    setError("");
     };
+    const handleChange = (e) => {
+    const value = e.target.value;
+    setAmount(value);
+    const errorMsg = validateAmount(value);
+    setError(errorMsg);
+};
 
-   
+
+   const validateAmount = (value) => {
+    if (!value) return "Amount is required.";
+    if (!/^\d+$/.test(value)) return "Only digits are allowed.";
+    const num = parseInt(value, 10);
+    if (num < 10) return "Minimum amount is ₹10.";
+    if (num > 50000) return "Maximum amount is ₹50,000.";
+    return "";
+};
 
     return (
         <>
@@ -50,14 +66,16 @@ export default function AddMoney({ setIsOpen }) {
                                     <form>
                                         <div className="mb-3">
                                             <label htmlFor="amount" className="form-label">Amount</label>
-                                            <input 
-                                                type="tel" 
-                                                className="form-control" 
-                                                id="amount" 
-                                                placeholder="₹ Enter Amount" 
-                                                value={amount} 
-                                                onChange={(e) => setAmount(e.target.value)} 
-                                            />
+                                          <input
+    type="tel"
+    className={`form-control ${error ? "is-invalid" : ""}`}
+    id="amount"
+    placeholder="₹ Enter Amount"
+    value={amount}
+    onChange={handleChange}
+/>
+{error && <div className="invalid-feedback">{error}</div>}
+
                                         </div>
                                         <div className="money_btns">
                                             <button type="button" className="btn directaddmoney me-3" onClick={() => handleAmountClick(100)}>100+</button>
@@ -65,13 +83,13 @@ export default function AddMoney({ setIsOpen }) {
                                             <button type="button" className="btn directaddmoney" onClick={() => handleAmountClick(1000)}>1000+</button>
                                         </div>
                                         {/* Pass the amount to the PaymentCheck page */}
-                                        <Link 
-                                            to={`/paymentcheck/${amount}`}
-                                            className="btn btn-primary d-block mt-4 w-100"
-                                           
-                                        >
-                                            Continue
-                                        </Link>
+                                        <Link
+    to={error || !amount ? "#" : `/paymentcheck/${amount}`}
+    className={`btn btn-primary d-block mt-4 w-100 ${error || !amount ? "disabled" : ""}`}
+>
+    Continue
+</Link>
+
                                     </form>
                                 </div>
                             </section>

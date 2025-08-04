@@ -91,9 +91,9 @@ const BugBountyProgram = () => {
                 Individuals who have responsibly disclosed high severity vulnerabilities:
               </p>
               <Row>
-                {['Dinesh Vicky', 'Nitin Goplani', 'Ravi Parmar', 'Ankki Giri', 'President Sharma', 
-                  'Jigar Thakkar', 'Gopinath Kandasamy', 'Heath Jaiswal', 'Kapil Soni', 'Smit Shah', 
-                  'Diasani Sharma', 'Srihari Amudala', 'Tanya Bhardwaj'].map((name, index) => (
+                {['Dinesh Kumar', 'Amit Balotiya', 'Rahul Prajapat', 'Deepak Sharma', 'Kamlesh Meel', 
+                  'Rajan Pandey', 'Munesh Kumari', 'Akash Singh', 'Vijay Gupta', 'Adarsh Patel', 
+                  'Rajyvardhan Singh', 'Nandini Lodha', 'Rekha Kirad'].map((name, index) => (
                   <Col md={4} key={index} className="mb-3">
                     <div className="d-flex align-items-center">
                       <i className="bi bi-shield-shaded custom-color-icon me-2"></i>

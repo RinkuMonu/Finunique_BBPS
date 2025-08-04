@@ -131,7 +131,7 @@ const Municipality1 = ({
 
   return (
     <>
-      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
+     <div className="p-5 hero-section" >
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">

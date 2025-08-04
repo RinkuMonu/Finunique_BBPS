@@ -10,23 +10,55 @@ const LeadFormPopup = () => {
     phone: "",
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    phone: "",
+  });
+
   const closePopup = () => setIsOpen(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+
+    if (name === "name") {
+      if (/^[a-zA-Z\s]*$/.test(value)) {
+        setFormData((prev) => ({ ...prev, name: value }));
+        setErrors((prev) => ({ ...prev, name: "" }));
+      } else {
+        setErrors((prev) => ({ ...prev, name: "Only letters and spaces allowed" }));
+      }
+    } else if (name === "phone") {
+      if (/^\d{0,10}$/.test(value)) {
+        setFormData((prev) => ({ ...prev, phone: value }));
+        setErrors((prev) => ({ ...prev, phone: "" }));
+      } else {
+        setErrors((prev) => ({ ...prev, phone: "Phone must be numeric and 10 digits max" }));
+      }
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const { name, email, phone } = formData;
+
+    // Final validation before API call
+    if (!/^[a-zA-Z\s]+$/.test(name)) {
+      setErrors((prev) => ({ ...prev, name: "Please enter a valid name" }));
+      return;
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+      setErrors((prev) => ({ ...prev, phone: "Phone must be exactly 10 digits" }));
+      return;
+    }
+
     const payload = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
+      name,
+      email,
+      phone,
       message: "This Leads from ABDKS",
       service: "N/A",
       website_id: 5,
@@ -43,7 +75,6 @@ const LeadFormPopup = () => {
       });
 
       const result = await response.json();
-      console.log("API Response:", result);
 
       if (response.ok) {
         Swal.fire({
@@ -51,23 +82,20 @@ const LeadFormPopup = () => {
           title: "Thank You!",
           text: "Your details have been submitted successfully.",
           customClass: {
-            popup: "custom-swal-popup"
-          }
+            popup: "custom-swal-popup",
+          },
         });
         closePopup();
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-        })
+        setFormData({ name: "", email: "", phone: "" });
+        setErrors({ name: "", phone: "" });
       } else {
         Swal.fire({
           icon: "error",
           title: "Oops...",
           text: result?.message || "Something went wrong. Please try again.",
           customClass: {
-            popup: "custom-swal-popup"
-          }
+            popup: "custom-swal-popup",
+          },
         });
       }
     } catch (error) {
@@ -77,12 +105,11 @@ const LeadFormPopup = () => {
         title: "Error",
         text: "Failed to submit form. Please try again later.",
         customClass: {
-          popup: "custom-swal-popup"
-        }
+          popup: "custom-swal-popup",
+        },
       });
     }
   };
-
 
   return (
     <div>
@@ -111,10 +138,9 @@ const LeadFormPopup = () => {
                 </p>
 
                 <form onSubmit={handleSubmit} style={styles.form}>
+                  {/* Name */}
                   <div style={styles.inputGroup}>
-                    <label htmlFor="name" style={styles.label}>
-                      Name
-                    </label>
+                    <label htmlFor="name" style={styles.label}>Name</label>
                     <input
                       type="text"
                       id="name"
@@ -125,12 +151,16 @@ const LeadFormPopup = () => {
                       value={formData.name}
                       onChange={handleChange}
                     />
+                    {errors.name && (
+                      <span style={{ color: "red", fontSize: "12px", minHeight: "16px" }}>{errors.name}</span>
+                    )}
+                    {!errors.name && <div style={{ minHeight: "16px" }}></div>}
+
                   </div>
 
+                  {/* Email */}
                   <div style={styles.inputGroup}>
-                    <label htmlFor="email" style={styles.label}>
-                      Email
-                    </label>
+                    <label htmlFor="email" style={styles.label}>Email</label>
                     <input
                       type="email"
                       id="email"
@@ -143,10 +173,9 @@ const LeadFormPopup = () => {
                     />
                   </div>
 
+                  {/* Phone */}
                   <div style={styles.inputGroup}>
-                    <label htmlFor="phone" style={styles.label}>
-                      Phone 
-                    </label>
+                    <label htmlFor="phone" style={styles.label}>Phone</label>
                     <input
                       type="tel"
                       id="phone"
@@ -157,17 +186,15 @@ const LeadFormPopup = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       maxLength={10}
-                      onKeyPress={(e) => {
-                        if (!/[0-9]/.test(e.key)) {
-                          e.preventDefault();
-                        }
-                      }}
                     />
+                    {errors.phone && (
+                      <span style={{ color: "red", fontSize: "12px", minHeight: "16px" }}>{errors.phone}</span>
+                    )}
+                    {!errors.phone && <div style={{ minHeight: "16px" }}></div>}
                   </div>
 
-
                   <button type="submit" style={styles.submitButton}>
-                    Submit
+                    "Submit"
                   </button>
                 </form>
               </div>
@@ -178,32 +205,9 @@ const LeadFormPopup = () => {
     </div>
   );
 };
-<style>
-  {`
-    .custom-swal-popup {
-      z-index: 10001 !important;
-    }
-  `}
-</style>
-const styles = {
-  openButton: {
-    padding: "12px 24px",
-    backgroundColor: "#4CAF50",
-    color: "white",
-    border: "none",
-    borderRadius: "4px",
-    cursor: "pointer",
-    fontSize: "16px",
-    fontWeight: "600",
-    boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
-    transition: "all 0.3s ease",
-    ":hover": {
-      backgroundColor: "#45a049",
-      transform: "translateY(-2px)",
-      boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-    },
-  },
 
+// Custom styles
+const styles = {
   overlay: {
     position: "fixed",
     top: 0,
@@ -229,6 +233,7 @@ const styles = {
   popupContent: {
     display: "flex",
     flexDirection: "row",
+    minHeight: "500px",
   },
   imageContainer: {
     flex: 1,
@@ -244,6 +249,8 @@ const styles = {
     flex: 1,
     padding: "40px",
     position: "relative",
+    overflowY: "auto",
+    maxHeight: "90vh",
   },
   closeBtn: {
     position: "absolute",
@@ -255,9 +262,6 @@ const styles = {
     cursor: "pointer",
     color: "#888",
     padding: "5px",
-    ":hover": {
-      color: "#333",
-    },
   },
   title: {
     color: "#333",
@@ -278,25 +282,18 @@ const styles = {
   inputGroup: {
     display: "flex",
     flexDirection: "column",
-    gap: "5px",
+    gap: "3px",
   },
   label: {
     fontSize: "14px",
     color: "#555",
     fontWeight: "500",
   },
-
   input: {
     padding: "12px 15px",
     borderRadius: "6px",
     border: "1px solid #ddd",
     fontSize: "14px",
-    transition: "all 0.3s",
-    ":focus": {
-      borderColor: "#6e8efb",
-      boxShadow: "0 0 0 3px rgba(110, 142, 251, 0.2)",
-      outline: "none",
-    },
   },
   submitButton: {
     padding: "14px",
@@ -309,10 +306,6 @@ const styles = {
     cursor: "pointer",
     transition: "all 0.3s",
     marginTop: "10px",
-    ":hover": {
-      backgroundColor: "#5a7df4",
-      transform: "translateY(-2px)",
-    },
   },
 };
 

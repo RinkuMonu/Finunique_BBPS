@@ -23,7 +23,7 @@ const WhyUs = () => {
 
   const features = [
     {
-      icon: <FiPieChart />,
+      icon: <FiPieChart className=""/>,
       title: "Comprehensive Service Suite",
       desc: "One platform for BBPS billers, recharge, credit card payments, micro ATM & more.",
     },
@@ -68,9 +68,8 @@ const WhyUs = () => {
         og_site_name={seo?.og_site_name}
         canonical_tag={seo?.canonical_tag}
       />
-
       {/* Hero Section */}
-      <section className="hero-section text-white">
+      <section className="hero-section">
         <div className="container py-5 d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -78,18 +77,18 @@ const WhyUs = () => {
             transition={{ duration: 0.7 }}
             className="flex-fill"
           >
-            <h1 className="display-5 fw-bold mb-3">
-              India's Most Trusted <span className="text-warning">BBPS Platform</span>
+            <h1 className="display-5 fw-bold mb-3 hero-heading">
+              India's Most Trusted <span className="highlight">BBPS Platform</span>
             </h1>
             <p className="lead text-black mb-4">
               Recharge mobile, DTH & pay all your bills in one secure, scalable platform.
             </p>
             <div className="d-flex gap-3 flex-wrap">
               <Link to="/createaccount">
-                <button className="btn btn-warning btn-md px-3">Get Started</button>
+                <button className="btn btn-primary cta-main">Get Started</button>
               </Link>
-              <Link to="/ContactUs">
-                <button className="btn btn-outline-light border text-black btn-md px-3">Learn More</button>
+              <Link to="/AboutUs">
+                <button className="btn border-radius btn-outline-secondary  cta-secondary">Learn More</button>
               </Link>
             </div>
           </motion.div>
@@ -105,38 +104,40 @@ const WhyUs = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-5 bg-light">
-        <div className="container text-center">
+      <section className="features-section">
+        <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="section-header"
           >
-            <span className="badge bg-warning text-dark mb-2">
+            <span className="badge">
               <FiAward className="me-2" /> Trusted Platform
             </span>
-            <h2 className="fw-bold mb-3">Why Choose ABDKS?</h2>
-            <p className="text-muted mb-4">
+            <h2>Why Choose ABDKS?</h2>
+            <p className="subtitle">
               Empowering India's digital finance ecosystem with reliable, secure, and scalable BBPS solutions.
             </p>
           </motion.div>
 
-          <div className="row mt-4 g-4">
+          <div className="features-grid">
             {features.map((feature, index) => (
               <motion.div
-                className="col-sm-6 col-lg-4"
+                className="feature-card"
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
               >
-                <div className="p-4 bg-white shadow-sm rounded h-100 d-flex flex-column align-items-center text-center">
-                  <div className="fs-2 text-primary mb-3">{feature.icon}</div>
-                  <h5 className="fw-bold mb-2">{feature.title}</h5>
-                  <p className="text-muted">{feature.desc}</p>
+                <div className="feature-icon-container accordion-icon">
+                  {feature.icon}
                 </div>
+                <span  className="highlight fs-5 fw-bold">{feature.title}</span>
+                <p>{feature.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -144,115 +145,108 @@ const WhyUs = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-5 text-white" style={{background: "linear-gradient(135deg, rgb(255, 179, 0), rgb(255 111 0 / 60%))" }}>
-        <div className="container">
-          <div className="row text-center g-4">
-            {[
-              { icon: <FiZap />, value: "10M+", label: "Transactions" },
-              { icon: <FiUser />, value: "50K+", label: "Retail Partners" },
-              { icon: <FiGlobe />, value: "500+", label: "Cities" },
-              { icon: <FiCheckCircle />, value: "99.9%", label: "Success Rate" },
-            ].map((stat, index) => (
-              <motion.div
-                className="col-6 col-md-3"
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="py-3">
-                  <div className="fs-1 mb-2">{stat.icon}</div>
-                  <h3 className="fw-bold text-black mb-1">{stat.value}</h3>
-                  <p className="mb-0">{stat.label}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+     <section className="stats-section">
+  <div className="container">
+    <div className="stats-grid">
+      {[
+        { icon: <FiZap className="stat-icon" />, value: "10M+", label: "Transactions" },
+        { icon: <FiUser className="stat-icon" />, value: "50K+", label: "Retail Partners" },
+        { icon: <FiGlobe className="stat-icon" />, value: "500+", label: "Cities" },
+        { icon: <FiCheckCircle className="stat-icon" />, value: "99.9%", label: "Success Rate" },
+      ].map((stat, index) => (
+        <motion.div
+          className="stat-card"
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="icon-wrapper">{stat.icon}</div>
+          <motion.h3 
+            initial={{ scale: 0.9 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.3, delay: 0.2 + index * 0.1 }}
+          >
+            {stat.value}
+          </motion.h3>
+          <p>{stat.label}</p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Commitment Section */}
-      <section className="py-5 bg-white">
-        <div className="container text-center">
+      <section className="commitment-section">
+        <div className="container">
           <motion.div
-            className="mx-auto"
-            style={{ maxWidth: 700 }}
+            className="commitment-content"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="fs-1 text-warning mb-3"><FiAward /></div>
-            <h3 className="fw-bold mb-3">Our Commitment to BBPS Excellence</h3>
-            <p className="text-muted mb-4">
-              Since 2024, ABDKS has been dedicated to democratizing access to BBPS-integrated services. With a focus on reliability, speed, and partner growth, we’re the preferred choice for both local retailers and national distributors.
+            <div className="commitment-icon">
+              <FiAward />
+            </div>
+            <h2>Our Commitment to BBPS Excellence</h2>
+            <p>
+              Since 2024, ABDKS has been dedicated to democratizing access to BBPS-integrated services. With a focus on reliability, speed, and partner growth, we're the preferred choice for both local retailers and national distributors.
             </p>
-            <div className="d-flex justify-content-center flex-wrap gap-2">
-              <span className="badge bg-light text-dark"><FiShield className="me-1" /> RBI Compliant</span>
-              <span className="badge bg-light text-dark"><FiCheckCircle className="me-1" /> BBPS Certified</span>
-              <span className="badge bg-light text-dark"><FiZap className="me-1" /> Fast Settlements</span>
+            <div className="badges-container">
+              <span className="badge"><FiShield className="me-1" /> RBI Compliant</span>
+              <span className="badge"><FiCheckCircle className="me-1" /> BBPS Certified</span>
+              <span className="badge"><FiZap className="me-1" /> Fast Settlements</span>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section
-  className="py-5 text-white"
-  style={{
-    background: "linear-gradient(135deg, rgb(255, 179, 0), rgb(255 111 0 / 60%))",
-  }}
->
-  <div className="container text-center">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-    >
-      <h2 className="fw-bold mb-3 text-black display-5">Join the ABDKS Network Today</h2>
-      <p className="lead mb-4" style={{ maxWidth: "700px", margin: "0 auto" }}>
-        Deliver secure, fast, and profitable financial services. Empower your customers with every transaction.
-      </p>
-      <div className="d-flex justify-content-center flex-wrap gap-3 mt-4">
-        <Link to="/createaccount">
-          <button
-            className="btn btn-light btn-md border-0 px-4 py-2"
-            style={{
-              color: "#ff6f00",
-              fontWeight: "600",
-              boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-              transition: "all 0.3s ease",
-            }}
-            onMouseOver={(e) => {
-              e.target.style.background = "#fff3cd";
-              e.target.style.color = "#ff6f00";
-            }}
-            onMouseOut={(e) => {
-              e.target.style.background = "#ffffff";
-              e.target.style.color = "#ff6f00";
-            }}
-          >
-            Become a BBPS Partner
-          </button>
-        </Link>
-        <Link to="/ContactUs">
-          <button
-            className="btn btn-outline-light btn-md px-4 py-2"
-            style={{
-              fontWeight: "600",
-              borderWidth: "2px",
-              transition: "all 0.3s ease",
-            }}
-          >
-            Contact Our Team
-          </button>
-        </Link>
-      </div>
-    </motion.div>
+<div className="cta-premium-banner py-5 position-relative overflow-hidden">
+  {/* Floating particles */}
+  <div className="particle particle-1"></div>
+  <div className="particle particle-2"></div>
+  <div className="particle particle-3"></div>
+
+  {/* Glow effect */}
+  <div className="cta-glow"></div>
+
+  {/* Main content */}
+  <div className="position-relative z-3 text-center px-3">
+    <h3 className="display-5 fw-bold mb-4 text-gradient">
+      Join the <span className="text-primary">ABDKS</span> Network Today
+    </h3>
+
+    <p className="lead mb-5 opacity-75">
+      Deliver secure, fast, and profitable financial services.<br />
+      Empower your customers with every transaction.
+    </p>
+
+    <div className="d-md-flex gap-3 justify-content-center">
+      <Link
+        to="/createaccount"
+        className="btn btn-premium btn-lg px-5 py-3 fw-bold shadow-hover border-radius"
+      >
+        <span className="btn-content">
+          Become a BBPS Partner
+        </span>
+        <span className="btn-glow"></span>
+      </Link>
+      <Link
+        to="/ContactUs"
+        className="btn border-radius btn-outline-secondary d-flex align-items-center cta-secondary"
+      >
+        
+          Contact Our Team
+       
+      </Link>
+    </div>
   </div>
-</section>
+</div>
 
     </>
   );
