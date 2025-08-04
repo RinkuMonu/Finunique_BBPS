@@ -187,15 +187,15 @@ const LeadFormPopup = () => {
                       onChange={handleChange}
                       maxLength={10}
                     />
-                     {errors.phone && (
+                    {errors.phone && (
                       <span style={{ color: "red", fontSize: "12px", minHeight: "16px" }}>{errors.phone}</span>
                     )}
                     {!errors.phone && <div style={{ minHeight: "16px" }}></div>}
                   </div>
 
-                  <button type="submit" disabled={isLoading} style={styles.submitButton}>
-  {isLoading ? "Submitting..." : "Submit"}
-</button>
+                  <button type="submit" style={styles.submitButton}>
+                    "Submit"
+                  </button>
                 </form>
               </div>
             </div>
