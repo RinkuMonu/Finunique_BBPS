@@ -281,7 +281,7 @@ export default function UserAccountCreation() {
                                 ...formData,
                                 mobile: e.target.value.replace(/\D/g, ""),
                               })
-                            }
+                            }g
                             placeholder="Enter 10-digit mobile number"
                             maxLength={10}
                             className="py-2"
