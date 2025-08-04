@@ -6,7 +6,7 @@ import { Container, Row, Col, Modal } from "react-bootstrap";
 import {
   FaMobileAlt,
   FaMoneyBillWave,
-  FaWifi,
+  FaWifi, 
   FaLightbulb,
   
   FaShieldAlt,

@@ -79,7 +79,7 @@ function History() {
                 ) : (
                   <table className="table tb-plain borderless">
                     <thead>
-                      <tr>
+                      <tr> 
                         <th className="fw-bold">Date</th>
                         <th className="fw-bold">Description</th>
                         <th className="fw-bold">Reference</th>
