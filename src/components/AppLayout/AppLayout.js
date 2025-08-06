@@ -12,7 +12,6 @@ const AppLayout = () => {
 
   const openPopup = () => setIsPopupOpen(true);
   const closePopup = () => setIsPopupOpen(false);
-
   return (
     <div>
       <Header/>
