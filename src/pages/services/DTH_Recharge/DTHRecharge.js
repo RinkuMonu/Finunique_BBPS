@@ -120,7 +120,7 @@ const DTHRecharge = () => {
         <Row>
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: " #001e50" }}>
-              DTH recharge services with ABDKS
+              DTH recharge services with Finunique
             </h2>
             <h3>
               Recharge your DTH connection instantly with our BBPS-compliant

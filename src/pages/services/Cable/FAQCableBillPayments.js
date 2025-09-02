@@ -21,10 +21,10 @@ const FAQCableBillPayment = () => {
       body: (
         <>
           <p>
-            With ABDKS Solutions Private Ltd., you can now pay your cable TV bills
+            With Finunique Small Private Limited., you can now pay your cable TV bills
             online in just a few simple steps. Whether you're paying for your
             home connection or helping a customer as a digital service retailer,
-            ABDKS ensures smooth, secure, and real-time bill payments.
+            Finunique ensures smooth, secure, and real-time bill payments.
           </p>
           <p>
             Avoid missed deadlines, late penalties, and long queues — make your
@@ -51,11 +51,11 @@ const FAQCableBillPayment = () => {
       ),
     },
     {
-      title: "How to Pay Cable Bills via ABDKS",
+      title: "How to Pay Cable Bills via Finunique",
       body: (
         <ol>
           <li>
-            Go to the Bill Payment section on the ABDKS website or mobile app
+            Go to the Bill Payment section on the Finunique website or mobile app
           </li>
           <li>Select Cable TV or Cable Bill from the service category</li>
           <li>Choose your Cable Operator from the dropdown list</li>
@@ -70,7 +70,7 @@ const FAQCableBillPayment = () => {
       ),
     },
     {
-      title: "Why Use ABDKS for Cable Bill Payment?",
+      title: "Why Use Finunique for Cable Bill Payment?",
       body: (
         <ul>
           <li>24x7 Availability – Pay anytime, anywhere</li>
@@ -96,7 +96,7 @@ const FAQCableBillPayment = () => {
           <li>Earn commissions on each successful cable bill payment</li>
           <li>Attract more footfall to your digital service point</li>
           <li>Get a dedicated dashboard with full transaction logs</li>
-          <li>Access 24x7 support from the ABDKS backend team</li>
+          <li>Access 24x7 support from the Finunique backend team</li>
         </ul>
       ),
     },
@@ -109,7 +109,7 @@ const FAQCableBillPayment = () => {
               Can I pay for any cable operator?
             </Accordion.Header>
             <Accordion.Body>
-              Yes, ABDKS supports a wide range of regional and national cable TV
+              Yes, Finunique supports a wide range of regional and national cable TV
               providers.
             </Accordion.Body>
           </Accordion.Item>
@@ -124,7 +124,7 @@ const FAQCableBillPayment = () => {
           </Accordion.Item>
           <Accordion.Item eventKey="2">
             <Accordion.Header>
-              Are there extra fees for paying a cable bill through ABDKS?
+              Are there extra fees for paying a cable bill through Finunique?
             </Accordion.Header>
             <Accordion.Body>
               No additional charges are applied for standard cable bill
@@ -147,7 +147,7 @@ const FAQCableBillPayment = () => {
       body: (
         <>
           <p>
-            Choose ABDKS to simplify your entertainment bill payments — quickly,
+            Choose Finunique to simplify your entertainment bill payments — quickly,
             securely, and without hassle.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">

@@ -82,7 +82,7 @@ export default function Term() {
               </p>
               <div className="border-top border-bottom py-3 my-4 bg-white shadow-sm">
                 <h5 className="text-warning mb-2">
-                  ABDKS Solutions Private Limited
+                  Finunique Small Private Limited
                 </h5>
                 <p className="text-muted mb-0">
                   <strong>Effective Date:</strong> 12 June 2025 |{" "}
@@ -103,7 +103,7 @@ export default function Term() {
                       <FaFileSignature className="me-3 " /> 1. Introduction
                     </h3>
                     <p className="mb-4">
-                      ABDKS Solutions Private Limited ("ABDKS," "we," "our," or
+                      Finunique Small Private Limited ("Finunique," "we," "our," or
                       "us") is a registered fintech company in India under the
                       Companies Act, 2013. We specialize in providing Bharat
                       Bill Payment System (BBPS) services and utility payment
@@ -142,7 +142,7 @@ export default function Term() {
                       We serve retailers, agents, partners, and businesses
                       offering bill payment services to end consumers. These
                       Terms and Conditions form a legally binding agreement
-                      governing the use of ABDKS's BBPS and utility services.
+                      governing the use of Finunique's BBPS and utility services.
                     </p>
                   </div>
 
@@ -152,7 +152,7 @@ export default function Term() {
                       <FaCheckCircle className="me-3" /> 2. Acceptance of Terms
                     </h3>
                     <p className="mb-3">
-                      By using any of ABDKS's BBPS or utility payment services,
+                      By using any of Finunique's BBPS or utility payment services,
                       whether through our dashboard, partner portal, or
                       integrated API, you agree to be legally bound by these
                       Terms and Conditions. This acceptance occurs when:
@@ -162,7 +162,7 @@ export default function Term() {
                         <span className="badge bg-warning text-dark me-2">
                           •
                         </span>{" "}
-                        You sign up for or access any ABDKS-powered bill payment
+                        You sign up for or access any Finunique-powered bill payment
                         interface.
                       </li>
                       <li className="mb-2">
@@ -211,7 +211,7 @@ export default function Term() {
                       <FaUserShield className="me-3" /> 3. Eligibility
                     </h3>
                     <p className="mb-3">
-                      To use ABDKS BBPS and utility services, users must:
+                      To use Finunique BBPS and utility services, users must:
                     </p>
                     <div className="alert alert-warning mb-4">
                       <ul className="mb-0">
@@ -282,7 +282,7 @@ export default function Term() {
                             commissions.
                           </li>
                           <li>
-                            Reselling or white-labeling ABDKS services without
+                            Reselling or white-labeling Finunique services without
                             prior agreement.
                           </li>
                         </ul>
@@ -298,7 +298,7 @@ export default function Term() {
                       Access
                     </h3>
                     <p className="mb-3">
-                      To offer or use bill payment services via ABDKS:
+                      To offer or use bill payment services via Finunique:
                     </p>
                     <div className="steps">
                       <div className="step mb-3">
@@ -325,7 +325,7 @@ export default function Term() {
                         </div>
                         <span>
                           Await activation confirmation post-verification by
-                          ABDKS team.
+                          Finunique team.
                         </span>
                       </div>
                     </div>
@@ -417,7 +417,7 @@ export default function Term() {
 
                     <h5 className="fw-bold mt-4">7.1 Fee Structure</h5>
                     <p className="mb-3">
-                      ABDKS operates on a transparent commission-based model.
+                      Finunique operates on a transparent commission-based model.
                       Retailers and partners may be charged service fees or
                       receive commissions based on:
                     </p>
@@ -439,7 +439,7 @@ export default function Term() {
                     <ul className="mb-4">
                       <li>
                         Retailers must maintain a wallet balance or pre-funded
-                        amount with ABDKS to initiate transactions.
+                        amount with Finunique to initiate transactions.
                       </li>
                       <li>
                         BBPS charges are automatically deducted at the time of
@@ -470,7 +470,7 @@ export default function Term() {
                     <h5 className="fw-bold mt-4">7.4 Pricing Changes</h5>
                     <ul>
                       <li>
-                        ABDKS may revise pricing with at least 7-day prior
+                        Finunique may revise pricing with at least 7-day prior
                         notice via email or portal alert.
                       </li>
                       <li>
@@ -488,7 +488,7 @@ export default function Term() {
                       Reference
                     </h3>
                     <p className="mb-4">
-                      ABDKS follows a customer-friendly and compliant refund and
+                      Finunique follows a customer-friendly and compliant refund and
                       cancellation process aligned with NPCI and RBI regulations
                       for BBPS operations.
                     </p>
@@ -531,8 +531,7 @@ export default function Term() {
                     <h5 className="fw-bold mt-4">8.3 Refund Process</h5>
                     <ul className="mb-4">
                       <li>
-                        Users must raise refund requests via support@abdks.in
-                        with transaction ID and supporting details.
+                        Users must raise refund requests via support@finuniques.in                        with transaction ID and supporting details.
                       </li>
                       <li>
                         Refunds will be reviewed and resolved within 7 business
@@ -574,9 +573,9 @@ export default function Term() {
                       All content, design elements, service architecture, APIs,
                       databases, software code, logos, trademarks, business
                       methods, and intellectual materials associated with the
-                      ABDKS platform (whether used on the web, mobile app, or
-                      partner portals) are the exclusive property of ABDKS
-                      Solutions Private Limited. This includes:
+                      Finunique platform (whether used on the web, mobile app, or
+                      partner portals) are the exclusive property of Finunique
+                      Small Private Limited. This includes:
                     </p>
                     <ul className="mb-4">
                       <li>
@@ -597,7 +596,7 @@ export default function Term() {
 
                     <h5 className="fw-bold mt-4">9.2 User License</h5>
                     <p className="mb-3">
-                      Upon successful registration and onboarding, ABDKS grants
+                      Upon successful registration and onboarding, Finunique grants
                       users a limited, non-exclusive, non-transferable,
                       revocable license to use its services solely for bill
                       payment facilitation and utility transaction processing
@@ -610,7 +609,7 @@ export default function Term() {
                       </li>
                       <li>
                         Is strictly for the duration of the user's active
-                        relationship with ABDKS
+                        relationship with Finunique
                       </li>
                       <li>
                         Is subject to termination upon policy violation or
@@ -623,14 +622,14 @@ export default function Term() {
                     <ul className="mb-4">
                       <li>
                         Copy, modify, decompile, or reverse-engineer any part of
-                        the ABDKS software or APIs
+                        the Finunique software or APIs
                       </li>
                       <li>
                         Use the brand name, trade names, or visual assets of
-                        ABDKS without authorization
+                        Finunique without authorization
                       </li>
                       <li>
-                        Claim ownership or authorship of any ABDKS service,
+                        Claim ownership or authorship of any Finunique service,
                         module, or data flow
                       </li>
                       <li>
@@ -650,7 +649,7 @@ export default function Term() {
                         BBPS switch, verification protocols) remains with NPCI
                       </li>
                       <li>
-                        ABDKS does not assert ownership over third-party brand
+                        Finunique does not assert ownership over third-party brand
                         logos or trademarks displayed for billers, which are
                         used strictly under fair usage for informational and
                         processing purposes
@@ -660,7 +659,7 @@ export default function Term() {
                     <h5 className="fw-bold mt-4">9.5 Infringement Reporting</h5>
                     <p className="mb-3">
                       If you believe that any content, code, or interface on the
-                      ABDKS platform violates your intellectual property rights
+                      Finunique platform violates your intellectual property rights
                       or has been copied without authorization, you may report
                       it in writing to legal@abdks.in with supporting documents.
                       We will investigate and respond within 14 business days.
@@ -683,7 +682,7 @@ export default function Term() {
                        10. Privacy Policy Reference
                     </h3>
                     <p className="mb-3">
-                      ABDKS is committed to protecting user data in compliance
+                      Finunique is committed to protecting user data in compliance
                       with the Information Technology Act, 2000, Indian data
                       protection laws, and (where applicable) GDPR standards.
                     </p>
@@ -709,10 +708,10 @@ export default function Term() {
                     <p>
                       View the full Privacy Policy at:{" "}
                       <a
-                        href="https://www.abdks.in/privacy-policy"
+                        href="https://www.finuniques.in/privacy-policy"
                         className="text-decoration-none"
                       >
-                        www.abdks.in/privacy-policy
+                        www.finuniques.in/privacy-policy
                       </a>
                     </p>
                   </div>
@@ -732,14 +731,11 @@ export default function Term() {
                             </h5>
                             <ul className="list-unstyled">
                               <li className="mb-2">
-                                <strong>Support:</strong> support@abdks.in
-                              </li>
+                                <strong>Support:</strong> support@finuniques.in                              </li>
                               <li className="mb-2">
-                                <strong>Grievance:</strong> grievance@abdks.in
-                              </li>
+                                <strong>Grievance:</strong> grievance@finuniques.in                              </li>
                               <li>
-                                <strong>Legal:</strong> legal@abdks.in
-                              </li>
+                                <strong>Legal:</strong> legal@finuniques.in                              </li>
                             </ul>
                           </div>
                         </div>
@@ -759,7 +755,7 @@ export default function Term() {
                                 <strong>Registered Office:</strong> Plot No 97, Dakshinpuri - I, Shrikishan, Sanganer, Jagatpura, Jaipur Rajasthan, India, 302017
                               </li>
                               <li>
-                                <strong>Website:</strong>  <Link to="https://www.abdks.com/">www.abdks.com</Link>
+                                <strong>Website:</strong>  <Link to="https://www.finuniques.in/">www.finuniques.in</Link>
                               </li>
                             </ul>
                           </div>
@@ -770,7 +766,7 @@ export default function Term() {
 
                   <div className="text-center mt-5 pt-3">
                     <p className="lead text-muted">
-                      Thank you for choosing ABDKS for your BBPS and utility
+                      Thank you for choosing Finunique for your BBPS and utility
                       payment needs.
                     </p>
                   </div>

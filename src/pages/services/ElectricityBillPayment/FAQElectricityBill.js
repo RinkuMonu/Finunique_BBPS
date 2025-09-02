@@ -17,15 +17,15 @@ const FAQElectricityBill = () => {
 
   const content = [
     {
-      title: "How to Pay Your Electricity Bill through ABDKS Online",
+      title: "How to Pay Your Electricity Bill through Finunique Online",
       body: (
         <>
           <p>
-            Forget queues! With ABDKS, you can easily pay your electricity bills online via a secure BBPS-integrated platform. Whether you are a customer or a retailer, ABDKS makes payments seamless across all major Indian states.
+            Forget queues! With Finunique, you can easily pay your electricity bills online via a secure BBPS-integrated platform. Whether you are a customer or a retailer, Finunique makes payments seamless across all major Indian states.
           </p>
           <p>Follow these steps:</p>
           <ol>
-            <li>Go to 'Recharge & Bill Payment' on ABDKS website/app.</li>
+            <li>Go to 'Recharge & Bill Payment' on Finunique website/app.</li>
             <li>Select 'Electricity'.</li>
             <li>Choose your electricity board.</li>
             <li>Enter your consumer number.</li>
@@ -37,10 +37,10 @@ const FAQElectricityBill = () => {
       ),
     },
     {
-      title: "Supported Electricity Boards on ABDKS BBPS",
+      title: "Supported Electricity Boards on Finunique BBPS",
       body: (
         <>
-          <p>ABDKS supports 25+ boards including:</p>
+          <p>Finunique supports 25+ boards including:</p>
           <ul>
             <li>JVVNL, AVVNL, JDVVNL (Rajasthan)</li>
             <li>BSES Rajdhani / Yamuna (Delhi)</li>
@@ -52,7 +52,7 @@ const FAQElectricityBill = () => {
       ),
     },
     {
-      title: "Why Choose ABDKS for Electricity Bill Payments?",
+      title: "Why Choose Finunique for Electricity Bill Payments?",
       body: (
         <ul>
           <li>BBPS-Compliant & secure</li>
@@ -97,7 +97,7 @@ const FAQElectricityBill = () => {
       title: "FAQs",
       body: (
         <ul>
-          <li><strong>How to check my bill?</strong> Select board, enter details & view instantly on ABDKS.</li>
+          <li><strong>How to check my bill?</strong> Select board, enter details & view instantly on Finunique.</li>
           <li><strong>Is it secure?</strong> Yes, fully RBI-authorized & BBPS-integrated.</li>
           <li><strong>When is payment updated?</strong> Instantly reflected with receipt.</li>
           <li><strong>What if payment fails?</strong> Amount auto-refunded; support always ready.</li>
@@ -106,7 +106,7 @@ const FAQElectricityBill = () => {
       ),
     },
     {
-      title: "Pay Smartly with ABDKS",
+      title: "Pay Smartly with Finunique",
       body: (
         <>
           <p>Enjoy a fast, secure, commission-free electricity bill payment experience nationwide.</p>

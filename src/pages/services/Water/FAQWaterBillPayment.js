@@ -21,7 +21,7 @@ const FAQWaterBillPayment = () => {
       body: (
         <>
           <p>
-            Abdks Solutions Private Ltd. provides a safe and efficient platform to
+            Finunique Small Private Limited. provides a safe and efficient platform to
             pay your water bills online. Whether it is for a residential or
             commercial connection, our digital bill payment solution helps you
             to avoid all from long queues, missed deadline and late penalty.
@@ -44,10 +44,10 @@ const FAQWaterBillPayment = () => {
       ),
     },
     {
-      title: "How to Pay Your Water Bill with ABDKS",
+      title: "How to Pay Your Water Bill with Finunique",
       body: (
         <ol>
-          <li>Visit the Bill Payment section on the ABDKS app or website</li>
+          <li>Visit the Bill Payment section on the Finunique app or website</li>
           <li>Select Water Bill as your service category</li>
           <li>Choose your city or water board</li>
           <li>Enter your consumer number / account ID</li>
@@ -87,9 +87,9 @@ const FAQWaterBillPayment = () => {
       body: (
         <Accordion flush>
           <Accordion.Item eventKey="0">
-            <Accordion.Header>Which water boards are supported on ABDKS?</Accordion.Header>
+            <Accordion.Header>Which water boards are supported on Finunique?</Accordion.Header>
             <Accordion.Body>
-              ABDKS supports Jal Boards and PHEDs in major cities and states including Delhi, Rajasthan, Karnataka, Telangana, Tamil Nadu, and more.
+              Finunique supports Jal Boards and PHEDs in major cities and states including Delhi, Rajasthan, Karnataka, Telangana, Tamil Nadu, and more.
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
@@ -114,11 +114,11 @@ const FAQWaterBillPayment = () => {
       ),
     },
     {
-      title: "Pay Water Bills Effortlessly with ABDKS",
+      title: "Pay Water Bills Effortlessly with Finunique",
       body: (
         <>
           <p>
-            Avoid late fees, save time, and pay securely with ABDKS — your trusted digital utility payment partner.
+            Avoid late fees, save time, and pay securely with Finunique — your trusted digital utility payment partner.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
             <Link to="/billpayment" className="btn btn-warning text-dark fw-semibold shadow-sm px-4">Pay Now</Link>

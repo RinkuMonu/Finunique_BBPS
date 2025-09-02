@@ -131,7 +131,7 @@ function OurService() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Empower India's Digital Transactions with <span className="text-warning">ABDKS</span>
+          Empower India's Digital Transactions with <span className="text-warning">Finunique</span>
         </motion.h2>
         <p className="lead text-muted mb-0">
           We offer a robust suite of BBPS-based and digital financial services to help retailers and customers transact securely, confidently, and seamlessly across India.

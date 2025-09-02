@@ -159,7 +159,7 @@ const PostpaidRecharge1 = ({
             <h2 className="fw-bold" style={{ color: "#002244" }}>
               Postpaid Mobile Recharge
             </h2>
-            <h3>Pay Your Postpaid Bills Instantly with ABDKS</h3>
+            <h3>Pay Your Postpaid Bills Instantly with Finunique</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Mobile Recharge.svg"

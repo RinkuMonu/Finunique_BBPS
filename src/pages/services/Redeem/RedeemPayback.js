@@ -48,11 +48,11 @@ const RedeemPayback = () => {
             The best reward for loyalty? Money.
         
           <span className="highlight">
-            Redeem Your Payback Points Instantly with ABDKS Solutions Private Ltd.
+            Redeem Your Payback Points Instantly with Finunique Small Private Limited.
           </span>  </h2>
           <p className="mt-3 fs-5 text-muted">
             Turn your unused PAYBACK points into real cash or discounts in
-            seconds. With ABDKS, loyalty truly pays off — securely, instantly,
+            seconds. With Finunique, loyalty truly pays off — securely, instantly,
             and effortlessly.
           </p>
           <div className="d-flex justify-content-center align-items-center">

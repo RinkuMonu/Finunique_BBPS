@@ -17,20 +17,20 @@ const FAQMobileRecharge = () => {
 
   const content = [
     {
-      title: "Quick, Safe, and Real-Time Recharge with ABDKS",
-      body: "Experience uninterrupted recharge on India's most reliable BBPS system. ABDKS offers secure, real-time recharges to support all major networks, anytime, anywhere.",
+      title: "Quick, Safe, and Real-Time Recharge with Finunique",
+      body: "Experience uninterrupted recharge on India's most reliable BBPS system. Finunique offers secure, real-time recharges to support all major networks, anytime, anywhere.",
     },
     {
       title: "Operators Supported Across India",
       body: "Recharge Jio, Airtel, VI, and BSNL — both prepaid and postpaid — all through one powerful BBPS interface.",
     },
     {
-      title: "How to Recharge with ABDKS",
+      title: "How to Recharge with Finunique",
       body: "Choose operator → Enter number → Pick plan or amount → Pay → Receive instant confirmation & receipt. Super easy!",
     },
     {
       title: "Why Choose Our Platform",
-      body: "Zero downtime, instant settlements, all payment modes, and mobile-friendly interface make ABDKS the perfect choice for retailers.",
+      body: "Zero downtime, instant settlements, all payment modes, and mobile-friendly interface make Finunique the perfect choice for retailers.",
     },
     {
       title: "Grow Your Business as a Retailer",
@@ -40,7 +40,7 @@ const FAQMobileRecharge = () => {
       title: "Start Your BBPS Journey",
       body: (
         <>
-          <p>Expand your business with ABDKS BBPS today. No hidden costs. High margins. Complete support.</p>
+          <p>Expand your business with Finunique BBPS today. No hidden costs. High margins. Complete support.</p>
           <div className="d-flex flex-wrap gap-3 mt-3">
             <Link to="#" className="btn px-4 btn-warning text-dark fw-semibold shadow-sm">
               Start Recharging

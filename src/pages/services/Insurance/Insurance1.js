@@ -210,7 +210,7 @@ const Insurance1 = ({
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
               Insurance Payment Solution
             </h2>
-            <h3>Pay Your Insurance Premiums Securely and On Time with ABDKS</h3>
+            <h3>Pay Your Insurance Premiums Securely and On Time with Finunique</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Insurance.svg"

@@ -114,10 +114,11 @@ function Footer() {
                 </div>
                 <div>
                   <a
-                    href={`mailto:${contactDetails?.email}`}
+                    href={`mailto:support@finuniques.in`}
                     className="text-white text-decoration-none small"
                   >
-                    {contactDetails?.email || "Loading email..."}
+                    {/* {contactDetails?.email || "Loading email..."} */}
+                    <span>support@finuniques.in</span>
                   </a>
                 </div>
               </ListGroupItem>
@@ -263,12 +264,12 @@ function Footer() {
 
           {/* Social Media */}
           <Col lg={4} md={6} className="mt-4">
-            <h5 className="text-uppercase fw-bold mb-4 text-white">ABDKS</h5>
+            <h5 className="text-uppercase fw-bold mb-4 text-white">Finunique</h5>
             <p>
               {" "}
-              ABDKS is authorized to provide essential utility services
+              Finunique is authorized to provide essential utility services
               including but not limited to electricity, water, gas, mobile
-              recharge, DTH, and other bill payments. ABDKS is also an
+              recharge, DTH, and other bill payments. Finunique is also an
               integrated service provider under the BBPS framework, offering
               secure, seamless, and interoperable bill payment
               solutions across India.
@@ -314,7 +315,7 @@ function Footer() {
           {/* Left Side: Copyright and Policy Links */}
           <Col md={8} className="text-md-start text-center">
             <p className="mb-0 small">
-              © {new Date().getFullYear()} ABDKS Solutions Private Limited. All
+              © {new Date().getFullYear()} Finunique Small Private Limited. All
               rights reserved.
             </p>
             <ListGroup

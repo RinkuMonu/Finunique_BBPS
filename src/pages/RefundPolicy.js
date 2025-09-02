@@ -94,11 +94,11 @@ export default function RefundPolicy() {
                   >
 {`
 Refund and Cancellation Policy
-ABDKS Solutions Private Limited
+Finunique Small Private Limited
 Effective Date: 12 June 2025
 
 1. Company Introduction
-ABDKS Solutions Private Limited ("ABDKS," "we," "our," or "us") is a fintech enterprise registered under the Companies Act, 2013 in India. We provide digital financial solutions tailored to both B2B and B2C segments, including:
+Finunique Small Private Limited ("Finunique," "we," "our," or "us") is a fintech enterprise registered under the Companies Act, 2013 in India. We provide digital financial solutions tailored to both B2B and B2C segments, including:
 Payment Gateway Services
 Digital Lending APIs
 KYC/AML Verification Tools
@@ -117,11 +117,11 @@ Technology/Channel Partners integrating our fintech services.
 
 3. Definitions
 Term | Definition
-Customer | Any individual or entity availing ABDKS services.
+Customer | Any individual or entity availing Finunique services.
 Refund | Return of funds to a Customer due to failed service or billing error.
 Cancellation | Termination or revocation of a subscribed service or integration.
-Transaction | Any financial or service-related interaction processed via ABDKS.
-Service | Any digital feature, product, or offering delivered by ABDKS.
+Transaction | Any financial or service-related interaction processed via Finunique.
+Service | Any digital feature, product, or offering delivered by Finunique.
 Dispute | A disagreement raised by the customer regarding a transaction or refund.
 
 4. Cancellation Policy
@@ -138,7 +138,7 @@ KYC/AML Services | Non-cancellable | Triggered real-time and consumed
 Wallet/UPI Setup | Within 24 Hours | Wallet not activated or linked
 
 4.3 Procedure
-Email support@abdks.in with subject "Service Cancellation Request."
+Email support@finuniques.in with subject "Service Cancellation Request."
 Include registered account details, service ID, and reason.
 Team will validate the request and respond within 3 business days.
 
@@ -170,8 +170,7 @@ Payment Gateway Setup Fee | Paid to third-party networks and is non-refundable
 
 6. Refund Process and Timeline
 6.1 How to Raise a Refund Request
-Email: support@abdks.in
-Subject: "Refund Request - [Transaction ID]"
+Email: support@finuniques.inSubject: "Refund Request - [Transaction ID]"
 Include full details, reason, and proof (screenshots, bank statements).
 6.2 Timeline
 Acknowledgment: Within 3 business days
@@ -190,7 +189,7 @@ Wallet Credit – If transaction was wallet-based
 Credit Note – For business accounts (redeemable against future services)
 
 8. Cancellation Due to Policy Violation or Fraud
-ABDKS reserves the right to cancel service(s) immediately under the following:
+Finunique reserves the right to cancel service(s) immediately under the following:
 - Misuse of platform or API abuse
 - Fraudulent activity or chargeback misuse
 - Breach of contract or data policies
@@ -206,8 +205,7 @@ Failure to meet these responsibilities may delay or invalidate refunds/cancellat
 10. Dispute Resolution & Escalation
 
 10.1 Grievance Redressal
-Level 1: Write to support@abdks.in
-Level 2: Escalate to grievance@abdks.in within 7 days of unsatisfactory resolution
+Level 1: Write to support@finuniques.inLevel 2: Escalate to grievance@finuniques.in within 7 days of unsatisfactory resolution
 
 10.2 Arbitration Clause
 All disputes shall be resolved via binding arbitration under the Arbitration and Conciliation Act, 1996.
@@ -217,17 +215,15 @@ Seat of arbitration: Jaipur, Rajasthan, India
 All legal proceedings are subject to the exclusive jurisdiction of courts in Jaipur, Rajasthan, India.
 
 11. Policy Updates
-ABDKS reserves the right to update this policy periodically.
+Finunique reserves the right to update this policy periodically.
 Material changes will be communicated via email or platform banner.
 Continued use post-update implies acceptance of revised terms.
 
 12. Contact Information
 For refund and cancellation queries, reach us at:
-ABDKS Solutions Private Limited
-Email: support@abdks.in
-Grievance Cell: grievance@abdks.in
-Phone: 0141-4511098
-Website: www.abdks.in
+Finunique Small Private Limited
+Email: support@finuniques.inGrievance Cell: grievance@finuniques.inPhone: 0141-4511098
+Website: www.finuniques.in
 
 13. Compliance Statement
 This policy is in alignment with the following Indian regulatory frameworks:
@@ -235,7 +231,7 @@ This policy is in alignment with the following Indian regulatory frameworks:
 - Information Technology Act, 2000
 - Reserve Bank of India (RBI) Guidelines for Payment Aggregators and Prepaid Instruments
 - Data Protection Regulations under Indian law
-All stakeholders are advised to review this policy regularly. By availing any service of ABDKS, you agree to the terms mentioned herein.
+All stakeholders are advised to review this policy regularly. By availing any service of Finunique, you agree to the terms mentioned herein.
 `}
                   </div>
                 </div>
@@ -247,7 +243,7 @@ All stakeholders are advised to review this policy regularly. By availing any se
                 <div className="partner-box p-5 rounded shadow-sm">
                   <h2 className="fw-bold mb-3 text-gradient">Partner With Us</h2>
                   <p className="lead text-muted mb-4">
-                    Interested in becoming a BBPS retailer, distributor, or service partner with ABDKS? Let’s shape India’s digital payment future together.
+                    Interested in becoming a BBPS retailer, distributor, or service partner with Finunique? Let’s shape India’s digital payment future together.
                   </p>
                   <Link
                     to={"/createaccount?role=Retailer"}

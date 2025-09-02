@@ -284,7 +284,7 @@ const Login = ({ closePopup }) => {
 
                 <div className="already-account mt-3 d-flex">
                   <h3>
-                    New to ABDKS Solutions?
+                    New to Finunique ?
                     <Link to={"/createaccount"}>
                       <button
                         className="btn border-0 bg-white px-1 text-decoration-underline"

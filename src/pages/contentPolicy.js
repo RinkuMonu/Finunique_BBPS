@@ -49,7 +49,7 @@ export default function ContentPolicy() {
             </h5>
             <p>
               This Content Policy governs the nature, usage, and moderation of
-              content transmitted through ABDKS platforms and services. Please
+              content transmitted through Finunique platforms and services. Please
               read carefully before using our services.
             </p>
             <p>
@@ -70,11 +70,11 @@ export default function ContentPolicy() {
                 Content Policy
               </h1>
               <p className="lead text-muted">
-                Guidelines for content submission and usage on ABDKS platforms
+                Guidelines for content submission and usage on Finunique platforms
               </p>
               <div className="border-top border-bottom py-3 my-4 bg-white shadow-sm">
                 <h5 className="text-warning mb-2">
-                  ABDKS Solutions Private Limited
+                  Finunique Small Private Limited
                 </h5>
                 <p className="text-muted mb-0">
                   <strong>Effective Date:</strong> 12 June 2025
@@ -96,15 +96,15 @@ export default function ContentPolicy() {
                       This Content Policy ("Policy") governs the nature, usage,
                       and moderation of content transmitted, uploaded,
                       submitted, or integrated through the platforms and
-                      services operated by ABDKS Solutions Private Limited
-                      ("ABDKS," "we," "our," or "us").
+                      services operated by Finunique Small Private Limited
+                      ("Finunique," "we," "our," or "us").
                     </p>
                     <p>
-                      ABDKS is a licensed digital service provider offering
+                      Finunique is a licensed digital service provider offering
                       fintech solutions such as BBPS, AEPS, PAN verification,
                       mobile recharge, utility bill payment, EMI collection, and
                       API-based integrations. This Policy is developed to ensure
-                      that all content circulated through ABDKS systems adheres
+                      that all content circulated through Finunique systems adheres
                       to applicable law, respects platform integrity, and aligns
                       with the digital and regulatory standards defined by
                       authorities including RBI, UIDAI, TRAI, and under the IT
@@ -138,7 +138,7 @@ export default function ContentPolicy() {
                     </ul>
                     <p>
                       All participants are bound by this Policy when interacting
-                      with or submitting content to any ABDKS-controlled
+                      with or submitting content to any Finunique-controlled
                       interface or system.
                     </p>
                   </div>
@@ -152,7 +152,7 @@ export default function ContentPolicy() {
                     <p className="mb-4">
                       Any data, information, message, text, form input, file,
                       comment, document, API field, image, or metadata submitted,
-                      processed, transmitted, or hosted via ABDKS platforms.
+                      processed, transmitted, or hosted via Finunique platforms.
                     </p>
 
                     <p className="mb-3 fw-bold">User Content:</p>
@@ -164,7 +164,7 @@ export default function ContentPolicy() {
 
                     <p className="mb-3 fw-bold">Prohibited Content:</p>
                     <p className="mb-4">
-                      Content that violates law, ABDKS service terms, or
+                      Content that violates law, Finunique service terms, or
                       applicable regulatory norms, including but not limited to
                       misinformation, abuse, fraud, hate speech, or privacy
                       breaches.
@@ -173,7 +173,7 @@ export default function ContentPolicy() {
                     <p className="mb-3 fw-bold">Distributors:</p>
                     <p>
                       Entities managing a network of retailers or agents
-                      transacting on behalf of ABDKS under a commercial
+                      transacting on behalf of Finunique under a commercial
                       agreement.
                     </p>
                   </div>
@@ -206,7 +206,7 @@ export default function ContentPolicy() {
                           <li>
                             <strong>Compliant with Format Standards:</strong> API
                             payloads, uploaded documents, and form entries must
-                            align with ABDKS technical protocols and KYC norms.
+                            align with Finunique technical protocols and KYC norms.
                           </li>
                         </ul>
                       </div>
@@ -231,7 +231,7 @@ export default function ContentPolicy() {
                       5. Prohibited Content
                     </h3>
                     <p className="mb-4">
-                      The following are strictly prohibited across all ABDKS
+                      The following are strictly prohibited across all Finunique
                       platforms:
                     </p>
                     <div className="card border-danger mb-4">
@@ -315,7 +315,7 @@ export default function ContentPolicy() {
                       7. Moderation and Monitoring
                     </h3>
                     <p className="mb-4">
-                      ABDKS actively monitors content using:
+                      Finunique actively monitors content using:
                     </p>
                     <ul className="mb-4">
                       <li>
@@ -342,7 +342,7 @@ export default function ContentPolicy() {
                     </h3>
                     <p className="mb-4">
                       By submitting or uploading any content, users and partners
-                      grant ABDKS:
+                      grant Finunique:
                     </p>
                     <ul className="mb-4">
                       <li>
@@ -371,7 +371,7 @@ export default function ContentPolicy() {
                       9. Legal & Regulatory Compliance
                     </h3>
                     <p className="mb-4">
-                      All content handled through ABDKS must comply with:
+                      All content handled through Finunique must comply with:
                     </p>
                     <div className="row">
                       <div className="col-md-6">
@@ -402,7 +402,7 @@ export default function ContentPolicy() {
                       10. Enforcement Actions
                     </h3>
                     <p className="mb-4">
-                      ABDKS reserves the right to take one or more of the
+                      Finunique reserves the right to take one or more of the
                       following actions upon any policy breach:
                     </p>
                     <div className="card border-warning mb-4">
@@ -442,12 +442,11 @@ export default function ContentPolicy() {
                           <strong>Mr. Dinesh Kumar and Mr.Amit Balotiya</strong>
                         </p>
                         <p className="mb-2">
-                          Grievance Officer – ABDKS Solutions Private Limited
+                          Grievance Officer – Finunique Small Private Limited
                         </p>
                         <p className="mb-2">
                           <FaEnvelope className="me-2" />
-                          Email: grievance@abdks.in
-                        </p>
+                          Email: grievance@finuniques.in                        </p>
                         <p className="mb-0">
                           <FaPhone className="me-2" />
                           Phone: 0141-4511098
@@ -481,13 +480,13 @@ export default function ContentPolicy() {
                     </ul>
                     <div className="alert alert-warning">
                       <p className="mb-0 fw-bold">
-                        By using any ABDKS platform, service, or API, you
+                        By using any Finunique platform, service, or API, you
                         acknowledge and agree to this Content Policy.
                       </p>
                     </div>
                     <div className="text-center mt-4">
-                      <h5>ABDKS Solutions Private Limited</h5>
-                      <p>Website: <Link to="https://www.abdks.com/">www.abdks.com</Link></p>
+                      <h5>Finunique Small Private Limited</h5>
+                      <p>Website: <Link to="https://www.finuniques.in/">www.finuniques.in</Link></p>
                     </div>
                   </div>
                 </div>

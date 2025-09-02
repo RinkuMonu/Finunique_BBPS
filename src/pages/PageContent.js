@@ -51,7 +51,7 @@ function PageContent() {
 
                   <div className="mb-4">
                     <p className="lead" style={{ color: "#5a5a5a" }}>
-                      ABDKS is revolutionizing retail BBPS distribution with our cutting-edge fintech platform based in Jaipur.
+                      Finunique is revolutionizing retail BBPS distribution with our cutting-edge fintech platform based in Jaipur.
                     </p>
                     <p style={{ color: "#666" }}>
                       We provide lightning-fast DTH recharge, prepaid/postpaid mobile solutions, and seamless utility bill payment software - empowering traders with smarter tools for the digital age.
@@ -131,7 +131,7 @@ function PageContent() {
               </p>
               <h4>Growth Is Our Only Obsession</h4>
               <p>
-                Abdks makes your work easier and faster. Our strongest motive is
+                Finunique makes your work easier and faster. Our strongest motive is
                 to provide the best possible services to our customers.
               </p>
             </div>
@@ -195,7 +195,7 @@ function PageContent() {
                   <div className="feature-text">
                     <h4>Explore Unlimited Business Opportunities</h4>
                     <p>
-                      Abdks is easy to operate and it also makes your work easier
+                      Finunique is easy to operate and it also makes your work easier
                       and faster. We will always have a wide variety of options as
                       per your needs. You are always privileged to choose how to
                       go forward. After all, You are Important to us.
@@ -244,7 +244,7 @@ function PageContent() {
         <div className="position-relative z-3 text-center px-3">
           <h3 className="display-5 fw-bold mb-4 text-gradient">
             <span>Start Your Digital BBPS Journey</span><br />
-            <span className="text-primary">In Jaipur With ABDKS</span>
+            <span className="text-primary">In Jaipur With Finunique</span>
           </h3>
 
           <p className="lead mb-5 opacity-75">

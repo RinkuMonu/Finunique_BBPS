@@ -21,7 +21,7 @@ const FAQBroadbandBillPayment = () => {
       body: (
         <>
           <p>
-            Stay connected seamlessly. ABDKS offers a secure, quick, and intuitive platform to pay your broadband bills online. Manage your home Wi-Fi or provide bill payment services to customers — all with instant confirmations.
+            Stay connected seamlessly. Finunique offers a secure, quick, and intuitive platform to pay your broadband bills online. Manage your home Wi-Fi or provide bill payment services to customers — all with instant confirmations.
           </p>
           <p>
             <strong>Broadband bill payment made simple.</strong> Fast, safe, and convenient — anytime, anywhere.
@@ -54,7 +54,7 @@ const FAQBroadbandBillPayment = () => {
       title: "How to Pay Your Broadband Bill",
       body: (
         <ol>
-          <li>Visit the bill payment section on ABDKS platform.</li>
+          <li>Visit the bill payment section on Finunique platform.</li>
           <li>Select broadband as service category.</li>
           <li>Choose your provider.</li>
           <li>Enter account/user ID.</li>
@@ -110,7 +110,7 @@ const FAQBroadbandBillPayment = () => {
           </Accordion.Item>
           <Accordion.Item eventKey="3">
             <Accordion.Header>Are there extra charges?</Accordion.Header>
-            <Accordion.Body>No extra transaction fees on ABDKS platform.</Accordion.Body>
+            <Accordion.Body>No extra transaction fees on Finunique platform.</Accordion.Body>
           </Accordion.Item>
         </Accordion>
       ),
@@ -119,7 +119,7 @@ const FAQBroadbandBillPayment = () => {
       title: "Stay Connected Without Worry",
       body: (
         <>
-          <p>With ABDKS, pay broadband bills securely and stay online — whether for your home, office, or your customers.</p>
+          <p>With Finunique, pay broadband bills securely and stay online — whether for your home, office, or your customers.</p>
           <div className="d-flex flex-wrap gap-3 mt-3">
             <Link to="#" className="btn btn-warning text-dark fw-semibold shadow-sm px-4">Pay Now</Link>
             <Link to="/createaccount?role=Retailer" className="btn btn-outline-secondary fw-semibold px-4">Join as Partner</Link>

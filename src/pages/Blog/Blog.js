@@ -97,7 +97,7 @@ export default function Blog() {
         <div className="container text-center position-relative">
           <h1 className="hero-title fw-bold text-black">Blog</h1>
           <p className="fw-medium lead">
-            Welcome to the ABDKS Blog, your source for trends, expert tips, and insights.
+            Welcome to the Finunique Blog, your source for trends, expert tips, and insights.
           </p>
         </div>
       </section>

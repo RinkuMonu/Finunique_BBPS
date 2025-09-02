@@ -18,11 +18,11 @@ const FAQeChallanPayments = () => {
 
   const content = [
     {
-      title: "About eChallan Payment with ABDKS",
+      title: "About eChallan Payment with Finunique",
       body: (
         <>
           <p>
-            ABDKS Solutions Private Ltd. offers a quick and secure solution to
+            Finunique Small Private Limited. offers a quick and secure solution to
             settle your traffic challans online. Whether you've received an
             e-challan for overspeeding, signal jumping, or other violations —
             our platform helps you pay your traffic fines instantly, from
@@ -65,10 +65,10 @@ const FAQeChallanPayments = () => {
       ),
     },
     {
-      title: "How to Settle Traffic Challan with ABDKS",
+      title: "How to Settle Traffic Challan with Finunique",
       body: (
         <ol>
-          <li>Visit the Challan Payment section on the ABDKS app or website</li>
+          <li>Visit the Challan Payment section on the Finunique app or website</li>
           <li>Enter your vehicle number or challan number</li>
           <li>The system auto-fetches any pending fines</li>
           <li>Verify the fine details and amount</li>
@@ -80,7 +80,7 @@ const FAQeChallanPayments = () => {
       ),
     },
     {
-      title: "Why Use ABDKS for Challan Payment?",
+      title: "Why Use Finunique for Challan Payment?",
       body: (
         <ul>
           <li>24x7 Access – Pay fines anytime, from mobile or desktop</li>
@@ -106,7 +106,7 @@ const FAQeChallanPayments = () => {
           <li>Help customers resolve challans easily</li>
           <li>Increase daily footfall and trust</li>
           <li>Earn small margins or service fees</li>
-          <li>Access transactions via the ABDKS dashboard</li>
+          <li>Access transactions via the Finunique dashboard</li>
           <li>Get full training and backend support</li>
         </ul>
       ),
@@ -117,7 +117,7 @@ const FAQeChallanPayments = () => {
         <Accordion flush>
           <Accordion.Item eventKey="0">
             <Accordion.Header>
-              Is it safe to pay traffic fines through ABDKS?
+              Is it safe to pay traffic fines through Finunique?
             </Accordion.Header>
             <Accordion.Body>
               Yes. All payments are processed securely via official
@@ -144,7 +144,7 @@ const FAQeChallanPayments = () => {
           <Accordion.Item eventKey="3">
             <Accordion.Header>Are there any extra charges?</Accordion.Header>
             <Accordion.Body>
-              ABDKS does not charge additional service fees for standard challan
+              Finunique does not charge additional service fees for standard challan
               payments.
             </Accordion.Body>
           </Accordion.Item>
@@ -156,7 +156,7 @@ const FAQeChallanPayments = () => {
       body: (
         <>
           <p>
-            Avoid delays, penalties, or legal issues. Choose ABDKS for
+            Avoid delays, penalties, or legal issues. Choose Finunique for
             hassle-free, secure, and verified traffic challan settlement —
             available 24x7 for individuals and retailers alike.
           </p>

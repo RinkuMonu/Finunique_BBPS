@@ -24,7 +24,7 @@ import Testinomials from "../../components/Testinomials/Testinomials";
 const AboutUs = () => {
     const storyItems = [
     {
-      content: "In 2024, fintech innovators Mr. Dinesh Kumar and Mr. Amit Balotiya founded ABDKS Solutions Private Limited. with a bold mission: to simplify and scale BBPS-smooth digital financial services across India.",
+      content: "In 2024, fintech innovators Mr. Dinesh Kumar and Mr. Amit Balotiya founded Finunique Small Private Limited. with a bold mission: to simplify and scale BBPS-smooth digital financial services across India.",
       icon: "bi bi-lightbulb"
     },
     {
@@ -32,11 +32,11 @@ const AboutUs = () => {
       icon: "bi bi-geo-alt"
     },
     {
-      content: "ABDKS is rapidly expanding in Rajasthan and beyond. Our BBPS biller recharge system, user-friendly interfaces, and fast onboarding have empowered thousands of retailers and traders to make and earn more smartly.",
+      content: "Finunique is rapidly expanding in Rajasthan and beyond. Our BBPS biller recharge system, user-friendly interfaces, and fast onboarding have empowered thousands of retailers and traders to make and earn more smartly.",
       icon: "bi bi-graph-up-arrow"
     },
     {
-      content: "At ABDKS, we stand for innovation, transparency, and impact. Our vision is to lead India's digital payment revolution—one BBPS transaction at a time.",
+      content: "At Finunique, we stand for innovation, transparency, and impact. Our vision is to lead India's digital payment revolution—one BBPS transaction at a time.",
       icon: "bi bi-flag"
     }
   ];
@@ -118,7 +118,7 @@ const AboutUs = () => {
                     <FiArrowRight className="cta-icon" />
                   </Link>
                   <Link to={'/createaccount?role=Retailer'} className="btn btn-outline-secondary cta-secondary">
-                    Join the ABDKS Retailer Network
+                    Join the Finunique Retailer Network
                   </Link>
                 </div>
               </div>
@@ -145,7 +145,7 @@ const AboutUs = () => {
                 <img
                   className="about-image"
                   src="/assets/WHO WE ARE.svg"
-                  alt="About ABDKS"
+                  alt="About Finunique"
                 />
               </div>
             </div>
@@ -156,7 +156,7 @@ const AboutUs = () => {
                 <h2 className="about-title">
                   From Vision to Fintech Powerhouse—
                   <br />
-                  The ABDKS Story
+                  The Finunique Story
                 </h2>
 
                 <div className="story-content">
@@ -209,7 +209,7 @@ const AboutUs = () => {
                   Creating a digital future that works for everyone
                 </h4>
                 <p className="vm-text mb-4">
-                  At <strong className="vm-accent-text">ABDKS</strong>, we imagine a future where every
+                  At <strong className="vm-accent-text">Finunique</strong>, we imagine a future where every
                   Indian retailer — from urban shopkeepers to remote consumers
                   — can access and benefit from{" "}
                   <strong className="vm-accent-text">BBPS-operated digital services</strong>.
@@ -295,7 +295,7 @@ const AboutUs = () => {
                   <h3 className="vm-title mb-0">Our Core Values</h3>
                 </div>
                 <h4 className="vm-subtitle">
-                  The principles that power ABDKS
+                  The principles that power Finunique
                 </h4>
 
                 <div className="d-grid">

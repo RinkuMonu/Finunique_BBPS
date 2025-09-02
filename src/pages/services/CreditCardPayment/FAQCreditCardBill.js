@@ -29,7 +29,7 @@ const FAQCreditCardPayment = () => {
             A credit card gives you access to short-term credit for immediate payments. However, forgetting your bill date can result in interest charges, late fees, and even a lower credit score. That’s why timely bill payment is crucial.
           </p>
           <p>
-            ABDKS Solutions Private Ltd. offers a fast, secure, and seamless way to pay your credit card bills online — helping you avoid penalties, improve credit health, and manage your finances more effectively.
+            Finunique Small Private Limited. offers a fast, secure, and seamless way to pay your credit card bills online — helping you avoid penalties, improve credit health, and manage your finances more effectively.
           </p>
           <p>
             Our platform supports credit card bill payments for all major Indian banks, powered by BBPS (Bharat Bill Payment System) infrastructure for reliability and speed.
@@ -67,11 +67,11 @@ const FAQCreditCardPayment = () => {
       ),
     },
     {
-      title: "How to Pay Credit Card Bills on ABDKS",
+      title: "How to Pay Credit Card Bills on Finunique",
       body: (
         <>
           <ol>
-            <li>Visit the ABDKS website or open the mobile app</li>
+            <li>Visit the Finunique website or open the mobile app</li>
             <li>Login using your mobile number and OTP</li>
             <li>Go to Recharge & Bill Pay, then select Credit Card Payment</li>
             <li>Choose your bank from the dropdown</li>
@@ -84,7 +84,7 @@ const FAQCreditCardPayment = () => {
       ),
     },
     {
-      title: "Key Benefits of Paying Credit Card Bills via ABDKS",
+      title: "Key Benefits of Paying Credit Card Bills via Finunique",
       body: (
         <>
           <div className="row">
@@ -111,7 +111,7 @@ const FAQCreditCardPayment = () => {
       title: "Retailer & Agent Benefits",
       body: (
         <>
-          <p>If you're a retailer, CSC operator, or local service provider, ABDKS helps you offer credit card bill payment services to your customers:</p>
+          <p>If you're a retailer, CSC operator, or local service provider, Finunique helps you offer credit card bill payment services to your customers:</p>
           <ul>
             <li>Earn commission on every bill paid</li>
             <li>Attract more walk-ins by offering value-added services</li>
@@ -127,9 +127,9 @@ const FAQCreditCardPayment = () => {
       body: (
         <Accordion flush>
           <Accordion.Item eventKey="0">
-            <Accordion.Header>Is it safe to pay my credit card bill on ABDKS?</Accordion.Header>
+            <Accordion.Header>Is it safe to pay my credit card bill on Finunique?</Accordion.Header>
             <Accordion.Body>
-              Yes. ABDKS uses encrypted, RBI-authorized systems to safely process your payment.
+              Yes. Finunique uses encrypted, RBI-authorized systems to safely process your payment.
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
@@ -160,11 +160,11 @@ const FAQCreditCardPayment = () => {
       ),
     },
     {
-      title: "Start Paying Smart – Use ABDKS for Credit Card Bill Payments",
+      title: "Start Paying Smart – Use Finunique for Credit Card Bill Payments",
       body: (
         <>
           <p>
-            Whether for personal use or retail business, ABDKS makes credit card bill payment secure, fast, and reliable — powered by BBPS and trusted across India.
+            Whether for personal use or retail business, Finunique makes credit card bill payment secure, fast, and reliable — powered by BBPS and trusted across India.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
             <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">

@@ -137,7 +137,7 @@ const Fastag1 = ({
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
               FASTag Recharge
             </h2>
-            <h3>Recharge Your FASTag Instantly with ABDKS</h3>
+            <h3>Recharge Your FASTag Instantly with Finunique</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/fastag.svg"

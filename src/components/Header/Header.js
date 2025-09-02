@@ -40,7 +40,7 @@ export default function Header() {
                   <Link className="navbar-brand logo" to={"/"}>
                     <img
                       className="img-fluid"
-                      src="/logo/abdkslogo.png"
+                      src="/logo/finuniquelogo.png"
                       alt=""
                     />
                   </Link>

@@ -28,7 +28,7 @@ const GooglePlay = () => {
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
-              Instant Google Play Top-Up with ABDKS – Fast, Reliable & 24x7
+              Instant Google Play Top-Up with Finunique – Fast, Reliable & 24x7
             </h2>
             <h3>Recharge Your Google Play Balance Anytime, Anywhere</h3>
             <div className="d-flex justify-content-center align-items-center">

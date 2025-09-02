@@ -18,19 +18,19 @@ const FAQLoanEMIPayments = () => {
 
   const content = [
     {
-      title: "Simple & Secure EMI Payments with ABDKS",
+      title: "Simple & Secure EMI Payments with Finunique",
       body: (
         <>
           <p>
-            ABDKS Solutions Private Ltd. enables you to pay your loan EMIs online
+            Finunique Small Private Limited. enables you to pay your loan EMIs online
             from the comfort of your home or through your nearest digital
             service point. Whether it’s a personal loan, vehicle loan, home
-            loan, or consumer durable loan — ABDKS ensures secure, instant, and
+            loan, or consumer durable loan — Finunique ensures secure, instant, and
             reliable EMI transactions for all major NBFCs and banks.
           </p>
           <p>
             No more missed due dates, long queues, or delayed payments. With
-            ABDKS, your EMI payments are just a few clicks away.
+            Finunique, your EMI payments are just a few clicks away.
           </p>
         </>
       ),
@@ -70,10 +70,10 @@ const FAQLoanEMIPayments = () => {
       ),
     },
     {
-      title: "How to Pay EMI Online via ABDKS",
+      title: "How to Pay EMI Online via Finunique",
       body: (
         <ol>
-          <li>Visit the EMI Payment section on the ABDKS website or app</li>
+          <li>Visit the EMI Payment section on the Finunique website or app</li>
           <li>Select the financial institution or NBFC</li>
           <li>Enter your loan/account number or mobile number</li>
           <li>View the outstanding EMI and due date</li>
@@ -101,7 +101,7 @@ const FAQLoanEMIPayments = () => {
         <ul>
           <li>Serve customers who need to pay EMIs</li>
           <li>Earn commissions on every transaction</li>
-          <li>Use ABDKS dashboard to manage services</li>
+          <li>Use Finunique dashboard to manage services</li>
           <li>Access real-time support from our Jaipur-based team</li>
         </ul>
       ),
@@ -112,7 +112,7 @@ const FAQLoanEMIPayments = () => {
         <Accordion flush>
           <Accordion.Item eventKey="0">
             <Accordion.Header>
-              Can I pay EMI for any NBFC or bank through ABDKS?
+              Can I pay EMI for any NBFC or bank through Finunique?
             </Accordion.Header>
             <Accordion.Body>
               We support most major NBFCs and banks. Check the partner list in
@@ -139,7 +139,7 @@ const FAQLoanEMIPayments = () => {
           </Accordion.Item>
           <Accordion.Item eventKey="3">
             <Accordion.Header>
-              Is there any extra charge for using ABDKS?
+              Is there any extra charge for using Finunique?
             </Accordion.Header>
             <Accordion.Body>
               No additional service charge is applied for standard EMI payments.
@@ -154,7 +154,7 @@ const FAQLoanEMIPayments = () => {
         <>
           <p>
             Avoid late fees and maintain a good credit score by paying EMIs on
-            time — powered by ABDKS.
+            time — powered by Finunique.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
             <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">

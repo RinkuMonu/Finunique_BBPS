@@ -25,7 +25,7 @@ const FAQGasBillPayment = () => {
         <>
           <p>
             Managing your household gas connection is now easier than ever with
-            <strong> ABDKS Solutions Private Ltd.</strong> Whether it’s a piped gas bill or a LPG gas booking, our
+            <strong> Finunique Small Private Limited.</strong> Whether it’s a piped gas bill or a LPG gas booking, our
             platform offers a secure, fast, and convenient way to make your
             payments online — anytime, from anywhere.
           </p>
@@ -37,7 +37,7 @@ const FAQGasBillPayment = () => {
       body: (
         <>
           <p>
-            ABDKS supports bill payments and bookings for major gas service
+            Finunique supports bill payments and bookings for major gas service
             providers, including:
           </p>
           <div className="row">
@@ -65,11 +65,11 @@ const FAQGasBillPayment = () => {
       ),
     },
     {
-      title: "How to Pay Gas Bills Online Using ABDKS",
+      title: "How to Pay Gas Bills Online Using Finunique",
       body: (
         <>
           <ol>
-            <li>Visit the Bill Payment section on the ABDKS website or app</li>
+            <li>Visit the Bill Payment section on the Finunique website or app</li>
             <li>Select Gas as the category</li>
             <li>Choose your service provider from the dropdown</li>
             <li>Enter your Consumer Number / Customer ID</li>
@@ -109,14 +109,14 @@ const FAQGasBillPayment = () => {
         <>
           <p>
             If you run a digital service center, shop, or kiosk, offer gas bill
-            payment services through ABDKS and:
+            payment services through Finunique and:
           </p>
           <ul>
             <li>Increase walk-in customers</li>
             <li>Earn commission on every successful payment</li>
             <li>Provide value-added services in your area</li>
             <li>Access detailed reports and dashboards</li>
-            <li>Get real-time support from the ABDKS team</li>
+            <li>Get real-time support from the Finunique team</li>
           </ul>
         </>
       ),
@@ -129,7 +129,7 @@ const FAQGasBillPayment = () => {
             <Accordion.Item eventKey="0">
               <Accordion.Header>Which gas companies are supported for bill payment?</Accordion.Header>
               <Accordion.Body>
-                ABDKS supports both piped and LPG gas providers such as IGL,
+                Finunique supports both piped and LPG gas providers such as IGL,
                 MGL, Adani Gas, Bharat Gas, Indane, and more.
               </Accordion.Body>
             </Accordion.Item>
@@ -141,7 +141,7 @@ const FAQGasBillPayment = () => {
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="2">
-              <Accordion.Header>Can I use ABDKS to pay someone else's gas bill?</Accordion.Header>
+              <Accordion.Header>Can I use Finunique to pay someone else's gas bill?</Accordion.Header>
               <Accordion.Body>
                 Yes, simply enter the correct consumer number and proceed with
                 the payment.
@@ -151,7 +151,7 @@ const FAQGasBillPayment = () => {
               <Accordion.Header>Are there any additional charges?</Accordion.Header>
               <Accordion.Body>
                 No extra transaction fees are charged on gas bill payments made
-                via ABDKS.
+                via Finunique.
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
@@ -159,11 +159,11 @@ const FAQGasBillPayment = () => {
       ),
     },
     {
-      title: "Pay Your Gas Bill in Minutes with ABDKS",
+      title: "Pay Your Gas Bill in Minutes with Finunique",
       body: (
         <>
           <p>
-            Stay safe, save time, and never miss a due date again. With ABDKS,
+            Stay safe, save time, and never miss a due date again. With Finunique,
             paying gas bills is quick, convenient, and secure.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">

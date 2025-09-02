@@ -158,7 +158,7 @@ const DatacardPostpaidRecharge = ({
             <h2 className="fw-bold" style={{ color: "#002244" }}>
               Datacard Postpaid Recharge
             </h2>
-            <h3>Recharge Your Datacard Postpaid Connection with ABDKS</h3>
+            <h3>Recharge Your Datacard Postpaid Connection with Finunique</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Datacard.svg"

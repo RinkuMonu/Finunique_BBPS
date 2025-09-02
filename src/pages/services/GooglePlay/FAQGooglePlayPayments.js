@@ -16,11 +16,11 @@ const FAQGooglePlayRecharge = () => {
 
   const content = [
     {
-      title: 'Google Play Recharge Made Simple with ABDKS',
+      title: 'Google Play Recharge Made Simple with Finunique',
       body: (
         <>
           <p>
-            With ABDKS Solutions Private Ltd., buying Google Play recharge codes is quick, secure, and available round the clock. Whether you're purchasing apps, games, in-game currency, or subscriptions, our platform allows you to instantly top-up your Google Play account without the need for a debit/credit card.
+            With Finunique Small Private Limited., buying Google Play recharge codes is quick, secure, and available round the clock. Whether you're purchasing apps, games, in-game currency, or subscriptions, our platform allows you to instantly top-up your Google Play account without the need for a debit/credit card.
             Perfect for personal use or for retailers serving walk-in customers.
           </p>
         </>
@@ -39,10 +39,10 @@ const FAQGooglePlayRecharge = () => {
       ),
     },
     {
-      title: 'How to Buy Google Play Recharge via ABDKS',
+      title: 'How to Buy Google Play Recharge via Finunique',
       body: (
         <ol>
-          <li>Visit the Recharge Section on the ABDKS website or app</li>
+          <li>Visit the Recharge Section on the Finunique website or app</li>
           <li>Select Google Play Recharge</li>
           <li>Choose the recharge amount (e.g., ₹100, ₹200, ₹500, ₹1000)</li>
           <li>Complete payment using UPI, card, net banking, or wallet</li>
@@ -87,10 +87,10 @@ const FAQGooglePlayRecharge = () => {
       ),
     },
     {
-      title: 'Recharge Google Play Instantly with ABDKS',
+      title: 'Recharge Google Play Instantly with Finunique',
       body: (
         <>
-          <p>Whether for your own use or as a retailer service, Google Play recharge through ABDKS is fast, reliable, and always available.</p>
+          <p>Whether for your own use or as a retailer service, Google Play recharge through Finunique is fast, reliable, and always available.</p>
           <div className="d-flex flex-wrap gap-3 mt-3">
             <Link to="/ContactUs" className="btn btn-primary cta-main" size="lg">Buy Now</Link>
             <Link  to="/createaccount" className="btn btn-outline-secondary cta-secondary" size="lg">Register as a Retailer</Link>

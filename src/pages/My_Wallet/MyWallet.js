@@ -215,7 +215,7 @@ function MyWallet() {
                                                 </div>
                                             </div>
 
-                                            <p>Designated bank account with ABDKS Solutions Private Limited small pvt ltd .</p>
+                                            <p>Designated bank account with Finunique Small Private Limited small pvt ltd .</p>
                                         </div>
                                     </div>
                                 </div>

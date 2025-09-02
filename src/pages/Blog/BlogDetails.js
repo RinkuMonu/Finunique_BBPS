@@ -128,7 +128,7 @@ function BlogsDetails() {
         <div className="container text-center position-relative">
           <h1 className="hero-title pt-5">{blog.title}</h1>
           <p className="text-black fw-bold">
-            Welcome to the ABDKS Blog, your go-to source for the latest
+            Welcome to the Finunique Blog, your go-to source for the latest
             trends, expert grooming tips, and salon industry insights.
           </p>
         </div>

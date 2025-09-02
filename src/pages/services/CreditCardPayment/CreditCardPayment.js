@@ -26,10 +26,10 @@ const CreditCardPayment = () => {
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
-              Credit Card Bill Payment – Fast, Secure & BBPS-Enabled by ABDKS
+              Credit Card Bill Payment – Fast, Secure & BBPS-Enabled by Finunique
             </h2>
             <h5>
-              Pay your credit card bills instantly through ABDKS – India’s
+              Pay your credit card bills instantly through Finunique – India’s
               trusted BBPS platform with 24x7 access, real-time confirmation,
               and no hidden fees.
             </h5>

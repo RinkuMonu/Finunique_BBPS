@@ -21,7 +21,7 @@ const FAQFastag = () => {
       body: (
         <>
           <p>
-            With ABDKS Solutions Private Ltd., recharging your FASTag is quick,
+            With Finunique Small Private Limited., recharging your FASTag is quick,
             easy, and secure. Avoid toll booth delays and keep your FASTag active
             with our seamless online recharge service.
           </p>
@@ -62,7 +62,7 @@ const FAQFastag = () => {
       title: "How to Recharge FASTag Online",
       body: (
         <ol>
-          <li>Go to the Recharge section on the ABDKS website or app.</li>
+          <li>Go to the Recharge section on the Finunique website or app.</li>
           <li>Select "FASTag" as the recharge category.</li>
           <li>Choose your issuing bank/operator.</li>
           <li>Enter your vehicle number linked to FASTag.</li>
@@ -103,7 +103,7 @@ const FAQFastag = () => {
             <li>Provide value-added services for drivers and fleet owners</li>
             <li>Earn commission on every recharge</li>
             <li>Real-time transaction tracking and reporting</li>
-            <li>Easy setup with the ABDKS retailer dashboard</li>
+            <li>Easy setup with the Finunique retailer dashboard</li>
           </ul>
         </>
       ),
@@ -141,7 +141,7 @@ const FAQFastag = () => {
               Is there any convenience fee for FASTag recharge?
             </Accordion.Header>
             <Accordion.Body>
-              No, ABDKS does not charge any additional convenience fee for FASTag recharges.
+              No, Finunique does not charge any additional convenience fee for FASTag recharges.
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
@@ -152,7 +152,7 @@ const FAQFastag = () => {
       body: (
         <>
           <p>
-            Ensure smooth highway travel and avoid penalty charges with timely FASTag recharges through ABDKS.
+            Ensure smooth highway travel and avoid penalty charges with timely FASTag recharges through Finunique.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
             <Link to="/billpayment" className="btn btn-warning text-dark fw-semibold shadow-sm px-4">

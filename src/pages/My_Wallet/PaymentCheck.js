@@ -16,8 +16,8 @@ export default function PaymentCheck() {
       phone: "7062316137",
       email: "pateladarsh@gmail.com",
       productinfo: "23456",
-      furl: "https://www.ABDKS Solutions Private Limitedin/failure",
-      surl: "https://www.ABDKS Solutions Private Limitedin/success",
+      furl: "https://www.Finunique Small Private Limitedin/failure",
+      surl: "https://www.Finunique Small Private Limitedin/success",
     };
 
     try {

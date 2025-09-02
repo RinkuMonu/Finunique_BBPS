@@ -139,7 +139,7 @@ const Landline1 = ({
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
               Landline Bill Payment
             </h2>
-            <h3>Pay Landline Bills Online Quickly & Securely with ABDKS</h3>
+            <h3>Pay Landline Bills Online Quickly & Securely with Finunique</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Landline .svg"

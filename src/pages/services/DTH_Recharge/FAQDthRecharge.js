@@ -21,7 +21,7 @@ const FAQDthRecharge = () => {
       body: (
         <>
           <p>
-            Recharge your DTH instantly and keep enjoying your favorite shows. ABDKS Solutions offers a secure, easy-to-use BBPS DTH recharge platform for individuals and retailers. Recharge any major operator in seconds.
+            Recharge your DTH instantly and keep enjoying your favorite shows. Finunique  offers a secure, easy-to-use BBPS DTH recharge platform for individuals and retailers. Recharge any major operator in seconds.
           </p>
         </>
       ),
@@ -42,10 +42,10 @@ const FAQDthRecharge = () => {
       ),
     },
     {
-      title: "How to Recharge on ABDKS",
+      title: "How to Recharge on Finunique",
       body: (
         <ol>
-          <li>Go to Recharge & Bill Pay on ABDKS.</li>
+          <li>Go to Recharge & Bill Pay on Finunique.</li>
           <li>Select DTH as your service.</li>
           <li>Choose your operator.</li>
           <li>Enter your customer ID or registered number.</li>
@@ -55,7 +55,7 @@ const FAQDthRecharge = () => {
       ),
     },
     {
-      title: "Why Choose ABDKS for DTH Recharge?",
+      title: "Why Choose Finunique for DTH Recharge?",
       body: (
         <ul>
           <li>Zero extra fees</li>
@@ -72,7 +72,7 @@ const FAQDthRecharge = () => {
       body: (
         <>
           <p>
-            Are you a retailer or cyber café operator? Start earning commission on every DTH recharge with ABDKS BBPS.
+            Are you a retailer or cyber café operator? Start earning commission on every DTH recharge with Finunique BBPS.
           </p>
           <p>Easy onboarding, real-time logs, and dedicated support included.</p>
           <div className="d-flex flex-wrap gap-3 mt-3">
@@ -92,7 +92,7 @@ const FAQDthRecharge = () => {
           </Accordion.Item>
           <Accordion.Item eventKey="1">
             <Accordion.Header>Which DTH providers are supported?</Accordion.Header>
-            <Accordion.Body>ABDKS supports Airtel, Tata Play, Dish TV, D2H, and Sun Direct.</Accordion.Body>
+            <Accordion.Body>Finunique supports Airtel, Tata Play, Dish TV, D2H, and Sun Direct.</Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="2">
             <Accordion.Header>Can I pay for someone else’s DTH?</Accordion.Header>

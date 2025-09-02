@@ -103,7 +103,7 @@ const TransferToBank = () => {
         <Row>
           <Col md={6} className="text-center text-md-start">
             <h1 className="hero-headline">
-              Send Money Securely Across India – Powered by ABDKS
+              Send Money Securely Across India – Powered by Finunique
           
             <span className="highlight">Fast, Reliable & Compliant Domestic Money Transfers</span>  </h1>
             <div className="d-flex justify-content-center align-items-center transferBankSideImg">

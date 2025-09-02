@@ -11,7 +11,7 @@ function Testinomials() {
         <div className="container">
           <div className="section-header text-center">
             <h2>Trusted by Retailers Across Jaipur</h2>
-            <p>What our Jaipur retailers say about ABDKS</p>
+            <p>What our Jaipur retailers say about Finunique</p>
           </div>
           <div className="testimonial-grid">
             {/* Testimonial 1 */}
@@ -22,7 +22,7 @@ function Testinomials() {
                 ))}
               </div>
               <p className="testimonial-quote">
-                " I started with ABDKS in 2024, and now I handle 300 BBPS
+                " I started with Finunique in 2024, and now I handle 300 BBPS
                 transactions daily. The stage is fast, and the support team is
                 excellent."
               </p>
@@ -64,7 +64,7 @@ function Testinomials() {
               </div>
               <p className="testimonial-quote">
                 " Android app is smooth, and commission is more satisfied with
-                others. Abdks is very satisfied."
+                others. Finunique is very satisfied."
               </p>
               <div className="testimonial-author">
                 <div className="author-avatar">MM</div>

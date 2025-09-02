@@ -145,7 +145,7 @@ const PipedGas1 = ({
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
               Gas Bill Payment
             </h2>
-            <h3>Pay Your Gas Bills Online Safely and Instantly with ABDKS</h3>
+            <h3>Pay Your Gas Bills Online Safely and Instantly with Finunique</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Gas Bill Solution.svg"

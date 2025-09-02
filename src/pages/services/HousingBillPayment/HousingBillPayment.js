@@ -39,7 +39,7 @@ const HousingBillPayment = () => {
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
-              Pay Your Housing Society & Apartment Bills Online with ABDKS
+              Pay Your Housing Society & Apartment Bills Online with Finunique
             </h2>
             <h3>Simplify Monthly Housing Payments with One Digital Platform</h3>
             <div className="d-flex justify-content-center align-items-center">

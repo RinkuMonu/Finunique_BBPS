@@ -17,11 +17,11 @@ const FAQLoanEMIPayments = () => {
 
   const content = [
     {
-      title: "Simple & Secure EMI Payments with ABDKS",
+      title: "Simple & Secure EMI Payments with Finunique",
       body: (
         <>
           <p>
-            Pay your loan EMIs easily from home or your nearest retailer using ABDKS. Whether it's a personal loan, vehicle loan, or home loan — our platform ensures instant, secure, and reliable transactions across major NBFCs and banks.
+            Pay your loan EMIs easily from home or your nearest retailer using Finunique. Whether it's a personal loan, vehicle loan, or home loan — our platform ensures instant, secure, and reliable transactions across major NBFCs and banks.
           </p>
           <p>
             Forget queues and delays — pay on time and stay worry-free.
@@ -63,10 +63,10 @@ const FAQLoanEMIPayments = () => {
       ),
     },
     {
-      title: "How to Pay EMI via ABDKS",
+      title: "How to Pay EMI via Finunique",
       body: (
         <ol>
-          <li>Go to EMI Payment on ABDKS website/app.</li>
+          <li>Go to EMI Payment on Finunique website/app.</li>
           <li>Select your bank or NBFC.</li>
           <li>Enter account or mobile number.</li>
           <li>View outstanding amount & due date.</li>
@@ -93,7 +93,7 @@ const FAQLoanEMIPayments = () => {
         <ul>
           <li>Serve walk-in customers for EMI payments</li>
           <li>Earn commission per transaction</li>
-          <li>Easy-to-use ABDKS dashboard</li>
+          <li>Easy-to-use Finunique dashboard</li>
           <li>Dedicated support team</li>
         </ul>
       ),
@@ -126,7 +126,7 @@ const FAQLoanEMIPayments = () => {
       body: (
         <>
           <p>
-            Avoid penalties and keep your credit score healthy — pay EMIs securely and on time with ABDKS.
+            Avoid penalties and keep your credit score healthy — pay EMIs securely and on time with Finunique.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-3">
             <Link to="#" className="btn px-4 btn-warning text-dark fw-semibold shadow-sm">Pay EMI Now</Link>

@@ -40,7 +40,7 @@ const SEO = ({
       <meta property="og:type" content={og_type || "website"} />
       <meta property="og:url" content={og_url || ""} />
       <meta property="og:image" content={og_image || ""} />
-      <meta property="og:site_name" content={og_site_name || "ABDKS"} />
+      <meta property="og:site_name" content={og_site_name || "Finunique"} />
 
       {/* Canonical */}
       <link rel="canonical" href={canonical_tag || og_url} />

@@ -152,7 +152,7 @@ const Broadband1 = ({
               Broadband Bill Payment
             </h2>
             <h3>
-              Fast, Secure, and Convenient Internet Bill Payment with ABDKS
+              Fast, Secure, and Convenient Internet Bill Payment with Finunique
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img

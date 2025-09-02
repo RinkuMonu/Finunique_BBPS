@@ -21,13 +21,13 @@ const FAQLandline = () => {
       body: (
         <>
           <p>
-            Stay connected with uninterrupted landline service. With ABDKS Solutions Private Ltd., you can pay your landline phone bills online — anytime, from anywhere.
+            Stay connected with uninterrupted landline service. With Finunique Small Private Limited., you can pay your landline phone bills online — anytime, from anywhere.
           </p>
           <p>
             Our platform supports major telecom operators across India and offers real-time bill fetching, multiple payment methods, and instant payment confirmations.
           </p>
           <p>
-            Whether you're managing personal bills or offering services as a retailer, ABDKS ensures secure and hassle-free bill payments.
+            Whether you're managing personal bills or offering services as a retailer, Finunique ensures secure and hassle-free bill payments.
           </p>
         </>
       ),
@@ -61,7 +61,7 @@ const FAQLandline = () => {
       body: (
         <>
           <ol>
-            <li>Go to the Bill Payment section on the ABDKS website or app.</li>
+            <li>Go to the Bill Payment section on the Finunique website or app.</li>
             <li>Select "Landline" as the bill category.</li>
             <li>Choose your operator and region.</li>
             <li>Enter your landline number or account ID.</li>
@@ -103,7 +103,7 @@ const FAQLandline = () => {
             <li>Increase walk-in customers</li>
             <li>Earn commissions on every bill paid</li>
             <li>Simple onboarding with no technical expertise required</li>
-            <li>Real-time transaction reports and dedicated support via ABDKS dashboard</li>
+            <li>Real-time transaction reports and dedicated support via Finunique dashboard</li>
           </ul>
         </>
       ),
@@ -115,13 +115,13 @@ const FAQLandline = () => {
           <Accordion.Item eventKey="0">
             <Accordion.Header>Which operators can I pay landline bills for?</Accordion.Header>
             <Accordion.Body>
-              ABDKS supports major operators like BSNL, MTNL, Airtel, Tata, and more (subject to region).
+              Finunique supports major operators like BSNL, MTNL, Airtel, Tata, and more (subject to region).
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
             <Accordion.Header>Are there any extra charges for paying landline bills?</Accordion.Header>
             <Accordion.Body>
-              No, there are no additional charges for using ABDKS for bill payments.
+              No, there are no additional charges for using Finunique for bill payments.
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="2">
@@ -144,7 +144,7 @@ const FAQLandline = () => {
       body: (
         <>
           <p>
-            Avoid late fees and disconnections. Pay your landline bills quickly and easily with ABDKS — anytime, anywhere.
+            Avoid late fees and disconnections. Pay your landline bills quickly and easily with Finunique — anytime, anywhere.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
             <Link to="/billpayment" className="btn btn-warning text-dark fw-semibold shadow-sm px-4">

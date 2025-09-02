@@ -15,7 +15,7 @@ const ServicesSection = ({ years, heading }) => {
                 earned {years}+ years of expertise in services. You just need to
                 tell us about your requirements, we will strictly take care of
                 that. You are just one click away!! Start your own business
-                with Abdks services and provide Recharge and Bill Payment
+                with Finunique services and provide Recharge and Bill Payment
                 (BBPS) to your customers.
               </p>
             </div>

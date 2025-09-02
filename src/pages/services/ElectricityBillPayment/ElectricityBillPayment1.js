@@ -151,7 +151,7 @@ const ElectricityBillPayment1 = ({
               Electricity bill payment online- BBPS- Powered, safe, and immediate
             </h2>
             <h3>
-              Immediately pay electricity bills across India with the ABDKS
+              Immediately pay electricity bills across India with the Finunique
               reliable BBPS platform that offers real-time updates, zero
               additional fees, and multi-operator coverage.
             </h3>

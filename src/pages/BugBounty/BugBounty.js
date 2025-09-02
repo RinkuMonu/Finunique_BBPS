@@ -18,7 +18,7 @@ const BugBountyProgram = () => {
               <h2 className="mb-4">Guidelines</h2>
               <blockquote className="blockquote mb-4">
                 <p>
-                  If you believe that you have found security vulnerability or Bug on any ofABDKS's owned Website or Application, 
+                  If you believe that you have found security vulnerability or Bug on any of Finunique's  owned Website or Application, 
                   we encourage you to let us know straight away. Our Team will investigate all legitimate reports and do our best 
                   to quickly fix the problem.
                 </p>
@@ -26,7 +26,7 @@ const BugBountyProgram = () => {
 
               <h3 className="mt-5 mb-3">Response Targets</h3>
               <p>
-               ABDKS will make the best effort to meet the following response targets:
+               Finunique will make the best effort to meet the following response targets:
               </p>
               <ListGroup variant="flush" className="mb-4">
                 <ListGroup.Item className="d-flex align-items-center">

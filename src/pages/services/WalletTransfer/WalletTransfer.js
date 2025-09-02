@@ -308,7 +308,7 @@ const WalletTransfer = () => {
                     How Wallet Transfer Works
                   </h3>
                   <ol className="steps-list">
-                    <li>Log in to ABDKS dashboard</li>
+                    <li>Log in to Finunique dashboard</li>
                     <li>Navigate to Wallet Transfer section</li>
                     <li>Enter recipient's Wallet/User ID</li>
                     <li>Enter the transfer amount</li>
@@ -341,7 +341,7 @@ const WalletTransfer = () => {
                         className="bi bi-shield-lock-fill me-2"
                         style={{ color: colors.primary }}
                       ></i>{" "}
-                      Fully secure inside ABDKS system
+                      Fully secure inside Finunique system
                     </li>
                     <li>
                       <i
@@ -407,7 +407,7 @@ const WalletTransfer = () => {
                     </Accordion.Item>
                     <Accordion.Item eventKey="3">
                       <Accordion.Header>
-                        <strong>Both users must be on ABDKS?</strong>
+                        <strong>Both users must be on Finunique?</strong>
                       </Accordion.Header>
                       <Accordion.Body>Yes, internal transfers only.</Accordion.Body>
                     </Accordion.Item>

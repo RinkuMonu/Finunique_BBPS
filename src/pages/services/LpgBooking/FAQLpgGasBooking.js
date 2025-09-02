@@ -21,12 +21,12 @@ const FAQLpgGasBooking = () => {
       body: (
         <>
           <p>
-            ABDKS Solutions Private Ltd. offers a convenient way to book LPG gas
+            Finunique Small Private Limited. offers a convenient way to book LPG gas
             cylinders online for all major providers in India. With our Quick
             Gas Booking Service, you can schedule a cylinder refill anytime — no need to visit the gas agency or wait in long queues.
           </p>
           <p>
-            Whether you're booking for your home or helping customers as a retailer, ABDKS ensures smooth, secure, and instant gas booking with digital confirmation.
+            Whether you're booking for your home or helping customers as a retailer, Finunique ensures smooth, secure, and instant gas booking with digital confirmation.
           </p>
         </>
       ),
@@ -43,10 +43,10 @@ const FAQLpgGasBooking = () => {
       ),
     },
     {
-      title: "How to Book Gas Cylinder with ABDKS",
+      title: "How to Book Gas Cylinder with Finunique",
       body: (
         <ol>
-          <li>Visit the Gas Booking section on the ABDKS app or website</li>
+          <li>Visit the Gas Booking section on the Finunique app or website</li>
           <li>Select your LPG Provider (e.g., Indane, HP, Bharat)</li>
           <li>Enter your Consumer Number / Registered Mobile Number</li>
           <li>Confirm your booking details and delivery address</li>
@@ -56,7 +56,7 @@ const FAQLpgGasBooking = () => {
       ),
     },
     {
-      title: "Features of ABDKS Gas Booking",
+      title: "Features of Finunique Gas Booking",
       body: (
         <ul>
           <li>24x7 Booking Access – Book gas refills anytime, including holidays</li>
@@ -75,8 +75,8 @@ const FAQLpgGasBooking = () => {
           <li>Help customers in your area book LPG refills easily</li>
           <li>Earn small commissions on successful bookings</li>
           <li>Increase customer footfall with essential services</li>
-          <li>Simple integration with ABDKS dashboard</li>
-          <li>Onboarding and support provided by the ABDKS team</li>
+          <li>Simple integration with Finunique dashboard</li>
+          <li>Onboarding and support provided by the Finunique team</li>
         </ul>
       ),
     },
@@ -87,7 +87,7 @@ const FAQLpgGasBooking = () => {
           <Accordion.Item eventKey="0">
             <Accordion.Header>Can I book gas for any LPG provider?</Accordion.Header>
             <Accordion.Body>
-              Yes. ABDKS supports Indane, Bharat Gas, and HP Gas bookings.
+              Yes. Finunique supports Indane, Bharat Gas, and HP Gas bookings.
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
@@ -105,7 +105,7 @@ const FAQLpgGasBooking = () => {
           <Accordion.Item eventKey="3">
             <Accordion.Header>Are there extra charges for booking?</Accordion.Header>
             <Accordion.Body>
-              There are no hidden charges for standard LPG booking through ABDKS.
+              There are no hidden charges for standard LPG booking through Finunique.
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
@@ -116,7 +116,7 @@ const FAQLpgGasBooking = () => {
       body: (
         <>
           <p>
-            Choose ABDKS for quick, reliable, and secure LPG gas booking — available 24x7 for you and your customers.
+            Choose Finunique for quick, reliable, and secure LPG gas booking — available 24x7 for you and your customers.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
             <Link to="/billpayment" className="btn btn-warning text-dark fw-semibold shadow-sm px-4">

@@ -25,7 +25,7 @@ const Cable = () => {
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
-              Pay Your Cable TV Bills Online with ABDKS – Quick, Secure & Hassle-Free
+              Pay Your Cable TV Bills Online with Finunique – Quick, Secure & Hassle-Free
             </h2>
             <h3>Simplifying Cable TV Payments for Every Household</h3>
             <div className="d-flex justify-content-center align-items-center">

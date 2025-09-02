@@ -116,7 +116,7 @@ const WhyUs = () => {
             <span className="badge">
               <FiAward className="me-2" /> Trusted Platform
             </span>
-            <h2>Why Choose ABDKS?</h2>
+            <h2>Why Choose Finunique?</h2>
             <p className="subtitle">
               Empowering India's digital finance ecosystem with reliable, secure, and scalable BBPS solutions.
             </p>
@@ -194,7 +194,7 @@ const WhyUs = () => {
             </div>
             <h2>Our Commitment to BBPS Excellence</h2>
             <p>
-              Since 2024, ABDKS has been dedicated to democratizing access to BBPS-integrated services. With a focus on reliability, speed, and partner growth, we're the preferred choice for both local retailers and national distributors.
+              Since 2024, Finunique has been dedicated to democratizing access to BBPS-integrated services. With a focus on reliability, speed, and partner growth, we're the preferred choice for both local retailers and national distributors.
             </p>
             <div className="badges-container">
               <span className="badge"><FiShield className="me-1" /> RBI Compliant</span>
@@ -218,7 +218,7 @@ const WhyUs = () => {
   {/* Main content */}
   <div className="position-relative z-3 text-center px-3">
     <h3 className="display-5 fw-bold mb-4 text-gradient">
-      Join the <span className="text-primary">ABDKS</span> Network Today
+      Join the <span className="text-primary">Finunique</span> Network Today
     </h3>
 
     <p className="lead mb-5 opacity-75">

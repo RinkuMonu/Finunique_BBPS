@@ -284,7 +284,7 @@ const Login1 = ({ onClose, onLoginSuccess }) => {
 
             <div className="already-account mt-4 text-center">
               <h3 className="fs-6 fw-normal">
-                New to ABDKS Solutions?{" "}
+                New to Finunique Solutions?{" "}
                 <Link to="/createaccount">
                   <button
                     className="btn border-0 bg-white px-1 text-decoration-underline"

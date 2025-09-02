@@ -15,11 +15,11 @@ const FAQMunicipality = () => {
 
   const content = [
     {
-      title: 'ABDKS: Your Trusted Partner for Municipal Bill Payments',
+      title: 'Finunique: Your Trusted Partner for Municipal Bill Payments',
       body: (
         <>
           <p>
-            ABDKS Solutions Private Ltd. empowers citizens and retailers with a simple and secure way to pay municipal dues online. Whether it's property tax, water tax, sewerage charges, or municipal service fees, our digital platform ensures quick payments with real-time status updates — without standing in queues.
+            Finunique Small Private Limited. empowers citizens and retailers with a simple and secure way to pay municipal dues online. Whether it's property tax, water tax, sewerage charges, or municipal service fees, our digital platform ensures quick payments with real-time status updates — without standing in queues.
           </p>
         </>
       ),
@@ -52,10 +52,10 @@ const FAQMunicipality = () => {
       ),
     },
     {
-      title: 'How to Pay Municipal Bills via ABDKS',
+      title: 'How to Pay Municipal Bills via Finunique',
       body: (
         <ol>
-          <li>Go to the Bill Payment section on the ABDKS app or website</li>
+          <li>Go to the Bill Payment section on the Finunique app or website</li>
           <li>Choose Municipal Bill as the service category</li>
           <li>Select your city or municipality from the list</li>
           <li>Enter your property ID, account number, or consumer number</li>
@@ -66,7 +66,7 @@ const FAQMunicipality = () => {
       ),
     },
     {
-      title: 'Why Use ABDKS for Municipal Payments?',
+      title: 'Why Use Finunique for Municipal Payments?',
       body: (
         <ul>
           <li>24x7 Availability – Pay your bills anytime, from any location</li>
@@ -86,7 +86,7 @@ const FAQMunicipality = () => {
           <li>Increase customer footfall and revenue</li>
           <li>Offer value-added services to residents</li>
           <li>Earn a commission on every successful payment</li>
-          <li>View and manage transactions easily from your ABDKS dashboard</li>
+          <li>View and manage transactions easily from your Finunique dashboard</li>
           <li>Get real-time support from our local Jaipur-based team</li>
         </ul>
       ),
@@ -95,10 +95,10 @@ const FAQMunicipality = () => {
       title: 'Frequently Asked Questions',
       body: (
         <ul>
-          <li><strong>Can I pay property tax online through ABDKS?</strong><br />Yes. You can pay property tax and other civic dues for supported municipalities.</li>
+          <li><strong>Can I pay property tax online through Finunique?</strong><br />Yes. You can pay property tax and other civic dues for supported municipalities.</li>
           <li><strong>What details do I need to pay a municipal bill?</strong><br />Typically, your property ID, account number, or consumer ID is required.</li>
           <li><strong>Are municipal payments processed instantly?</strong><br />Yes. Once paid, the confirmation is generated instantly and shared via email/SMS.</li>
-          <li><strong>Is there a charge for paying municipal bills via ABDKS?</strong><br />There are no additional service charges for standard municipal bill payments.</li>
+          <li><strong>Is there a charge for paying municipal bills via Finunique?</strong><br />There are no additional service charges for standard municipal bill payments.</li>
         </ul>
       ),
     },
@@ -107,7 +107,7 @@ const FAQMunicipality = () => {
       body: (
         <>
           <p>
-            Whether you're a resident or a digital retailer, ABDKS helps you manage all your civic dues from one trusted platform — quickly, securely, and without delay.
+            Whether you're a resident or a digital retailer, Finunique helps you manage all your civic dues from one trusted platform — quickly, securely, and without delay.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-3">
             <Link to="/billpayment" className="btn btn-warning text-dark fw-semibold shadow-sm px-4">Pay Municipal Bill Now</Link>

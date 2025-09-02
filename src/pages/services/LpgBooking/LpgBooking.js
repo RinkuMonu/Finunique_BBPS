@@ -32,7 +32,7 @@ const LpgBooking = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#001e50"}}>Book Your LPG Gas Cylinder Online – Fast, Secure, and Anytime with ABDKS</h2>
+            <h2 className="fw-bold" style={{color:"#001e50"}}>Book Your LPG Gas Cylinder Online – Fast, Secure, and Anytime with Finunique</h2>
             <h3>
             Hassle-Free LPG Refill Booking in Just a Few Clicks
             </h3>

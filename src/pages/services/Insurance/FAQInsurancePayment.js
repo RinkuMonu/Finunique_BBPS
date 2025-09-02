@@ -21,7 +21,7 @@ const FAQInsurancePayment = () => {
       body: (
         <>
           <p>
-            <strong>ABDKS Solutions Private Ltd.</strong> offers a fast, reliable, and secure solution to pay your insurance premiums online.
+            <strong>Finunique Small Private Limited.</strong> offers a fast, reliable, and secure solution to pay your insurance premiums online.
             Whether you’re paying for life, health, or vehicle insurance, our platform is designed to help you make payments effortlessly — with instant confirmation and support for leading insurers in India.
           </p>
         </>
@@ -58,10 +58,10 @@ const FAQInsurancePayment = () => {
       ),
     },
     {
-      title: 'How to Pay Insurance Premiums Online with ABDKS',
+      title: 'How to Pay Insurance Premiums Online with Finunique',
       body: (
         <ol>
-          <li>Go to the Bill Payment section on the ABDKS app or website</li>
+          <li>Go to the Bill Payment section on the Finunique app or website</li>
           <li>Select Insurance as the bill category</li>
           <li>Choose your insurance provider from the list</li>
           <li>Enter your policy number or customer ID</li>
@@ -101,7 +101,7 @@ const FAQInsurancePayment = () => {
       body: (
         <>
           <p>Insurance is just like a safety cushion that people avail for themselves in times of emergency...</p>
-          <p>ABDKS Solutions Private Limited provides an easy approach for making the insurance premium payment online via the website and application...</p>
+          <p>Finunique Small Private Limited provides an easy approach for making the insurance premium payment online via the website and application...</p>
         </>
       ),
     },
@@ -109,9 +109,9 @@ const FAQInsurancePayment = () => {
       title: 'How to Pay Life Insurance Premiums Online?',
       body: (
         <>
-          <p>Using ABDKS Solutions Private Limited to make a life insurance online payment is fairly simple...</p>
+          <p>Using Finunique Small Private Limited to make a life insurance online payment is fairly simple...</p>
           <ol>
-            <li>Download the ABDKS Solutions Private Limited App.</li>
+            <li>Download the Finunique Small Private Limited App.</li>
             <li>Click on 'Recharge/ Bill Pay' option on the home page.</li>
             <li>Select 'Insurance' from the available options.</li>
             <li>Select your insurance premium operator.</li>
@@ -126,25 +126,25 @@ const FAQInsurancePayment = () => {
     {
       title: 'Get Cashback Offers on Online Insurance Premium Payments',
       body: (
-        <p>ABDKS Solutions Private Limited knows how to take care of its customers and rewards you every time you use the app...</p>
+        <p>Finunique Small Private Limited knows how to take care of its customers and rewards you every time you use the app...</p>
       ),
     },
     {
       title: 'Make Your Life Insurance Premium Payment Online Securely',
       body: (
-        <p>All payments made using the ABDKS App or website vow full security. You do not have to disclose any private information...</p>
+        <p>All payments made using the Finunique App or website vow full security. You do not have to disclose any private information...</p>
       ),
     },
     {
-      title: 'The Flexibility Offered at ABDKS',
+      title: 'The Flexibility Offered at Finunique',
       body: (
         <>
-          <p>ABDKS offers complete flexibility in the modes you wish to make the payment:</p>
+          <p>Finunique offers complete flexibility in the modes you wish to make the payment:</p>
           <ul>
             <li>Payments using credit/debit cards (no CVV storage).</li>
             <li>Net banking or direct transactions.</li>
             <li>UPI ID-based payments.</li>
-            <li>ABDKS ZIP option for quick payments in a cash crunch.</li>
+            <li>Finunique ZIP option for quick payments in a cash crunch.</li>
           </ul>
         </>
       ),
@@ -173,12 +173,12 @@ const FAQInsurancePayment = () => {
       ),
     },
     {
-      title: 'Pay Insurance Premiums Easily with ABDKS',
+      title: 'Pay Insurance Premiums Easily with Finunique',
       body: (
         <>
           <p>
             Never miss a renewal again. Whether you're paying for yourself or assisting customers,
-            ABDKS makes insurance payments smooth, secure, and on time.
+            Finunique makes insurance payments smooth, secure, and on time.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
             <Link to="/billpayment" className="btn btn-warning text-dark fw-semibold shadow-sm px-4">Pay Insurance Now</Link>

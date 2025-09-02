@@ -17,11 +17,11 @@ const FAQDatacardPostpaid = () => {
 
   const content = [
     {
-      title: "Why Choose ABDKS for Datacard Postpaid Recharge?",
+      title: "Why Choose Finunique for Datacard Postpaid Recharge?",
       body: (
         <>
           <p>
-            With ABDKS Solutions Pvt. Ltd., you can recharge your Datacard postpaid plans with speed, reliability, and ease. Our platform supports secure and real-time bill payments.
+            With Finunique Small Private Limited, you can recharge your Datacard postpaid plans with speed, reliability, and ease. Our platform supports secure and real-time bill payments.
           </p>
           <p>
             Enjoy flexible payment options, instant bill fetch, and confirmation – all from the comfort of your device.
@@ -48,7 +48,7 @@ const FAQDatacardPostpaid = () => {
       title: "Steps to Pay Datacard Postpaid Bills",
       body: (
         <ol>
-          <li>Select the “Datacard Postpaid” category on the ABDKS platform.</li>
+          <li>Select the “Datacard Postpaid” category on the Finunique platform.</li>
           <li>Choose your operator from the list.</li>
           <li>Enter your registered Datacard number or mobile number.</li>
           <li>Review the bill details, if auto-fetched.</li>
@@ -110,7 +110,7 @@ const FAQDatacardPostpaid = () => {
               Is this service available in all locations?
             </Accordion.Header>
             <Accordion.Body>
-              Yes, ABDKS provides online datacard postpaid recharge services across India.
+              Yes, Finunique provides online datacard postpaid recharge services across India.
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
@@ -120,7 +120,7 @@ const FAQDatacardPostpaid = () => {
       title: "Start Recharging Now",
       body: (
         <>
-          <p>Don't let your datacard run out of balance. Recharge it easily with ABDKS and stay connected.</p>
+          <p>Don't let your datacard run out of balance. Recharge it easily with Finunique and stay connected.</p>
           <div className="d-flex flex-wrap gap-3 mt-4">
             <Link to="#" className="btn btn-warning text-dark fw-semibold shadow-sm px-4">
               Recharge Now

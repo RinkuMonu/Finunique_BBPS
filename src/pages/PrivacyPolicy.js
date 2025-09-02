@@ -18,7 +18,7 @@ const PRIVACY_SECTIONS = [
     content: (
       <>
         <p>
-          Welcome to ABDKS Solutions Private Limited ("ABDKS," "we," "our," or
+          Welcome to Finunique Small Private Limited ("Finunique," "we," "our," or
           "us"). We are committed to respecting and protecting the privacy of
           our users, clients, merchants, distributors, and partners. This
           Privacy Policy outlines how we collect, use, disclose, store, and
@@ -41,7 +41,7 @@ const PRIVACY_SECTIONS = [
       <p className="mb-0">
         This policy applies to all users of our services including mobile apps,
         APIs, retailers, distributors, and website visitors. It does not apply
-        to third-party platforms linked from ABDKS services.
+        to third-party platforms linked from Finunique services.
       </p>
     ),
   },
@@ -187,7 +187,7 @@ const PRIVACY_SECTIONS = [
         </p>
         <p>
           <strong>Email:</strong>{" "}
-          <a href="mailto:grievance@abdks.com">grievance@abdks.com</a>
+          <a href="mailto:grievance@finuniques.in">grievance@finuniques.in</a>
         </p>
         <p>
           <strong>Phone:</strong> 0141-4511098
@@ -198,16 +198,16 @@ const PRIVACY_SECTIONS = [
         </p>
         <p>
           <strong>Support:</strong>{" "}
-          <a href="mailto:support@abdks.com">support@abdks.com</a>
+          <a href="mailto:support@finuniques.in">support@finuniques.in</a>
         </p>
         <p className="mb-0">
           <strong>Website:</strong>{" "}
           <a
-            href="https://www.abdks.com"
+            href="https://www.finuniques.in"
             target="_blank"
             rel="noopener noreferrer"
           >
-            www.abdks.com
+           www.finuniques.in
           </a>
         </p>
       </div>
@@ -361,7 +361,7 @@ const sectionRefs = React.useRef([]);
               <Card.Body className="p-4 p-lg-5">
                 <section className="mb-5">
                   <h2 className="h4 mb-4" style={{ color: colors.primary }}>
-                    ABDKS Solutions Private Limited
+                    Finunique Small Private Limited
                   </h2>
                   <p style={{ color: colors.text }}>
                     This Privacy Policy explains how we collect, use, disclose,

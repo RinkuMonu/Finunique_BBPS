@@ -34,7 +34,7 @@ const Emi = () => {
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
               Pay Your Loan EMIs Online Quickly, Securely & Hassle-Free with
-              ABDKS
+              Finunique
             </h2>
             <h3>One Platform to Manage All Your EMI Payments</h3>
             <div className="d-flex justify-content-center align-items-center">

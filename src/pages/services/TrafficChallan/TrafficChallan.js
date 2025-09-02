@@ -34,7 +34,7 @@ const TrafficChallan = () => {
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
-              Pay Traffic Challans Online Safely and Instantly with ABDKS
+              Pay Traffic Challans Online Safely and Instantly with Finunique
             </h2>
             <h3>Clear Traffic Fines in Just a Few Clicks</h3>
             <div className="d-flex justify-content-center align-items-center">

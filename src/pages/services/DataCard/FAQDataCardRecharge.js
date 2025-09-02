@@ -24,7 +24,7 @@ const FAQDataCardRecharge = () => {
         <>
           <p>
             In today’s digital-first world, uninterrupted internet is essential. Whether you’re streaming, working remotely, attending online classes, or gaming — your dongle or data card should never run out of balance. 
-            <strong> ABDKS Solutions Private Ltd.</strong> offers a secure, fast, and user-friendly platform for recharging any prepaid data card or dongle across India.
+            <strong> Finunique Small Private Limited.</strong> offers a secure, fast, and user-friendly platform for recharging any prepaid data card or dongle across India.
           </p>
           <p>
             Backed by <strong>BBPS (Bharat Bill Payment System)</strong>, we ensure real-time confirmation and 100% operator coverage.
@@ -53,7 +53,7 @@ const FAQDataCardRecharge = () => {
               </ul>
             </div>
           </div>
-          <p>Whether it’s a USB modem, Wi-Fi dongle, or 4G stick — recharge securely with just a few taps using ABDKS.</p>
+          <p>Whether it’s a USB modem, Wi-Fi dongle, or 4G stick — recharge securely with just a few taps using Finunique.</p>
         </>
       ),
     },
@@ -62,7 +62,7 @@ const FAQDataCardRecharge = () => {
       body: (
         <>
           <ol>
-            <li>Open the ABDKS app or visit our official website.</li>
+            <li>Open the Finunique app or visit our official website.</li>
             <li>Navigate to the ‘Recharge’ section.</li>
             <li>Select ‘Data Card Recharge’ as the category.</li>
             <li>Choose your operator (e.g., Jio, Airtel, VI, BSNL).</li>
@@ -75,7 +75,7 @@ const FAQDataCardRecharge = () => {
       ),
     },
     {
-      title: "Why Choose ABDKS for Datacard Recharge?",
+      title: "Why Choose Finunique for Datacard Recharge?",
       body: (
         <div className="row">
           <div className="col-md-6">
@@ -100,7 +100,7 @@ const FAQDataCardRecharge = () => {
       title: "For Retailers & Digital Service Points",
       body: (
         <>
-          <p>If you run a cyber café, CSC center, recharge shop, or a local store, you can earn by providing datacard recharge services with ABDKS:</p>
+          <p>If you run a cyber café, CSC center, recharge shop, or a local store, you can earn by providing datacard recharge services with Finunique:</p>
           <ul>
             <li>Serve customers in your locality with essential internet services</li>
             <li>No technical setup – Just login and start recharging</li>
@@ -118,7 +118,7 @@ const FAQDataCardRecharge = () => {
           <Accordion.Item eventKey="0">
             <Accordion.Header>How do I recharge my internet dongle?</Accordion.Header>
             <Accordion.Body>
-              Log in to ABDKS, choose “Datacard Recharge”, select your operator, enter your number, and complete the payment.
+              Log in to Finunique, choose “Datacard Recharge”, select your operator, enter your number, and complete the payment.
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
@@ -140,7 +140,7 @@ const FAQDataCardRecharge = () => {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="4">
-            <Accordion.Header>Are there any extra charges on ABDKS?</Accordion.Header>
+            <Accordion.Header>Are there any extra charges on Finunique?</Accordion.Header>
             <Accordion.Body>
               No. There are zero hidden or additional charges on our platform.
             </Accordion.Body>
@@ -155,11 +155,11 @@ const FAQDataCardRecharge = () => {
       ),
     },
     {
-      title: "Keep Your Internet Running with ABDKS",
+      title: "Keep Your Internet Running with Finunique",
       body: (
         <>
           <p>
-            Whether you're at home, traveling, or running a business — stay connected with ABDKS. Recharge online in seconds and enjoy uninterrupted browsing anytime, anywhere.
+            Whether you're at home, traveling, or running a business — stay connected with Finunique. Recharge online in seconds and enjoy uninterrupted browsing anytime, anywhere.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-4">
             <Link to="#" className="btn btn-primary cta-main" size="lg">Recharge Now</Link>

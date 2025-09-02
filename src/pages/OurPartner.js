@@ -46,12 +46,12 @@ const OurPartener = () => {
     {
       title: "Distributor",
       description:
-        "Build your own network of ABDKS retailers and earn on each of their transactions.",
+        "Build your own network of Finunique retailers and earn on each of their transactions.",
     },
     {
       title: "API Partner",
       description:
-        "Integrate ABDKS BBPS and AEPS services into your own app or platform.",
+        "Integrate Finunique BBPS and AEPS services into your own app or platform.",
     },
   ];
 
@@ -106,7 +106,7 @@ const OurPartener = () => {
                   color: "rgb(238, 162, 20)",
                 }}
               >
-                ABDKS Solutions Private Ltd.
+                Finunique Small Private Limited.
               </span>
             </h2>
             <p className="text-muted lead">
@@ -117,7 +117,7 @@ const OurPartener = () => {
 
           <div className="row">
             <div className="col-md-6 mb-4">
-              <h4>Why Partner with ABDKS?</h4>
+              <h4>Why Partner with Finunique?</h4>
               <p className="text-muted mb-2">
                 We believe in partnerships that create long-term value, build
                 faith, and bring digital empowerment to the last mile.
@@ -242,7 +242,7 @@ const OurPartener = () => {
 
           <div className="text-center mt-5">
             <p className="fw-bold mb-3">
-              We are already connected to 1000+ active retailers and distributors across Rajasthan and expanding every day. Whether you're launching your first fintech venture or scaling an existing business, ABDKS is your gateway to the digital revolution powered by BBPS.
+              We are already connected to 1000+ active retailers and distributors across Rajasthan and expanding every day. Whether you're launching your first fintech venture or scaling an existing business, Finunique is your gateway to the digital revolution powered by BBPS.
             </p>
             <div className="partnerbtnjoin">
               <button className="btn btn-primary me-3">

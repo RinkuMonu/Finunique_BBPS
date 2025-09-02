@@ -183,7 +183,7 @@ const ContactUs = () => {
               <p className="hero-subheadline">
                 Whether you're a retailer ready to join our BBPS network, a
                 distributor seeking a fintech partnership, or a customer needing
-                support — the ABDKS team is available 24/7 with fast and
+                support — the Finunique team is available 24/7 with fast and
                 reliable service.
               </p>
             </div>
@@ -316,7 +316,7 @@ const ContactUs = () => {
                       <i className="bi bi-globe-americas fs-3"></i>
                       <div>
                         <span>Head Office</span>
-                        <b>ABDKS Solutions Private Limited</b>
+                        <b>Finunique Small Private Limited</b>
                         <p>{contactDetails?.address || "Loading address..."}</p>
                       </div>
                     </li>
@@ -325,10 +325,10 @@ const ContactUs = () => {
                       <div>
                         <span>Email</span>
                         <a
-                          href={`mailto:${contactDetails?.email}`}
+                          href={`mailto:support@finuniques.in`}
                           className="text-decoration-none"
                         >
-                          {contactDetails?.email || "Loading email..."}
+                         <span>support@finuniques.in</span>
                         </a>
                       </div>
                     </li>
@@ -386,7 +386,7 @@ const ContactUs = () => {
                 <div className="partner-box p-5 rounded shadow-sm">
                   <h2 className="fw-bold mb-3 text-gradient">Partner With Us</h2>
                   <p className="lead text-muted mb-4">
-                    Interested in becoming a BBPS retailer, distributor, or service partner with ABDKS? Let’s shape India’s digital payment future together.
+                    Interested in becoming a BBPS retailer, distributor, or service partner with Finunique? Let’s shape India’s digital payment future together.
                   </p>
                   <Link to={"/createaccount?role=Retailer"} className="btn btn-warning text-dark fw-semibold d-inline-flex align-items-center px-4 py-2 shadow-sm">
                     Be a Partner <FiArrowRight className="ms-2" size={18} />

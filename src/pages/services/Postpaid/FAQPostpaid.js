@@ -17,11 +17,11 @@ const FAQPostpaid = () => {
 
   const content = [
     {
-      title: "Why Choose ABDKS for Postpaid Bill Payment?",
+      title: "Why Choose Finunique for Postpaid Bill Payment?",
       body: (
         <>
           <p>
-            Pay your postpaid mobile bills easily and securely with ABDKS. Enjoy real-time bill fetching, instant confirmation, and flexible payment options — all on one modern, intuitive platform.
+            Pay your postpaid mobile bills easily and securely with Finunique. Enjoy real-time bill fetching, instant confirmation, and flexible payment options — all on one modern, intuitive platform.
           </p>
         </>
       ),
@@ -45,7 +45,7 @@ const FAQPostpaid = () => {
       title: "Steps to Recharge",
       body: (
         <ol>
-          <li>Go to Postpaid Recharge on ABDKS.</li>
+          <li>Go to Postpaid Recharge on Finunique.</li>
           <li>Select operator and enter your number.</li>
           <li>Check bill details.</li>
           <li>Choose payment method and confirm.</li>
@@ -83,7 +83,7 @@ const FAQPostpaid = () => {
       body: (
         <>
           <p>
-            Never miss a due date. Pay your mobile bills instantly and securely with ABDKS.
+            Never miss a due date. Pay your mobile bills instantly and securely with Finunique.
           </p>
           <div className="d-flex flex-wrap gap-3 mt-3">
             <Link to="#" className="btn btn-warning px-4 text-dark fw-semibold shadow-sm">
