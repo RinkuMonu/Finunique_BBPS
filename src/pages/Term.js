@@ -661,7 +661,7 @@ export default function Term() {
                       If you believe that any content, code, or interface on the
                       Finunique platform violates your intellectual property rights
                       or has been copied without authorization, you may report
-                      it in writing to legal@abdks.in with supporting documents.
+                      it in writing to legal@finuniques.in with supporting documents.
                       We will investigate and respond within 14 business days.
                     </p>
                     <p>
