@@ -26,7 +26,7 @@ function BlogsDetails() {
       try {
         const [postRes, relatedRes, categoryapi] = await Promise.all([
           fetch(
-            `https://cms.sevenunique.com/apis/blogs/get-blogs.php?status=2&slug=${sanitizedSlug}&website_id=5`,
+            `https://cms.sevenunique.com/apis/blogs/get-blogs.php?status=2&slug=${sanitizedSlug}&website_id=6`,
             {
               method: "GET",
               headers: {
@@ -36,7 +36,7 @@ function BlogsDetails() {
             }
           ),
           fetch(
-            `https://cms.sevenunique.com/apis/blogs/get-blogs.php?status=2&limit=3&website_id=5`,
+            `https://cms.sevenunique.com/apis/blogs/get-blogs.php?status=2&limit=3&website_id=6`,
             {
               method: "GET",
               headers: {
@@ -46,7 +46,7 @@ function BlogsDetails() {
             }
           ),
           fetch(
-            `https://cms.sevenunique.com/apis/category/get_category_by_id.php?category_id=5`,
+            `https://cms.sevenunique.com/apis/category/get_category_by_id.php?category_id=6`,
             {
               method: "GET",
               headers: {

@@ -20,7 +20,7 @@ export default function Blog() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://cms.sevenunique.com/apis/blogs/get-blogs.php?website_id=5&status=2&page=${currentPage}&limit=${limit}`,
+        `https://cms.sevenunique.com/apis/blogs/get-blogs.php?website_id=6&status=2&page=${currentPage}&limit=${limit}`,
         {
           headers: {
             Authorization: "Bearer jibhfiugh84t3324fefei#*fef",

@@ -25,7 +25,7 @@ function Footer() {
     const fetchSocialLinks = async () => {
       try {
         const response = await axios.get(
-          "https://cms.sevenunique.com/apis/social-media/get-social-accounts.php?website_id=5",
+          "https://cms.sevenunique.com/apis/social-media/get-social-accounts.php?website_id=6",
           { headers }
         );
         const result = response.data;
@@ -43,7 +43,7 @@ function Footer() {
     const fetchContactDetails = async () => {
       try {
         const response = await axios.get(
-          "https://cms.sevenunique.com/apis/contact/get-contact-details.php?website_id=5",
+          "https://cms.sevenunique.com/apis/contact/get-contact-details.php?website_id=6",
           { headers }
         );
         const result = response.data;

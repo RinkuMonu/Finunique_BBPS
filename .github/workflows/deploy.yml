@@ -35,7 +35,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22527
           source: "build.tar.gz"
-          target: "/home/abdksco/"
+          target: "/home/finuniqu/"
 
       - name: Unzip files on Server via SSH
         uses: appleboy/ssh-action@master
@@ -45,7 +45,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22527
           script: |
-            rm -rf /home/abdksco/public_html/*
-            mkdir -p /home/abdksco/public_html
-            tar -xzvf /home/abdksco/build.tar.gz -C /home/abdksco/public_html
-            rm /home/abdksco/build.tar.gz
+            rm -rf /home/finuniqu/public_html/*
+            mkdir -p /home/finuniqu/public_html
+            tar -xzvf /home/finuniqu/build.tar.gz -C /home/finuniqu/public_html
+            rm /home/finuniqu/build.tar.gz
