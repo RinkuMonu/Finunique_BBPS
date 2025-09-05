@@ -3,8 +3,8 @@ import axios from "axios";
 const axiosInstance = axios.create({
 
   // baseURL: "https://bbpsrepo.onrender.com/api/", 
-  // baseURL:"https://server.finuniques.in/api",
-    baseURL:"https://7qcwg3jk-5002.inc1.devtunnels.ms/api/",
+  baseURL:"https://server.finuniques.in/api",
+    // baseURL:"https://7qcwg3jk-5002.inc1.devtunnels.ms/api/",
   // baseURL: "http://192.168.1.88:8080/api/",
   // baseURL: 'https://7qcwg3jk-8080.inc1.devtunnels.ms/api/',
   // baseURL: "http://localhost:8080/api/",
